@@ -1,0 +1,43 @@
+{
+  "name": "kouto-swiss",
+  "version": "0.0.1",
+  "description": "A complete CSS framework for Stylus",
+  "keywords": [
+    "Stylus",
+    "CSS",
+    "framework",
+    "polyfill",
+    "grid",
+    "vendors",
+    "responsive",
+    "reset",
+    "utility"
+  ],
+  "homepage": "http://leny.github.io/kouto-swiss/",
+  "author": {
+    "name": "Leny",
+    "email": "info@flatland.be",
+    "url": "http://leny.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leny/kouto-swiss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leny/kouto-swiss/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/leny/kouto-swiss/blob/master/LICENSE"
+    }
+  ],
+  "main": "lib/kouto-swiss.js",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "stylus": "~0.44"
+  },
+  "devDependencies": {}
+}
