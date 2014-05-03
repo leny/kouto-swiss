@@ -1,4 +1,4 @@
-# kouto-swiss
+# kouto swiss
 
 ![NPM version](http://img.shields.io/npm/v/kouto-swiss.svg) ![Build Status](http://img.shields.io/travis/leny/kouto-swiss.svg) ![Dependency Status](https://david-dm.org/leny/kouto-swiss.svg) ![Downloads counter](http://img.shields.io/npm/dm/kouto-swiss.svg)
 
@@ -16,17 +16,17 @@
 
 ### Development TODO
 
-- [] setup project & tests
-- [] reset
-- [] vendors
-- [] utils: colors
-- [] utils: shortcuts
-- [] utils: fallbacks
-- [] grid system
-- [] responsive
-- [] documentation
-- [] website
-- [] release 1.0
+- [ ] setup project & tests
+- [ ] reset
+- [ ] vendors
+- [ ] utils: colors
+- [ ] utils: shortcuts
+- [ ] utils: fallbacks
+- [ ] grid system
+- [ ] responsive
+- [ ] documentation
+- [ ] website
+- [ ] release 1.0
 
 ## License
 Copyright (c) 2014 Leny  
