@@ -1,7 +1,8 @@
-/**
+/*!
  * Kouto Swiss
  * A complete CSS framework for Stylus
  * https://github.com/leny/kouto-swiss
+ * MIT Licensed
  *
  * Test Runner
  * (inspired from nib test runner)
