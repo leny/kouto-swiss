@@ -24,6 +24,10 @@ body {
   color: rgba(234,241,106,0.5);
 }
 body {
+  color: #eaf16a;
+  color: rgba(234,241,106,0.5);
+}
+body {
   background: #ca2b78 url("test.png") top left repeat;
   background: rgba(202,43,120,0.5) url("test.png") top left repeat;
 }
