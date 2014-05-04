@@ -6,7 +6,7 @@
 
 * * *
 
-![kouto swiss logo](https://raw.githubusercontent.com/leny/kouto-swiss/master/logo.svg)
+![kouto swiss logo](https://raw.githubusercontent.com/leny/kouto-swiss/master/Logo.png)
 
 * * *
 
