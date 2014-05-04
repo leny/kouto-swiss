@@ -1,0 +1,11 @@
+// color-fallback( color )
+// duplicate current property to create color fallback for colors with alpha values < 1
+
+color-fallback( color )
+    if( current-property )
+        if( alpha( color ) < 1 )
+            fallback-color = rgb( red( color ), green( color ), blue( color ) )
+            add-property( current-property[ 0 ], replace( current-property[ 1 ], "__CALL__", fallback-color ) )
+        color
+    else
+        error( "color-fallback() must be used within a property" )
