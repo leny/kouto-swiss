@@ -16,7 +16,7 @@
 
 ### Development TODO
 
-- [ ] setup project & tests
+- [x] setup project & tests
 - [ ] reset
 - [ ] vendors
 - [ ] utils: colors
