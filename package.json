@@ -33,11 +33,17 @@
     }
   ],
   "main": "lib/kouto-swiss.js",
+  "scripts": {
+    "test": "mocha"
+  },
   "engines": {
     "node": "*"
   },
   "dependencies": {
     "stylus": "~0.44"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  }
 }
