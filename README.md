@@ -6,6 +6,10 @@
 
 * * *
 
+![kouto swiss logo](https://raw.githubusercontent.com/leny/kouto-swiss/master/logo.svg)
+
+* * *
+
 > **note:** kouto-swiss is in early development.
 
 * * *
