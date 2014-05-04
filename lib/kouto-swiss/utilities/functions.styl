@@ -1,0 +1,6 @@
+replace( expr, str, val )
+    expr = clone( expr )
+    for e, i in expr
+        if str == e
+            expr[ i ] = val
+    expr
