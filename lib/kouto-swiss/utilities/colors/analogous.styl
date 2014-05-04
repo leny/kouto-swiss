@@ -1,0 +1,17 @@
+// analogous( color )
+// returns analogous variations of given color
+
+analogous( color )
+    first = spin( color, 30 )
+    second = spin( color, -30 )
+    ( first second )
+
+// extended-analogous( color )
+// returns extended analogous variations (4 instead of 2) of given color
+
+extended-analogous( color )
+    first = spin( color, 30 )
+    second = spin( color, -30 )
+    third = spin( color, 60 )
+    fourth = spin( color, -60 )
+    ( first second third fourth )
