@@ -1,6 +1,6 @@
 # Implicit color fallback
 
-The `implicit color fallback` mecanism allows you to use the `color-fallback` function without calling it, by declaring an `implicit-color-fallback` variable to `true`.
+The `implicit color fallback` mecanism allows you to use the `color-fallback` function without calling it, by declaring an `ks-color-fallback` variable to `true`.
 
 ### Usage
 
@@ -8,7 +8,7 @@ The `implicit color fallback` mecanism allows you to use the `color-fallback` fu
 .foo
     color rgba( 255, 0, 0, .5 )
 
-implicit-color-fallback = true
+ks-color-fallback = true
 
 .bar
     color rgba( 255, 0, 0, .5 )
@@ -16,7 +16,7 @@ implicit-color-fallback = true
 .bar
     background rgba( 202, 43, 120, .5 ) url( test.png ) top left repeat
     
-implicit-color-fallback = false
+ks-color-fallback = false
 
 .foo
     color rgba( 255, 0, 0, .5 )
