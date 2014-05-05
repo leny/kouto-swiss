@@ -1,7 +1,7 @@
 # placeholder()
 
 Outputs vendor-prefixes for placeholders.  
-Must be called from a rule-set.
+Must be called from a ruleset.
 
 ### Usage
 

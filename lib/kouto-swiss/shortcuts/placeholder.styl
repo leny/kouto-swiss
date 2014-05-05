@@ -1,4 +1,6 @@
 placeholder()
+    if selector() == "&"
+        error( "placeholder() must be called from a ruleset!" )
     &::-webkit-input-placeholder
         {block}
     &:-moz-placeholder
