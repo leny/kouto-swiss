@@ -1,0 +1,8 @@
+button {
+  -webkit-align-content: stretch;
+  align-content: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-align-self: auto;
+  align-self: auto;
+}
