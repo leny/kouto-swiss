@@ -26,3 +26,14 @@ div:after {
 div:after {
   clear: both;
 }
+header {
+  width: 100%;
+}
+header:before,
+header:after {
+  content: " ";
+  display: table;
+}
+header:after {
+  clear: both;
+}
