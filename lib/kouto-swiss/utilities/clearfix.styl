@@ -11,3 +11,9 @@ clear( value, args... )
         clearfix()
     else
         clear value
+
+fix()
+    if( current-property && current-property[ 0 ] == "clear" )
+        fix
+    else
+        error( "fix() must be used within a clear property" )
