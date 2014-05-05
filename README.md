@@ -14,6 +14,13 @@
 
 * * *
 
+**kouto swiss** is a complete CSS framework for Stylus, inspired by great tools like nib, compass, bourbon…
+
+## Contributing
+
+In lieu of a formal styleguide, take care to maintain the existing coding style.  
+Add unit tests and update the docs for any new or changed functionality.
+
 ## Release History
 
 - **2014-05-03:** starting project
