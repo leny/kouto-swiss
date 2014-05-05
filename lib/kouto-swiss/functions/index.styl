@@ -18,3 +18,12 @@ percent( value, total )
     value = _strip-units( value )
     total = _strip-units( total )
     value / total * 100%
+
+ks-em-base = 16px
+
+// em( value, base )
+// convert pixels to em, with given base
+em( value, base = ks-em-base )
+    value = _strip-units( value )
+    base = _strip-units( base )
+    value / base * 1em
