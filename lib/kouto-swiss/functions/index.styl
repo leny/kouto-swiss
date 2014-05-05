@@ -27,3 +27,10 @@ em( value, base = ks-em-base )
     value = _strip-units( value )
     base = _strip-units( base )
     value / base * 1em
+
+// rem( value, base )
+// convert pixels to rem
+rem( value )
+    value = _strip-units( value )
+    base = ks-rem-base is a "unit" ? _strip-units( ks-rem-base ) : 16
+    value / base * 1rem
