@@ -6,3 +6,195 @@ button {
   -webkit-align-self: auto;
   align-self: auto;
 }
+button {
+  -webkit-animation: none 0s ease 0s 1 normal none;
+  -ms-animation: none 0s ease 0s 1 normal none;
+  animation: none 0s ease 0s 1 normal none;
+  -webkit-animation-delay: 0;
+  -ms-animation-delay: 0;
+  animation-delay: 0;
+  -webkit-animation-direction: normal;
+  -ms-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-duration: 0;
+  -ms-animation-duration: 0;
+  animation-duration: 0;
+  -webkit-animation-fill-mode: none;
+  -ms-animation-fill-mode: none;
+  animation-fill-mode: none;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-name: none;
+  -ms-animation-name: none;
+  animation-name: none;
+  -webkit-animation-play-state: running;
+  -ms-animation-play-state: running;
+  animation-play-state: running;
+  -webkit-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  animation-timing-function: ease;
+}
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+button {
+  -webkit-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  backface-visibility: visible;
+}
+button {
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+}
+button {
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+button {
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
+  -webkit-column-fill: balance;
+  -moz-column-fill: balance;
+  column-fill: balance;
+  -webkit-column-gap: normal;
+  -moz-column-gap: normal;
+  column-gap: normal;
+  -webkit-column-rule: medium none #000;
+  -moz-column-rule: medium none #000;
+  column-rule: medium none #000;
+  -webkit-column-rule-color: #000;
+  -moz-column-rule-color: #000;
+  column-rule-color: #000;
+  -webkit-column-rule-style: medium;
+  -moz-column-rule-style: medium;
+  column-rule-style: medium;
+  -webkit-column-rule-width: medium;
+  -moz-column-rule-width: medium;
+  column-rule-width: medium;
+  -webkit-column-span: none;
+  column-span: none;
+  -webkit-column-width: auto;
+  -moz-column-width: auto;
+  column-width: auto;
+  -webkit-columns: auto auto;
+  -moz-columns: auto auto;
+  columns: auto auto;
+}
+button {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+button {
+  -webkit-grid: none;
+  -ms-grid: none;
+  grid: none;
+  -webkit-grid-area: none;
+  grid-area: none;
+  -webkit-grid-auto-columns: auto;
+  grid-auto-columns: auto;
+  -webkit-grid-auto-flow: none;
+  grid-auto-flow: none;
+  -webkit-grid-auto-position: 1/1;
+  grid-auto-position: 1/1;
+  -webkit-grid-auto-rows: auto;
+  grid-auto-rows: auto;
+  -webkit-grid-column: none;
+  -ms-grid-column: none;
+  grid-column: none;
+  -webkit-grid-column-end: auto;
+  grid-column-end: auto;
+  -webkit-grid-column-start: auto;
+  grid-column-start: auto;
+  -webkit-grid-row: none;
+  -ms-grid-row: none;
+  grid-row: none;
+  -webkit-grid-row-end: auto;
+  grid-row-end: auto;
+  -webkit-grid-row-start: auto;
+  grid-row-start: auto;
+  -webkit-grid-template: none;
+  grid-template: none;
+  -webkit-grid-template-areas: none;
+  grid-template-areas: none;
+  -webkit-grid-template-columns: none;
+  grid-template-columns: none;
+  -webkit-grid-template-rows: none;
+  grid-template-rows: none;
+}
+button {
+  -webkit-justify-content: auto;
+  justify-content: auto;
+}
+button {
+  -webkit-mask: border-box;
+  mask: border-box;
+}
+button {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  -ms-filter: none;
+  filter: none;
+  opacity: 1;
+  -ms-filter: inherit;
+  filter: inherit;
+  opacity: inherit;
+}
+button {
+  -webkit-perspective: none;
+  perspective: none;
+  -webkit-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+}
+button {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+  -webkit-transform-origin: 50% 50% 0;
+  -o-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+  -webkit-transform-style: flat;
+  transform-style: flat;
+}
+button {
+  -webkit-transition: 0s 0s all ease;
+  -o-transition: 0s 0s all ease;
+  transition: 0s 0s all ease;
+  -webkit-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+  -webkit-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
