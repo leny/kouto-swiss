@@ -1,0 +1,10 @@
+button {
+  width: 22px;
+}
+button:before, button:after {
+  content: " ";
+  display: table;
+}
+button:after {
+  clear: both;
+}
