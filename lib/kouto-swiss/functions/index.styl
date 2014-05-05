@@ -7,9 +7,14 @@ _replace( expr, str, val )
             expr[ i ] = val
     expr
 
+// _strip-units
+// remove units of a number
+_strip-units( val )
+    unit( val, "" )
+
 // percent( x, y )
 // return the percentage value of x in y
 percent( x, y )
-    x = unit( x, "" )
-    y = unit( y, "" )
+    x = _strip-units( x )
+    y = _strip-units( y )
     x / y * 100%
