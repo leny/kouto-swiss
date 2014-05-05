@@ -1,0 +1,14 @@
+vendor( property, value, prefixes = null, official = true )
+    for prefix in prefixes
+        prefixedproperty = "-" + prefix + "-" + property
+        {prefixedproperty}: value
+    {property}: value if official
+
+align-content()
+    vendor( "align-content", arguments, prefixes: webkit )
+
+align-items()
+    vendor( "align-items", arguments, prefixes: webkit )
+
+align-self()
+    vendor( "align-self", arguments, prefixes: webkit )
