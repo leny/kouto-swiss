@@ -1,6 +1,15 @@
+// _replace
+// internal search and replace in expr
 _replace( expr, str, val )
     expr = clone( expr )
     for e, i in expr
         if str == e
             expr[ i ] = val
     expr
+
+// percent( x, y )
+// return the percentage value of x in y
+percent( x, y )
+    x = unit( x, "" )
+    y = unit( y, "" )
+    x / y * 100%
