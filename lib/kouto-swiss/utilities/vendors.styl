@@ -1,7 +1,8 @@
 vendor( property, value, prefixes = null, official = true )
-    for prefix in prefixes
-        prefixedproperty = "-" + prefix + "-" + property
-        {prefixedproperty}: value
+    if prefixes
+        for prefix in prefixes
+            prefixedproperty = "-" + prefix + "-" + property
+            {prefixedproperty}: value
     {property}: value if official
 
 align-content()
@@ -12,3 +13,150 @@ align-items()
 
 align-self()
     vendor( "align-self", arguments, prefixes: webkit )
+
+animation()
+    vendor( "animation", arguments, prefixes: webkit ms )
+animation-delay()
+    vendor( "animation-delay", arguments, prefixes: webkit ms )
+animation-direction()
+    vendor( "animation-direction", arguments, prefixes: webkit ms )
+animation-duration()
+    vendor( "animation-duration", arguments, prefixes: webkit ms )
+animation-fill-mode()
+    vendor( "animation-fill-mode", arguments, prefixes: webkit ms )
+animation-iteration-count()
+    vendor( "animation-iteration-count", arguments, prefixes: webkit ms )
+animation-name()
+    vendor( "animation-name", arguments, prefixes: webkit ms )
+animation-play-state()
+    vendor( "animation-play-state", arguments, prefixes: webkit ms )
+animation-timing-function()
+    vendor( "animation-timing-function", arguments, prefixes: webkit ms )
+
+appearance()
+    vendor( "appearance", arguments, prefixes: webkit moz )
+
+backface-visibility()
+    vendor( "backface-visibility", arguments, prefixes: webkit ms )
+
+background-clip()
+    vendor( "background-clip", arguments, prefixes: webkit )
+background-origin()
+    vendor( "background-origin", arguments, prefixes: webkit )
+background-size()
+    vendor( "background-size", arguments, prefixes: webkit )
+
+clip-path()
+    vendor( "clip-path", arguments, prefixes: webkit )
+
+column-count()
+    vendor( "column-count", arguments, prefixes: webkit moz )
+column-fill()
+    vendor( "column-fill", arguments, prefixes: webkit moz )
+column-gap()
+    vendor( "column-gap", arguments, prefixes: webkit moz )
+column-rule()
+    vendor( "column-rule", arguments, prefixes: webkit moz )
+column-rule-color()
+    vendor( "column-rule-color", arguments, prefixes: webkit moz )
+column-rule-style()
+    vendor( "column-rule-style", arguments, prefixes: webkit moz )
+column-rule-width()
+    vendor( "column-rule-width", arguments, prefixes: webkit moz )
+column-span()
+    vendor( "column-span", arguments, prefixes: webkit )
+column-width()
+    vendor( "column-width", arguments, prefixes: webkit moz )
+columns()
+    vendor( "columns", arguments, prefixes: webkit moz )
+
+flex()
+    vendor( "flex", arguments, prefixes: webkit ms )
+flex-basis()
+    vendor( "flex-basis", arguments, prefixes: webkit )
+flex-direction()
+    vendor( "flex-direction", arguments, prefixes: webkit ms )
+flex-flow()
+    vendor( "flex-flow", arguments, prefixes: webkit ms )
+flex-grow()
+    vendor( "flex-grow", arguments, prefixes: webkit )
+flex-shrink()
+    vendor( "flex-shrink", arguments, prefixes: webkit )
+flex-wrap()
+    vendor( "flex-wrap", arguments, prefixes: webkit ms )
+
+grid()
+    vendor( "grid", arguments, prefixes: webkit ms )
+grid-area()
+    vendor( "grid-area", arguments, prefixes: webkit )
+grid-auto-columns()
+    vendor( "grid-auto-columns", arguments, prefixes: webkit )
+grid-auto-flow()
+    vendor( "grid-auto-flow", arguments, prefixes: webkit )
+grid-auto-position()
+    vendor( "grid-auto-position", arguments, prefixes: webkit )
+grid-auto-rows()
+    vendor( "grid-auto-rows", arguments, prefixes: webkit )
+grid-column()
+    vendor( "grid-column", arguments, prefixes: webkit ms )
+grid-column-end()
+    vendor( "grid-column-end", arguments, prefixes: webkit )
+grid-column-start()
+    vendor( "grid-column-start", arguments, prefixes: webkit )
+grid-row()
+    vendor( "grid-row", arguments, prefixes: webkit ms )
+grid-row-end()
+    vendor( "grid-row-end", arguments, prefixes: webkit )
+grid-row-start()
+    vendor( "grid-row-start", arguments, prefixes: webkit )
+grid-template()
+    vendor( "grid-template", arguments, prefixes: webkit )
+grid-template-areas()
+    vendor( "grid-template-areas", arguments, prefixes: webkit )
+grid-template-columns()
+    vendor( "grid-template-columns", arguments, prefixes: webkit )
+grid-template-rows()
+    vendor( "grid-template-rows", arguments, prefixes: webkit )
+
+justify-content()
+    vendor( "justify-content", arguments, prefixes: webkit )
+
+mask()
+    vendor( "mask", arguments, prefixes: webkit )
+
+opacity( value )
+    if value == inherit or value == initial
+        -ms-filter value
+        filter value
+    else
+        val = round( value * 100 )
+        if val == 100
+            -ms-filter: none
+            filter: none
+        else
+            -ms-filter: '"progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)"' % val
+            filter: 'alpha(opacity=%s)' % val
+    opacity value
+
+perspective()
+    vendor( "perspective", arguments, prefixes: webkit )
+perspective-origin()
+    vendor( "perspective-origin", arguments, prefixes: webkit )
+
+transform()
+    vendor( "transform", arguments, prefixes: webkit moz o )
+transform-origin()
+    vendor( "transform-origin", arguments, prefixes: webkit o )
+transform-style()
+    vendor( "transform-style", arguments, prefixes: webkit )
+
+transition()
+    vendor( "transition", arguments, prefixes: webkit o )
+transition-delay()
+    vendor( "transition-delay", arguments, prefixes: webkit o )
+transition-duration()
+    vendor( "transition-duration", arguments, prefixes: webkit o )
+transition-property()
+    vendor( "transition-property", arguments, prefixes: webkit o )
+transition-timing-function()
+    vendor( "transition-timing-function", arguments, prefixes: webkit o )
