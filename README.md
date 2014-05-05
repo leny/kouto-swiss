@@ -22,8 +22,8 @@
 
 - [x] setup project & tests
 - [x] reset
-- [ ] vendors
-- [ ] utils: colors
+- [x] vendors
+- [x] utils: colors
 - [ ] utils: shortcuts
 - [ ] utils: fallbacks
 - [ ] grid system
