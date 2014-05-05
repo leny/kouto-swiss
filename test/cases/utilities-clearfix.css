@@ -9,3 +9,20 @@ button:after {
 button:after {
   clear: both;
 }
+section {
+  clear: none;
+  clear: left;
+  clear: right;
+  clear: both;
+}
+div {
+  width: 100%;
+}
+div:before,
+div:after {
+  content: " ";
+  display: table;
+}
+div:after {
+  clear: both;
+}
