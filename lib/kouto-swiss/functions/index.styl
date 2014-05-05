@@ -12,9 +12,9 @@ _replace( expr, str, val )
 _strip-units( val )
     unit( val, "" )
 
-// percent( x, y )
-// return the percentage value of x in y
-percent( x, y )
-    x = _strip-units( x )
-    y = _strip-units( y )
-    x / y * 100%
+// percent( value, total )
+// return the percentage value of value in total
+percent( value, total )
+    value = _strip-units( value )
+    total = _strip-units( total )
+    value / total * 100%
