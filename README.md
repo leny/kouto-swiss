@@ -6,11 +6,11 @@
 
 * * *
 
-![kouto swiss logo](https://raw.githubusercontent.com/leny/kouto-swiss/master/Logo.png)
+> **note:** kouto-swiss is in early development, not suitable for production (yet).
 
 * * *
 
-> **note:** kouto-swiss is in early development.
+![kouto swiss logo](https://raw.githubusercontent.com/leny/kouto-swiss/master/Logo.png)
 
 * * *
 
