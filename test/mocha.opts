@@ -1,3 +1,5 @@
 --require should
+--reporter spec
 --check-leaks
+--inline-diffs
 test/runner.js

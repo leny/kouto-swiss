@@ -17,6 +17,7 @@
 ## Release History
 
 - **2014-05-03:** starting project
+- **2014-05-05:** version `0.0.1` : first publish on npm, still in early stages of development.
 
 ### Development TODO
 

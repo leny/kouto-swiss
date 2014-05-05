@@ -26,10 +26,10 @@ describe( "Kouto Swiss Integration Tests", function() {
     cases.forEach( function( oTest ) {
         var sName = oTest.replace( rTestNameSanitize, " " );
 
-        it( sName, function() {
+        it( sName, function( done ) {
             var sPath = "test/cases/" + oTest + ".styl",
                 sStylusCase = fs.readFileSync( sPath, "utf8" ).replace( rReturn, "" ),
-                sCSSExpected = fs.readFileSync( "test/cases/" + oTest + ".css", "utf8" ).replace( rReturn, "" ).trim(),
+                sCSSExpected = fs.readFileSync( "test/cases/" + oTest + ".css", "utf8" ).replace( rReturn, "" ),
                 oStylus;
 
             ( oStylus = stylus( sStylusCase ) )
@@ -42,13 +42,15 @@ describe( "Kouto Swiss Integration Tests", function() {
             }
 
             oStylus.render( function( oError, sCSSActual ) {
-                if (oError) {
-                    throw oError;
+                if( oError ) {
+                    oError.message = oError.message.substring( 0, oError.message.indexOf( "expected" ) );
+                    return done( oError );
                 }
                 sCSSActual
                     .trim()
                     .should
-                    .equal( sCSSExpected );
+                    .equal( sCSSExpected.trim() );
+                done();
             } );
         } );
     } );
