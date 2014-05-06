@@ -8,3 +8,8 @@
     color: #f00;
   }
 }
+@media screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (-o-min-device-pixel-ratio: 1/1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+  div {
+    color: #f00;
+  }
+}
