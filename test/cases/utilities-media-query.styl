@@ -2,11 +2,16 @@
 
 query-one = media-query( all, min-width 640px )
 query-two = media-query( only screen, min-width 640px, min-height 960px, orientation portrait )
+query-three = media-query( print )
 
 @media query-one
     div
         color red
 
 @media query-two
+    div
+        color red
+
+@media query-three
     div
         color red

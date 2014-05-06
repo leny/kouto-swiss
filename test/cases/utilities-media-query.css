@@ -8,3 +8,8 @@
     color: #f00;
   }
 }
+@media print {
+  div {
+    color: #f00;
+  }
+}
