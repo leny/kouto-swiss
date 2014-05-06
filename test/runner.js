@@ -22,7 +22,7 @@ var cases = fs.readdirSync( "test/cases" )
         return oFile.replace( ".styl", "" );
     } );
 
-describe( "Kouto Swiss Integration Tests", function() {
+describe( "Kouto Swiss Tests", function() {
     cases.forEach( function( oTest ) {
         var sName = oTest.replace( rTestNameSanitize, " " );
 
@@ -43,7 +43,9 @@ describe( "Kouto Swiss Integration Tests", function() {
 
             oStylus.render( function( oError, sCSSActual ) {
                 if( oError ) {
-                    oError.message = oError.message.substring( 0, oError.message.indexOf( "expected" ) );
+                    if( oError.message.indexOf( "expected" ) > -1 ) {
+                        oError.message = oError.message.substring( 0, oError.message.indexOf( "expected" ) );
+                    }
                     return done( oError );
                 }
                 sCSSActual
