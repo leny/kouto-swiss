@@ -26,3 +26,10 @@ div {
   font-size: 32px;
   font-size: 64px;
 }
+div {
+  font-size: 0.444444444444444em;
+  font-size: 0.666666666666667em;
+  font-size: 1em;
+  font-size: 1.5em;
+  font-size: 2.25em;
+}
