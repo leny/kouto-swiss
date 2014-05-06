@@ -35,6 +35,7 @@ describe( "Kouto Swiss Tests", function() {
             ( oStylus = stylus( sStylusCase ) )
                 .use( koutoSwiss() )
                 .set( "filename", sPath )
+                .include( __dirname + "/cases/img" )
                 .define( "url", stylus.url() );
 
             if ( ~oTest.indexOf("compress") ) {
