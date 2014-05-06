@@ -1,7 +1,12 @@
 @import 'kouto-swiss'
 
 query-one = media-query( all, min-width 640px )
+query-two = media-query( only screen, min-width 640px, min-height 960px, orientation portrait )
 
 @media query-one
+    div
+        color red
+
+@media query-two
     div
         color red

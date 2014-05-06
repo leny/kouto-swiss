@@ -3,3 +3,8 @@
     color: #f00;
   }
 }
+@media only screen and (min-width: 640px) and (min-height: 960px) and (orientation: portrait) {
+  div {
+    color: #f00;
+  }
+}
