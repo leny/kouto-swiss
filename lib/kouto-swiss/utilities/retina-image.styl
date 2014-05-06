@@ -1,0 +1,15 @@
+// TODO makes a mixin from this
+ks-mq-retina = "only screen and (-webkit-min-device-pixel-ratio: 1.3),"
+ks-mq-retina += " only screen and (min--moz-device-pixel-ratio: 1.3),"
+ks-mq-retina += " only screen and (-o-min-device-pixel-ratio: 1.3/1),"
+ks-mq-retina += " only screen and (min-device-pixel-ratio: 1.3),"
+ks-mq-retina += " only screen and (min-resolution: 125dpi),"
+ks-mq-retina += " only screen and (min-resolution: 1.3dppx)"
+
+retina-image( img-src, size = false, suffix = "@2x" )
+    background-image url( img-src )
+    @media ks-mq-retina
+        background-image url( img-src )
+        background-size size
+
+
