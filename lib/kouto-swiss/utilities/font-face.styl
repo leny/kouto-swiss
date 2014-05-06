@@ -1,0 +1,21 @@
+font-face( name, font-src, weight = false, style = false, formats = eot woff truetype svg, svg-font-name = false )
+    @font-face
+        font-family name
+        if weight
+            font-weight weight
+        if style
+            font-style style
+        fonts = ()
+        if eot in formats
+            src url( font-src + ".eot" )
+            push( fonts, join( " ", url( font-src + ".eot?#iefix" ), format( "embedded-opentype" ) ) )
+        if woff in formats
+            push( fonts, join( " ", url( font-src + ".woff" ), format( "woff" ) ) )
+        if opentype in formats
+            push( fonts, join( " ", url( font-src + ".otf" ), format( "opentype" ) ) )
+        if truetype in formats
+            push( fonts, join( " ", url( font-src + ".ttf" ), format( "truetype" ) ) )
+        if svg in formats
+            svg-name = svg-font-name ? svg-font-name : name
+            push( fonts, join( " ", url( font-src + ".svg#" + svg-name ), format( "svg" ) ) )
+        src unquote( join( ", ", fonts ) )
