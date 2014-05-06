@@ -7,9 +7,17 @@ ks-mq-retina += " only screen and (min-resolution: 125dpi),"
 ks-mq-retina += " only screen and (min-resolution: 1.3dppx)"
 
 retina-image( img-src, size = false, suffix = "@2x" )
-    background-image url( img-src )
+    ext = extname( img-src )
+    image-src = pathjoin( dirname( img-src ), basename( img-src, ext ) + ext )
+    retina-src = pathjoin( dirname( img-src ), basename( img-src, ext ) + suffix + ext )
+    unless size
+        size = image-size( img-src, true )
+        if size[ 0 ] == 0 && size[ 1 ] == 0
+            size = contain
+
+    background-image url( image-src )
     @media ks-mq-retina
-        background-image url( img-src )
+        background-image url( retina-src )
         background-size size
 
 
