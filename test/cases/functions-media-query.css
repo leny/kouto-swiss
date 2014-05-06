@@ -1,0 +1,5 @@
+@media all and ( min-width: 640px ) {
+  div {
+    color: #f00;
+  }
+}
