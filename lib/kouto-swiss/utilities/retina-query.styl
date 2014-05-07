@@ -1,0 +1,9 @@
+retina-query( media = all, ratio = 1 )
+    media = join( " ", media )
+    query = media + " and (-webkit-min-device-pixel-ratio: " + ratio + "), "
+    query += media + " and (min--moz-device-pixel-ratio: " + ratio + "), "
+    query += media + " and (-o-min-device-pixel-ratio: " + ratio + "/1), "
+    query += media + " and (min-device-pixel-ratio: " + ratio + "), "
+    query += media + " and (min-resolution: " + ceil( ratio * 96 ) + "dpi), "
+    query += media + " and (min-resolution: " + ratio + "dppx)"
+    return query
