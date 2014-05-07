@@ -48,3 +48,7 @@ query-three = retina-query( screen )
   }
 }
 ```
+
+### Alias
+
+`hidpi-query()`
