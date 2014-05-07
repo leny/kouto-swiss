@@ -36,6 +36,7 @@ Add unit tests and update the docs for any new or changed functionality.
 - [ ] ellipsis mixin
 - [ ] grid system
 - [ ] grid background helper
+- [ ] code organisation
 - [ ] documentation
 - [ ] website
 - [ ] release 1.0
