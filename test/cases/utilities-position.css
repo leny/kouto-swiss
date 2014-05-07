@@ -1,0 +1,112 @@
+div {
+  position: static;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+div {
+  position: static;
+  top: 10px;
+  right: 20px;
+  bottom: 10px;
+  left: 20px;
+}
+div {
+  position: static;
+  top: 10px;
+  right: 20px;
+  bottom: 30px;
+  left: 20px;
+}
+div {
+  position: static;
+  top: 10px;
+  right: 20px;
+  bottom: 30px;
+  left: 40px;
+}
+div {
+  position: relative;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+div {
+  position: relative;
+  top: 10px;
+  right: 20px;
+  bottom: 10px;
+  left: 20px;
+}
+div {
+  position: relative;
+  top: 10px;
+  right: 20px;
+  bottom: 30px;
+  left: 20px;
+}
+div {
+  position: relative;
+  top: 10px;
+  right: 20px;
+  bottom: 30px;
+  left: 40px;
+}
+div {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+div {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  bottom: 10px;
+  left: 20px;
+}
+div {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  bottom: 30px;
+  left: 20px;
+}
+div {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  bottom: 30px;
+  left: 40px;
+}
+div {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+div {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  bottom: 10px;
+  left: 20px;
+}
+div {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  bottom: 30px;
+  left: 20px;
+}
+div {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  bottom: 30px;
+  left: 40px;
+}
