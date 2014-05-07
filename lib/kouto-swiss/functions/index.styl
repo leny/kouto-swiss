@@ -34,3 +34,15 @@ rem( value )
     value = _strip-units( value )
     base = ks-rem-base is a "unit" ? _strip-units( ks-rem-base ) : 16
     value / base * 1rem
+
+// calc( operation, fallback )
+// vendor prefixing of css3 calc function
+calc( operation, fallback = false )
+    if current-property
+        prop = current-property[ 0 ]
+        if fallback
+            add-property( prop, fallback )
+        add-property( prop, unquote( "-webkit-calc(" + operation + ")" ) )
+        unquote( "calc(" + operation + ")" )
+    else
+        error( "calc() must be used within a property" )
