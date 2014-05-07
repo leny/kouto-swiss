@@ -31,7 +31,7 @@ Add unit tests and update the docs for any new or changed functionality.
 - [ ] gradients
 - [x] global font-stacks shortcuts
 - [x] hide-text mixin
-- [ ] global ease function shortcuts
+- [x] global ease function shortcuts
 - [x] triangle shape mixin
 - [x] ellipsis mixin
 - [ ] grid system
