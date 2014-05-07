@@ -1,48 +1,5 @@
-// _replace
-// internal search and replace in expr
-_replace( expr, str, val )
-    expr = clone( expr )
-    for e, i in expr
-        if str == e
-            expr[ i ] = val
-    expr
-
-// _strip-units
-// remove units of a number
-_strip-units( val )
-    unit( val, "" )
-
-// percent( value, total )
-// return the percentage value of value in total
-percent( value, total )
-    value = _strip-units( value )
-    total = _strip-units( total )
-    value / total * 100%
-
-// em( value, base )
-// convert pixels to em, with given base
-em( value, base = 16 )
-    value = _strip-units( value )
-    base = _strip-units( base )
-    value / base * 1em
-
-ks-rem-base = 16px
-
-// rem( value, base )
-// convert pixels to rem
-rem( value )
-    value = _strip-units( value )
-    base = ks-rem-base is a "unit" ? _strip-units( ks-rem-base ) : 16
-    value / base * 1rem
-
-// calc( operation, fallback )
-// vendor prefixing of css3 calc function
-calc( operation, fallback = false )
-    if current-property
-        prop = current-property[ 0 ]
-        if fallback
-            add-property( prop, fallback )
-        add-property( prop, unquote( "-webkit-calc(" + operation + ")" ) )
-        unquote( "calc(" + operation + ")" )
-    else
-        error( "calc() must be used within a property" )
+@import "_internals"
+@import "percent"
+@import "em"
+@import "rem"
+@import "calc"

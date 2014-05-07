@@ -1,0 +1,9 @@
+calc( operation, fallback = false )
+    if current-property
+        prop = current-property[ 0 ]
+        if fallback
+            add-property( prop, fallback )
+        add-property( prop, unquote( "-webkit-calc(" + operation + ")" ) )
+        unquote( "calc(" + operation + ")" )
+    else
+        error( "calc() must be used within a property" )
