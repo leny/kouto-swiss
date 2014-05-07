@@ -1,0 +1,10 @@
+h1 {
+  background: url("logo.png") top left no-repeat;
+  overflow: hidden;
+}
+h1:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+}
