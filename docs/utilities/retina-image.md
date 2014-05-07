@@ -32,3 +32,7 @@ div {
   }
 }
 ```
+
+### Alias
+
+`hidpi-image()`
