@@ -28,14 +28,14 @@ Add unit tests and update the docs for any new or changed functionality.
 
 ### Development TODO
 
-- [x] setup project & tests
-- [x] reset
-- [x] vendors
-- [x] utils: colors
-- [ ] utils: shortcuts
-- [ ] utils: fallbacks
+- [ ] gradients
+- [ ] global font-stacks shortcuts
+- [ ] hide-text mixin
+- [ ] global ease function shortcuts
+- [ ] triangle shape mixin
+- [ ] ellipsis mixin
 - [ ] grid system
-- [ ] responsive
+- [ ] grid background helper
 - [ ] documentation
 - [ ] website
 - [ ] release 1.0
