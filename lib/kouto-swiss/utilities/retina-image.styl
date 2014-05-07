@@ -12,3 +12,6 @@ retina-image( img-src, size = false, suffix = "@2x" )
     @media query
         background-image url( retina-src )
         background-size size
+
+hidpi-image( img-src, size = false, suffix = "@2x" )
+    retina-image( img-src, size, suffix )
