@@ -29,7 +29,7 @@ Add unit tests and update the docs for any new or changed functionality.
 ### Development TODO
 
 - [ ] gradients
-- [ ] global font-stacks shortcuts
+- [x] global font-stacks shortcuts
 - [ ] hide-text mixin
 - [ ] global ease function shortcuts
 - [ ] triangle shape mixin
