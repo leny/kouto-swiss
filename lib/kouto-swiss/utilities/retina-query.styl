@@ -7,3 +7,6 @@ retina-query( media = all, density = 1 )
     query += media + " and (min-resolution: " + ceil( density * 96 ) + "dpi), "
     query += media + " and (min-resolution: " + density + "dppx)"
     return query
+
+hidpi-query( media = all, density = 1 )
+    retina-query( media, density )
