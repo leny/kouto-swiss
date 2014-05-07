@@ -3,6 +3,9 @@
 query-one = retina-query( all, 1.3 )
 query-two = retina-query( only screen, 2 )
 query-three = retina-query( screen )
+query-four = hidpi-query( all, 1.3 )
+query-five = hidpi-query( only screen, 2 )
+query-six = hidpi-query( screen )
 
 @media query-one
     div
@@ -13,5 +16,17 @@ query-three = retina-query( screen )
         color red
 
 @media query-three
+    div
+        color red
+
+@media query-four
+    div
+        color red
+
+@media query-five
+    div
+        color red
+
+@media query-six
     div
         color red
