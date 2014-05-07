@@ -32,7 +32,7 @@ Add unit tests and update the docs for any new or changed functionality.
 - [x] global font-stacks shortcuts
 - [x] hide-text mixin
 - [ ] global ease function shortcuts
-- [ ] triangle shape mixin
+- [x] triangle shape mixin
 - [ ] ellipsis mixin
 - [ ] grid system
 - [ ] grid background helper
