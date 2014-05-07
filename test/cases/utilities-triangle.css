@@ -46,7 +46,7 @@ div {
 div {
   width: 0;
   height: 0;
-  border: 10px solid transparent;
+  border: 10px solid #00f;
   border-bottom-color: #f00;
   border-right-color: #f00;
 }
