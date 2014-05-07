@@ -33,7 +33,7 @@ Add unit tests and update the docs for any new or changed functionality.
 - [x] hide-text mixin
 - [ ] global ease function shortcuts
 - [x] triangle shape mixin
-- [ ] ellipsis mixin
+- [x] ellipsis mixin
 - [ ] grid system
 - [ ] grid background helper
 - [ ] code organisation
