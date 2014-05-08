@@ -28,16 +28,19 @@ Add unit tests and update the docs for any new or changed functionality.
 
 ### Development TODO
 
-- [ ] gradients
 - [x] global font-stacks shortcuts
 - [x] hide-text mixin
 - [x] global ease function shortcuts
 - [x] triangle shape mixin
 - [x] ellipsis mixin
-- [ ] grid system
+- [x] grid system : fixed
+- [ ] grid system : fluid
+- [ ] grid system : responsive
+- [ ] gradients
 - [ ] grid background helper
 - [ ] code organisation
 - [ ] documentation
+- [ ] docset for [dash](http://kapeli.com/dash)
 - [ ] website
 - [ ] release 1.0
 
