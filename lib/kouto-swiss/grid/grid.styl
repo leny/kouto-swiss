@@ -4,8 +4,6 @@ gs( col-width = ks-grid-col-width, gut-width = ks-grid-gut-width, cols = ks-grid
     ks-grid-config[ "gutter-width" ] = gut-width
     ks-grid-config[ "computed-total-width" ] = ( col-width + gut-width ) * cols
     ks-grid-config[ "total-width" ] = ( col-width + gut-width ) * cols
-    if unit( total ) == "%"
-        ks-grid-config[ "total-width" ] = total
     if selector() != "&"
         width: ks-grid-config[ "total-width" ]
         margin 0 auto
