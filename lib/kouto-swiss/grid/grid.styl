@@ -1,0 +1,12 @@
+gs( col-width = ks-grid-col-width, gut-width = ks-grid-gut-width, cols = ks-grid-columns, total = ks-grid-total-width )
+    ks-grid-columns = cols
+    ks-grid-col-width = col-width
+    ks-grid-gut-width = gut-width
+    ks-grid-computed-total-width = ( ks-grid-col-width + ks-grid-gut-width ) * ks-grid-columns
+    ks-grid-total-width = ks-grid-computed-total-width
+    if unit( total ) == "%"
+        ks-grid-total-width = total
+    if selector() != "&"
+        width ks-grid-total-width
+        margin 0 auto
+        overflow hidden
