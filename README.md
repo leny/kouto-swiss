@@ -34,8 +34,7 @@ Add unit tests and update the docs for any new or changed functionality.
 - [x] triangle shape mixin
 - [x] ellipsis mixin
 - [x] grid system : fixed
-- [ ] grid system : fluid
-- [ ] grid system : responsive
+- [x] grid system : fluid
 - [ ] gradients
 - [ ] grid background helper
 - [ ] code organisation
