@@ -41,6 +41,7 @@ Add unit tests and update the docs for any new or changed functionality.
 - [ ] documentation
 - [ ] grunt-ks-stylus
 - [ ] gulp-ks-stylus
+- [ ] demo pages
 - [ ] website
 - [ ] release 1.0
 - [ ] docset for [dash](http://kapeli.com/dash)
