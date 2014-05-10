@@ -30,3 +30,35 @@ div {
   margin: 0 5px;
   margin-left: 305px;
 }
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 7.5%;
+  margin: 0 0.4166666666667%;
+  margin-left: 25.4166666666667%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 49.1666666666667%;
+  margin: 0 0.4166666666667%;
+  margin-left: 50.4166666666667%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 9%;
+  margin: 0 0.5%;
+  margin-left: 30.5%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 59%;
+  margin: 0 0.5%;
+  margin-left: 60.5%;
+}
