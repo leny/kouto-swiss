@@ -9,9 +9,24 @@ gs( type = "fixed", cols = false, col-width = false, gut-width = false )
         _total = ( col-width + gut-width ) * cols
         ks-grid-config[ "computed-total-width" ] = _total
         ks-grid-config[ "total-width" ] = _total
-        if selector() != "&"
-            width: ks-grid-config[ "total-width" ]
-            margin 0 auto
-            overflow hidden
-    else
+    if type == "fluid"
+        cols = ks-grid-fluid-columns unless cols
+        ks-grid-config[ "columns" ] = cols
+        if typeof( col-width ) == "unit"
+            ks-grid-config[ "column-width" ] = unit( col-width, "%" )
+            ks-grid-config[ "gutter-width" ] = unit( ( 100% - ( cols * col-width ) ) / cols, "%" )
+        else if typeof( gut-width ) == "unit"
+            ks-grid-config[ "gutter-width" ] = unit( gut-width, "%" )
+            ks-grid-config[ "column-width" ] = unit( ( 100% - ( cols * gut-width ) ) / cols, "%" )
+        else
+            col-width = unit( ( 100 / cols * 0.9 ), "%" )
+            ks-grid-config[ "column-width" ] = col-width
+            ks-grid-config[ "gutter-width" ] = unit( ( 100% - ( cols * col-width ) ) / cols, "%" )
+        ks-grid-config[ "computed-total-width" ] = 100%
+        ks-grid-config[ "total-width" ] = 100%
+    if selector() != "&"
+        width: ks-grid-config[ "total-width" ]
+        margin 0 auto
+        overflow hidden
+    if type != "fixed" && type != "fluid"
         error( "Unknown grid system type '" + type + "' !" )
