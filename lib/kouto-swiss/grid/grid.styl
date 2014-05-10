@@ -1,10 +1,14 @@
-gs( col-width = ks-grid-col-width, gut-width = ks-grid-gut-width, cols = ks-grid-columns, total = ks-grid-total-width )
-    ks-grid-config[ "columns" ] = cols
-    ks-grid-config[ "column-width" ] = col-width
-    ks-grid-config[ "gutter-width" ] = gut-width
-    ks-grid-config[ "computed-total-width" ] = ( col-width + gut-width ) * cols
-    ks-grid-config[ "total-width" ] = ( col-width + gut-width ) * cols
-    if selector() != "&"
-        width: ks-grid-config[ "total-width" ]
-        margin 0 auto
-        overflow hidden
+gs( type = "fixed", cols = ks-grid-columns, col-width = ks-grid-col-width, gut-width = ks-grid-gut-width )
+    if type == "fixed"
+        ks-grid-config[ "columns" ] = cols
+        ks-grid-config[ "column-width" ] = col-width
+        ks-grid-config[ "gutter-width" ] = gut-width
+        _total = ( col-width + gut-width ) * cols
+        ks-grid-config[ "computed-total-width" ] = _total
+        ks-grid-config[ "total-width" ] = _total
+        if selector() != "&"
+            width: ks-grid-config[ "total-width" ]
+            margin 0 auto
+            overflow hidden
+    else
+        error( "Unknown grid system type '{type}' !" )
