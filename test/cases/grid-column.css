@@ -40,3 +40,45 @@ div {
   width: 290px;
   margin: 0 5px;
 }
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 99.1666666666667%;
+  margin: 0 0.4166666666667%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 7.5%;
+  margin: 0 0.4166666666667%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 49.1666666666667%;
+  margin: 0 0.4166666666667%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 99%;
+  margin: 0 0.5%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 9%;
+  margin: 0 0.5%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 59%;
+  margin: 0 0.5%;
+}
