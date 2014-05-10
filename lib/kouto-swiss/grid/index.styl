@@ -1,15 +1,16 @@
-ks-grid-col-width = 60px
-ks-grid-gut-width = 20px
-ks-grid-columns = 12
-ks-grid-computed-total-width = ( ks-grid-col-width + ks-grid-gut-width ) * ks-grid-columns
-ks-grid-total-width = ks-grid-computed-total-width
+ks-grid-fixed-col-width = 60px
+ks-grid-fixed-gut-width = 20px
+ks-grid-fixed-columns = 12
+ks-grid-fixed-computed-total-width = ( ks-grid-fixed-col-width + ks-grid-fixed-gut-width ) * ks-grid-fixed-columns
+ks-grid-fixed-total-width = ks-grid-fixed-computed-total-width
 
+// default to fixed layout
 ks-grid-config = {
-    "column-width": ks-grid-col-width,
-    "gutter-width": ks-grid-gut-width,
-    "columns": ks-grid-columns,
-    "computed-total-width": ks-grid-computed-total-width,
-    "total-width": ks-grid-total-width
+    "column-width": ks-grid-fixed-col-width,
+    "gutter-width": ks-grid-fixed-gut-width,
+    "columns": ks-grid-fixed-columns,
+    "computed-total-width": ks-grid-fixed-computed-total-width,
+    "total-width": ks-grid-fixed-total-width
 }
 
 @import "grid"

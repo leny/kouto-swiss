@@ -1,5 +1,8 @@
-gs( type = "fixed", cols = ks-grid-columns, col-width = ks-grid-col-width, gut-width = ks-grid-gut-width )
+gs( type = "fixed", cols = false, col-width = false, gut-width = false )
     if type == "fixed"
+        cols = ks-grid-fixed-columns unless cols
+        col-width = ks-grid-fixed-col-width unless col-width
+        gut-width = ks-grid-fixed-gut-width unless gut-width
         ks-grid-config[ "columns" ] = cols
         ks-grid-config[ "column-width" ] = col-width
         ks-grid-config[ "gutter-width" ] = gut-width
@@ -11,4 +14,4 @@ gs( type = "fixed", cols = ks-grid-columns, col-width = ks-grid-col-width, gut-w
             margin 0 auto
             overflow hidden
     else
-        error( "Unknown grid system type '{type}' !" )
+        error( "Unknown grid system type '" + type + "' !" )
