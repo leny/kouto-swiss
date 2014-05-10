@@ -6,7 +6,7 @@
 
 * * *
 
-> **note:** kouto-swiss is in early development, not suitable for production (yet).
+> **note:** kouto-swiss is currently in development, not suitable for production (yet).
 
 * * *
 
@@ -40,9 +40,11 @@ Add unit tests and update the docs for any new or changed functionality.
 - [ ] grid background helper
 - [ ] code organisation
 - [ ] documentation
-- [ ] docset for [dash](http://kapeli.com/dash)
+- [ ] grunt-ks-stylus
+- [ ] gulp-ks-stylus
 - [ ] website
 - [ ] release 1.0
+- [ ] docset for [dash](http://kapeli.com/dash)
 
 ## License
 Copyright (c) 2014 Leny  
