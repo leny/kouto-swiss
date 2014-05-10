@@ -3,6 +3,7 @@ gs( type = "fixed", cols = false, col-width = false, gut-width = false )
         cols = ks-grid-fixed-columns unless cols
         col-width = ks-grid-fixed-col-width unless col-width
         gut-width = ks-grid-fixed-gut-width unless gut-width
+        ks-grid-config[ "type" ] = "fixed"
         ks-grid-config[ "columns" ] = cols
         ks-grid-config[ "column-width" ] = col-width
         ks-grid-config[ "gutter-width" ] = gut-width
@@ -11,6 +12,7 @@ gs( type = "fixed", cols = false, col-width = false, gut-width = false )
         ks-grid-config[ "total-width" ] = _total
     if type == "fluid"
         cols = ks-grid-fluid-columns unless cols
+        ks-grid-config[ "type" ] = "fluid"
         ks-grid-config[ "columns" ] = cols
         if typeof( col-width ) == "unit"
             ks-grid-config[ "column-width" ] = unit( col-width, "%" )
