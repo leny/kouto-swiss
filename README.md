@@ -21,6 +21,13 @@
 In lieu of a formal styleguide, take care to maintain the existing coding style.  
 Add unit tests and update the docs for any new or changed functionality.
 
+### Special call for contribution : something who write better english than mine !
+
+> As you can guess by my spelling, english isn't my first language. And as I make prodigious efforts to try, I still can't write good and readable documentation as a native speaker should.
+
+If you want to help the **kouto swiss** project, but don't want to write code, please, consider a little review of the docs, correcting my *very bad* english.  
+Many thanks !
+
 ## Release History
 
 - **2014-05-03:** starting project
