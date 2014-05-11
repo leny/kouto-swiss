@@ -47,7 +47,6 @@ Many thanks !
 - [ ] code organisation
 - [ ] documentation
 - [ ] grunt-ks-stylus
-- [ ] gulp-ks-stylus
 - [ ] demo pages
 - [ ] website
 - [ ] release 1.0
