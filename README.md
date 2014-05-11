@@ -35,24 +35,21 @@ Many thanks !
 
 ### Development TODO
 
-- [x] global font-stacks shortcuts
-- [x] hide-text mixin
-- [x] global ease function shortcuts
-- [x] triangle shape mixin
-- [x] ellipsis mixin
-- [x] grid system : fixed
-- [x] grid system : fluid
-- [ ] gradients
+- [ ] gradients: `radial-gradient`
+- [ ] gradients: `linear-gradient`
+- [ ] gradients: `repeating-radial-gradient`
+- [ ] gradients: `repeating-linear-gradient`
 - [ ] grid background helper
+- [ ] installation infos in README
+- [ ] release 0.1
 - [ ] code organisation
+- [ ] demo pages
 - [ ] documentation
 - [ ] grunt-ks-stylus
-- [ ] demo pages
 - [ ] website
-- [ ] release 1.0
+- [ ] **release 1.0**
 - [ ] docset for [dash](http://kapeli.com/dash)
 
 ## License
 Copyright (c) 2014 Leny  
 Licensed under the MIT license.
-
