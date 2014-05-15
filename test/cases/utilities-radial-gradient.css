@@ -1,5 +1,4 @@
 div {
-  background-image: -webkit-gradient(radial,50% 50%,0,50% 50%,200,from(#fff), to(#000));
   background-image: -webkit-radial-gradient(50% 50%, #000, #fff);
   background-image: -moz-radial-gradient(50% 50%, #000, #fff);
   background-image: -o-radial-gradient(50% 50%, #000, #fff);
