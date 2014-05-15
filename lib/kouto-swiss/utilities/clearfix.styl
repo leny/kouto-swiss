@@ -13,7 +13,10 @@ clear( value, args... )
         clear value
 
 fix()
-    if( current-property && current-property[ 0 ] == "clear" )
-        fix
+    if( current-property )
+        if( current-property[ 0 ] == "clear" )
+            fix
+        else
+            error( "fix() must be used within a clear property" )
     else
         error( "fix() must be used within a clear property" )
