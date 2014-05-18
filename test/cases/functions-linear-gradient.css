@@ -13,9 +13,9 @@ div {
   background-image: linear-gradient(-45deg, #ff0, #008000);
 }
 div {
-  background-image: -webkit-linear-gradient(bottom left, #f00, #fff, #00f);
-  background-image: -moz-linear-gradient(bottom left, #f00, #fff, #00f);
-  background-image: -ms-linear-gradient(bottom left, #f00, #fff, #00f);
-  background-image: -o-linear-gradient(bottom left, #f00, #fff, #00f);
-  background-image: linear-gradient(to top right, #f00, #fff, #00f);
+  background-image: -webkit-linear-gradient(bottom left, #f00, #fff 30%, #00f);
+  background-image: -moz-linear-gradient(bottom left, #f00, #fff 30%, #00f);
+  background-image: -ms-linear-gradient(bottom left, #f00, #fff 30%, #00f);
+  background-image: -o-linear-gradient(bottom left, #f00, #fff 30%, #00f);
+  background-image: linear-gradient(to top right, #f00, #fff 30%, #00f);
 }
