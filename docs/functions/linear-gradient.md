@@ -8,7 +8,7 @@ Display a `linear-gradient`.
 
 `linear-gradient( start, stops... )`
 
-The implementation of `radial-gradient` follows [the CSS3 specs](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient).
+The implementation of `linear-gradient` follows [the CSS3 specs](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient).
 
 ### Usage
 
