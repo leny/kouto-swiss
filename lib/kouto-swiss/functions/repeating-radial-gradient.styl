@@ -1,0 +1,9 @@
+repeating-radial-gradient( props... )
+    if( current-property )
+        if( current-property[ 0 ] == "background-image" )
+            add-property( "background-image", unquote( "-webkit-repeating-radial-gradient(" + join( ",", props ) + ")" ) )
+            unquote( "repeating-radial-gradient(" + join( ",", props ) + ")" )
+        else
+            error( "repeating-radial-gradient() must be used within a 'background-image' property" )
+    else
+        error( "repeating-radial-gradient() must be used within a 'background-image' property" )
