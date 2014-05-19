@@ -35,8 +35,8 @@ Many thanks !
 
 ### Development TODO
 
-- [ ] gradients: `radial-gradient`
-- [ ] gradients: `linear-gradient`
+- [x] gradients: `radial-gradient`
+- [x] gradients: `linear-gradient`
 - [ ] gradients: `repeating-radial-gradient`
 - [ ] gradients: `repeating-linear-gradient`
 - [ ] grid background helper
