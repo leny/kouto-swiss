@@ -40,7 +40,7 @@
     "node": "*"
   },
   "dependencies": {
-    "stylus": "~0.44"
+    "stylus": "~0.45"
   },
   "devDependencies": {
     "mocha": "*",
