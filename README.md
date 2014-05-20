@@ -16,6 +16,58 @@
 
 **kouto swiss** is a complete CSS framework for Stylus, inspired by great tools like nib, compass, bourbon…
 
+## Installation
+
+```bash
+$ npm install kouto-swiss
+```
+
+## Usage
+
+### Included in compilation, with grunt or gulp.
+
+#### Grunt
+
+For grunt, you can use [grunt-contrib-stylus](https://www.npmjs.org/package/grunt-contrib-stylus), and include **kouto swiss** in your `use` option for the task.
+
+You can also use [grunt-ks-stylus](https://www.npmjs.org/package/grunt-ks-stylus), which is a fork of **grunt-contrib-stylus**, with **kouto swiss** included.
+
+#### Gulp
+
+For gulp, use [gulp-stylus](https://www.npmjs.org/package/gulp-stylus) and include **kouto swiss** in your `use` option for the task.
+
+### As middleware, for *on the fly* compilation.
+
+There's an exemple of how to use stylus with kouto-swiss within Connect or Express.
+
+```javascript
+var connect = require( "connect" ),
+    stylus = require( "stylus" ),
+    koutoSwiss = require( "kouto-swiss" ),
+    server = connect();
+    
+function compile( str, path ) {
+    return stylus( str )
+        .set( "filename", path )
+        .set( "compress", true )
+        .use( koutoSwiss() );
+}
+
+server.use( stylus.middleware( {
+    src: __dirname,
+    compile: compile
+} ) );
+    
+```
+
+## Stylus API
+
+To gain access to the kouto swiss tools from your Stylus files, simply add:
+
+```stylus
+@import "kouto-swiss"
+```
+
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style.  
