@@ -84,20 +84,17 @@ Many thanks !
 
 - **2014-05-03:** starting project
 - **2014-05-05:** version `0.0.1` : first publish on npm, still in early stages of development.
+- **2014-05-20:** version `0.1.0` : first version of the lib, including nearly all the basics.
 
 ### Development TODO
 
-- [x] gradients: `radial-gradient`
-- [x] gradients: `linear-gradient`
-- [x] gradients: `repeating-radial-gradient`
-- [x] gradients: `repeating-linear-gradient`
+- [x] installation infos in README
+- [x] release 0.1
 - [ ] grid background helper
-- [ ] installation infos in README
-- [ ] release 0.1
 - [ ] code organisation
 - [ ] demo pages
 - [ ] documentation
-- [ ] grunt-ks-stylus
+- [x] grunt-ks-stylus
 - [ ] website
 - [ ] **release 1.0**
 - [ ] docset for [dash](http://kapeli.com/dash)
