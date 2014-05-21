@@ -6,6 +6,12 @@ Returns more analogous variations of the given color.
 `returned[2]`: third analogous variation ( spinning given color by 60 degrees )  
 `returned[3]`: fourth analogous variation ( spinning given color by -60 degrees )
 
+### Signature
+
+`extended-analogous( color )`
+
+* `color`: color to perform analogous variations.
+
 ### Usage
 
 ```stylus

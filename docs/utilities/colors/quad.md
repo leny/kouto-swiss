@@ -5,6 +5,12 @@ Returns quad (*tetrad*) variations of the given color.
 `returned[1]`: second quad variation ( spinning given color by -90 degrees )  
 `returned[2]`: third quad variation ( spinning given color by 180 degrees ) - complement color
 
+### Signature
+
+`quad( color )` & `tetrad( color )`
+
+* `color`: color to perform quad variations.
+
 ### Usage
 
 ```stylus

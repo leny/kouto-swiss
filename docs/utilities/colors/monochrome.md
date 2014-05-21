@@ -4,6 +4,12 @@ Returns monochromatic variations of the given color.
 `returned[0]`: first monochrome variation ( given color's lightness minus 33% )  
 `returned[1]`: second monochrome variation ( given color's lightness minus 66% )
 
+### Signature
+
+`monochrome( color )`
+
+* `color`: color to perform monochromatic variations.
+
 ### Usage
 
 ```stylus

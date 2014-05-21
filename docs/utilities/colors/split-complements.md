@@ -4,6 +4,12 @@ Returns split-complements variations of the given color.
 `returned[0]`: first split-complements variation ( spinning given color by 150 degrees )  
 `returned[1]`: second split-complements variation ( spinning given color by -150 degrees )
 
+### Signature
+
+`split-complements( color )`
+
+* `color`: color to perform split-complements variations.
+
 ### Usage
 
 ```stylus

@@ -4,6 +4,13 @@ The `percent` function makes a simple percentage convertion operation. It takes 
 
 > **Note:** the function doesn't care about the units you give and don't convert it.
 
+### Signature
+
+`percent( value, total )`
+
+* `value`: value to a percentage of `total`.
+* `total`: the 100% reference number.
+
 ### Usage
 
 ```stylus

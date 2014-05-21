@@ -5,6 +5,12 @@
 Create a fallback property for color with alpha value different than `1`.  
 If the given color has an alpha of `1`, the function doesn't do anything.
 
+### Signature
+
+`color-fallback( color )`
+
+* `color`: color to fallback.
+
 ### Usage
 
 ```stylus

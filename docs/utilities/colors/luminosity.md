@@ -2,6 +2,12 @@
 
 Returns the [WCAG luminosity](http://www.w3.org/TR/WCAG20/#relativeluminancedef) of the given color, as a `Number` between `0` (*black*) and `1` (*white*).
 
+### Signature
+
+`luminosity( color )`
+
+* `color`: color to analyse.
+
 ### Usage
 
 ```stylus

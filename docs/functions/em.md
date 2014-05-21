@@ -3,6 +3,13 @@
 Converts `pixels` to `em`.  
 Uses the second value as base. If no base is given, uses `16px` as base.
 
+### Signature
+
+`em( value [, base ] )`
+
+* `value`: value to convert.
+* `base`: base for conversion. *Optional* Defaults to `16`.
+
 ### Usage
 
 ```stylus

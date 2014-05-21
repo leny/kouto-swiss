@@ -3,6 +3,12 @@
 Converts `pixels` to `rem`.  
 Assumes `1rem = 16px`. You can override by passing a new value to the global variable `ks-rem-base`.
 
+### Signature
+
+`rem( value )`
+
+* `value`: value to convert.
+
 ### Usage
 
 ```stylus

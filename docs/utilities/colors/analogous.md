@@ -4,6 +4,12 @@ Returns analogous variations of the given color.
 `returned[0]`: first analogous variation ( spinning given color by 30 degrees )  
 `returned[1]`: second analogous variation ( spinning given color by -30 degrees )
 
+### Signature
+
+`analogous( color )`
+
+* `color`: color to perform analogous variations.
+
 ### Usage
 
 ```stylus

@@ -6,7 +6,7 @@ For more information, read the post "[Box-sizing: Border-box FTW](http://www.pau
 ### Usage
 
 ```stylus
-meyer-reset()
+box-sizing-reset()
 ```
 
 ### Result
