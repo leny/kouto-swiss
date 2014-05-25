@@ -91,7 +91,7 @@ Many thanks !
 - [x] installation infos in README
 - [x] release 0.1
 - [ ] grid background helper
-- [ ] code organisation
+- [x] code organisation
 - [ ] demo pages
 - [ ] documentation
 - [x] grunt-ks-stylus
