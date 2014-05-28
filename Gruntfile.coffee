@@ -21,6 +21,12 @@ module.exports = ( grunt ) ->
             options:
                 compress: yes
             docs:
+                options:
+                    data: # TMP
+                        name: "demo test"
+                        id: "test"
+                        doc: "<p>here's <strong>the docs</strong> !</p>"
+                        demo: "<p>here's <em>the demo</em> !</p>"
                 files:
                     "docs/demo.html": "_docs/_pages/demo.jade" # TODO : change this
         copy:
