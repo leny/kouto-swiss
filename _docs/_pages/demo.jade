@@ -19,16 +19,15 @@ html( lang="en" )
         header
             h1
                 a( href="//kouto-swiss.io" )
-                    img( alt="kouto swiss", src="styles/img/logo.svg" )/
                     span kouto swiss
 
         article
             header
-                h2.
+                h1.
                     demo : #{name}
 
             section.doc!= doc
 
             section.demo( id="demo-{id}" )!= demo
 
-            footer kouto swiss
+        footer kouto swiss

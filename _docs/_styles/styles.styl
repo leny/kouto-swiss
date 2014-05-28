@@ -1,0 +1,53 @@
+// imports
+@import "kouto-swiss"
+
+// resets
+meyer-reset()
+box-sizing-reset()
+
+// fonts
+font-face( "FiraSans", "./fonts/firasans/firasans", formats: eot woff )
+FiraSans = "FiraSans", font-stack( "Helvetica" )
+font-face( "Norwester", "./fonts/norwester/norwester", formats: eot woff )
+Norwester = "Norwester", FiraSans
+
+*
+    -webkit-font-smoothing antialiased
+    -webkit-text-size-adjust 100%
+
+html
+    background-color silver
+    retina-image( "img/squared_metal.png", 132px 132px, "_@2X" )
+    font normal 62.5%/1.5 FiraSans
+
+body
+    width 75%
+    max-width 75rem
+    margin 2rem auto 0
+
+header
+    h1
+        margin 0 auto 1rem
+        text-align right
+        a
+            font normal 3rem Norwester
+            color #c30
+            text-decoration none
+
+article
+    width 100%
+    margin 0 auto 1rem
+    padding 2rem
+    background white
+    box-shadow 0 0 1rem rgba( black, .25 )
+    header
+        margin 0 auto 1rem
+        h1
+            font normal 2rem Norwester
+            color black
+            text-align center
+    section.doc
+        margin 0 auto 1rem
+        padding 1rem 0
+        border-bottom .1rem dotted silver
+
