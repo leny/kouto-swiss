@@ -100,5 +100,17 @@ Many thanks !
 - [ ] docset for [dash](http://kapeli.com/dash)
 
 ## License
+
 Copyright (c) 2014 Leny  
 Licensed under the MIT license.
+
+### Licenses for ressources used in docs
+
+#### Patterns
+
+* [Squared Metal](http://subtlepatterns.com/squared-metal/) by [doot0](http://twitter.com/doot0)
+
+#### Fonts
+
+* [Norwester by Jamie Wilson](http://jamiewilson.io/norwester/) ([SIL Open Font License](http://scripts.sil.org/OFL))
+* [Fira Sans by Mozilla](https://www.mozilla.org/en-US/styleguide/products/firefox-os/typeface/) ([SIL Open Font License](http://scripts.sil.org/OFL))
