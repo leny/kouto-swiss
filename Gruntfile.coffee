@@ -24,14 +24,11 @@ module.exports = ( grunt ) ->
                 files:
                     "docs/demo.html": "_docs/_pages/demo.jade" # TODO : change this
         copy:
-            images:
+            assets:
                 expand: yes
-                src: [ "_docs/_styles/img/**" ]
-                dest: "docs/styles/img/"
-            fonts:
-                expand: yes
-                src: [ "_docs/_styles/fonts/**" ]
-                dest: "docs/styles/fonts/"
+                cwd: "_docs/_styles/"
+                src: [ "img/**", "fonts/**" ]
+                dest: "docs/styles/"
         watch:
             jade:
                 files: "_docs/_pages/*.jade"
