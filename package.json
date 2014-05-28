@@ -44,6 +44,12 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
+    "should": "*",
+    "grunt-ks-stylus": "~0.0",
+    "grunt-contrib-clean": "~0.4",
+    "grunt": "~0.4",
+    "grunt-contrib-watch": "~0.6",
+    "grunt-contrib-jade": "~0.11",
+    "grunt-contrib-copy": "~0.5"
   }
 }
