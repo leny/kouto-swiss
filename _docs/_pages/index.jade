@@ -1,0 +1,157 @@
+doctype html
+html( lang="en" )
+    head
+        meta( charset="UTF-8" )/
+        title kouto swiss - A complete CSS framework for Stylus
+
+        meta( name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0" )/
+
+        link( rel="stylesheet", href="styles/styles.css" )/
+
+        //if lt IE 9
+            script( src="http://html5shiv.googlecode.com/svn/trunk/html5.js" )
+
+    body
+        header
+            span.logo
+            div.introducing
+                span
+                    a( href="//krkn.be" ) krkn presents:
+            div.whats
+                h1
+                    a( href=homepage )
+                        span kouto swiss
+                h2= description
+            div.buttons
+                a( href=github ) github
+                a( href="#" ) docs
+
+        section.about
+            p.punchline Here's a punchy punchline!
+
+            p And some ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+
+            p.punchline A second punchline, dude, no way?!
+
+            p And some more lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+
+        section.usage
+            h3 Usage
+
+            h4 Included in compilation, with Grunt or Gulp
+
+            h5
+                a( href="//gruntjs.com" ) Grunt
+
+            p
+                | Use
+                = " "
+                a( href="//www.npmjs.org/package/grunt-contrib-stylus" ) grunt-contrib-stylus
+                | , and include
+                = " "
+                strong kouto swiss
+                = " "
+                | in your
+                = " "
+                code use
+                = " "
+                | option for the task.
+
+            p
+                | Or use
+                = " "
+                a( href="//www.npmjs.org/package/grunt-ks-stylus" ) grunt-ks-stylus
+                | , which is a fork of
+                = " "
+                strong grunt-contrib-stylus
+                | , with
+                = " "
+                strong kouto swiss
+                = " "
+                | included.
+
+            h5
+                a( href="//gulpjs.com" ) Gulp
+
+            p
+                | Use
+                = " "
+                a( href="//www.npmjs.org/package/gulp-stylus" ) gulp-stylus
+                = " "
+                | and include
+                = " "
+                strong kouto swiss
+                = " "
+                | in your
+                = " "
+                code use
+                = " "
+                | option for the task.
+
+            h4
+                | As middleware, for
+                = " "
+                em on the fly
+                = " "
+                | compilation.
+
+            p
+                | Here's an exemple of how to use stylus with kouto-swiss within
+                = " "
+                a( href="//www.senchalabs.org/connect/" ) Connect
+                = " "
+                | or
+                = " "
+                a( href="//expressjs.com" ) Express
+                | .
+
+            pre
+                code.
+                    var connect = require( "connect" ),
+                        stylus = require( "stylus" ),
+                        koutoSwiss = require( "kouto-swiss" ),
+                        server = connect();
+
+                    function compile( str, path ) {
+                        return stylus( str )
+                            .set( "filename", path )
+                            .set( "compress", true )
+                            .use( koutoSwiss() );
+                    }
+
+                    server.use( stylus.middleware( {
+                        src: __dirname,
+                        compile: compile
+                    } ) );
+
+            h4 Stylus API
+
+            p To gain access to the kouto swiss tools from your Stylus files, simply add:
+
+            pre
+                code @import "kouto-swiss"
+
+        footer
+            p
+                strong kouto swiss
+                = " "
+                | is maintained by
+                = " "
+                a( href=author.url )= author.name
+                | .
+                | Any question? Please tweet
+                a( href="//twitter.com/krkn_be" ) @krkn_be
+
+            p
+                strong kouto swiss
+                = " "
+                | is Copyright © 2014
+                = " "
+                a( href=author.url )= author.name
+                | .
+                = " "
+                | It is free software, and may be redistributed under the terms specified in the LICENSE file.
+
+            div.buttons
+                a( href=github ) github
+                a( href="#" ) docs
