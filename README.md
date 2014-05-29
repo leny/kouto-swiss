@@ -101,7 +101,7 @@ Many thanks !
 
 ## License
 
-Copyright (c) 2014 Leny  
+Copyright (c) 2014 [krkn](http://krkn.be)  
 Licensed under the MIT license.
 
 ### Licenses for ressources used in docs
