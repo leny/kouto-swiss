@@ -29,6 +29,15 @@ module.exports = ( grunt ) ->
                         demo: "<p>here's <em>the demo</em> !</p>"
                 files:
                     "docs/demo.html": "_docs/_pages/demo.jade" # TODO : change this
+            home:
+                options:
+                    data: # TMP
+                        name: "demo test"
+                        id: "test"
+                        doc: "<p>here's <strong>the docs</strong> !</p>"
+                        demo: "<p>here's <em>the demo</em> !</p>"
+                files:
+                    "docs/index.html": "_docs/_pages/index.jade" # TODO : change this
         copy:
             assets:
                 expand: yes
