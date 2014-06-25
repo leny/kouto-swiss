@@ -12,146 +12,144 @@ html( lang="en" )
             script( src="http://html5shiv.googlecode.com/svn/trunk/html5.js" )
 
     body
-        header
-            span.logo
-            div.introducing
-                span
-                    a( href="//krkn.be" ) krkn presents:
-            div.whats
+        #wrapper
+            header
                 h1
                     a( href=homepage )
                         span kouto swiss
                 h2= description
-            div.buttons
-                a( href=github ) github
-                a( href="#" ) docs
+                div.buttons
+                    a( href=github ) github
+                    a( href="#" ) docs
 
-        section.about
-            p.punchline Here's a punchy punchline!
+            section.about
+                blockquote
+                    p Stylus is great, but... where's my Compass/Bourbon?
 
-            p And some ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+                p.punchline
+                    | Here comes
+                    = " "
+                    strong kouto swiss
+                    | , the missing css toolbox for Stylus!
 
-            p.punchline A second punchline, dude, no way?!
+            section.usage
+                h3 Usage
 
-            p And some more lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+                h4 Included in compilation, with Grunt or Gulp
 
-        section.usage
-            h3 Usage
+                h5
+                    a#grunt-site( href="//gruntjs.com" ) Grunt
 
-            h4 Included in compilation, with Grunt or Gulp
+                p
+                    | Use
+                    = " "
+                    a( href="//www.npmjs.org/package/grunt-contrib-stylus" ) grunt-contrib-stylus
+                    | , and include
+                    = " "
+                    strong kouto swiss
+                    = " "
+                    | in your
+                    = " "
+                    code use
+                    = " "
+                    | option for the task.
 
-            h5
-                a( href="//gruntjs.com" ) Grunt
+                p
+                    | Or use
+                    = " "
+                    a( href="//www.npmjs.org/package/grunt-ks-stylus" ) grunt-ks-stylus
+                    | , which is a fork of
+                    = " "
+                    strong grunt-contrib-stylus
+                    | , with
+                    = " "
+                    strong kouto swiss
+                    = " "
+                    | included.
 
-            p
-                | Use
-                = " "
-                a( href="//www.npmjs.org/package/grunt-contrib-stylus" ) grunt-contrib-stylus
-                | , and include
-                = " "
-                strong kouto swiss
-                = " "
-                | in your
-                = " "
-                code use
-                = " "
-                | option for the task.
+                h5
+                    a#gulp-site( href="//gulpjs.com" ) Gulp
 
-            p
-                | Or use
-                = " "
-                a( href="//www.npmjs.org/package/grunt-ks-stylus" ) grunt-ks-stylus
-                | , which is a fork of
-                = " "
-                strong grunt-contrib-stylus
-                | , with
-                = " "
-                strong kouto swiss
-                = " "
-                | included.
+                p
+                    | Use
+                    = " "
+                    a( href="//www.npmjs.org/package/gulp-stylus" ) gulp-stylus
+                    = " "
+                    | and include
+                    = " "
+                    strong kouto swiss
+                    = " "
+                    | in your
+                    = " "
+                    code use
+                    = " "
+                    | option for the task.
 
-            h5
-                a( href="//gulpjs.com" ) Gulp
+                h4
+                    | As middleware, for
+                    = " "
+                    em on the fly
+                    = " "
+                    | compilation.
 
-            p
-                | Use
-                = " "
-                a( href="//www.npmjs.org/package/gulp-stylus" ) gulp-stylus
-                = " "
-                | and include
-                = " "
-                strong kouto swiss
-                = " "
-                | in your
-                = " "
-                code use
-                = " "
-                | option for the task.
+                p
+                    | Here's an exemple of how to use stylus with kouto-swiss within
+                    = " "
+                    a( href="//www.senchalabs.org/connect/" ) Connect
+                    = " "
+                    | or
+                    = " "
+                    a( href="//expressjs.com" ) Express
+                    | .
 
-            h4
-                | As middleware, for
-                = " "
-                em on the fly
-                = " "
-                | compilation.
+                pre
+                    code.
+                        var connect = require( "connect" ),
+                            stylus = require( "stylus" ),
+                            koutoSwiss = require( "kouto-swiss" ),
+                            server = connect();
 
-            p
-                | Here's an exemple of how to use stylus with kouto-swiss within
-                = " "
-                a( href="//www.senchalabs.org/connect/" ) Connect
-                = " "
-                | or
-                = " "
-                a( href="//expressjs.com" ) Express
-                | .
+                        function compile( str, path ) {
+                            return stylus( str )
+                                .set( "filename", path )
+                                .set( "compress", true )
+                                .use( koutoSwiss() );
+                        }
 
-            pre
-                code.
-                    var connect = require( "connect" ),
-                        stylus = require( "stylus" ),
-                        koutoSwiss = require( "kouto-swiss" ),
-                        server = connect();
+                        server.use( stylus.middleware( {
+                            src: __dirname,
+                            compile: compile
+                        } ) );
 
-                    function compile( str, path ) {
-                        return stylus( str )
-                            .set( "filename", path )
-                            .set( "compress", true )
-                            .use( koutoSwiss() );
-                    }
+                h4 Stylus API
 
-                    server.use( stylus.middleware( {
-                        src: __dirname,
-                        compile: compile
-                    } ) );
+                p To gain access to the kouto swiss tools from your Stylus files, simply add:
 
-            h4 Stylus API
+                pre
+                    code @import "kouto-swiss"
 
-            p To gain access to the kouto swiss tools from your Stylus files, simply add:
+            footer
+                p
+                    strong kouto swiss
+                    = " "
+                    | is maintained by
+                    = " "
+                    a( href=author.url )= author.name
+                    | .
+                    | Any question? Please tweet
+                    = " "
+                    a( href="//twitter.com/krkn_be" ) @krkn_be
 
-            pre
-                code @import "kouto-swiss"
+                p
+                    strong kouto swiss
+                    = " "
+                    | is Copyright ©2014
+                    = " "
+                    a( href=author.url )= author.name
+                    | .
+                    = " "
+                    | It is free software, and may be redistributed under the terms specified in the LICENSE file.
 
-        footer
-            p
-                strong kouto swiss
-                = " "
-                | is maintained by
-                = " "
-                a( href=author.url )= author.name
-                | .
-                | Any question? Please tweet
-                a( href="//twitter.com/krkn_be" ) @krkn_be
-
-            p
-                strong kouto swiss
-                = " "
-                | is Copyright © 2014
-                = " "
-                a( href=author.url )= author.name
-                | .
-                = " "
-                | It is free software, and may be redistributed under the terms specified in the LICENSE file.
-
-            div.buttons
-                a( href=github ) github
-                a( href="#" ) docs
+                div.buttons
+                    a( href=github ) github
+                    a( href="#" ) docs
