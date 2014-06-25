@@ -48,16 +48,16 @@
     "node": "*"
   },
   "dependencies": {
-    "stylus": "~0.45"
+    "stylus": "~0.46"
   },
   "devDependencies": {
     "mocha": "*",
     "should": "*",
     "grunt-ks-stylus": "~0.0",
-    "grunt-contrib-clean": "~0.4",
+    "grunt-contrib-clean": "~0.5",
     "grunt": "~0.4",
     "grunt-contrib-watch": "~0.6",
-    "grunt-contrib-jade": "~0.11",
+    "grunt-contrib-jade": "~0.12",
     "grunt-contrib-copy": "~0.5"
   }
 }
