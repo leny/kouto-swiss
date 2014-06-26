@@ -233,11 +233,14 @@ section
             font-weight normal
         code
             padding 0 .5rem
-            background #fff1cc
-            border 1px solid shade( #ffe399, 15% )
-            border-radius 3px
+            border 1px solid transparent
             font normal 1em FiraMono
-            color shade( #ffe399, 66% )
+            color #008a67
+            transition all .25s ease-in-out
+            &:hover
+                background #fff1cc
+                border 1px solid shade( #ffe399, 15% )
+                border-radius 3px
         &.punchline
             margin 2.5rem 10px 1rem
             font-weight SemiBold
@@ -282,6 +285,59 @@ section
                     height 100px
                     background url( "img/gulp-logo.svg" ) top center no-repeat
                     background-size contain
+
+div.docs
+    margin 0 10px
+    > h2
+        margin 0 auto 2rem
+        font normal 2rem FiraSans
+        color cKoutoSwiss
+        text-align center
+    article
+        margin 0 auto 30px
+        padding 0 0 30px
+        border-bottom 1px solid tint( cKoutoSwiss, 75% )
+        > h1
+            margin 0 auto 1.75rem
+            font normal 1.8rem FiraSans
+            code
+                font normal 1.8rem FiraMono
+        > h3
+            margin 0 auto .5rem 1.5rem
+            font normal 1.6rem FiraSans
+            color tint( cKoutoSwiss, 15% )
+        p
+        ul
+        ol
+            margin 0 auto 1rem
+            font Light 1.6rem FiraSans
+            strong
+                font-weight normal
+            code
+                padding 0 .5rem
+                border 1px solid transparent
+                font normal 1em FiraMono
+                color #008a67
+                transition all .25s ease-in-out
+                &:hover
+                    background #fff1cc
+                    border 1px solid shade( #ffe399, 15% )
+                    border-radius 3px
+        ul
+        ol
+            li
+                margin 0 auto .75rem
+        pre
+            margin 10px 0 20px
+            padding 1rem
+            overflow scroll
+            background #fff1cc
+            border 1px solid shade( #ffe399, 15% )
+            border-radius 3px
+            font normal 1.2rem FiraMono
+            color #008a67
+        &:last-child
+            border-bottom 0
 
 footer
     position relative
