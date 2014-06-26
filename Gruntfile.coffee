@@ -39,15 +39,18 @@ module.exports = ( grunt ) ->
         watch:
             jade:
                 files: "_docs/_pages/*.jade"
-                tasks: [ "jade" ]
+                tasks: [ "jade", "generate" ]
             styles:
                 files: "_docs/_styles/**/*.styl"
                 tasks: [ "stylus" ]
+
+    grunt.loadTasks "_docs/_tasks"
 
     # TODO : change this, default task should build the docs & demo
     grunt.registerTask "default", [
         "clean"
         "jade"
+        "generate"
         "stylus"
         "copy"
     ]
