@@ -4,7 +4,7 @@ html( lang="en" )
         meta( charset="UTF-8" )/
         title kouto swiss - A complete CSS framework for Stylus
 
-        meta( name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0" )/
+        meta( name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0, minimal-ui" )/
 
         link( rel="stylesheet", href="styles/styles.css" )/
 
@@ -13,14 +13,14 @@ html( lang="en" )
 
     body
         #wrapper
-            header
+            header.home
                 h1
                     a( href=homepage )
                         span kouto swiss
                 h2= description
                 div.buttons
                     a( href=github ) github
-                    a( href="#" ) docs
+                    a( href="docs.html" ) docs
 
             section.about
                 blockquote
@@ -152,4 +152,4 @@ html( lang="en" )
 
                 div.buttons
                     a( href=github ) github
-                    a( href="#" ) docs
+                    a( href="docs.html" ) docs
