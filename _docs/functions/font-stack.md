@@ -1,4 +1,4 @@
-# font-stack()
+# `font-stack()`
 
 Get a font stack to use with `font-family`.  
 The font stacks are taken from the site [cssfontstack.com](http://cssfontstack.com), by [Denis Leblanc](http://denisleblanc.com)
