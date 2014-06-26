@@ -1,0 +1,142 @@
+doctype html
+html( lang="en" )
+    head
+        meta( charset="UTF-8" )/
+        title
+            | demo/
+            = name + " "
+            | - kouto swiss - A complete CSS framework for Stylus
+
+        meta( name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0" )/
+
+        link( rel="stylesheet", href="styles/styles.css" )/
+
+        //if lt IE 9
+            script( src="http://html5shiv.googlecode.com/svn/trunk/html5.js" )
+
+    body
+        #wrapper
+            header
+                h1
+                    a( href=homepage )
+                        span kouto swiss
+                h2= description
+
+                a( href="javascript:void(0)" ) toggle nav
+
+                nav.open
+                    ul
+                        li
+                            strong reset
+                            ul
+                                li
+                                    a( href="#" ) meyer-reset
+                                li
+                                    a( href="#" ) box-sizing-reset
+                        li
+                            strong functions
+                            ul
+                                li
+                                    a( href="#" ) percent
+                                li
+                                    a( href="#" ) em
+                                li
+                                    a( href="#" ) rem
+                                li
+                                    a( href="#" ) calc
+                                li
+                                    a.active( href="#" ) font-stack
+                                li
+                                    a( href="#" ) linear-gradient
+                                li
+                                    a( href="#" ) radial-gradient
+                                li
+                                    a( href="#" ) repeating-linear-gradient
+                                li
+                                    a( href="#" ) repeating-radial-gradient
+                                li
+                                    a( href="#" ) monochrome
+                                li
+                                    a( href="#" ) split-complements
+                                li
+                                    a( href="#" ) analogous
+                                li
+                                    a( href="#" ) triad
+                                li
+                                    a( href="#" ) quad
+                                li
+                                    a( href="#" ) luminosity
+                                li
+                                    a( href="#" ) color-fallback
+                                li
+                                    a( href="#" ) easing
+                        li
+                            strong utilities
+                            ul
+                                li
+                                    a( href="#" ) colors
+                                li
+                                    a( href="#" ) vendors
+                                li
+                                    a( href="#" ) clearfix
+                                li
+                                    a( href="#" ) position
+                                li
+                                    a( href="#" ) size
+                                li
+                                    a( href="#" ) overflow
+                                li
+                                    a( href="#" ) placeholder
+                                li
+                                    a( href="#" ) font-face
+                                li
+                                    a( href="#" ) modular-scale
+                                li
+                                    a( href="#" ) golden-ratio
+                                li
+                                    a( href="#" ) media-query
+                                li
+                                    a( href="#" ) retina-query
+                                li
+                                    a( href="#" ) retina-image
+                                li
+                                    a( href="#" ) hide-text
+                                li
+                                    a( href="#" ) triangle
+                        li
+                            strong grid system
+                            ul
+                                li
+                                    a( href="#" ) gs
+                                li
+                                    a( href="#" ) row
+                                li
+                                    a( href="#" ) column
+                                li
+                                    a( href="#" ) offset
+
+            footer
+                p
+                    strong kouto swiss
+                    = " "
+                    | is maintained by
+                    = " "
+                    a( href=author.url )= author.name
+                    | .
+                    | Any question? Please tweet
+                    = " "
+                    a( href="//twitter.com/krkn_be" ) @krkn_be
+
+                p
+                    strong kouto swiss
+                    = " "
+                    | is Copyright ©2014
+                    = " "
+                    a( href=author.url )= author.name
+                    | .
+                    = " "
+                    | It is free software, and may be redistributed under the terms specified in the LICENSE file.
+
+                div.buttons
+                    a( href=github ) github
+                    a( href="docs.html" ) docs

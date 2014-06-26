@@ -25,6 +25,8 @@ font-face( "FiraMono", "fonts/firamono/FiraMono-Regular", bold, formats: eot wof
 FiraMono = "FiraMono", font-stack( "Consolas" )
 font-face( "Norwester", "fonts/norwester/norwester", formats: eot woff )
 Norwester = "Norwester", FiraSans
+font-face( "WebHostingHub", "fonts/webhostinghub/webhostinghub-glyphs-webfont", formats: eot ttf svg )
+Glyphs = "WebHostingHub", "WebHostingHub-Glyphs"
 
 // vars
 cKoutoSwiss = #c30
@@ -57,61 +59,151 @@ header
     position relative
     width 100%
     margin 0 auto 70px
-    padding 1px 0 5px
+    padding 1px 0 0
     background cKoutoSwiss
     &:after
         content ""
         display block
         position absolute
         width 120%
-        height 90px
-        margin -45px 0 0 -10%
+        height 80px
+        margin -55px 0 0 -10%
         background cKoutoSwiss
         transform rotate( -10deg )
     h1
-        margin 19px auto 0
+        position relative
+        margin 10px auto 0
+        z-index 20
         a
             display block
-            margin 0 auto
-            font normal 5rem/1 Norwester
+            margin 0 0 0 10px
+            font normal 3.225rem/1 Norwester
             color white
-            text-align center
             text-decoration none
-            &:before
-                content ""
-                display block
-                width 120px
-                height 80px
-                margin 0 auto 10px
-                background url( "img/logo.svg" ) right center no-repeat
-                background-size auto 100%
             &:hover
                 color white
     h2
-        margin 0 auto 25px
-        font SemiBold 1.55rem FiraSans
-        color white
-        text-align center
-    .buttons
         position relative
-        z-index 10
-        text-align center
-        a
-            display inline-block
-            width 120px
-            padding 8px 0
-            border 2px solid white
-            font SemiBold 1.8rem FiraSans
+        margin 0 0 5px 10px
+        z-index 20
+        font SemiBold 1rem FiraSans
+        color white
+    &.home
+        padding 1px 0 5px
+        &:after
+            content ""
+            display block
+            position absolute
+            width 120%
+            height 90px
+            margin -45px 0 0 -10%
+            background cKoutoSwiss
+            transform rotate( -10deg )
+        h1
+            margin 19px auto 0
+            a
+                display block
+                margin 0 auto
+                font normal 5rem/1 Norwester
+                color white
+                text-align center
+                text-decoration none
+                &:before
+                    content ""
+                    display block
+                    width 120px
+                    height 80px
+                    margin 0 auto 10px
+                    background url( "img/logo.svg" ) right center no-repeat
+                    background-size auto 100%
+                &:hover
+                    color white
+        h2
+            margin 0 auto 25px
+            font SemiBold 1.55rem FiraSans
             color white
-            text-decoration none
-            &:first-child
-                border-right-width 1px
-                border-radius 5px 0 0 5px
-            &:last-child
-                background white
-                border-left-width 1px
-                border-radius 0 5px 5px 0
-                color cKoutoSwiss
+            text-align center
+        .buttons
+            position relative
+            z-index 10
+            text-align center
+            a
+                display inline-block
+                width 120px
+                padding 8px 0
+                border 2px solid white
+                font SemiBold 1.8rem FiraSans
+                color white
+                text-decoration none
+                &:first-child
+                    border-right-width 1px
+                    border-radius 5px 0 0 5px
+                &:last-child
+                    background white
+                    border-left-width 1px
+                    border-radius 0 5px 5px 0
+                    color cKoutoSwiss
+    > a
+        position absolute
+        display block
+        width 40px
+        height 40px
+        top 8px
+        right 10px
+        z-index 20
+        text-indent -9999px
+        &:before
+            content ""
+            position absolute
+            display block
+            top 4px
+            right 0
+            font normal 2.4rem Glyphs
+            color white
+            text-align right
+    nav
+        position relative
+        display none
+        margin 10px 10px 20px
+        z-index 20
+        > ul
+            border 2px solid white
+            border-radius 5px
+            > li
+                strong
+                    display block
+                    padding 8px 0 5px
+                    font normal 1.6rem/1 FiraSans
+                    color white
+                    text-transform uppercase
+                    text-align center
+                > ul
+                    border 2px solid white
+                    border-left 0
+                    border-right 0
+                    > li
+                        a
+                            display block
+                            padding 13px 10px 10px
+                            background white
+                            border-bottom 1px solid cKoutoSwiss
+                            font normal 1.4rem/1 FiraSans
+                            color cKoutoSwiss
+                            text-align left
+                            &.active
+                                padding-top 11px
+                                padding-left 0
+                                background cKoutoSwiss
+                                color white
+                                &:before
+                                    content ""
+                                    display inline-block
+                                    triangle( right, 10px, white )
+                                    vertical-align -5px
+                        &:last-child a
+                            border-bottom 0
+        &.open
+            display block
 
 section
     margin 0 auto 20px
@@ -194,7 +286,7 @@ section
 footer
     position relative
     width 100%
-    margin 120px auto 0
+    margin 100px auto 0
     padding 1px 0 20px
     background cKoutoSwiss
     &:before
