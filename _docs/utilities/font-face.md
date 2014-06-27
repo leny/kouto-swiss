@@ -10,7 +10,7 @@ Simple `@font-face` mixin.
 * `font-src`: the path for the font, minus the extension
 * `weight`: the weight of the font, for font-weight. *Optional*.
 * `style`: the style of the font, for font-style. *Optional*.
-* `formats`: the formats to includes. *Optional*. Default: `eot woff truetype svg`
+* `formats`: the formats to includes. *Optional*. Default: `eot woff truetype svg` Accepted words: `eot woff truetype ttf opentype otf svg`
 * `svg-font-name`: the svg font name. *Optional*. Default: use the `name` parameters.
 
 ### Usage
