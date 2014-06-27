@@ -30,6 +30,21 @@
   src: url("./fonts/Entypo-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Entypo-webfont.otf") format("opentype"), url("./fonts/Entypo-webfont.svg#entypo") format("svg");
 }
 @font-face {
+  font-family: "EntypoIcons";
+  src: url("./fonts/Entypo-webfont.eot");
+  src: url("./fonts/Entypo-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Entypo-webfont.otf") format("opentype"), url("./fonts/Entypo-webfont.svg#entypo") format("svg");
+}
+@font-face {
   font-family: "OpenSans";
   src: url("./fonts/OpenSans.woff") format("woff");
+}
+@font-face {
+  font-family: "EntypoIcons";
+  src: url("./fonts/Entypo-webfont.eot");
+  src: url("./fonts/Entypo-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Entypo-webfont.ttf") format("truetype"), url("./fonts/Entypo-webfont.svg#entypo") format("svg");
+}
+@font-face {
+  font-family: "EntypoIcons";
+  src: url("./fonts/Entypo-webfont.eot");
+  src: url("./fonts/Entypo-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Entypo-webfont.ttf") format("truetype"), url("./fonts/Entypo-webfont.svg#entypo") format("svg");
 }
