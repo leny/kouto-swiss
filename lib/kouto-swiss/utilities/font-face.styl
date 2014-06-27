@@ -11,9 +11,9 @@ font-face( name, font-src, weight = false, style = false, formats = eot woff tru
             push( fonts, 'url("' + font-src + '.eot?#iefix") format("embedded-opentype")' )
         if woff in formats
             push( fonts, 'url("' + font-src + '.woff") format("woff")' )
-        if opentype in formats
+        if opentype in formats || otf in formats
             push( fonts, 'url("' + font-src + '.otf") format("opentype")' )
-        if truetype in formats
+        if truetype in formats || ttf in formats
             push( fonts, 'url("' + font-src + '.ttf") format("truetype")' )
         if svg in formats
             svg-name = svg-font-name ? svg-font-name : name
