@@ -90,14 +90,14 @@ Many thanks !
 
 - [x] installation infos in README
 - [x] release 0.1
-- [ ] grid background helper
 - [x] code organisation
-- [ ] demo pages
 - [ ] documentation
 - [x] grunt-ks-stylus
 - [ ] website
 - [ ] **release 1.0**
 - [ ] docset for [dash](http://kapeli.com/dash)
+- [ ] grid background helper
+- [ ] demo pages
 
 ## License
 
@@ -106,11 +106,7 @@ Licensed under the MIT license.
 
 ### Licenses for ressources used in docs
 
-#### Patterns
-
-* [Squared Metal](http://subtlepatterns.com/squared-metal/) by [doot0](http://twitter.com/doot0)
-
 #### Fonts
 
 * [Norwester by Jamie Wilson](http://jamiewilson.io/norwester/) ([SIL Open Font License](http://scripts.sil.org/OFL))
-* [Fira Sans by Mozilla](https://www.mozilla.org/en-US/styleguide/products/firefox-os/typeface/) ([SIL Open Font License](http://scripts.sil.org/OFL))
+* [Fira Sans & Fira Mono by Mozilla](https://www.mozilla.org/en-US/styleguide/products/firefox-os/typeface/) ([SIL Open Font License](http://scripts.sil.org/OFL))
