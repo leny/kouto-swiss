@@ -7,6 +7,8 @@ module.exports = ( grunt ) ->
     grunt.loadNpmTasks "grunt-contrib-copy"
     grunt.loadNpmTasks "grunt-contrib-jade"
     grunt.loadNpmTasks "grunt-contrib-stylus"
+    grunt.loadNpmTasks "grunt-contrib-connect"
+    grunt.loadNpmTasks "grunt-concurrent"
 
     grunt.initConfig
         clean:
@@ -39,7 +41,22 @@ module.exports = ( grunt ) ->
                 cwd: "_docs/_styles/"
                 src: [ "img/**", "fonts/**" ]
                 dest: "docs/styles/"
+        connect:
+            docs:
+                options:
+                    port: 5555
+                    hostname: "*"
+                    base: "./docs"
+                    keepalive: yes
+                    livereload: yes
+        concurrent:
+            docs:
+                tasks: [ "connect:docs", "watch" ]
+                options:
+                    logConcurrentOutput: yes
         watch:
+            options:
+                livereload: yes
             jade:
                 files: "_docs/_pages/*.jade"
                 tasks: [ "jade", "generate" ]
@@ -60,5 +77,5 @@ module.exports = ( grunt ) ->
 
     grunt.registerTask "work", [
         "default"
-        "watch"
+        "concurrent"
     ]
