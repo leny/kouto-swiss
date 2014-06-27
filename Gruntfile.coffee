@@ -6,7 +6,7 @@ module.exports = ( grunt ) ->
     grunt.loadNpmTasks "grunt-contrib-watch"
     grunt.loadNpmTasks "grunt-contrib-copy"
     grunt.loadNpmTasks "grunt-contrib-jade"
-    grunt.loadNpmTasks "grunt-ks-stylus"
+    grunt.loadNpmTasks "grunt-contrib-stylus"
 
     grunt.initConfig
         clean:
@@ -14,6 +14,9 @@ module.exports = ( grunt ) ->
         stylus:
             options:
                 compress: yes
+                use: [
+                    require "./lib/kouto-swiss.js" # use internal kouto-swiss
+                ]
             docs:
                 files:
                     "docs/styles/styles.css": "_docs/_styles/styles.styl"
