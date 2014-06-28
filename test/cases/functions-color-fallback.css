@@ -40,3 +40,42 @@ body {
   background: #ca2b78 url("test.png") top left repeat;
   background: rgba(202,43,120,0.5) url("test.png") top left repeat;
 }
+body {
+  background: rgba(255,0,0,0.5);
+}
+body {
+  background: #f00;
+  background: rgba(255,0,0,0.5);
+}
+body {
+  background: #f00;
+}
+body {
+  background: #f00;
+  background: rgba(255,0,0,0.5);
+}
+body {
+  background: #f00;
+}
+body {
+  border: 1px solid #f00;
+  border: 1px solid rgba(255,0,0,0.5);
+}
+body {
+  color: #eaf16a;
+  color: rgba(234,241,106,0.5);
+}
+body {
+  color: #eaf16a;
+  color: rgba(234,241,106,0.5);
+}
+body {
+  background: #ca2b78 url("test.png") top left repeat;
+  background: rgba(202,43,120,0.5) url("test.png") top left repeat;
+}
+body {
+  background: rgba(255,0,0,0.5);
+}
+body {
+  background: #f00;
+}
