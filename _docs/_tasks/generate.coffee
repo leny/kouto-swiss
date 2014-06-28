@@ -63,7 +63,6 @@ module.exports = ( grunt ) ->
                 $docs.append $topicArticle
 
         # 4. update version number
-        console.log process.cwd()
         $( "#wrapper .about p strong" ).text "v#{ pkg.version }"
 
         # 5. save
