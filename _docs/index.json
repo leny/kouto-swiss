@@ -7,7 +7,7 @@
         "grid"
     ],
     "reset": [
-        "meyer-reset"
+        "meyer-reset",
         "box-sizing-reset"
     ],
     "mixins": [
