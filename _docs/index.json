@@ -1,0 +1,35 @@
+{
+    "chapters": [
+        "reset",
+        "mixins",
+        "functions",
+        "utilities",
+        "grid"
+    ],
+    "reset": [
+        "meyer-reset"
+        "box-sizing-reset"
+    ],
+    "functions": [
+        "analogous",
+        "calc",
+        "color-fallback",
+        "easing",
+        "em",
+        "extended-analogous",
+        "font-stack",
+        "golden-ratio",
+        "linear-gradient",
+        "luminosity",
+        "modular-scale",
+        "monochrome",
+        "percent",
+        "quad",
+        "radial-gradient",
+        "rem",
+        "repeating-linear-gradient",
+        "split-complements",
+        "triad",
+        "triangle"
+    ]
+}
