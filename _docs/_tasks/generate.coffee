@@ -9,6 +9,7 @@ marked = require "marked"
         classPrefix: ""
 
 pkg = require "../../package.json"
+index = require "../index.json"
 
 oMarkdownCompilationOptions =
     gfm: yes
@@ -20,9 +21,8 @@ module.exports = ( grunt ) ->
 
     grunt.registerTask "generate", "Generate Kouto Swiss documentation page.", ->
         sDocFilePath = "docs/docs.html"
-        aChapters = [ "reset", "functions", "utilities", "grid" ]
         oDocChapters = {}
-        iChapters = 0
+        iChapters = index.chapters.length
         iTopics = 0
         # 1. get all the markdown doc files
         grunt.file.recurse "./_docs", ( sAbsolutePath, sRootDir, sSubDir, sFilename ) ->
@@ -37,13 +37,12 @@ module.exports = ( grunt ) ->
 
         # 2. generate navigation menu
         ( $menu = $ "#wrapper header nav > ul" ).empty()
-        for sChapterName in aChapters
-            iChapters++
+        for sChapterName in index.chapters
             ( $chapterNav = $ "<li><strong></strong><ul></ul></li>" )
                 .find( "strong" )
                     .text( sChapterName.toLowerCase() )
             $chapterTopicsNav = $chapterNav.find "ul"
-            for sTopicName, sContent of oDocChapters[ sChapterName ]
+            for sTopicName in index[ sChapterName ]
                 iTopics++
                 ( $topicNavLink = $ "<li><a></a></li>" )
                     .find( "a" )
@@ -54,13 +53,13 @@ module.exports = ( grunt ) ->
 
         # 3. insert doc articles
         ( $docs = $ "#wrapper div.docs" ).empty()
-        for sChapterName in aChapters
+        for sChapterName in index.chapters
             ( $chapterTitle = $ "<h2></h2>" ).text sChapterName
             $docs.append $chapterTitle
-            for sTopicName, sContent of oDocChapters[ sChapterName ]
+            for sTopicName in index[ sChapterName ]
                 ( $topicArticle = $ "<article></article>" )
                     .attr( "id", sTopicName )
-                    .html( sContent )
+                    .html( oDocChapters[ sChapterName ][ sTopicName ] )
                 $docs.append $topicArticle
 
         # 4. update version number
