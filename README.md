@@ -75,7 +75,7 @@ Add unit tests and update the docs for any new or changed functionality.
 
 ### Special call for contribution : something who write better english than mine !
 
-> As you can guess by my spelling, english isn't my first language. And as I make prodigious efforts to try, I still can't write good and readable documentation as a native speaker should.
+> As you can guess from my spelling, english **isn't** my first language. And as I make prodigious efforts to try, I still can't write good and readable documentation as a native speaker should.
 
 If you want to help the **kouto swiss** project, but don't want to write code, please, consider a little review of the docs, correcting my *very bad* english.  
 Many thanks !
@@ -91,13 +91,21 @@ Many thanks !
 - [x] installation infos in README
 - [x] release 0.1
 - [x] code organisation
-- [ ] documentation
+- [ ] documentation/website
+    - [x] index page
+    - [ ] syntax coloration in index page
+    - [x] generate documentation from markdown file
+    - [x] stylesheet for mobile
+    - [ ] stylesheet for tablet
+    - [ ] stylesheet for desktop
+    - [ ] javascript
+    - [ ] publication on `gh-pages` branch
+- [ ] release 0.9
+- [ ] community returns
 - [x] grunt-ks-stylus
-- [ ] website
 - [ ] **release 1.0**
 - [ ] docset for [dash](http://kapeli.com/dash)
 - [ ] grid background helper
-- [ ] demo pages
 
 ## License
 
