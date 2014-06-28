@@ -10,10 +10,6 @@
 
 * * *
 
-![kouto swiss logo](https://raw.githubusercontent.com/leny/kouto-swiss/master/Logo.png)
-
-* * *
-
 **kouto swiss** is a complete CSS framework for Stylus, inspired by great tools like nib, compass, bourbon…
 
 ## Installation
