@@ -66,5 +66,8 @@
     "highlight.js": "~8.0",
     "marked": "~0.3",
     "should": "~4.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4"
   }
 }
