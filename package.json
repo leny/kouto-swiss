@@ -61,6 +61,7 @@
     "grunt-contrib-jade": "~0.12",
     "grunt-contrib-stylus": "~0.17",
     "grunt-contrib-watch": "~0.6",
+    "grunt-gh-pages": "~0.9",
     "highlight.js": "~8.0",
     "marked": "~0.3",
     "mocha": "*",

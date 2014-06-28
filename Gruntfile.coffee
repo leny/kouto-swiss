@@ -9,6 +9,7 @@ module.exports = ( grunt ) ->
     grunt.loadNpmTasks "grunt-contrib-stylus"
     grunt.loadNpmTasks "grunt-contrib-connect"
     grunt.loadNpmTasks "grunt-concurrent"
+    grunt.loadNpmTasks "grunt-gh-pages"
 
     grunt.initConfig
         clean:
@@ -41,6 +42,10 @@ module.exports = ( grunt ) ->
                 cwd: "_docs/_styles/"
                 src: [ "img/**", "fonts/**" ]
                 dest: "docs/styles/"
+        "gh-pages":
+            options:
+                base: "docs"
+            src: "**/*"
         connect:
             docs:
                 options:
@@ -66,7 +71,6 @@ module.exports = ( grunt ) ->
 
     grunt.loadTasks "_docs/_tasks"
 
-    # TODO : change this, default task should build the docs & demo
     grunt.registerTask "default", [
         "clean"
         "jade"
@@ -78,4 +82,9 @@ module.exports = ( grunt ) ->
     grunt.registerTask "work", [
         "default"
         "concurrent"
+    ]
+
+    grunt.registerTask "build", [
+        "default"
+        "gh-pages"
     ]

@@ -95,7 +95,8 @@ Many thanks !
     - [ ] stylesheet for tablet
     - [ ] stylesheet for desktop
     - [ ] javascript
-    - [ ] publication on `gh-pages` branch
+    - [x] publication on `gh-pages` branch
+    - [ ] setup custom domain
 - [ ] release 0.9
 - [ ] community returns
 - [x] grunt-ks-stylus
