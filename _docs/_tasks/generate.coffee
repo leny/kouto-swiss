@@ -59,6 +59,7 @@ module.exports = ( grunt ) ->
             $docs.append $chapterTitle
             for sTopicName, sContent of oDocChapters[ sChapterName ]
                 ( $topicArticle = $ "<article></article>" )
+                    .attr( "id", sTopicName )
                     .html( sContent )
                 $docs.append $topicArticle
 
