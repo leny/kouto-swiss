@@ -51,6 +51,11 @@ module.exports = ( grunt ) ->
                 cwd: "_docs/_styles/"
                 src: [ "img/**", "fonts/**" ]
                 dest: "docs/styles/"
+            scripts:
+                expand: yes
+                cwd: "_docs/_js/"
+                src: [ "**" ]
+                dest: "docs/js/"
             cname:
                 src: "_docs/CNAME"
                 dest: "docs/CNAME"
