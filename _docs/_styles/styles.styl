@@ -6,6 +6,7 @@ meyer-reset()
 box-sizing-reset()
 
 // fonts
+// TODO : clean unused weights
 ExtraLight = 100
 font-face( "FiraSans", "fonts/firasans/FiraSans-ExtraLight", ExtraLight, formats: eot woff )
 Light = 200
@@ -31,6 +32,13 @@ Glyphs = "WebHostingHub", "WebHostingHub-Glyphs"
 // vars
 cKoutoSwiss = #c30
 
+bkHorizontalPhones = media-query( screen, min-width 480px )
+bkVerticalTablets = media-query( screen, min-width 640px )
+bkLargerVerticalTablets = media-query( screen, min-width 768px )
+bkSmallDesktopScreens = media-query( screen, min-width 960px )
+bkMediumDesktopScreens = media-query( screen, min-width 1200px )
+bkBigDesktopScreens = media-query( screen, min-width 1600px )
+
 *
     -webkit-font-smoothing antialiased
     -webkit-text-size-adjust 100%
@@ -49,6 +57,17 @@ a
     transition color .25s ease-in-out
     &:hover
         color complement( cKoutoSwiss )
+
+pre
+    padding 1rem
+    overflow scroll
+    -webkit-overflow-scrolling touch
+    background tint( #fff1cc, 95% )
+    border 1px solid shade( #ffe399, 15% )
+    border-radius 3px
+    font normal 1.2rem FiraMono
+    code
+        color #008a67
 
 div[id="wrapper"]
     position relative
@@ -135,6 +154,7 @@ header
                 font SemiBold 1.8rem FiraSans
                 color white
                 text-decoration none
+                text-align center
                 &:first-child
                     border-right-width 1px
                     border-radius 5px 0 0 5px
@@ -295,6 +315,10 @@ div.docs
             font normal 1.8rem FiraSans
             code
                 font normal 1.8rem FiraMono
+        > h2
+            margin 0 auto .25rem 1rem
+            font normal 1.7rem FiraSans
+            color shade( cKoutoSwiss, 25% )
         > h3
             margin 0 auto .5rem 1.5rem
             font normal 1.6rem FiraSans
@@ -319,6 +343,10 @@ div.docs
         ol
             li
                 margin 0 auto .75rem
+        ul
+            list-style disc inside
+        ol
+            list-style decimal inside
         pre
             margin 10px 0 20px
         &:last-child
@@ -372,75 +400,58 @@ footer
                 border-radius 0 5px 5px 0
                 color cKoutoSwiss
 
-// Tomorrow Theme for highlight.js
-// http://jmblog.github.com/color-themes-for-google-code-highlightjs
-// Original theme - https://github.com/chriskempson/tomorrow-theme
-// http://jmblog.github.com/color-themes-for-google-code-highlightjs
+@import "highlightjs-tommorrow-theme"
 
-pre .comment
-pre .title
-    color #8e908c
+@media bkHorizontalPhones
+    header
+        margin 0 auto 100px
+        &:after
+            height 90px
+            margin -50px 0 0 -10%
+        &.home
+            margin 0 auto 60px
+            h1
+                margin 19px auto 0 10px
+                a
+                    margin 0
+                    text-align left
+                    &:before
+                        position absolute
+                        width 140px
+                        height 140px
+                        top 6px
+                        right 10px
+            h2
+                margin 0 auto 25px 10px
+                text-align left
+            .buttons
+                margin 0 0 0 20px
+                text-align left
+            &:after
+                margin -40px 0 0 -10%
+    section
+        h3
+            width 120%
+            margin 0 -10% 60px
+            padding 3px 10% 0
+            background cKoutoSwiss
+            font normal 2.8rem/2 Norwester
+            color white
+            text-transform uppercase
+            transform rotate( -10deg )
+            &:before
+                content ""
+                display inline-block
+                width 10px
+        p
+            &.punchline
+                width 50%
+                margin 2.5rem 10px 1rem
+                font-weight SemiBold
+                color cKoutoSwiss
+    footer
+        margin 120px auto 0
+        &:before
+            height 100px
+            margin -55px 0 0 -10%
 
-pre .variable
-pre .attribute
-pre .tag
-pre .regexp
-pre .ruby .constant
-pre .xml .tag .title
-pre .xml .pi
-pre .xml .doctype
-pre .html .doctype
-pre .css .id
-pre .css .class
-pre .css .pseudo
-    color #c82829
-
-pre .number
-pre .preprocessor
-pre .built_in
-pre .literal
-pre .params
-pre .constant
-    color #f5871f
-
-pre .class
-pre .ruby .class .title
-pre .css .rules .attribute
-    color #eab700
-
-pre .string
-pre .value
-pre .inheritance
-pre .header
-pre .ruby .symbol
-pre .xml .cdata
-    color #718c00
-
-pre .css .hexcolor
-    color #3e999f
-
-pre .function
-pre .python .decorator
-pre .python .title
-pre .ruby .function .title
-pre .ruby .title .keyword
-pre .perl .sub
-pre .javascript .title
-pre .coffeescript .title
-    color #4271ae
-
-pre .keyword
-pre .javascript .function
-    color #8959a8
-
-
-pre
-    padding 1rem
-    overflow scroll
-    -webkit-overflow-scrolling touch
-    background tint( #fff1cc, 95% )
-    border 1px solid shade( #ffe399, 15% )
-    border-radius 3px
-    font normal 1.2rem FiraMono
-    code
-        color #008a67
