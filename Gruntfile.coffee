@@ -51,6 +51,9 @@ module.exports = ( grunt ) ->
                 cwd: "_docs/_styles/"
                 src: [ "img/**", "fonts/**" ]
                 dest: "docs/styles/"
+            cname:
+                src: "_docs/CNAME"
+                dest: "docs/CNAME"
         "gh-pages":
             options:
                 base: "docs"
