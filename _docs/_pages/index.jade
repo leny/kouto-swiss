@@ -103,20 +103,20 @@ html( lang="en" )
                     | .
 
                 pre
-                    code.
-                        var connect = require( "connect" ),
-                            stylus = require( "stylus" ),
-                            koutoSwiss = require( "kouto-swiss" ),
+                    code.lang-javascript.
+                        <span class="keyword">var</span> connect = <span class="keyword">require</span>( <span class="string">&quot;connect&quot;</span> ),
+                            stylus = <span class="keyword">require</span>( <span class="string">&quot;stylus&quot;</span> ),
+                            koutoSwiss = <span class="keyword">require</span>( <span class="string">&quot;kouto-swiss&quot;</span> ),
                             server = connect();
 
-                        function compile( str, path ) {
-                            return stylus( str )
-                                .set( "filename", path )
-                                .set( "compress", true )
-                                .use( koutoSwiss() );
+                        <span class="function"><span class="keyword">function</span> <span class="title">compile</span><span class="params">( str, path )</span> {</span>
+                            <span class="keyword">return</span> stylus( str )
+                                .set( <span class="string">&quot;filename&quot;</span>, path )
+                                .set( <span class="string">&quot;compress&quot;</span>, <span class="keyword">true</span> )
+                                .<span class="keyword">use</span>( koutoSwiss() );
                         }
 
-                        server.use( stylus.middleware( {
+                        server.<span class="keyword">use</span>( stylus.middleware( {
                             src: __dirname,
                             compile: compile
                         } ) );
@@ -126,7 +126,8 @@ html( lang="en" )
                 p To gain access to the kouto swiss tools from your Stylus files, simply add:
 
                 pre
-                    code @import "kouto-swiss"
+                    code.lang-stylus.
+                        <span class="variable">@import</span> <span class="string">&quot;kouto-swiss&quot;</span>
 
             footer
                 p
