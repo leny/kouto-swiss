@@ -67,7 +67,8 @@ To gain access to the kouto swiss tools from your Stylus files, simply add:
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style.  
-Add unit tests and update the docs for any new or changed functionality.
+Add unit tests and update the docs for any new or changed functionality.  
+More informations (soon) in the `CONTRIBUTING.md` file.
 
 ### Special call for contribution : something who write better english than mine !
 
@@ -97,6 +98,7 @@ Many thanks !
     - [ ] javascript
     - [x] publication on `gh-pages` branch
     - [ ] setup custom domain
+- [ ] CONTRIBUTING.md
 - [ ] release 0.9
 - [ ] community returns
 - [x] grunt-ks-stylus
