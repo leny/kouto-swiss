@@ -8,6 +8,8 @@ marked = require "marked"
     .configure
         classPrefix: ""
 
+pkg = require "../../package.json"
+
 oMarkdownCompilationOptions =
     gfm: yes
     tables: true
@@ -60,8 +62,12 @@ module.exports = ( grunt ) ->
                     .html( sContent )
                 $docs.append $topicArticle
 
-        # 4. save
+        # 4. update version number
+        console.log process.cwd()
+        $( "#wrapper .about p strong" ).text "v#{ pkg.version }"
+
+        # 5. save
         grunt.file.write sDocFilePath, $.html()
 
-        # 5. log
+        # 6. log
         grunt.log.writeln "Generate doc for #{ chalk.cyan( iTopics ) } topics in #{ chalk.cyan( iChapters ) } chapters into #{ chalk.cyan( sDocFilePath ) }"
