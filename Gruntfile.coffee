@@ -54,6 +54,9 @@ module.exports = ( grunt ) ->
             cname:
                 src: "_docs/CNAME"
                 dest: "docs/CNAME"
+            readme:
+                src: "_docs/README.md"
+                dest: "docs/README.md"
         "gh-pages":
             options:
                 base: "docs"
