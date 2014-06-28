@@ -10,26 +10,49 @@
         "meyer-reset"
         "box-sizing-reset"
     ],
-    "functions": [
-        "analogous",
+    "mixins": [
         "calc",
-        "color-fallback",
-        "easing",
-        "em",
-        "extended-analogous",
-        "font-stack",
-        "golden-ratio",
+        "font-face",
+        "placeholder",
         "linear-gradient",
-        "luminosity",
-        "modular-scale",
-        "monochrome",
-        "percent",
-        "quad",
         "radial-gradient",
-        "rem",
         "repeating-linear-gradient",
+        "repeating-radial-gradient",
+        "vendors"
+    ],
+    "functions": [
+        "em",
+        "rem",
+        "percent",
+        "modular-scale",
+        "golden-ratio",
+        "color-fallback",
+        "luminosity",
+        "analogous",
+        "extended-analogous",
+        "monochrome",
         "split-complements",
         "triad",
+        "quad"
+    ],
+    "utilities": [
+        "colors",
+        "clearfix",
+        "position",
+        "size",
+        "font-stack",
+        "hide-text",
+        "easing",
+        "media-query",
+        "retina-image",
+        "retina-query",
         "triangle"
+    ],
+    "grid": [
+        "index",
+        "gs",
+        "col",
+        "row",
+        "offset"
     ]
 }
