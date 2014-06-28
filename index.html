@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>kouto swiss - A complete CSS framework for Stylus</title><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, minimal-ui"><link rel="stylesheet" href="styles/styles.css"><!--if lt IE 9script( src="http://html5shiv.googlecode.com/svn/trunk/html5.js" )
+--></head><body><div id="wrapper"><header class="home"><h1><a href="http://krkn.github.io/kouto-swiss"><span>kouto swiss</span></a></h1><h2>A complete CSS framework for Stylus</h2><div class="buttons"><a href="http://github.com/krkn/kouto-swiss">github</a><a href="docs.html">docs</a></div></header><section class="about"><blockquote><p>Stylus is great, but... where's my Compass/Bourbon?</p></blockquote><p class="punchline">Here comes <strong>kouto swiss</strong>, the missing css toolbox for Stylus!</p></section><section class="usage"><h3>Usage</h3><h4>Included in compilation, with Grunt or Gulp</h4><h5><a id="grunt-site" href="//gruntjs.com">Grunt</a></h5><p>Use <a href="//www.npmjs.org/package/grunt-contrib-stylus">grunt-contrib-stylus</a>, and include <strong>kouto swiss</strong> in your <code>use</code> option for the task.</p><p>Or use <a href="//www.npmjs.org/package/grunt-ks-stylus">grunt-ks-stylus</a>, which is a fork of <strong>grunt-contrib-stylus</strong>, with <strong>kouto swiss</strong> included.</p><h5><a id="gulp-site" href="//gulpjs.com">Gulp</a></h5><p>Use <a href="//www.npmjs.org/package/gulp-stylus">gulp-stylus</a> and include <strong>kouto swiss</strong> in your <code>use</code> option for the task.</p><h4>As middleware, for <em>on the fly</em> compilation.</h4><p>Here's an exemple of how to use stylus with kouto-swiss within <a href="//www.senchalabs.org/connect/">Connect</a> or <a href="//expressjs.com">Express</a>.</p><pre><code>var connect = require( "connect" ),
+    stylus = require( "stylus" ),
+    koutoSwiss = require( "kouto-swiss" ),
+    server = connect();
+    
+function compile( str, path ) {
+    return stylus( str )
+        .set( "filename", path )
+        .set( "compress", true )
+        .use( koutoSwiss() );
+}
+
+server.use( stylus.middleware( {
+    src: __dirname,
+    compile: compile
+} ) );
+</code></pre><h4>Stylus API</h4><p>To gain access to the kouto swiss tools from your Stylus files, simply add:</p><pre><code>@import "kouto-swiss"</code></pre></section><footer><p><strong>kouto swiss</strong> is maintained by <a href="http://krkn.be">krkn</a>.
+Any question? Please tweet <a href="//twitter.com/krkn_be">@krkn_be</a></p><p><strong>kouto swiss</strong> is Copyright ©2014 <a href="http://krkn.be">krkn</a>. It is free software, and may be redistributed under the terms specified in the LICENSE file.</p><div class="buttons"><a href="http://github.com/krkn/kouto-swiss">github</a><a href="docs.html">docs</a></div></footer></div></body></html>
