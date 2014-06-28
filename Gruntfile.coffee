@@ -8,10 +8,19 @@ module.exports = ( grunt ) ->
     grunt.loadNpmTasks "grunt-contrib-jade"
     grunt.loadNpmTasks "grunt-contrib-stylus"
     grunt.loadNpmTasks "grunt-contrib-connect"
+    grunt.loadNpmTasks "grunt-mocha-cli"
     grunt.loadNpmTasks "grunt-concurrent"
     grunt.loadNpmTasks "grunt-gh-pages"
 
     grunt.initConfig
+        mochacli:
+            options:
+                require: [ "should" ]
+                reporter: "spec"
+                "check-leaks": yes
+                "inline-diffs": yes
+            tests:
+                src: "test/runner.js"
         clean:
             docs: [ "docs" ]
         stylus:
@@ -77,6 +86,10 @@ module.exports = ( grunt ) ->
         "generate"
         "stylus"
         "copy"
+    ]
+
+    grunt.registerTask "test", [
+        "mochacli"
     ]
 
     grunt.registerTask "work", [
