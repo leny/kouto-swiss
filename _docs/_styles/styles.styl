@@ -130,8 +130,7 @@ header
                 &:before
                     content ""
                     display block
-                    width 120px
-                    height 80px
+                    size 120px 80px
                     margin 0 auto 10px
                     background url( "img/logo.svg" ) right center no-repeat
                     background-size auto 100%
@@ -288,14 +287,12 @@ section
             text-align center
             a
                 display inline-block
-                width 75px
+                size 100px
                 text-indent -9999px
                 &[id="grunt-site"]
-                    height 100px
                     background url( "img/grunt-logo.svg" ) top center no-repeat
                     background-size contain
                 &[id="gulp-site"]
-                    height 100px
                     background url( "img/gulp-logo.svg" ) top center no-repeat
                     background-size contain
 
@@ -417,8 +414,7 @@ footer
                     text-align left
                     &:before
                         position absolute
-                        width 140px
-                        height 140px
+                        size 140px
                         top 6px
                         right 10px
             h2
@@ -443,15 +439,71 @@ footer
                 content ""
                 display inline-block
                 width 10px
-        p
-            &.punchline
-                width 50%
-                margin 2.5rem 10px 1rem
-                font-weight SemiBold
-                color cKoutoSwiss
+        p.punchline
+            width 50%
+            margin 2.5rem 10px 1rem
+            font-weight SemiBold
+            color cKoutoSwiss
     footer
         margin 120px auto 0
         &:before
             height 100px
             margin -55px 0 0 -10%
 
+@media bkVerticalTablets
+    header
+        margin 0 auto 100px
+        &:after
+            height 80px
+            margin -50px 0 0 -10%
+            transform rotate( -5deg )
+        &.home
+            margin 0 auto 70px
+            h1
+                margin 19px auto 0 20px
+                a
+                    font normal 7rem/1 Norwester
+                    &:before
+                        position absolute
+                        size 175px
+                        top 8px
+                        right 20px
+            h2
+                margin 0 auto 25px 20px
+                font SemiBold 2.15rem FiraSans
+            .buttons
+                margin 0 0 0 72.5px
+                text-align left
+            &:after
+                margin -40px 0 0 -10%
+                transform rotate( -5deg )
+    section
+        h3
+            margin 10px -10% 50px
+            padding 5px 10% 0
+            font normal 3.2rem/2 Norwester
+            transform rotate( -5deg )
+        p.punchline
+            font SemiBold 1.8rem FiraSans
+        &.about
+            blockquote
+                padding 10px 0 0 50%
+                &:before
+                    top -35px
+                    right 10px
+                    font italic Light 12rem/1 FiraSans
+                p
+                    font italic Light 2.0rem FiraSans
+                    color cKoutoSwiss
+        &.usage
+            h5
+                a
+                    size 150px
+                    margin 0 auto 10px
+    footer
+        margin 100px auto 0
+        padding 1px 0 20px
+        &:before
+            height 90px
+            margin -45px 0 0 -10%
+            transform rotate( -5deg )
