@@ -90,14 +90,14 @@ Many thanks !
 - [x] code organisation
 - [ ] documentation/website
     - [x] index page
-    - [ ] syntax coloration in index page
+    - [x] syntax coloration in index page
     - [x] generate documentation from markdown file
     - [x] stylesheet for mobile
-    - [ ] stylesheet for tablet
+    - [x] stylesheet for tablet
     - [ ] stylesheet for desktop
-    - [ ] javascript
+    - [x] javascript
     - [x] publication on `gh-pages` branch
-    - [ ] setup custom domain
+    - [x] setup custom domain
 - [ ] CONTRIBUTING.md
 - [ ] release 0.9
 - [ ] community returns
