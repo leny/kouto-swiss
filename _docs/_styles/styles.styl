@@ -454,8 +454,8 @@ footer
     header
         margin 0 auto 100px
         &:after
-            height 80px
-            margin -50px 0 0 -10%
+            height 90px
+            margin -55px 0 0 -10%
             transform rotate( -5deg )
         &.home
             margin 0 auto 70px
@@ -507,3 +507,9 @@ footer
             height 90px
             margin -45px 0 0 -10%
             transform rotate( -5deg )
+
+@media bkLargerVerticalTablets
+    section.usage
+        columns 2
+        h3
+            column-span all
