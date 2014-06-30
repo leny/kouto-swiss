@@ -88,6 +88,12 @@ module.exports = ( grunt ) ->
             styles:
                 files: "_docs/_styles/**/*.styl"
                 tasks: [ "stylus" ]
+            scripts:
+                files: "_docs/_js/**/*.js"
+                tasks: [ "copy:scripts" ]
+            docs:
+                files: "_docs/**/*.md"
+                tasks: [ "generate" ]
 
     grunt.loadTasks "_docs/_tasks"
 
@@ -101,6 +107,11 @@ module.exports = ( grunt ) ->
 
     grunt.registerTask "test", [
         "mochacli"
+    ]
+
+    grunt.registerTask "preview", [
+        "default"
+        "connect:docs"
     ]
 
     grunt.registerTask "work", [
