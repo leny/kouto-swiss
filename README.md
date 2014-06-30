@@ -6,10 +6,6 @@
 
 * * *
 
-> **note:** kouto-swiss is currently in development, not suitable for production (yet).
-
-* * *
-
 **kouto swiss** is a complete CSS framework for Stylus, inspired by great tools like nib, compass, bourbon…
 
 ## Installation
@@ -68,7 +64,7 @@ To gain access to the kouto swiss tools from your Stylus files, simply add:
 
 In lieu of a formal styleguide, take care to maintain the existing coding style.  
 Add unit tests and update the docs for any new or changed functionality.  
-More informations (soon) in the `CONTRIBUTING.md` file.
+More informations _(soon)_ in the `CONTRIBUTING.md` file.
 
 ### Special call for contribution : something who write better english than mine !
 
@@ -88,22 +84,23 @@ Many thanks !
 - [x] installation infos in README
 - [x] release 0.1
 - [x] code organisation
-- [ ] documentation/website
+- [x] documentation/website
     - [x] index page
     - [x] syntax coloration in index page
     - [x] generate documentation from markdown file
     - [x] stylesheet for mobile
     - [x] stylesheet for tablet
-    - [ ] stylesheet for desktop
+    - [x] stylesheet for desktop
     - [x] javascript
     - [x] publication on `gh-pages` branch
     - [x] setup custom domain
+- [x] release 0.8
 - [ ] CONTRIBUTING.md
-- [ ] release 0.9
 - [ ] community returns
+- [ ] release 0.9
 - [x] grunt-ks-stylus
-- [ ] **release 1.0**
 - [ ] docset for [dash](http://kapeli.com/dash)
+- [ ] **release 1.0**
 - [ ] grid background helper
 
 ## License
