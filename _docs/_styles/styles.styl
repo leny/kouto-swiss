@@ -50,6 +50,30 @@ html
 
 body
     color black
+    // debug
+    position relative
+    &:before
+        content "320px"
+        display block
+        absolute 0 auto auto 0
+        size 70px 30px
+        z-index 1000
+        background black
+        font bold 1.4rem/30px FiraMono
+        color white
+        text-align center
+        @media bkHorizontalPhones
+            content "480px"
+        @media bkVerticalTablets
+            content "640px"
+        @media bkLargerVerticalTablets
+            content "768px"
+        @media bkSmallDesktopScreens
+            content "960px"
+        @media bkMediumDesktopScreens
+            content "1200px"
+        @media bkBigDesktopScreens
+            content "1600px"
 
 a
     color cKoutoSwiss
@@ -107,7 +131,7 @@ header
         z-index 20
         font SemiBold 1rem FiraSans
         color white
-    &.home
+    body.home &
         padding 1px 0 5px
         &:after
             content ""
@@ -405,7 +429,7 @@ footer
         &:after
             height 90px
             margin -50px 0 0 -10%
-        &.home
+        body.home &
             margin 0 auto 60px
             h1
                 margin 19px auto 0 10px
@@ -457,7 +481,7 @@ footer
             height 90px
             margin -55px 0 0 -10%
             transform rotate( -5deg )
-        &.home
+        body.home &
             margin 0 auto 70px
             h1
                 margin 19px auto 0 20px
@@ -514,10 +538,9 @@ footer
         h3
             column-span all
 
-
 @media bkSmallDesktopScreens
     header
-        &.home
+        body.home &
             margin 0 auto 120px
             padding 1px 0 5px
             &:after
@@ -544,7 +567,8 @@ footer
                 text-align right
             .buttons
                 width 800px
-                padding 0 55px 0 0
+                margin 0 auto
+                padding 0 65px 0 0
                 text-align right
     section
         width 800px
@@ -588,3 +612,11 @@ footer
             a
                 width 120px
                 font SemiBold 1.8rem FiraSans
+
+@media bkBigDesktopScreens
+    footer
+        margin 180px auto 0
+        padding 1px 0 20px
+        &:before
+            height 180px
+            margin -95px 0 0 -10%
