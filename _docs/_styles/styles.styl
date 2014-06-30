@@ -55,7 +55,7 @@ body
     &:before
         content "320px"
         display block
-        absolute 0 auto auto 0
+        fixed 0 auto auto 0
         size 70px 30px
         z-index 1000
         background black
@@ -540,24 +540,73 @@ footer
 
 @media bkSmallDesktopScreens
     header
-        body.home &
-            margin 0 auto 120px
-            padding 1px 0 5px
+        fixed 0 auto 0 0
+        size 240px auto
+        overflow scroll
+        margin 0
+        z-index 100
+        background white
+        border-right 2px solid cKoutoSwiss
+        > a
+            display none
+        nav
+            position relative
+            display block
+            margin 0
+            z-index 100
+            background cKoutoSwiss
+            > ul
+                border 2px solid cKoutoSwiss
+                border-left 0
+                border-right 0
+                border-radius 0
+        h1
+            a
+                margin 0 10px 0
+                color cKoutoSwiss
+                &:hover
+                    color cKoutoSwiss
+        h2
+            width 100%
+            margin 0
+            padding 0 10px 30px
+            overflow hidden
+            color cKoutoSwiss
             &:after
+                content ""
+                position absolute
+                bottom -40px
+                left -10%
+                display block
+                width 120%
+                height 50px
+                background cKoutoSwiss
+                transform rotate( -5deg )
+        &:after
+            content none
+        body.home &
+            position static
+            width auto
+            margin 0 auto 120px
+            padding 21px 0 5px
+            background cKoutoSwiss
+            &:after
+                content ""
                 height 300px
                 margin -200px 0 0 -10%
                 background cKoutoSwiss
-                // background rgba( pink, .5 )
             h1
                 width 800px
                 margin 19px auto 0
+                color white
                 a
                     margin 0 auto
                     font normal 7rem/1 Norwester
+                    color white
                     text-align right
                     &:before
                         position absolute
-                        size 220px
+                        size 205px
                         top 0
                         left 0
                         margin 0
@@ -565,14 +614,17 @@ footer
                 width 800px
                 margin 0 auto 20px
                 text-align right
+                &:after
+                    content none
             .buttons
                 width 800px
                 margin 0 auto
                 padding 0 65px 0 0
                 text-align right
     section
-        width 800px
         &.about
+            width 680px
+            margin 30px 0 50px 260px
             p.punchline
                 font SemiBold 2.2rem FiraSans
             blockquote
@@ -584,39 +636,63 @@ footer
                 p
                     font italic Light 3.0rem FiraSans
                     color cKoutoSwiss
+        body.home &
+            width 800px
+            margin 30px auto 0
         h3
             width 300%
             margin 10px -100% 50px
             padding 5px 100% 0
             font normal 3.2rem/2 Norwester
             transform rotate( -5deg )
+    div.docs
+        width 680px
+        margin 10px 0 20px 260px
     footer
-        margin 120px auto 0
-        padding 1px 0 20px
+        position relative
+        width auto
+        padding 10px 20px 20px 260px
+        z-index 20
         &:before
             height 120px
-            margin -55px 0 0 -10%
-        p
-            position relative
-            width 800px
-            margin 0 auto 10px
-            padding 0 420px 0 0
-            font Light 1.5rem FiraSans
-        .buttons
-            position absolute
-            width 800px
-            top 0
-            left 50%
-            margin 10px 0 0 -400px
-            padding 25px 0 0 400px
-            a
-                width 120px
-                font SemiBold 1.8rem FiraSans
+            margin -65px 0 0 -10%
+        body.home &
+            margin 120px auto 0
+            padding 1px 0 20px
+            &:before
+                height 120px
+                margin -55px 0 0 -10%
+            p
+                position relative
+                width 800px
+                margin 0 auto 10px
+                padding 0 420px 0 0
+                font Light 1.5rem FiraSans
+            .buttons
+                position absolute
+                width 800px
+                top 0
+                left 50%
+                margin 10px 0 0 -400px
+                padding 25px 0 0 400px
+                a
+                    width 120px
+                    font SemiBold 1.8rem FiraSans
+
+@media bkMediumDesktopScreens
+    div.docs
+        width 800px
+        margin 10px auto 20px 320px
 
 @media bkBigDesktopScreens
     footer
         margin 180px auto 0
-        padding 1px 0 20px
+        padding 10px 20px 20px 260px
         &:before
             height 180px
             margin -95px 0 0 -10%
+        body.home &
+            margin 200px auto 0
+            &:before
+                height 180px
+                margin -85px 0 0 -10%
