@@ -513,3 +513,78 @@ footer
         columns 2
         h3
             column-span all
+
+
+@media bkSmallDesktopScreens
+    header
+        &.home
+            margin 0 auto 120px
+            padding 1px 0 5px
+            &:after
+                height 300px
+                margin -200px 0 0 -10%
+                background cKoutoSwiss
+                // background rgba( pink, .5 )
+            h1
+                width 800px
+                margin 19px auto 0
+                a
+                    margin 0 auto
+                    font normal 7rem/1 Norwester
+                    text-align right
+                    &:before
+                        position absolute
+                        size 220px
+                        top 0
+                        left 0
+                        margin 0
+            h2
+                width 800px
+                margin 0 auto 20px
+                text-align right
+            .buttons
+                width 800px
+                padding 0 55px 0 0
+                text-align right
+    section
+        width 800px
+        &.about
+            p.punchline
+                font SemiBold 2.2rem FiraSans
+            blockquote
+                padding 10px 0 0 40%
+                &:before
+                    top -35px
+                    right 10px
+                    font italic Light 12rem/1 FiraSans
+                p
+                    font italic Light 3.0rem FiraSans
+                    color cKoutoSwiss
+        h3
+            width 300%
+            margin 10px -100% 50px
+            padding 5px 100% 0
+            font normal 3.2rem/2 Norwester
+            transform rotate( -5deg )
+    footer
+        margin 120px auto 0
+        padding 1px 0 20px
+        &:before
+            height 120px
+            margin -55px 0 0 -10%
+        p
+            position relative
+            width 800px
+            margin 0 auto 10px
+            padding 0 420px 0 0
+            font Light 1.5rem FiraSans
+        .buttons
+            position absolute
+            width 800px
+            top 0
+            left 50%
+            margin 10px 0 0 -400px
+            padding 25px 0 0 400px
+            a
+                width 120px
+                font SemiBold 1.8rem FiraSans
