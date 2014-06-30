@@ -5,7 +5,7 @@
     $( function() {
         ( $docNavigation = $( "#wrapper > header > nav" ) )
             .find( "a" )
-                .on( "click", function( e ) {
+                .on( "click", function() {
                     $docNavigation.removeClass( "open" );
                 } );
         $( "#wrapper > header > a" ).on( "click", function( e ) {
