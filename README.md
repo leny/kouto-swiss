@@ -64,7 +64,7 @@ To gain access to the kouto swiss tools from your Stylus files, simply add:
 
 In lieu of a formal styleguide, take care to maintain the existing coding style.  
 Add unit tests and update the docs for any new or changed functionality.  
-More informations _(soon)_ in the `CONTRIBUTING.md` file.
+More informations in the `CONTRIBUTING.md` file.
 
 ### Special call for contribution : something who write better english than mine !
 
@@ -75,9 +75,10 @@ Many thanks !
 
 ## Release History
 
-- **2014-05-03:** starting project
-- **2014-05-05:** version `0.0.1` : first publish on npm, still in early stages of development.
+- **2014-06-30:** version `0.8.0` : first stable version of the lib, including website & docs.
 - **2014-05-20:** version `0.1.0` : first version of the lib, including nearly all the basics.
+- **2014-05-05:** version `0.0.1` : first publish on npm, still in early stages of development.
+- **2014-05-03:** starting project
 
 ### Development TODO
 
@@ -95,7 +96,7 @@ Many thanks !
     - [x] publication on `gh-pages` branch
     - [x] setup custom domain
 - [x] release 0.8
-- [ ] CONTRIBUTING.md
+- [x] CONTRIBUTING.md
 - [ ] community returns
 - [ ] release 0.9
 - [x] grunt-ks-stylus
