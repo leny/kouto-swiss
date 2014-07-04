@@ -56,21 +56,21 @@
 </ul>
 <h3 id="usage">Usage</h3>
 <pre><code class="lang-stylus"><span class="tag">body</span>
-    <span class="attribute">width</span> <span class="function">calc( <span class="string">&quot;100%-80px&quot;</span> )</span>
+    <span class="attribute">width</span> <span class="function">calc( <span class="string">&quot;100% - 80px&quot;</span> )</span>
 
 <span class="tag">body</span>
-    <span class="attribute">width</span> <span class="function">calc( <span class="string">&quot;100%-80px&quot;</span>, <span class="number">90</span>% )</span>
+    <span class="attribute">width</span> <span class="function">calc( <span class="string">&quot;100% - 80px&quot;</span>, <span class="number">90</span>% )</span>
 </code></pre>
 <h3 id="result">Result</h3>
 <pre><code class="lang-css"><span class="tag">body</span> <span class="rules">{
-  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="function">-webkit-calc(<span class="number">100</span>%-<span class="number">80</span>px)</span></span></span>;
-  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="function">calc(<span class="number">100</span>%-<span class="number">80</span>px)</span></span></span>;
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="function">-webkit-calc(<span class="number">100</span>% - <span class="number">80</span>px)</span></span></span>;
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="function">calc(<span class="number">100</span>% - <span class="number">80</span>px)</span></span></span>;
 <span class="rule">}</span></span>
 
 <span class="tag">body</span> <span class="rules">{
   <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">90</span>%</span></span>;
-  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="function">-webkit-calc(<span class="number">100</span>%-<span class="number">80</span>px)</span></span></span>;
-  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="function">calc(<span class="number">100</span>%-<span class="number">80</span>px)</span></span></span>;
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="function">-webkit-calc(<span class="number">100</span>% - <span class="number">80</span>px)</span></span></span>;
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="function">calc(<span class="number">100</span>% - <span class="number">80</span>px)</span></span></span>;
 <span class="rule">}</span></span>
 </code></pre>
 </article><article id="font-face"><h1 id="font-face-">font-face()</h1>
