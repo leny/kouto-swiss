@@ -13,23 +13,23 @@ Add vendor-prefix for the css3 `calc()` function.
 
 ```stylus
 body
-    width calc( "100%-80px" )
+    width calc( "100% - 80px" )
 
 body
-    width calc( "100%-80px", 90% )
+    width calc( "100% - 80px", 90% )
 ```
 
 ### Result
 
 ```css
 body {
-  width: -webkit-calc(100%-80px);
-  width: calc(100%-80px);
+  width: -webkit-calc(100% - 80px);
+  width: calc(100% - 80px);
 }
 
 body {
   width: 90%;
-  width: -webkit-calc(100%-80px);
-  width: calc(100%-80px);
+  width: -webkit-calc(100% - 80px);
+  width: calc(100% - 80px);
 }
 ```
