@@ -63,7 +63,8 @@ module.exports = ( grunt ) ->
                 $docs.append $topicArticle
 
         # 4. update version number
-        $( "#wrapper .about p strong" ).text "v#{ pkg.version }"
+        $( "#wrapper .about p strong.version" ).text "v#{ pkg.version }"
+        $( "#wrapper .about p strong.stylus" ).text "v#{ pkg.dependencies.stylus }"
 
         # 5. save
         grunt.file.write sDocFilePath, $.html()
