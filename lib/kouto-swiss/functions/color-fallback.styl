@@ -6,7 +6,8 @@ use( "color-fallback.js" )
 color-fallback( color )
     if( current-property )
         if( alpha( color ) < 1 )
-            fallback-color = rgb( red( color ), green( color ), blue( color ) )
+            // new alpha function, since 0.47, attempt an rgba function, but crashes on hsla. Will submit a bugfix to Stylus.
+            fallback-color = alpha( rgba( color ), 1 )
             add-property( current-property[ 0 ], _replace( current-property[ 1 ], "__CALL__", fallback-color ) )
         color
     else
