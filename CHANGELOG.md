@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.8.3` / 2014-07-05
+
+* Update Stylus to `0.47.1`. Fix an issue caused by a bug introduced in Stylus `0.47`.
+
 ## `0.8.2` / 2014-07-04
 
 * Small fix in docs & tests for `calc()`, according to specs (issue #4). Thanks to [PunKeel](https://github.com/PunKeel).
