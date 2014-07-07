@@ -82,25 +82,11 @@ Many thanks !
 
 ### Development TODO
 
-- [x] installation infos in README
-- [x] release 0.1
-- [x] code organisation
-- [x] documentation/website
-    - [x] index page
-    - [x] syntax coloration in index page
-    - [x] generate documentation from markdown file
-    - [x] stylesheet for mobile
-    - [x] stylesheet for tablet
-    - [x] stylesheet for desktop
-    - [x] javascript
-    - [x] publication on `gh-pages` branch
-    - [x] setup custom domain
-- [x] release 0.8
-- [x] CONTRIBUTING.md
-- [ ] community returns
-- [ ] release 0.9
-- [x] grunt-ks-stylus
+- [ ] add kouto-swiss lib to bower
+- [ ] write how-to for CodeKit & Prepros
 - [ ] docset for [dash](http://kapeli.com/dash)
+- [ ] release 0.9
+- [ ] community returns
 - [ ] **release 1.0**
 - [ ] grid background helper
 
