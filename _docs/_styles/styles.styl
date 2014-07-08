@@ -510,9 +510,18 @@ footer
 
 @media bkLargerVerticalTablets
     section.usage
-        columns 2
-        h3
-            column-span all
+        h5
+            text-align center
+            a
+                display inline-block
+                size 100px
+                text-indent -9999px
+                &[id="grunt-site"]
+                    background url( "img/grunt-logo.svg" ) top center no-repeat
+                    background-size contain
+                &[id="gulp-site"]
+                    background url( "img/gulp-logo.svg" ) top center no-repeat
+                    background-size contain
 
 @media bkSmallDesktopScreens
     header
