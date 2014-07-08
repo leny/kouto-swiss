@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.8.5` / 2014-07-08
+
+* Allow users to disable autoprefixing (as suggered in issue #5).
+
 ## `0.8.4` / 2014-07-08
 
 * Add custom vendors prefixes support (as asked in issue #5).
