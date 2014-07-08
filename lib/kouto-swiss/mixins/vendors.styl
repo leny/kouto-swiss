@@ -1,12 +1,13 @@
-ks-vendors-prefixes = null
+ks-vendors-prefixes = recommended
 
 vendor( property, value, prefixes = null, official = true )
-    if ks-vendors-prefixes isnt null
-        prefixes = ks-vendors-prefixes
-    if prefixes
-        for prefix in prefixes
-            prefixedproperty = "-" + prefix + "-" + property
-            {prefixedproperty}: value
+    if ks-vendors-prefixes isnt false
+        if ks-vendors-prefixes isnt recommended
+            prefixes = ks-vendors-prefixes
+        if prefixes
+            for prefix in prefixes
+                prefixedproperty = "-" + prefix + "-" + property
+                {prefixedproperty}: value
     {property}: value if official
 
 align-content()
