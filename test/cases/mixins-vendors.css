@@ -198,3 +198,14 @@ button {
   -o-transition-timing-function: ease;
   transition-timing-function: ease;
 }
+button {
+  -o-mask: border-box;
+  -ms-mask: border-box;
+  -webkit-mask: border-box;
+  -moz-mask: border-box;
+  mask: border-box;
+}
+button {
+  -webkit-mask: border-box;
+  mask: border-box;
+}
