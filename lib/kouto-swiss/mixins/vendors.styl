@@ -1,4 +1,8 @@
+ks-vendors-prefixes = null
+
 vendor( property, value, prefixes = null, official = true )
+    if ks-vendors-prefixes isnt null
+        prefixes = ks-vendors-prefixes
     if prefixes
         for prefix in prefixes
             prefixedproperty = "-" + prefix + "-" + property
