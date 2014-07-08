@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.8.4` / 2014-07-08
+
+* Add custom vendors prefixes support (as asked in issue #5).
+
 ## `0.8.3` / 2014-07-05
 
 * Update Stylus to `0.47.1`. Fix an issue caused by a bug introduced in Stylus `0.47`.
