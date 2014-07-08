@@ -85,3 +85,38 @@ _**Note:** for each property, the added vendor prefixes are given. The implement
 * **transition-duration:** `-webkit` `-o`
 * **transition-property:** `-webkit` `-o`
 * **transition-timing-function:** `-webkit` `-o`
+
+##  Specific prefixes
+
+If you want specific prefixes, you can force them by setting the global variable `ks-vendors-prefixes` with the prefixes you want.  
+If you want to go back and use preselected prefixes, simply set the global var to `null`.
+
+### Usage
+
+```stylus
+ks-vendors-prefixes = o ms webkit moz
+
+button
+    mask border-box
+
+ks-vendors-prefixes = null
+
+button
+    mask border-box
+```
+
+### Result
+
+```css
+button {
+  -o-mask: border-box;
+  -ms-mask: border-box;
+  -webkit-mask: border-box;
+  -moz-mask: border-box;
+  mask: border-box;
+}
+button {
+  -webkit-mask: border-box;
+  mask: border-box;
+}
+```
