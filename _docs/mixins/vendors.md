@@ -1,9 +1,15 @@
 # Vendors Prefixes
 
 **Kouto Swiss** comes with automatic vendor prefixer for the following properties.  
-_**Note:** for each property, the added vendor prefixes are given. The implementation is based on [the list of Peter Beverloo](http://peter.sh/experiments/vendor-prefixed-css-property-overview/)_
 
-## Supported properties
+You can define the behavior of the prefixer by changing the value of the global variable `ks-vendors-prefixes`.
+
+## Recommended prefixes (by default)
+
+    ks-vendors-prefixes = recommended
+
+For each property, the added vendor prefixes are given.  
+The implementation is based on [the list of Peter Beverloo](http://peter.sh/experiments/vendor-prefixed-css-property-overview/)_
 
 * **align-content:** `-webkit`
 * **align-items:** `-webkit`
@@ -86,10 +92,15 @@ _**Note:** for each property, the added vendor prefixes are given. The implement
 * **transition-property:** `-webkit` `-o`
 * **transition-timing-function:** `-webkit` `-o`
 
-##  Specific prefixes
+## Specific prefixes
 
 If you want specific prefixes, you can force them by setting the global variable `ks-vendors-prefixes` with the prefixes you want.  
-If you want to go back and use preselected prefixes, simply set the global var to `null`.
+
+## No vendor prefixes
+
+    ks-vendors-prefixes = false
+
+If you don't want to let **kouto swiss** to add vendor prefixes, and do the job yourself with such plugins like `autoprefixer`, simply set `ks-vendors-prefixes` to false.
 
 ### Usage
 
@@ -99,7 +110,12 @@ ks-vendors-prefixes = o ms webkit moz
 button
     mask border-box
 
-ks-vendors-prefixes = null
+ks-vendors-prefixes = recommended
+
+button
+    mask border-box
+
+ks-vendors-prefixes = false
 
 button
     mask border-box
@@ -117,6 +133,9 @@ button {
 }
 button {
   -webkit-mask: border-box;
+  mask: border-box;
+}
+button {
   mask: border-box;
 }
 ```
