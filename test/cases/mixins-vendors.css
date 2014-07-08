@@ -209,3 +209,10 @@ button {
   -webkit-mask: border-box;
   mask: border-box;
 }
+button {
+  mask: border-box;
+}
+button {
+  -webkit-mask: border-box;
+  mask: border-box;
+}
