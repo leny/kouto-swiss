@@ -28,6 +28,12 @@ You can also use [grunt-ks-stylus](https://www.npmjs.org/package/grunt-ks-stylus
 
 For gulp, use [gulp-stylus](https://www.npmjs.org/package/gulp-stylus) and include **kouto swiss** in your `use` option for the task.
 
+### Included in compilation with third-party tools.
+
+To use **kouto swiss** with third party tools like [Codekit](https://incident57.com/codekit/) or [Prepros](http://alphapixels.com/prepros/), you should include **kouto swiss** on your project by yourself. You can download it [on github](https://github.com/krkn/kouto-swiss/releases), or use [bower](http://bower.io).
+
+In your stylus file, be sure to import kouto swiss from the path you saved it.
+
 ### As middleware, for *on the fly* compilation.
 
 There's an exemple of how to use stylus with kouto-swiss within Connect or Express.
