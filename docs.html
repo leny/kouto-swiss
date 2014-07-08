@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>docs - kouto swiss - A complete CSS framework for Stylus</title><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"><link rel="stylesheet" href="styles/styles.css"><!--if lt IE 9script( src="http://html5shiv.googlecode.com/svn/trunk/html5.js" )
---></head><body><div id="wrapper"><header><h1><a href="http://kouto-swiss.io"><span>kouto swiss</span></a></h1><h2>A complete CSS framework for Stylus</h2><a href="javascript:void(0)">toggle nav</a><nav><ul><li><strong>reset</strong><ul><li><a href="#meyer-reset">meyer-reset</a></li><li><a href="#box-sizing-reset">box-sizing-reset</a></li></ul></li><li><strong>mixins</strong><ul><li><a href="#calc">calc</a></li><li><a href="#font-face">font-face</a></li><li><a href="#placeholder">placeholder</a></li><li><a href="#linear-gradient">linear-gradient</a></li><li><a href="#radial-gradient">radial-gradient</a></li><li><a href="#repeating-linear-gradient">repeating-linear-gradient</a></li><li><a href="#repeating-radial-gradient">repeating-radial-gradient</a></li><li><a href="#vendors">vendors</a></li></ul></li><li><strong>functions</strong><ul><li><a href="#em">em</a></li><li><a href="#rem">rem</a></li><li><a href="#percent">percent</a></li><li><a href="#modular-scale">modular-scale</a></li><li><a href="#golden-ratio">golden-ratio</a></li><li><a href="#color-fallback">color-fallback</a></li><li><a href="#luminosity">luminosity</a></li><li><a href="#analogous">analogous</a></li><li><a href="#extended-analogous">extended-analogous</a></li><li><a href="#monochrome">monochrome</a></li><li><a href="#split-complements">split-complements</a></li><li><a href="#triad">triad</a></li><li><a href="#quad">quad</a></li></ul></li><li><strong>utilities</strong><ul><li><a href="#colors">colors</a></li><li><a href="#clearfix">clearfix</a></li><li><a href="#position">position</a></li><li><a href="#size">size</a></li><li><a href="#font-stack">font-stack</a></li><li><a href="#hide-text">hide-text</a></li><li><a href="#easing">easing</a></li><li><a href="#media-query">media-query</a></li><li><a href="#retina-image">retina-image</a></li><li><a href="#retina-query">retina-query</a></li><li><a href="#triangle">triangle</a></li></ul></li><li><strong>grid</strong><ul><li><a href="#system">system</a></li><li><a href="#gs">gs</a></li><li><a href="#col">col</a></li><li><a href="#row">row</a></li><li><a href="#offset">offset</a></li></ul></li></ul></nav></header><section class="about"><p>The documentation below refers to kouto swiss <strong class="version">v0.8.4</strong>, build on top of Stylus <strong class="stylus">v0.47.1</strong></p></section><div class="docs"><h2>reset</h2><article id="meyer-reset"><h1 id="-meyer-reset-"><code>meyer-reset()</code></h1>
+--></head><body><div id="wrapper"><header><h1><a href="http://kouto-swiss.io"><span>kouto swiss</span></a></h1><h2>A complete CSS framework for Stylus</h2><a href="javascript:void(0)">toggle nav</a><nav><ul><li><strong>reset</strong><ul><li><a href="#meyer-reset">meyer-reset</a></li><li><a href="#box-sizing-reset">box-sizing-reset</a></li></ul></li><li><strong>mixins</strong><ul><li><a href="#calc">calc</a></li><li><a href="#font-face">font-face</a></li><li><a href="#placeholder">placeholder</a></li><li><a href="#linear-gradient">linear-gradient</a></li><li><a href="#radial-gradient">radial-gradient</a></li><li><a href="#repeating-linear-gradient">repeating-linear-gradient</a></li><li><a href="#repeating-radial-gradient">repeating-radial-gradient</a></li><li><a href="#vendors">vendors</a></li></ul></li><li><strong>functions</strong><ul><li><a href="#em">em</a></li><li><a href="#rem">rem</a></li><li><a href="#percent">percent</a></li><li><a href="#modular-scale">modular-scale</a></li><li><a href="#golden-ratio">golden-ratio</a></li><li><a href="#color-fallback">color-fallback</a></li><li><a href="#luminosity">luminosity</a></li><li><a href="#analogous">analogous</a></li><li><a href="#extended-analogous">extended-analogous</a></li><li><a href="#monochrome">monochrome</a></li><li><a href="#split-complements">split-complements</a></li><li><a href="#triad">triad</a></li><li><a href="#quad">quad</a></li></ul></li><li><strong>utilities</strong><ul><li><a href="#colors">colors</a></li><li><a href="#clearfix">clearfix</a></li><li><a href="#position">position</a></li><li><a href="#size">size</a></li><li><a href="#font-stack">font-stack</a></li><li><a href="#hide-text">hide-text</a></li><li><a href="#easing">easing</a></li><li><a href="#media-query">media-query</a></li><li><a href="#retina-image">retina-image</a></li><li><a href="#retina-query">retina-query</a></li><li><a href="#triangle">triangle</a></li></ul></li><li><strong>grid</strong><ul><li><a href="#system">system</a></li><li><a href="#gs">gs</a></li><li><a href="#col">col</a></li><li><a href="#row">row</a></li><li><a href="#offset">offset</a></li></ul></li></ul></nav></header><section class="about"><p>The documentation below refers to kouto swiss <strong class="version">v0.8.5</strong>, build on top of Stylus <strong class="stylus">v0.47.1</strong></p></section><div class="docs"><h2>reset</h2><article id="meyer-reset"><h1 id="-meyer-reset-"><code>meyer-reset()</code></h1>
 <p>A global reset, using&apos;s the <a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&apos;s CSS reset v2</a>.</p>
 <h3 id="usage">Usage</h3>
 <pre><code class="lang-stylus">meyer-<span class="keyword">reset</span>()
@@ -258,8 +258,11 @@ div {
 }
 </code></pre>
 </article><article id="vendors"><h1 id="vendors-prefixes">Vendors Prefixes</h1>
-<p><strong>Kouto Swiss</strong> comes with automatic vendor prefixer for the following properties.<br><em><strong>Note:</strong> for each property, the added vendor prefixes are given. The implementation is based on <a href="http://peter.sh/experiments/vendor-prefixed-css-property-overview/">the list of Peter Beverloo</a></em></p>
-<h2 id="supported-properties">Supported properties</h2>
+<p><strong>Kouto Swiss</strong> comes with automatic vendor prefixer for the following properties.  </p>
+<p>You can define the behavior of the prefixer by changing the value of the global variable <code>ks-vendors-prefixes</code>.</p>
+<h2 id="recommended-prefixes-by-default-">Recommended prefixes (by default)</h2>
+<pre><code>ks<span class="attribute">-vendors</span><span class="attribute">-prefixes</span> <span class="subst">=</span> recommended
+</code></pre><p>For each property, the added vendor prefixes are given.<br>The implementation is based on <a href="http://peter.sh/experiments/vendor-prefixed-css-property-overview/">the list of Peter Beverloo</a>_</p>
 <ul>
 <li><strong>align-content:</strong> <code>-webkit</code></li>
 <li><strong>align-items:</strong> <code>-webkit</code></li>
@@ -351,14 +354,22 @@ div {
 <li><strong>transition-timing-function:</strong> <code>-webkit</code> <code>-o</code></li>
 </ul>
 <h2 id="specific-prefixes">Specific prefixes</h2>
-<p>If you want specific prefixes, you can force them by setting the global variable <code>ks-vendors-prefixes</code> with the prefixes you want.<br>If you want to go back and use preselected prefixes, simply set the global var to <code>null</code>.</p>
+<p>If you want specific prefixes, you can force them by setting the global variable <code>ks-vendors-prefixes</code> with the prefixes you want.  </p>
+<h2 id="no-vendor-prefixes">No vendor prefixes</h2>
+<pre><code>ks<span class="attribute">-vendors</span><span class="attribute">-prefixes</span> <span class="subst">=</span> <span class="literal">false</span>
+</code></pre><p>If you don&apos;t want to let <strong>kouto swiss</strong> to add vendor prefixes, and do the job yourself with such plugins like <code>autoprefixer</code>, simply set <code>ks-vendors-prefixes</code> to false.</p>
 <h3 id="usage">Usage</h3>
 <pre><code class="lang-stylus">ks<span class="attribute">-vendors</span><span class="attribute">-prefixes</span> <span class="subst">=</span> o ms webkit moz
 
 button
     mask border<span class="attribute">-box</span>
 
-ks<span class="attribute">-vendors</span><span class="attribute">-prefixes</span> <span class="subst">=</span> <span class="built_in">null</span>
+ks<span class="attribute">-vendors</span><span class="attribute">-prefixes</span> <span class="subst">=</span> recommended
+
+button
+    mask border<span class="attribute">-box</span>
+
+ks<span class="attribute">-vendors</span><span class="attribute">-prefixes</span> <span class="subst">=</span> <span class="literal">false</span>
 
 button
     mask border<span class="attribute">-box</span>
@@ -373,6 +384,9 @@ button
 <span class="rule">}</span></span>
 <span class="tag">button</span> <span class="rules">{
   <span class="rule"><span class="attribute">-webkit-mask</span>:<span class="value"> border-box</span></span>;
+  <span class="rule"><span class="attribute">mask</span>:<span class="value"> border-box</span></span>;
+<span class="rule">}</span></span>
+<span class="tag">button</span> <span class="rules">{
   <span class="rule"><span class="attribute">mask</span>:<span class="value"> border-box</span></span>;
 <span class="rule">}</span></span>
 </code></pre>
