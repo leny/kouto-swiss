@@ -82,6 +82,7 @@ Many thanks !
 
 ### Development TODO
 
+- [ ] allow users to choose the vendor prefixes they want to use
 - [ ] add kouto-swiss lib to bower
 - [ ] write how-to for CodeKit & Prepros
 - [ ] docset for [dash](http://kapeli.com/dash)
