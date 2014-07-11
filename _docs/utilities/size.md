@@ -17,7 +17,7 @@ div
     size 10px false
     
 div
-    fixed false 20px
+    size false 20px
 ```
 
 ### Result
