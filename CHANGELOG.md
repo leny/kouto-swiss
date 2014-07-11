@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.8.6` / 2014-07-11
+
+* Fix *hsl* support in luminosity() function.
+
 ## `0.8.5` / 2014-07-08
 
 * Allow users to disable autoprefixing (as suggered in issue #5).
