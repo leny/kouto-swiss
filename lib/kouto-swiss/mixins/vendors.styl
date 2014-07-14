@@ -5,6 +5,7 @@ vendor( property, value, feature = null, prefixes = null, official = true )
         for prefix in caniuse-prefixes( feature )
             prefixedproperty = "-" + prefix + "-" + property
             {prefixedproperty}: value
+        {property}: value
     else
         if ks-vendors-prefixes isnt false
             if ks-vendors-prefixes isnt recommended
@@ -13,7 +14,7 @@ vendor( property, value, feature = null, prefixes = null, official = true )
                 for prefix in prefixes
                     prefixedproperty = "-" + prefix + "-" + property
                     {prefixedproperty}: value
-    {property}: value if official
+        {property}: value if official
 
 align-content()
     vendor( "align-content", arguments, feature: "flexbox" )
