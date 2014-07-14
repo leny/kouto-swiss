@@ -172,11 +172,10 @@ button {
 }
 button {
   -webkit-transform: none;
-  -moz-transform: none;
-  -o-transform: none;
+  -ms-transform: none;
   transform: none;
   -webkit-transform-origin: 50% 50% 0;
-  -o-transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
   transform-origin: 50% 50% 0;
   -webkit-transform-style: flat;
   transform-style: flat;
