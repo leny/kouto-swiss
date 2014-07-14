@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "caniuse-db": "^1.0.20140702",
+    "prefiks": "^0.1.0",
     "stylus": "0.47.1"
   },
   "devDependencies": {
