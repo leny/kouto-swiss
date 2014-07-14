@@ -104,40 +104,37 @@ button {
   flex-wrap: nowrap;
 }
 button {
-  -webkit-grid: none;
   -ms-grid: none;
   grid: none;
-  -webkit-grid-area: none;
+  -ms-grid-area: none;
   grid-area: none;
-  -webkit-grid-auto-columns: auto;
+  -ms-grid-auto-columns: auto;
   grid-auto-columns: auto;
-  -webkit-grid-auto-flow: none;
+  -ms-grid-auto-flow: none;
   grid-auto-flow: none;
-  -webkit-grid-auto-position: 1/1;
+  -ms-grid-auto-position: 1/1;
   grid-auto-position: 1/1;
-  -webkit-grid-auto-rows: auto;
+  -ms-grid-auto-rows: auto;
   grid-auto-rows: auto;
-  -webkit-grid-column: none;
   -ms-grid-column: none;
   grid-column: none;
-  -webkit-grid-column-end: auto;
+  -ms-grid-column-end: auto;
   grid-column-end: auto;
-  -webkit-grid-column-start: auto;
+  -ms-grid-column-start: auto;
   grid-column-start: auto;
-  -webkit-grid-row: none;
   -ms-grid-row: none;
   grid-row: none;
-  -webkit-grid-row-end: auto;
+  -ms-grid-row-end: auto;
   grid-row-end: auto;
-  -webkit-grid-row-start: auto;
+  -ms-grid-row-start: auto;
   grid-row-start: auto;
-  -webkit-grid-template: none;
+  -ms-grid-template: none;
   grid-template: none;
-  -webkit-grid-template-areas: none;
+  -ms-grid-template-areas: none;
   grid-template-areas: none;
-  -webkit-grid-template-columns: none;
+  -ms-grid-template-columns: none;
   grid-template-columns: none;
-  -webkit-grid-template-rows: none;
+  -ms-grid-template-rows: none;
   grid-template-rows: none;
 }
 button {
