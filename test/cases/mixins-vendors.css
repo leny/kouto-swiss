@@ -11,31 +11,22 @@ button {
 }
 button {
   -webkit-animation: none 0s ease 0s 1 normal none;
-  -ms-animation: none 0s ease 0s 1 normal none;
   animation: none 0s ease 0s 1 normal none;
   -webkit-animation-delay: 0;
-  -ms-animation-delay: 0;
   animation-delay: 0;
   -webkit-animation-direction: normal;
-  -ms-animation-direction: normal;
   animation-direction: normal;
   -webkit-animation-duration: 0;
-  -ms-animation-duration: 0;
   animation-duration: 0;
   -webkit-animation-fill-mode: none;
-  -ms-animation-fill-mode: none;
   animation-fill-mode: none;
   -webkit-animation-iteration-count: 1;
-  -ms-animation-iteration-count: 1;
   animation-iteration-count: 1;
   -webkit-animation-name: none;
-  -ms-animation-name: none;
   animation-name: none;
   -webkit-animation-play-state: running;
-  -ms-animation-play-state: running;
   animation-play-state: running;
   -webkit-animation-timing-function: ease;
-  -ms-animation-timing-function: ease;
   animation-timing-function: ease;
 }
 button {
