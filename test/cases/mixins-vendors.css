@@ -1,9 +1,12 @@
 button {
   -webkit-align-content: stretch;
+  -ms-align-content: stretch;
   align-content: stretch;
   -webkit-align-items: stretch;
+  -ms-align-items: stretch;
   align-items: stretch;
   -webkit-align-self: auto;
+  -ms-align-self: auto;
   align-self: auto;
 }
 button {
@@ -93,6 +96,7 @@ button {
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
   -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
   flex-basis: auto;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -101,8 +105,10 @@ button {
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
   flex-grow: 0;
   -webkit-flex-shrink: 1;
+  -ms-flex-shrink: 1;
   flex-shrink: 1;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
@@ -147,6 +153,7 @@ button {
 }
 button {
   -webkit-justify-content: auto;
+  -ms-justify-content: auto;
   justify-content: auto;
 }
 button {
@@ -163,6 +170,11 @@ button {
   -ms-filter: inherit;
   filter: inherit;
   opacity: inherit;
+}
+button {
+  -webkit-order: 3;
+  -ms-order: 3;
+  order: 3;
 }
 button {
   -webkit-perspective: none;

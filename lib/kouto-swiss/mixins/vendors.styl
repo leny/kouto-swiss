@@ -1,23 +1,31 @@
+// TODO : REMOVE ks-vendors globals mecanism
 ks-vendors-prefixes = recommended
 
-vendor( property, value, prefixes = null, official = true )
-    if ks-vendors-prefixes isnt false
-        if ks-vendors-prefixes isnt recommended
-            prefixes = ks-vendors-prefixes
-        if prefixes
-            for prefix in prefixes
-                prefixedproperty = "-" + prefix + "-" + property
-                {prefixedproperty}: value
+vendor( property, value, feature = null, prefixes = null, official = true )
+    if feature isnt null
+        for prefix in caniuse-prefixes( feature )
+            prefixedproperty = "-" + prefix + "-" + property
+            {prefixedproperty}: value
+    else
+        p( "Feature is NULL for " + property )
+        if ks-vendors-prefixes isnt false
+            if ks-vendors-prefixes isnt recommended
+                prefixes = ks-vendors-prefixes
+            if prefixes
+                for prefix in prefixes
+                    prefixedproperty = "-" + prefix + "-" + property
+                    {prefixedproperty}: value
     {property}: value if official
+    // TODO : REMOVE LINES 8 to 16
 
 align-content()
-    vendor( "align-content", arguments, prefixes: webkit )
+    vendor( "align-content", arguments, feature: "flexbox" )
 
 align-items()
-    vendor( "align-items", arguments, prefixes: webkit )
+    vendor( "align-items", arguments, feature: "flexbox" )
 
 align-self()
-    vendor( "align-self", arguments, prefixes: webkit )
+    vendor( "align-self", arguments, feature: "flexbox" )
 
 animation()
     vendor( "animation", arguments, prefixes: webkit ms )
@@ -76,19 +84,19 @@ columns()
     vendor( "columns", arguments, prefixes: webkit moz )
 
 flex()
-    vendor( "flex", arguments, prefixes: webkit ms )
+    vendor( "flex", arguments, feature: "flexbox" )
 flex-basis()
-    vendor( "flex-basis", arguments, prefixes: webkit )
+    vendor( "flex-basis", arguments, feature: "flexbox" )
 flex-direction()
-    vendor( "flex-direction", arguments, prefixes: webkit ms )
+    vendor( "flex-direction", arguments, feature: "flexbox" )
 flex-flow()
-    vendor( "flex-flow", arguments, prefixes: webkit ms )
+    vendor( "flex-flow", arguments, feature: "flexbox" )
 flex-grow()
-    vendor( "flex-grow", arguments, prefixes: webkit )
+    vendor( "flex-grow", arguments, feature: "flexbox" )
 flex-shrink()
-    vendor( "flex-shrink", arguments, prefixes: webkit )
+    vendor( "flex-shrink", arguments, feature: "flexbox" )
 flex-wrap()
-    vendor( "flex-wrap", arguments, prefixes: webkit ms )
+    vendor( "flex-wrap", arguments, feature: "flexbox" )
 
 grid()
     vendor( "grid", arguments, prefixes: webkit ms )
@@ -124,7 +132,7 @@ grid-template-rows()
     vendor( "grid-template-rows", arguments, prefixes: webkit )
 
 justify-content()
-    vendor( "justify-content", arguments, prefixes: webkit )
+    vendor( "justify-content", arguments, feature: "flexbox" )
 
 mask()
     vendor( "mask", arguments, prefixes: webkit )
@@ -142,6 +150,9 @@ opacity( value )
             -ms-filter: '"progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)"' % val
             filter: 'alpha(opacity=%s)' % val
     opacity value
+
+order()
+    vendor( "order", arguments, feature: "flexbox" )
 
 perspective()
     vendor( "perspective", arguments, prefixes: webkit )
