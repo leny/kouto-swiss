@@ -37,3 +37,15 @@ header:after {
 header:after {
   clear: both;
 }
+div {
+  width: 100%;
+  *zoom: 1;
+}
+div:before,
+div:after {
+  content: " ";
+  display: table;
+}
+div:after {
+  clear: both;
+}
