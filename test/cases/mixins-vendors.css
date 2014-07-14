@@ -196,20 +196,20 @@ button {
   transition-timing-function: ease;
 }
 button {
-  -o-mask: border-box;
-  -ms-mask: border-box;
-  -webkit-mask: border-box;
-  -moz-mask: border-box;
-  mask: border-box;
+  -o-clip-path: none;
+  -ms-clip-path: none;
+  -webkit-clip-path: none;
+  -moz-clip-path: none;
+  clip-path: none;
 }
 button {
-  -webkit-mask: border-box;
-  mask: border-box;
+  -webkit-clip-path: none;
+  clip-path: none;
 }
 button {
-  mask: border-box;
+  clip-path: none;
 }
 button {
-  -webkit-mask: border-box;
-  mask: border-box;
+  -webkit-clip-path: none;
+  clip-path: none;
 }
