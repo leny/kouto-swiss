@@ -40,11 +40,8 @@ button {
   backface-visibility: visible;
 }
 button {
-  -webkit-background-clip: border-box;
   background-clip: border-box;
-  -webkit-background-origin: padding-box;
   background-origin: padding-box;
-  -webkit-background-size: auto auto;
   background-size: auto auto;
 }
 button {
