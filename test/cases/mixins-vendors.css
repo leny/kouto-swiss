@@ -10,6 +10,15 @@ button {
   align-self: auto;
 }
 button {
+  -webkit-align-content: stretch;
+  align-content: stretch;
+}
+button {
+  -webkit-align-content: stretch;
+  -ms-align-content: stretch;
+  align-content: stretch;
+}
+button {
   -webkit-animation: none 0s ease 0s 1 normal none;
   animation: none 0s ease 0s 1 normal none;
   -webkit-animation-delay: 0;
@@ -207,4 +216,22 @@ button {
 button {
   -webkit-clip-path: none;
   clip-path: none;
+}
+button {
+  -webkit-columns: auto auto;
+  -moz-columns: auto auto;
+  columns: auto auto;
+}
+button {
+  -webkit-columns: auto auto;
+  -moz-columns: auto auto;
+  -ms-columns: auto auto;
+  -o-columns: auto auto;
+  columns: auto auto;
+}
+button {
+  -webkit-columns: auto auto;
+  -moz-columns: auto auto;
+  -ms-columns: auto auto;
+  -o-columns: auto auto;
 }

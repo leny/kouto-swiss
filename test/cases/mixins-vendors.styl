@@ -5,6 +5,16 @@ button
     align-items stretch
     align-self auto
 
+ks-support-ie = 11
+
+button
+    align-content stretch
+
+ks-support-ie = ks-support-ie-default
+
+button
+    align-content stretch
+
 button
     animation none 0s ease 0s 1 normal none
     animation-delay 0
@@ -118,3 +128,12 @@ ks-vendors-prefixes = recommended
 
 button
     clip-path none
+
+button
+    vendor( "columns", auto auto, feature: "multicolumn" )
+
+button
+    vendor( "columns", auto auto, prefixes: webkit moz ms o )
+
+button
+    vendor( "columns", auto auto, prefixes: webkit moz ms o, official: false )
