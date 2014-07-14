@@ -48,7 +48,7 @@
     "node": "*"
   },
   "dependencies": {
-    "prefiks": "^0.1",
+    "prefiks": "^0.2",
     "stylus": "0.47.1"
   },
   "devDependencies": {
