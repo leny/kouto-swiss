@@ -180,19 +180,14 @@ button {
 }
 button {
   -webkit-transition: 0s 0s all ease;
-  -o-transition: 0s 0s all ease;
   transition: 0s 0s all ease;
   -webkit-transition-delay: 0s;
-  -o-transition-delay: 0s;
   transition-delay: 0s;
   -webkit-transition-duration: 0s;
-  -o-transition-duration: 0s;
   transition-duration: 0s;
   -webkit-transition-property: all;
-  -o-transition-property: all;
   transition-property: all;
   -webkit-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
   transition-timing-function: ease;
 }
 button {
