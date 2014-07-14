@@ -71,6 +71,7 @@ button {
   -moz-column-rule-width: medium;
   column-rule-width: medium;
   -webkit-column-span: none;
+  -moz-column-span: none;
   column-span: none;
   -webkit-column-width: auto;
   -moz-column-width: auto;
