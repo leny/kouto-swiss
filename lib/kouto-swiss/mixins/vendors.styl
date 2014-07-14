@@ -1,4 +1,3 @@
-// TODO : REMOVE ks-vendors globals mecanism
 ks-vendors-prefixes = recommended
 
 vendor( property, value, feature = null, prefixes = null, official = true )
@@ -7,7 +6,6 @@ vendor( property, value, feature = null, prefixes = null, official = true )
             prefixedproperty = "-" + prefix + "-" + property
             {prefixedproperty}: value
     else
-        p( "Feature is NULL for " + property )
         if ks-vendors-prefixes isnt false
             if ks-vendors-prefixes isnt recommended
                 prefixes = ks-vendors-prefixes
@@ -16,7 +14,6 @@ vendor( property, value, feature = null, prefixes = null, official = true )
                     prefixedproperty = "-" + prefix + "-" + property
                     {prefixedproperty}: value
     {property}: value if official
-    // TODO : REMOVE LINES 8 to 16
 
 align-content()
     vendor( "align-content", arguments, feature: "flexbox" )
