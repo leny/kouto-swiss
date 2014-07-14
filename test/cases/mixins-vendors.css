@@ -30,6 +30,11 @@ button {
   animation-timing-function: ease;
 }
 button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+button {
   -webkit-backface-visibility: visible;
   -ms-backface-visibility: visible;
   backface-visibility: visible;
