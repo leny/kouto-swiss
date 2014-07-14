@@ -1,20 +1,21 @@
 ks-vendors-prefixes = recommended
 
 vendor( property, value, feature = null, prefixes = null, official = true )
-    if feature isnt null
-        for prefix in caniuse-prefixes( feature )
-            prefixedproperty = "-" + prefix + "-" + property
-            {prefixedproperty}: value
+    unless called-from[1]
+        if feature isnt null
+            for prefix in caniuse-prefixes( feature )
+                prefixedproperty = "-" + prefix + "-" + property
+                {prefixedproperty}: value
+        else
+            if ks-vendors-prefixes isnt false
+                if ks-vendors-prefixes isnt recommended
+                    prefixes = ks-vendors-prefixes
+                if prefixes
+                    for prefix in prefixes
+                        prefixedproperty = "-" + prefix + "-" + property
+                        {prefixedproperty}: value
+    if official
         {property}: value
-    else
-        if ks-vendors-prefixes isnt false
-            if ks-vendors-prefixes isnt recommended
-                prefixes = ks-vendors-prefixes
-            if prefixes
-                for prefix in prefixes
-                    prefixedproperty = "-" + prefix + "-" + property
-                    {prefixedproperty}: value
-        {property}: value if official
 
 align-content()
     vendor( "align-content", arguments, feature: "flexbox" )
