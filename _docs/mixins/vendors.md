@@ -25,6 +25,8 @@ You can select which version of browsers you want to support by modifying the fo
     
 You can set a number, which will act as "*greater or equal*" support, a [semver range](https://github.com/isaacs/node-semver#ranges) string, or the `false` value, to be ignored.
 
+If you want to ignore the [caniuse](http://caniuse.com) recommandations, add the features you want to ignore to the `ks-support-ignore-features` global variable.
+
 For the properties not registered in [caniuse](http://caniuse.com), the implementation is based on [the list of Peter Beverloo](http://peter.sh/experiments/vendor-prefixed-css-property-overview/)_.
 
 You can set the following global variable to use the recommended prefixes for the variable.
@@ -96,6 +98,12 @@ button
 
 button
     vendor( "columns", auto auto, prefixes: webkit moz ms o, official: false )
+    
+ks-support-ignore-features = "css3-boxsizing" "css-animation"
+
+button
+    animation none 0s ease 0s 1 normal none
+    box-sizing content-box
 ```
 
 ### Result
@@ -141,5 +149,9 @@ button {
   -moz-columns: auto auto;
   -ms-columns: auto auto;
   -o-columns: auto auto;
+}
+button {
+  animation: none 0s ease 0s 1 normal none;
+  box-sizing: content-box;
 }
 ```
