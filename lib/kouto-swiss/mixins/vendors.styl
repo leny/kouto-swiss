@@ -1,7 +1,7 @@
 ks-vendors-prefixes = recommended
 
 vendor( property, value, feature = null, prefixes = null, official = true )
-    unless called-from[1]
+    unless called-from[1] is "vendor"
         if feature isnt null
             for prefix in caniuse-prefixes( feature )
                 prefixedproperty = "-" + prefix + "-" + property
@@ -57,6 +57,9 @@ background-origin()
     vendor( "background-origin", arguments, feature: "background-img-opts" )
 background-size()
     vendor( "background-size", arguments, feature: "background-img-opts" )
+
+box-sizing()
+    vendor( "box-sizing", arguments, feature: "css3-boxsizing" )
 
 border-image-source()
     vendor( "border-image-source", arguments, feature: "border-image" )
