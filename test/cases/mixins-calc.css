@@ -7,3 +7,9 @@ body {
   width: -webkit-calc(100% - 80px);
   width: calc(100% - 80px);
 }
+body {
+  width: 90%;
+  width: -webkit-calc(100% - 80px);
+  width: -moz-calc(100% - 80px);
+  width: calc(100% - 80px);
+}
