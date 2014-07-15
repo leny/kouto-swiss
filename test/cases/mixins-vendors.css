@@ -54,6 +54,11 @@ button {
   background-size: auto auto;
 }
 button {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+button {
   -webkit-border-image-source: none;
   border-image-source: none;
   -webkit-border-image-slice: 100%;
