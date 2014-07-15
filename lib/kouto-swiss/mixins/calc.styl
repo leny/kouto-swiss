@@ -3,7 +3,8 @@ calc( operation, fallback = false )
         prop = current-property[ 0 ]
         if fallback
             add-property( prop, fallback )
-        add-property( prop, unquote( "-webkit-calc(" + operation + ")" ) )
+        for prefix in caniuse-prefixes( "calc" )
+            add-property( prop, unquote( "-" + prefix + "-calc(" + operation + ")" ) )
         unquote( "calc(" + operation + ")" )
     else
         error( "calc() must be used within a property" )
