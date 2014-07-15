@@ -147,6 +147,12 @@ button {
   grid-template-rows: none;
 }
 button {
+  -webkit-hyphens: manual;
+  -moz-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
+}
+button {
   -webkit-justify-content: auto;
   -ms-justify-content: auto;
   justify-content: auto;
