@@ -1,7 +1,7 @@
 ks-vendors-prefixes = recommended
 
 vendor( property, value, feature = null, prefixes = null, official = true )
-    unless called-from[1] is "vendor"
+    unless "vendor" in called-from
         if feature isnt null
             for prefix in caniuse-prefixes( feature )
                 prefixedproperty = "-" + prefix + "-" + property
