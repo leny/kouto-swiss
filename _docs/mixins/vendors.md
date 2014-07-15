@@ -27,7 +27,7 @@ You can set a number, which will act as "*greater or equal*" support, a [semver 
 
 If you want to ignore the [caniuse](http://caniuse.com) recommandations, add the features you want to ignore to the `ks-support-ignore-features` global variable.
 
-For the properties not registered in [caniuse](http://caniuse.com), the implementation is based on [the list of Peter Beverloo](http://peter.sh/experiments/vendor-prefixed-css-property-overview/)_.
+For the properties not registered in [caniuse](http://caniuse.com), the implementation is based on [the list of Peter Beverloo](http://peter.sh/experiments/vendor-prefixed-css-property-overview/).
 
 You can set the following global variable to use the recommended prefixes for the variable.
 
