@@ -2,9 +2,11 @@
 
 Create the query part of a media query for retina/hdpi screens, which you can store in a variable, to use when you make a media block.  
 
+> **Warning:** since version `0.9`, the retina-query() mixin has changed: it's now a *block* mixin.
+
 ### Signature
 
-`retina-query( media [, density ] )`
+`+retina-query( media [, density ] )`
 
 * `media`: the media of the query
 * `density`: pixel density for the query. *Optional*. Default to `1`.
@@ -12,19 +14,15 @@ Create the query part of a media query for retina/hdpi screens, which you can st
 ### Usage
 
 ```stylus
-query-one = retina-query( all, 1.3 )
-query-two = retina-query( only screen, 2 )
-query-three = retina-query( screen )
-
-@media query-one
++retina-query( all, 1.3 )
     div
         color red
 
-@media query-two
++retina-query( only screen, 2 )
     div
         color red
 
-@media query-three
++retina-query( screen )
     div
         color red
 ```
