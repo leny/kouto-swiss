@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.9.1` / 2014-07-19
+
+* Update Stylus to `0.47.2`. Remove workaround for [Stylus issue#1618](https://github.com/LearnBoost/stylus/issues/1618).
+
 ## `0.9.0` / 2014-07-19
 
 * Change calling format of media queries, allows to skip it for legacy browsers.
