@@ -1,5 +1,17 @@
 # kouto swiss: changelog
 
+## `0.9.0` / 2014-07-19
+
+* Change calling format of media queries, allows to skip it for legacy browsers.
+
+## `0.8.8` / 2014-07-15
+
+* Implement more vendors features, allows to disable the caniuse data's usage.
+
+## `0.8.7` / 2014-07-14
+
+* Use [caniuse website](http://caniuse.com) data for vendors mixins.
+
 ## `0.8.6` / 2014-07-11
 
 * Fix *hsl* support in luminosity() function.
