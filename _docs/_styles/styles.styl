@@ -400,7 +400,7 @@ footer
 
 @import "highlightjs-tommorrow-theme"
 
-@media bkHorizontalPhones
++media-query( screen, min-width 480px )
     header
         margin 0 auto 100px
         &:after
@@ -451,7 +451,7 @@ footer
             height 100px
             margin -55px 0 0 -10%
 
-@media bkVerticalTablets
++media-query( screen, min-width 640px )
     header
         margin 0 auto 100px
         &:after
@@ -509,7 +509,7 @@ footer
             margin -45px 0 0 -10%
             transform rotate( -5deg )
 
-@media bkLargerVerticalTablets
++media-query( screen, min-width 768px )
     section.usage
         h5
             text-align center
@@ -524,7 +524,7 @@ footer
                     background url( "img/gulp-logo.svg" ) top center no-repeat
                     background-size contain
 
-@media bkSmallDesktopScreens
++media-query( screen, min-width 960px )
     header
         fixed 0 auto 0 0
         size 240px auto
@@ -667,12 +667,12 @@ footer
                     width 120px
                     font SemiBold 1.8rem FiraSans
 
-@media bkMediumDesktopScreens
++media-query( screen, min-width 1200px )
     div.docs
         width 800px
         margin 10px auto 20px 320px
 
-@media bkBigDesktopScreens
++media-query( screen, min-width 1600px )
     footer
         margin 180px auto 0
         padding 10px 20px 20px 260px
