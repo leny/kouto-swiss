@@ -1,31 +1,27 @@
 @import 'kouto-swiss'
 
-query-one = media-query( all, min-width 640px )
-query-two = media-query( only screen, min-width 640px, min-height 960px, orientation portrait )
-query-three = media-query( print )
-
-@media query-one
++media-query( all, min-width 640px )
     div
         color red
 
-@media query-two
++media-query( only screen, min-width 640px, min-height 960px, orientation portrait )
     div
         color red
 
-@media query-three
++media-query( print )
     div
         color red
 
 ks-support-media-queries = false
 
-@media query-one
++media-query( all, min-width 640px )
     div
         color red
 
-@media query-two
++media-query( only screen, min-width 640px, min-height 960px, orientation portrait )
     div
         color red
 
-@media query-three
++media-query( print )
     div
         color red
