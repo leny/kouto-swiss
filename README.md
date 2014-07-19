@@ -91,6 +91,7 @@ Many thanks !
 - [x] allow users to choose the vendor prefixes they want to use
 - [x] add kouto-swiss lib to bower
 - [x] write how-to for CodeKit & Prepros
+- [ ] IE 8 media queries fallback
 - [ ] docset for [dash](http://kapeli.com/dash)
 - [ ] release 0.9
 - [ ] community returns
