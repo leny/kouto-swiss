@@ -65,7 +65,7 @@
     "grunt-contrib-watch": "~0.6",
     "grunt-gh-pages": "~0.9",
     "grunt-mocha-cli": "~1.9",
-    "highlight.js": "~8.0",
+    "highlight.js": "~8.1",
     "marked": "~0.3",
     "should": "~4.0"
   },
