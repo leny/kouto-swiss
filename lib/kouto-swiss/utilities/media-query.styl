@@ -1,6 +1,11 @@
 media-query( media = all, conditions... )
-    parsed-conditions = ()
-    push( parsed-conditions, join( " ", media ) )
-    for condition in conditions
-        push( parsed-conditions, "(" + condition[ 0 ] + ": " + condition[ 1 ] + ")" )
-    return unquote( join( " and ", parsed-conditions ) )
+    if ks-support-media-queries
+        parsed-conditions = ()
+        push( parsed-conditions, join( " ", media ) )
+        for condition in conditions
+            push( parsed-conditions, "(" + condition[ 0 ] + ": " + condition[ 1 ] + ")" )
+        query = unquote( join( " and ", parsed-conditions ) )
+        @media query
+            {block}
+    else
+        {block}
