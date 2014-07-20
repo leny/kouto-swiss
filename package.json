@@ -67,7 +67,8 @@
     "grunt-mocha-cli": "~1.9",
     "highlight.js": "~8.1",
     "marked": "~0.3",
-    "should": "~4.0"
+    "should": "~4.0",
+    "sqlite3": "^2.2.4"
   },
   "peerDependencies": {
     "grunt": "~0.4"

@@ -3,6 +3,7 @@
 path = require "path"
 marked = require "marked"
 chalk = require "chalk"
+sqlite3 = require( "sqlite3" ).verbose()
 ( highlightjs = require "highlight.js" )
     .configure
         classPrefix: ""
@@ -32,9 +33,14 @@ module.exports = ( grunt ) ->
             # 1. Generate markdown
             # 2. Add stylesheet ?
         # 3. Create the Info.plist File
+        grunt.file.copy "#{ sDocsetSourcePath }/Info.plist", "#{ sBundlePath }/Contents/Info.plist"
         # 4. Create the SQLite Index
-        # 5. Populate the SQLite Index
-        # 6. Table of Contents Support
+        db = new sqlite3.Database "#{ sBundlePath }/Contents/Resources/docSet.dsidx"
+        db.run "CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);"
+        db.run "CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);"
+        # 5. Populate the SQLite Index (cf. http://kapeli.com/docsets#fillsqlite)
+        db.close()
+        # 6. Table of Contents Support (optional)
         # 7. Set an Index Page
         # 8. Add an Icon (inside docset bundle)
         grunt.file.copy "#{ sDocsetSourcePath }/icon.png", "#{ sBundlePath }/icon.png"
