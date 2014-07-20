@@ -1,0 +1,10 @@
+{
+    "name": "Kouto Swiss",
+    "version": "x.x.x",
+    "archive": "kouto_swiss.tgz",
+    "author": {
+        "name": "krkn",
+        "link": "http://kouto-swiss.io"
+    },
+    "aliases": []
+}
