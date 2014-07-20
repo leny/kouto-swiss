@@ -9,6 +9,10 @@ chalk = require "chalk"
 
 pkg = require "../../package.json"
 
+sBundlePath = "./.grunt/docset/kouto_swiss.docset"
+sDocsetSourcePath = "./_docs/_docset"
+sDocsetPath = "./docset"
+
 oMarkdownCompilationOptions =
     gfm: yes
     tables: true
@@ -18,7 +22,12 @@ oMarkdownCompilationOptions =
 module.exports = ( grunt ) ->
 
     grunt.registerTask "docset", "Generate dash docset for Kouto Swiss.", ->
+        # 0. Clean previously generated docset folders
+        grunt.file.delete "./.grunt/docset"
+        grunt.file.delete sDocsetPath
         # 1. Create the docset folders (tmp & final)
+        grunt.file.mkdir "#{ sBundlePath }/Contents/Resources/Documents"
+        grunt.file.mkdir sDocsetPath
         # 2. Copy the HTML documentation
             # 1. Generate markdown
             # 2. Add stylesheet ?
@@ -27,8 +36,16 @@ module.exports = ( grunt ) ->
         # 5. Populate the SQLite Index
         # 6. Table of Contents Support
         # 7. Set an Index Page
-        # 8. Add an Icon
+        # 8. Add an Icon (inside docset bundle)
+        grunt.file.copy "#{ sDocsetSourcePath }/icon.png", "#{ sBundlePath }/icon.png"
+        grunt.file.copy "#{ sDocsetSourcePath }/icon@2x.png", "#{ sBundlePath }/icon@2x.png"
         # 9. Generate the archive
         # 10. Copy the archive to the docset's final folder
-        # 11. Update version number in docset.json
-        # 12. Clean temporary files
+        # 11. Update version number in docset.json (and copy it)
+        # 12. Add an Icon (inside docset final folders)
+        grunt.file.copy "#{ sDocsetSourcePath }/icon.png", "#{ sDocsetPath }/icon.png"
+        grunt.file.copy "#{ sDocsetSourcePath }/icon@2x.png", "#{ sDocsetPath }/icon@2x.png"
+        # 13. Copy README
+        grunt.file.copy "#{ sDocsetSourcePath }/README.md", "#{ sDocsetPath }/README.md"
+        # 14. Clean temporary files
+
