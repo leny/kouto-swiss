@@ -43,6 +43,7 @@
         "font-stack",
         "hide-text",
         "easing",
+        "ellipsis",
         "media-query",
         "retina-image",
         "retina-query",
