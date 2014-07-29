@@ -4,6 +4,8 @@ The size mixins gives you a convenient shortcut for setting `width` and `height`
 
 **Note:** If only one value is given, the `width` and `height` will have the same values.
 
+**Note 2:** When giving two values, making one to false will not displaying it.
+
 ### Usage
 
 ```stylus
@@ -35,11 +37,9 @@ div {
 
 div {
   width: 10px;
-  height: auto;
 }
 
 div {
-  width: auto;
   height: 20px;
 }
 ```
