@@ -8,7 +8,8 @@
     ],
     "reset": [
         "meyer-reset",
-        "box-sizing-reset"
+        "box-sizing-reset",
+        "normalize"
     ],
     "mixins": [
         "calc",
