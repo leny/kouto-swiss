@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.9.7` / 2014-08-03
+
+* Add global importation state variable (useful for third-party plugins).
+
 ## `0.9.6` / 2014-08-02
 
 * Update documentation.
