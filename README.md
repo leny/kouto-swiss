@@ -81,6 +81,7 @@ Many thanks !
 
 ## Release History
 
+- **2014-07-19:** version `0.9.0` : some breaking changes in media-queries managment.
 - **2014-06-30:** version `0.8.0` : first stable version of the lib, including website & docs.
 - **2014-05-20:** version `0.1.0` : first version of the lib, including nearly all the basics.
 - **2014-05-05:** version `0.0.1` : first publish on npm, still in early stages of development.

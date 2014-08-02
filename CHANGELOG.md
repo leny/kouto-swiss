@@ -1,5 +1,26 @@
 # kouto swiss: changelog
 
+## `0.9.6` / 2014-08-02
+
+* Update documentation.
+
+## `0.9.5` / 2014-08-02
+
+* Add [normalize](https://github.com/necolas/normalize.css) "reset".
+
+## `0.9.4` / 2014-07-30
+
+* Add conditions in size mixin.
+
+## `0.9.3` / 2014-07-29
+
+* Add documentation for ellipsis mixin.
+* Add conditions in position mixin.
+
+## `0.9.2` / 2014-07-25
+
+* Update Stylus to `0.47.3`.
+
 ## `0.9.1` / 2014-07-19
 
 * Update Stylus to `0.47.2`. Remove workaround for [Stylus issue#1618](https://github.com/LearnBoost/stylus/issues/1618).
