@@ -1,6 +1,6 @@
 {
   "name": "kouto-swiss",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "A complete CSS framework for Stylus",
   "keywords": [
     "Stylus",
@@ -57,7 +57,7 @@
     "grunt": "~0.4",
     "grunt-cli": "~0.1",
     "grunt-concurrent": "~0.5",
-    "grunt-contrib-clean": "~0.5",
+    "grunt-contrib-clean": "~0.6",
     "grunt-contrib-connect": "0.8",
     "grunt-contrib-copy": "~0.5",
     "grunt-contrib-jade": "~0.12",
