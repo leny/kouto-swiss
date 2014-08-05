@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.9.8` / 2014-08-05
+
+* Fixing bug with `0` value in size & position mixin.
+
 ## `0.9.7` / 2014-08-03
 
 * Add global importation state variable (useful for third-party plugins).
