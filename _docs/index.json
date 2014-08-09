@@ -14,6 +14,7 @@
     "mixins": [
         "calc",
         "font-face",
+        "keyframes",
         "placeholder",
         "linear-gradient",
         "radial-gradient",
