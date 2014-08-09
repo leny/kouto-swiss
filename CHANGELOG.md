@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.9.9` / 2014-08-09
+
+* Update documentation.
+
 ## `0.9.8` / 2014-08-05
 
 * Fixing bug with `0` value in size & position mixin.
