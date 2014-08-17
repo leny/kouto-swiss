@@ -1,10 +1,19 @@
 {
     "chapters": [
+        "usage",
         "reset",
         "mixins",
         "functions",
         "utilities",
         "grid"
+    ],
+    "usage": [
+        "grunt",
+        "gulp",
+        "third-party",
+        "middleware",
+        "stylus",
+        "nib"
     ],
     "reset": [
         "meyer-reset",
