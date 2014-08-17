@@ -26,6 +26,11 @@ describe( "Kouto Swiss Tests", function() {
     cases.forEach( function( sTest ) {
         var sName = sTest.replace( rTestNameSanitize, " " );
 
+        // disabled tests
+        if( sName.substr( 0, 1 ) === "_" ) {
+            return;
+        }
+
         it( sName, function( done ) {
             var sPath = "test/cases/" + sTest + ".styl",
                 sStylusCase = fs.readFileSync( sPath, "utf8" ).replace( rReturn, "" ),
