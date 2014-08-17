@@ -23,13 +23,13 @@ var cases = fs.readdirSync( "test/cases" )
     } );
 
 describe( "Kouto Swiss Tests", function() {
-    cases.forEach( function( oTest ) {
-        var sName = oTest.replace( rTestNameSanitize, " " );
+    cases.forEach( function( sTest ) {
+        var sName = sTest.replace( rTestNameSanitize, " " );
 
         it( sName, function( done ) {
-            var sPath = "test/cases/" + oTest + ".styl",
+            var sPath = "test/cases/" + sTest + ".styl",
                 sStylusCase = fs.readFileSync( sPath, "utf8" ).replace( rReturn, "" ),
-                sCSSExpected = fs.readFileSync( "test/cases/" + oTest + ".css", "utf8" ).replace( rReturn, "" ),
+                sCSSExpected = fs.readFileSync( "test/cases/" + sTest + ".css", "utf8" ).replace( rReturn, "" ),
                 oStylus;
 
             ( oStylus = stylus( sStylusCase ) )
@@ -38,7 +38,7 @@ describe( "Kouto Swiss Tests", function() {
                 .include( __dirname + "/cases/img" )
                 .define( "url", stylus.url() );
 
-            if ( ~oTest.indexOf("compress") ) {
+            if ( ~sTest.indexOf("compress") ) {
                 oStylus.set("compress", true);
             }
 
