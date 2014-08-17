@@ -4,7 +4,7 @@
 
 As kouto swiss and nib shares some functions & mixins names, **it's not a great idea** to use nib and kouto swiss together.
 
-In simple terms : importing **kouto swiss** after **nib** will break some of nib features, and importing **nib** after **kouto swiss** will break some of kouto swiss feature.
+In simple terms : importing **kouto swiss** *after* **nib** will break some of nib's features, and importing **nib** *after* **kouto swiss** will break some of kouto swiss' features.
 
 kouto swiss has been coded in the way to provide a complete *alternative* to nib.
 
