@@ -10,3 +10,10 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
+article *,
+article *:before,
+article *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
