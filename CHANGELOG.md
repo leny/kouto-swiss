@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.10` / 2014-08-18
+
+* Add [inheritance pattern](http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/) to box-sizing-reset mixin.
+
 ## `0.9.9` / 2014-08-09
 
 * Update documentation.
