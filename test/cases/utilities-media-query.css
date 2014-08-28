@@ -22,3 +22,13 @@ div {
 div {
   color: #f00;
 }
+@media only screen and (max-width: 767px) {
+  div {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 640px) {
+  div {
+    width: 100%;
+  }
+}

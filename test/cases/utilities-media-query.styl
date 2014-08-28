@@ -25,3 +25,15 @@ ks-support-media-queries = false
 +media-query( print )
     div
         color red
+
+ks-support-media-queries = true
+
+breakpointMain = only screen, max-width 767px
+
++media-query( breakpointMain )
+    div
+        width 100%
+
++media-query( breakpointMain, min-width 640px )
+    div
+        width 100%
