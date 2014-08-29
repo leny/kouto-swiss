@@ -172,7 +172,11 @@ order()
     vendor( "order", arguments, feature: "flexbox" )
 
 perspective()
-    vendor( "perspective", arguments, feature: "transforms3d" )
+    if current-property[ 0 ] is "perspective"
+        vendor( "perspective", arguments, feature: "transforms3d" )
+    else
+        unquote( "perspective(" + arguments + ")" )
+
 perspective-origin()
     vendor( "perspective-origin", arguments, feature: "transforms3d" )
 
