@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.10.1` / 2014-09-29
+
+* Fix variables in media query mixin bug.
+
 ## `0.10` / 2014-08-18
 
 * Add [inheritance pattern](http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/) to box-sizing-reset mixin.
@@ -87,4 +91,4 @@ First stable version of the lib, ready for production, with [website and documen
 
 * * *
 
-The versions before `0.8.0` we strict development version and don't really need to appears here.
+The versions before `0.8.0` were strict development version and don't really need to appears here.
