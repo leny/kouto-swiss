@@ -14,6 +14,8 @@ It's useful for legacy stylesheet for old IE versions.
 * `media`: the media of the query
 * `conditions`: multiple pairs of conditions for the query. *Optional*.
 
+**Note:** if you give a list as the `media` argument, the first element of this list will be assumed as the media value.
+
 ### Usage
 
 ```stylus
@@ -42,6 +44,14 @@ ks-support-media-queries = false
 +media-query( print )
     div
         color red
+        
+ks-support-media-queries = true
+
+breakpointMain = only screen, max-width 767px
+
++media-query( breakpointMain )
+    div
+        width 100%
 
 ```
 
@@ -71,5 +81,10 @@ div {
 }
 div {
   color: #f00;
+}
+@media only screen and (max-width: 767px) {
+  div {
+    width: 100%;
+  }
 }
 ```
