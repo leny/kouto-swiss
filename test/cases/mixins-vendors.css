@@ -203,16 +203,6 @@ button {
   perspective-origin: 50% 50%;
 }
 button {
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-  -webkit-transform-origin: 50% 50% 0;
-  -ms-transform-origin: 50% 50% 0;
-  transform-origin: 50% 50% 0;
-  -webkit-transform-style: flat;
-  transform-style: flat;
-}
-button {
   -webkit-transition: 0s 0s all ease;
   transition: 0s 0s all ease;
   -webkit-transition-delay: 0s;
