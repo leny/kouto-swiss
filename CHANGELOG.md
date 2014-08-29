@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.10.2` / 2014-09-29
+
+* Fix `perspective` vendor prefixing when using in a `transform` property context.
+
 ## `0.10.1` / 2014-09-29
 
 * Fix variables in media query mixin bug.
