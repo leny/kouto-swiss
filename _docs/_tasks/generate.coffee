@@ -3,7 +3,10 @@
 path = require "path"
 cheerio = require "cheerio"
 chalk = require "chalk"
-marked = require "marked"
+( oRenderer = new ( marked = require "marked" ).Renderer() )
+    .heading = ( sText, iLevel ) ->
+        "<h#{ iLevel }>#{ sText }</h#{ iLevel }>"
+
 ( highlightjs = require "highlight.js" )
     .configure
         classPrefix: ""
@@ -14,6 +17,7 @@ index = require "../index.json"
 oMarkdownCompilationOptions =
     gfm: yes
     tables: true
+    renderer: oRenderer
     highlight: ( sCode ) ->
         highlightjs.highlightAuto( sCode ).value
 
