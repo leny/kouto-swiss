@@ -1,6 +1,6 @@
 # kouto swiss
 
-[![NPM version](https://badge.fury.io/js/kouto-swiss.svg)](http://badge.fury.io/js/kouto-swiss) [![Build Status](http://img.shields.io/travis/krkn/kouto-swiss.svg)](https://travis-ci.org/krkn/kouto-swiss) ![Dependency Status](https://david-dm.org/krkn/kouto-swiss.svg) ![Downloads counter](http://img.shields.io/npm/dm/kouto-swiss.svg) [![Bower package version](https://badge.fury.io/bo/kouto-swiss.svg)](http://badge.fury.io/bo/kouto-swiss)
+[![NPM version](https://badge.fury.io/js/kouto-swiss.svg)](http://badge.fury.io/js/kouto-swiss) [![Build Status](http://img.shields.io/travis/krkn/kouto-swiss.svg)](https://travis-ci.org/krkn/kouto-swiss) ![Dependency Status](https://david-dm.org/krkn/kouto-swiss.svg) ![Downloads counter](http://img.shields.io/npm/dm/kouto-swiss.svg)
 
 > A complete CSS framework for [Stylus](http://learnboost.github.io/stylus/)
 
@@ -30,9 +30,9 @@ For gulp, use [gulp-stylus](https://www.npmjs.org/package/gulp-stylus) and inclu
 
 ### Included in compilation with third-party tools.
 
-To use **kouto swiss** with third-party tools like [Codekit](https://incident57.com/codekit/) or [Prepros](http://alphapixels.com/prepros/), you should include **kouto swiss** on your project by yourself. You can download it [on github](https://github.com/krkn/kouto-swiss/releases), or use [bower](http://bower.io).
+To use **kouto swiss** with third-party tools like [Codekit](https://incident57.com/codekit/) or [Prepros](http://alphapixels.com/prepros/), you should include **kouto swiss** on your project by yourself. You can download it [on github](https://github.com/krkn/kouto-swiss/releases).
 
-In your stylus file, be sure to import kouto swiss from the path you saved it.
+_More informations coming soon._
 
 ### As middleware, for *on the fly* compilation.
 
@@ -81,16 +81,16 @@ Many thanks !
 
 ## Release History
 
-- **2014-07-19:** version `0.9.0` : some breaking changes in media-queries managment.
-- **2014-06-30:** version `0.8.0` : first stable version of the lib, including website & docs.
-- **2014-05-20:** version `0.1.0` : first version of the lib, including nearly all the basics.
-- **2014-05-05:** version `0.0.1` : first publish on npm, still in early stages of development.
+- **2014-08-18:** version `0.10.0`: some breaking changes in box-sizing mixin.
+- **2014-07-19:** version `0.9.0`: some breaking changes in media-queries managment.
+- **2014-06-30:** version `0.8.0`: first stable version of the lib, including website & docs.
+- **2014-05-20:** version `0.1.0`: first version of the lib, including nearly all the basics.
+- **2014-05-05:** version `0.0.1`: first publish on npm, still in early stages of development.
 - **2014-05-03:** starting project
 
 ### Development TODO
 
 - [x] allow users to choose the vendor prefixes they want to use
-- [x] add kouto-swiss lib to bower
 - [x] write how-to for CodeKit & Prepros
 - [x] IE 8 media queries fallback
 - [x] release 0.9
