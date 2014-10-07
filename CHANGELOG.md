@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.10.3` / 2014-10-07
+
+* Update Stylus to `0.49.1`, update dev dependencies.
+
 ## `0.10.2` / 2014-09-29
 
 * Fix `perspective` vendor prefixing when using in a `transform` property context.
