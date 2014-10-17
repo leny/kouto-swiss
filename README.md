@@ -36,7 +36,7 @@ _More informations coming soon._
 
 ### As middleware, for *on the fly* compilation.
 
-There's an exemple of how to use stylus with kouto-swiss within Connect or Express.
+There's an example of how to use stylus with kouto-swiss within Connect or Express.
 
 ```javascript
 var connect = require( "connect" ),
@@ -72,17 +72,17 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 Add unit tests and update the docs for any new or changed functionality.  
 More informations in the `CONTRIBUTING.md` file.
 
-### Special call for contribution : something who write better english than mine !
+### Special call for contribution : someone who's English is better than I am !
 
-> As you can guess from my spelling, english **isn't** my first language. And as I make prodigious efforts to try, I still can't write good and readable documentation as a native speaker should.
+> I am committed to improving the readability of documents with heart and soul. As you can see, I'm **not** a native English speaker. I need your help.
 
-If you want to help the **kouto swiss** project, but don't want to write code, please, consider a little review of the docs, correcting my *very bad* english.  
+If you want to help the **kouto swiss** project, but don't want to write code, please, consider a little review of the docs, correcting my *very bad* English.  
 Many thanks !
 
 ## Release History
 
 - **2014-08-18:** version `0.10.0`: some breaking changes in box-sizing mixin.
-- **2014-07-19:** version `0.9.0`: some breaking changes in media-queries managment.
+- **2014-07-19:** version `0.9.0`: some breaking changes in media-queries management.
 - **2014-06-30:** version `0.8.0`: first stable version of the lib, including website & docs.
 - **2014-05-20:** version `0.1.0`: first version of the lib, including nearly all the basics.
 - **2014-05-05:** version `0.0.1`: first publish on npm, still in early stages of development.
