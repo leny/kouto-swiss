@@ -3,11 +3,21 @@
 
 use( "color-fallback.js" )
 
+_ks-color-fallback-processing( current-property, color )
+    if( alpha( color ) < 1 )
+        fallback-color-value = alpha( color, 1 )
+        add-property( current-property[ 0 ], _replace( current-property[ 1 ], "__CALL__", fallback-color-value ) )
+
+ks-color-fallback( color )
+    if( current-property )
+        _ks-color-fallback-processing( current-property, color )
+        color
+    else
+        error( "ks-color-fallback() must be used within a property" )
+
 color-fallback( color )
     if( current-property )
-        if( alpha( color ) < 1 )
-            fallback-color = alpha( color, 1 )
-            add-property( current-property[ 0 ], _replace( current-property[ 1 ], "__CALL__", fallback-color ) )
+        _ks-color-fallback-processing( current-property, color )
         color
     else
         error( "color-fallback() must be used within a property" )
