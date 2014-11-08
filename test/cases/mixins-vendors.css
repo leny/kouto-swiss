@@ -1,24 +1,4 @@
 button {
-  -webkit-align-content: stretch;
-  -ms-align-content: stretch;
-  align-content: stretch;
-  -webkit-align-items: stretch;
-  -ms-align-items: stretch;
-  align-items: stretch;
-  -webkit-align-self: auto;
-  -ms-align-self: auto;
-  align-self: auto;
-}
-button {
-  -webkit-align-content: stretch;
-  align-content: stretch;
-}
-button {
-  -webkit-align-content: stretch;
-  -ms-align-content: stretch;
-  align-content: stretch;
-}
-button {
   -webkit-animation: none 0s ease 0s 1 normal none;
   animation: none 0s ease 0s 1 normal none;
   -webkit-animation-delay: 0;
@@ -146,6 +126,11 @@ button {
   -webkit-hyphens: manual;
   -moz-hyphens: manual;
   -ms-hyphens: manual;
+  hyphens: manual;
+}
+button {
+  -webkit-hyphens: manual;
+  -moz-hyphens: manual;
   hyphens: manual;
 }
 button {
