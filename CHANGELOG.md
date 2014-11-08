@@ -1,5 +1,13 @@
 # kouto swiss: changelog
 
+## `0.11.0` / 2014-11-08
+
+* Refactor flex mixins
+* Aliasing color-fallback mecanism, changing global support variable name
+* Aliasing all the functions & mixins
+* Fix typos and grammers in README
+* Update Stylus to `0.49.3`, update dev dependencies.
+
 ## `0.10.3` / 2014-10-07
 
 * Update Stylus to `0.49.1`, update dev dependencies.
