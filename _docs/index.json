@@ -13,7 +13,8 @@
         "third-party",
         "middleware",
         "stylus",
-        "nib"
+        "nib",
+        "aliases"
     ],
     "reset": [
         "meyer-reset",
