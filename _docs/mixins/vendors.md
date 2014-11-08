@@ -22,7 +22,7 @@ You can select which version of browsers you want to support by modifying the fo
     ks-support-android-chrome = false
     ks-support-android-firefox = false
     ks-support-ie-mobile = false
-    
+
 You can set a number, which will act as "*greater or equal*" support, a [semver range](https://github.com/isaacs/node-semver#ranges) string, or the `false` value, to be ignored.
 
 If you want to ignore the [caniuse](http://caniuse.com) recommandations, add the features you want to ignore to the `ks-support-ignore-features` global variable.
@@ -37,7 +37,7 @@ The following properties are not registered in [caniuse](http://caniuse.com).
 
 ### Supported properties
 
-The following properties are implemented by the vendor mecanism and will be automaticaly prefixed using [caniuse](http://caniuse.com) data: `align-content`, `align-items`, `align-self`, `animation`, `animation-delay`, `animation-direction`, `animation-duration`, `animation-fill-mode`, `animation-iteration-count`, `animation-name`, `animation-play-state`, `animation-timing-function`, `appearance`, `backface-visibility`, `background-clip`, `background-origin`, `background-size`, `border-image-source`, `border-image-slice`, `border-image-width`, `border-image-outset`, `border-image-repeat`, `border-image`, `box-sizing`, `clip-path`, `column-count`, `column-fill`, `column-gap`, `column-rule`, `column-rule-color`, `column-rule-style`, `column-rule-width`, `column-span`, `column-width`, `columns`, `flex`, `flex-basis`, `flex-direction`, `flex-flow`, `flex-grow`, `flex-shrink`, `flex-wrap`, `grid`, `grid-area`, `grid-auto-columns`, `grid-auto-flow`, `grid-auto-position`, `grid-auto-rows`, `grid-column`, `grid-column-end`, `grid-column-start`, `grid-row`, `grid-row-end`, `grid-row-start`, `grid-template`, `grid-template-areas`, `grid-template-columns`, `grid-template-rows`, `hyphens`, `justify-content`, `mask`, `opacity`, `order`, `perspective`, `perspective-origin`, `transform`, `transform-origin`, `transform-style`, `transition`, `transition-delay`, `transition-duration`, `transition-property`, `transition-timing-function` 
+The following properties are implemented by the vendor mecanism and will be automaticaly prefixed using [caniuse](http://caniuse.com) data: `align-content`, `align-items`, `align-self`, `animation`, `animation-delay`, `animation-direction`, `animation-duration`, `animation-fill-mode`, `animation-iteration-count`, `animation-name`, `animation-play-state`, `animation-timing-function`, `appearance`, `backface-visibility`, `background-clip`, `background-origin`, `background-size`, `border-image-source`, `border-image-slice`, `border-image-width`, `border-image-outset`, `border-image-repeat`, `border-image`, `box-sizing`, `clip-path`, `column-count`, `column-fill`, `column-gap`, `column-rule`, `column-rule-color`, `column-rule-style`, `column-rule-width`, `column-span`, `column-width`, `columns`, `flex`, `flex-basis`, `flex-direction`, `flex-flow`, `flex-grow`, `flex-shrink`, `flex-wrap`, `grid`, `grid-area`, `grid-auto-columns`, `grid-auto-flow`, `grid-auto-position`, `grid-auto-rows`, `grid-column`, `grid-column-end`, `grid-column-start`, `grid-row`, `grid-row-end`, `grid-row-start`, `grid-template`, `grid-template-areas`, `grid-template-columns`, `grid-template-rows`, `hyphens`, `justify-content`, `mask`, `opacity`, `order`, `perspective`, `perspective-origin`, `transform`, `transform-origin`, `transform-style`, `transition`, `transition-delay`, `transition-duration`, `transition-property`, `transition-timing-function`
 
 ### Unregistered properties
 
@@ -69,19 +69,19 @@ You can also define your own vendors mixins with the **kouto swiss** built-in ve
 * `value`: the value for the property.
 * `feature`: the name of the feature in [caniuse](http://caniuse.com) website, which will automatically set the prefixes.
 * `prefixes`: the list of prefixes to use, if `feature` is set to false.
-* `official`: a boolean to display the non-prefixed property, if `feature` is set to false. 
+* `official`: a boolean to display the non-prefixed property, if `feature` is set to false.
 
 ### Usage
 
 ```stylus
 
 button
-    align-content stretch
+    hyphens manual
 
 ks-support-ie = 11
 
 button
-    align-content stretch
+    hyphens manual
 
 ks-vendors-prefixes = o ms webkit moz
 
@@ -97,16 +97,16 @@ ks-vendors-prefixes = false
 
 button
     clip-path none
-    
+
 button
     vendor( "columns", auto auto, feature: "multicolumn" )
-    
+
 button
     vendor( "columns", auto auto, prefixes: webkit moz ms o )
 
 button
     vendor( "columns", auto auto, prefixes: webkit moz ms o, official: false )
-    
+
 ks-support-ignore-features = "css3-boxsizing" "css-animation"
 
 button
@@ -118,13 +118,15 @@ button
 
 ```css
 button {
-  -webkit-align-content: stretch;
-  -ms-align-content: stretch;
-  align-content: stretch;
+  -webkit-hyphens: manual;
+  -moz-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
 }
 button {
-  -webkit-align-content: stretch;
-  align-content: stretch;
+  -webkit-hyphens: manual;
+  -moz-hyphens: manual;
+  hyphens: manual;
 }
 button {
   -o-clip-path: none;
