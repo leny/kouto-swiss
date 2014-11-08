@@ -6,8 +6,8 @@ On some IDEs like PHPStorm and Webstorm, you can automatically compile your styl
 $ npm install --save-dev kouto-swiss
 ```
 2. Do an ``npm install``
-3. Create a new file watcher with settings like these: ![image](https://cloud.githubusercontent.com/assets/1750837/4965903/60310eac-679d-11e4-85db-95950c854398.png)
+3. Create a new file watcher with settings like these: [![webstorm-integration](styles/img/webstorm-integration.png)](styles/img/webstorm-integration.png)
 4. Create an ``@import`` in one of you ``.styl`` files:
 ```
-@import "../../../node_modules/kouto-swiss" // import kuoto-swiss for auto-prefixing (or whatever relative path where node-modules lives
+@import "../../../node_modules/kouto-swiss" // import kouto-swiss for auto-prefixing (or whatever relative path where node-modules lives
 ```

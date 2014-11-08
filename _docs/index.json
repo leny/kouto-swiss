@@ -11,6 +11,7 @@
         "grunt",
         "gulp",
         "third-party",
+        "webstorm",
         "middleware",
         "stylus",
         "nib",
