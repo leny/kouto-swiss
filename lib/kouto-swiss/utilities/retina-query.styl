@@ -1,4 +1,4 @@
-retina-query( media = all, density = 1 )
+ks-retina-query( media = all, density = 1 )
     media = join( " ", media )
     query = media + " and (-webkit-min-device-pixel-ratio: " + density + "), "
     query += media + " and (min--moz-device-pixel-ratio: " + density + "), "
@@ -9,6 +9,6 @@ retina-query( media = all, density = 1 )
     @media query
         {block}
 
-hidpi-query( media = all, density = 1 )
-    +retina-query( media, density )
-        {block}
+retina-query = ks-retina-query
+ks-hidpi-query = ks-retina-query
+hidpi-query = ks-hidpi-query

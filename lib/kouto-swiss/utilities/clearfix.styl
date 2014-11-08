@@ -1,4 +1,4 @@
-clearfix()
+ks-clearfix()
     if ks-support-ie <= 7
         *zoom 1
     &:before
@@ -8,17 +8,30 @@ clearfix()
     &:after
         clear both
 
-clear( value, args... )
+clearfix = ks-clearfix
+
+ks-clear( value, args... )
     if value == fix
         clearfix()
     else
         clear value
 
+clear = ks-clear
+
+_ks-fix-processing( current-property )
+    if( current-property[ 0 ] == "clear" )
+        fix
+    else
+        error( "fix() must be used within a clear property" )
+
+ks-fix()
+    if( current-property )
+        _ks-fix-processing( current-property )
+    else
+        error( "ks-fix() must be used within a clear property" )
+
 fix()
     if( current-property )
-        if( current-property[ 0 ] == "clear" )
-            fix
-        else
-            error( "fix() must be used within a clear property" )
+        _ks-fix-processing( current-property )
     else
         error( "fix() must be used within a clear property" )

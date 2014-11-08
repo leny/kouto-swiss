@@ -1,10 +1,19 @@
+_ks-calc-processing( current-property, operation, fallback )
+    prop = current-property[ 0 ]
+    if fallback
+        add-property( prop, fallback )
+    for prefix in caniuse-prefixes( "calc" )
+        add-property( prop, unquote( "-" + prefix + "-calc(" + operation + ")" ) )
+    unquote( "calc(" + operation + ")" )
+
+ks-calc( operation, fallback = false )
+    if current-property
+        _ks-calc-processing( current-property, operation, fallback )
+    else
+        error( "ks-calc() must be used within a property" )
+
 calc( operation, fallback = false )
     if current-property
-        prop = current-property[ 0 ]
-        if fallback
-            add-property( prop, fallback )
-        for prefix in caniuse-prefixes( "calc" )
-            add-property( prop, unquote( "-" + prefix + "-calc(" + operation + ")" ) )
-        unquote( "calc(" + operation + ")" )
+        _ks-calc-processing( current-property, operation, fallback )
     else
         error( "calc() must be used within a property" )

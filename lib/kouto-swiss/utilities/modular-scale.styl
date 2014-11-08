@@ -16,5 +16,7 @@ ks-major-eleventh = 2.667
 ks-major-twelfth = 3
 ks-double-octave = 4
 
-modular-scale( base, step, ratio = ks-perfect-fifth )
+ks-modular-scale( base, step, ratio = ks-perfect-fifth )
     base * ( ratio ** step )
+
+modular-scale = ks-modular-scale

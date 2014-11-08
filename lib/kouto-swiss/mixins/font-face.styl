@@ -1,4 +1,4 @@
-font-face( name, font-src, weight = false, style = false, formats = eot woff truetype svg, svg-font-name = false )
+ks-font-face( name, font-src, weight = false, style = false, formats = eot woff truetype svg, svg-font-name = false )
     @font-face
         font-family name
         if weight
@@ -19,3 +19,5 @@ font-face( name, font-src, weight = false, style = false, formats = eot woff tru
             svg-name = svg-font-name ? svg-font-name : name
             push( fonts, 'url("' + font-src + '.svg#' + svg-name + '") format("svg")' )
         src unquote( join( ", ", fonts ) )
+
+font-face = ks-font-face

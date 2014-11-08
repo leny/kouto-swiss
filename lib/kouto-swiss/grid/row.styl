@@ -1,4 +1,4 @@
-row()
+ks-row()
     display block
     if ks-grid-config[ "type" ] == "fixed"
         width: round( ks-grid-config[ "total-width" ] * ( ( ks-grid-config[ "gutter-width" ] + ks-grid-config[ "computed-total-width" ] ) / ks-grid-config[ "computed-total-width" ] ), 5 )
@@ -9,3 +9,5 @@ row()
         _comp = unit( ks-grid-config[ "computed-total-width" ], "" )
         width: unit( _total * ( ( _gut + _comp ) / _comp ), "%" )
         margin: 0 unit( _total * ( ( ( _gut * .5 ) / _comp ) * -1 ), "%" )
+
+row = ks-row

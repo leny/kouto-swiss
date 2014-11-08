@@ -1,4 +1,4 @@
-font-stack( name )
+ks-font-stack( name )
     if name == "Arial"
         return unquote( 'Arial, "Helvetica Neue", Helvetica, sans-serif' )
     if name == "Arial Black"
@@ -92,3 +92,5 @@ font-stack( name )
     if name == "Brush Script MT"
         return unquote( '"Brush Script MT", cursive' )
     return name
+
+font-stack = ks-font-stack

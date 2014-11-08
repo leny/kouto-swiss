@@ -1,4 +1,4 @@
-gs( type = "fixed", cols = false, col-width = false, gut-width = false )
+ks-gs( type = "fixed", cols = false, col-width = false, gut-width = false )
     if type == "fixed"
         cols = ks-grid-fixed-columns unless cols
         col-width = ks-grid-fixed-col-width unless col-width
@@ -32,3 +32,5 @@ gs( type = "fixed", cols = false, col-width = false, gut-width = false )
         overflow hidden
     if type != "fixed" && type != "fluid"
         error( "Unknown grid system type '" + type + "' !" )
+
+gs = ks-gs

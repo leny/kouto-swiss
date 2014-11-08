@@ -1,7 +1,9 @@
-size( values... )
+ks-size( values... )
     if length( values ) == 1
         width values[ 0 ] || auto
         height values[ 0 ] || auto
     else
         width values[ 0 ] if values[ 0 ] != false
         height values[ 1 ] if values[ 1 ] != false
+
+size = ks-size

@@ -1,4 +1,4 @@
-easing( name )
+ks-easing( name )
     if name == "in-quad"
         return cubic-bezier(0.55,0.085,0.68,0.53)
     if name == "in-cubic"
@@ -48,3 +48,5 @@ easing( name )
     if name == "in-out-back"
         return cubic-bezier(0.68,-0.55,0.265,1.55)
     return name
+
+easing = ks-easing

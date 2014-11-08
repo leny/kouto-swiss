@@ -1,4 +1,4 @@
-placeholder()
+ks-placeholder()
     if selector() == "&"
         error( "placeholder() must be called from a ruleset!" )
     &::-webkit-input-placeholder
@@ -9,3 +9,5 @@ placeholder()
         {block}
     &:-ms-input-placeholder
         {block}
+
+placeholder = ks-placeholder

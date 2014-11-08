@@ -1,4 +1,4 @@
-box-sizing-reset()
+ks-box-sizing-reset()
     if selector() is "&"
         html
             box-sizing border-box
@@ -8,3 +8,5 @@ box-sizing-reset()
     else
         *, *:before, *:after
             box-sizing border-box
+
+box-sizing-reset = ks-box-sizing-reset

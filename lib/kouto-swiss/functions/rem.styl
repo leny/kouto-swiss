@@ -1,6 +1,8 @@
 ks-rem-base = 16px
 
-rem( value )
+ks-rem( value )
     value = _strip-units( value )
     base = ks-rem-base is a "unit" ? _strip-units( ks-rem-base ) : 16
     value / base * 1rem
+
+rem = ks-rem

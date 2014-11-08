@@ -1,4 +1,4 @@
-retina-image( img-src, size = false, suffix = "@2x" )
+ks-retina-image( img-src, size = false, suffix = "@2x" )
     ext = extname( img-src )
     image-src = pathjoin( dirname( img-src ), basename( img-src, ext ) + ext )
     retina-src = pathjoin( dirname( img-src ), basename( img-src, ext ) + suffix + ext )
@@ -8,9 +8,10 @@ retina-image( img-src, size = false, suffix = "@2x" )
             size = contain
 
     background-image url( image-src )
-    +retina-query( only screen, 1.3 )
+    +ks-retina-query( only screen, 1.3 )
         background-image url( retina-src )
         background-size size
 
-hidpi-image( img-src, size = false, suffix = "@2x" )
-    retina-image( img-src, size, suffix )
+retina-image = ks-retina-image
+ks-hidpi-image = ks-retina-image
+hidpi-image = ks-hidpi-image
