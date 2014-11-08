@@ -11,7 +11,7 @@
 ## Installation
 
 ```bash
-$ npm install kouto-swiss
+$ npm install --save-dev kouto-swiss
 ```
 
 ## Usage
@@ -32,8 +32,7 @@ For gulp, use [gulp-stylus](https://www.npmjs.org/package/gulp-stylus) and inclu
 
 On some IDEs like PHPStorm and Webstorm, you can automatically compile your styles as they change, without relying on a third-party tool.  In PHPStorm and Webstorm, this functionality is known as *file watchers*.  To use with PHPStorm or WebStorm, as a file watcher, simply:
 
-1. Ensure you have added ``kouto-swiss`` as a dependency:
-```bash
+1. Ensure you have added ``kouto-swiss`` as a dependency: ```bash
 $ npm install --save-dev kouto-swiss
 ```
 2. Do an ``npm install``
@@ -47,7 +46,7 @@ $ npm install --save-dev kouto-swiss
 
 To use **kouto swiss** with third-party tools like [Codekit](https://incident57.com/codekit/) or [Prepros](http://alphapixels.com/prepros/), you should include **kouto swiss** on your project by yourself. You can download it [on github](https://github.com/krkn/kouto-swiss/releases).
 
-_More informations coming soon._
+_More information coming soon._
 
 ### As middleware, for *on the fly* compilation.
 
@@ -91,8 +90,8 @@ More informations in the `CONTRIBUTING.md` file.
 
 > I am committed to improving the readability of documents with heart and soul. As you can see, I'm **not** a native English speaker. I need your help.
 
-If you want to help the **kouto swiss** project, but don't want to write code, please, consider a little review of the docs, correcting my *very bad* English.  
-Many thanks !
+If you want to help the **kouto swiss** project, but don't want to write code, please consider reviewing the docs, correcting my *very bad* English.  
+Many thanks!
 
 ## Release History
 
