@@ -16,7 +16,7 @@ If the given color has an alpha of `1`, the function doesn't do anything.
 ```stylus
 .no-alpha
     color color-fallback( red )
-    
+
 .alpha
     color color-fallback( rgba( 255, 0, 0, .5 ) )
 ```
@@ -27,7 +27,7 @@ If the given color has an alpha of `1`, the function doesn't do anything.
 .no-alpha {
   color: #f00;
 }
-    
+
 .alpha {
   color: #f00;
   color: rgba(255,0,0,0.5);
@@ -36,7 +36,9 @@ If the given color has an alpha of `1`, the function doesn't do anything.
 
 ## Implicit color fallback
 
-The `implicit color fallback` mecanism allows you to use the `color-fallback` function without calling it, by declaring an `ks-color-fallback` variable to `true`.
+The `implicit color fallback` mecanism allows you to use the `color-fallback` function without calling it, by declaring an `ks-color-fallback-enabled` variable to `true`.
+
+**Note:** prior to version `0.11.0`, the `ks-color-fallback-enabled` variable was called `ks-color-fallback`.
 
 ### Usage
 
@@ -44,19 +46,19 @@ The `implicit color fallback` mecanism allows you to use the `color-fallback` fu
 .foo
     color rgba( 255, 0, 0, .5 )
 
-ks-color-fallback = true
+ks-color-fallback-enabled = true
 
 .bar
     color rgba( 255, 0, 0, .5 )
-    
+
 .bar
     background rgba( 202, 43, 120, .5 ) url( test.png ) top left repeat
-    
-ks-color-fallback = false
+
+ks-color-fallback-enabled = false
 
 .foo
     color rgba( 255, 0, 0, .5 )
-    
+
 ```
 
 ### Result
