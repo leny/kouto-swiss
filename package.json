@@ -23,8 +23,27 @@
   "contributors": [
     {
       "name": "leny",
-      "email": "info@flatland.be",
       "url": "http://leny.me"
+    },
+    {
+      "name": "filipelinhares",
+      "url": "http://filipelinhares.com"
+    },
+    {
+      "name": "PunKeel",
+      "url": "http://www.ungeek.fr"
+    },
+    {
+      "name": "kaok",
+      "url": "http://otherside.in"
+    },
+    {
+      "name": "bcbcarl",
+      "url": "https://github.com/bcbcarl"
+    },
+    {
+      "name": "srsgores",
+      "url": "http://seangoresht.com"
     }
   ],
   "repository": {
