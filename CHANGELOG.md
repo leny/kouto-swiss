@@ -1,5 +1,13 @@
 # kouto swiss: changelog
 
+## `0.11.1` / 2014-11-08
+
+* List contributors in package.json
+* Fix possible collision for *row* and *column* values in `flex-flow` and `flex-direction` mixin
+* Fix some grammatical/spelling errors
+* Add docs section for webstorm IDEs
+* Add editorconfig file
+
 ## `0.11.0` / 2014-11-08
 
 * Refactor flex mixins
