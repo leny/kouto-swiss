@@ -62,16 +62,22 @@ flex-direction( value )
             else
                 if value is row
                     -{prefix}-flex-direction unquote( "row" )
+                else if value is column
+                    -{prefix}-flex-direction unquote( "column" )
                 else
                     -{prefix}-flex-direction value
     if value is row
         flex-direction unquote( "row" )
+    else if value is column
+        flex-direction unquote( "column" )
     else
         flex-direction value
 
 flex-flow( dir, wrap )
     if dir is row
         dir = unquote( "row" )
+    if dir is column
+        dir = unquote( "column" )
     if ks-vendors-prefixes isnt false and !( flex in ks-support-ignore-features ) and !( flexbox in ks-support-ignore-features )
         for prefix in caniuse-prefixes( "flexbox" )
             -{prefix}-flex-flow dir wrap
