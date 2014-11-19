@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.11.3` / 2014-11-19
+
+* Fix index glob collision in importing
+
 ## `0.11.2` / 2014-11-08
 
 * Add js-compiled Gruntfile
