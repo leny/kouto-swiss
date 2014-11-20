@@ -79,3 +79,21 @@ button {
   -ms-transform: perspective(25em) rotateY(90deg);
   transform: perspective(25em) rotateY(90deg);
 }
+button {
+  -webkit-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+  -webkit-transform-origin: 50% 50% 0 !important;
+  -ms-transform-origin: 50% 50% 0 !important;
+  transform-origin: 50% 50% 0 !important;
+  -webkit-transform-style: flat !important;
+  transform-style: flat !important;
+}
+button {
+  -webkit-transform: perspective(17px) !important;
+  -ms-transform: perspective(17px) !important;
+  transform: perspective(17px) !important;
+  -webkit-transform: translateX(10px) rotate(10deg) translateY(5px) !important;
+  -ms-transform: translateX(10px) rotate(10deg) translateY(5px) !important;
+  transform: translateX(10px) rotate(10deg) translateY(5px) !important;
+}

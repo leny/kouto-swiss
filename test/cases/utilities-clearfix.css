@@ -49,3 +49,31 @@ div:after {
 div:after {
   clear: both;
 }
+section {
+  clear: none !important;
+  clear: left !important;
+  clear: right !important;
+  clear: both !important;
+}
+div {
+  width: 100%;
+}
+div:before,
+div:after {
+  content: " ";
+  display: table;
+}
+div:after {
+  clear: both;
+}
+header {
+  width: 100%;
+}
+header:before,
+header:after {
+  content: " ";
+  display: table;
+}
+header:after {
+  clear: both;
+}

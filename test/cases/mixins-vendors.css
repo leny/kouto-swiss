@@ -215,4 +215,10 @@ button {
 button {
   animation: none 0s ease 0s 1 normal none;
   box-sizing: content-box;
+  box-sizing: content-box !important;
+}
+button {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
