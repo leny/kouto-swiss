@@ -1,5 +1,10 @@
 # kouto swiss: changelog
 
+## `0.11.4` / 2014-11-20
+
+* Fix additional parameters support in clear & overflow utilities
+* Fix support for additional parameters support in flex mixins
+
 ## `0.11.3` / 2014-11-19
 
 * Fix index glob collision in importing
