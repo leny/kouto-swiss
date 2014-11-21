@@ -1,4 +1,4 @@
-ks-font-face( name, font-src, weight = false, style = false, formats = eot woff truetype svg, svg-font-name = false )
+ks-font-face( name, font-src, weight = false, style = false, formats = eot woff2 woff truetype svg, svg-font-name = false )
     @font-face
         font-family name
         if weight
@@ -9,6 +9,8 @@ ks-font-face( name, font-src, weight = false, style = false, formats = eot woff 
         if eot in formats
             src url( font-src + ".eot" )
             push( fonts, 'url("' + font-src + '.eot?#iefix") format("embedded-opentype")' )
+        if woff2 in formats
+            push( fonts, 'url("' + font-src + '.woff2") format("woff2")' )
         if woff in formats
             push( fonts, 'url("' + font-src + '.woff") format("woff")' )
         if opentype in formats || otf in formats
