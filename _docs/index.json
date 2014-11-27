@@ -27,6 +27,7 @@
         "font-face",
         "keyframes",
         "placeholder",
+        "ratio-box",
         "linear-gradient",
         "radial-gradient",
         "repeating-linear-gradient",
