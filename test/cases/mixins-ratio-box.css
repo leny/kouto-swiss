@@ -2,7 +2,7 @@
   overflow: hidden;
   position: relative;
 }
-.ratio-box-default::before {
+.ratio-box-default:before {
   content: "";
   display: block;
   height: 0;
@@ -12,7 +12,7 @@
   overflow: hidden;
   position: relative;
 }
-.ratio-box-1x1::before {
+.ratio-box-1x1:before {
   content: "";
   display: block;
   height: 0;
@@ -22,7 +22,7 @@
   overflow: hidden;
   position: relative;
 }
-.ratio-box-2x1::before {
+.ratio-box-2x1:before {
   content: "";
   display: block;
   height: 0;
@@ -32,7 +32,7 @@
   overflow: hidden;
   position: relative;
 }
-.ratio-box-1x2::before {
+.ratio-box-1x2:before {
   content: "";
   display: block;
   height: 0;
