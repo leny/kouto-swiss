@@ -15,7 +15,7 @@
         "middleware",
         "stylus",
         "nib",
-        "aliases"
+        "no-conflict-mode"
     ],
     "reset": [
         "meyer-reset",
