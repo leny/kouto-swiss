@@ -9,6 +9,6 @@ ks-retina-query( media = all, density = 1 )
     @media query
         {block}
 
-retina-query = ks-retina-query
-ks-hidpi-query = ks-retina-query
-hidpi-query = ks-hidpi-query
+retina-query = ks-retina-query unless ks-no-conflict
+ks-hidpi-query = ks-retina-query unless ks-no-conflict
+hidpi-query = ks-hidpi-query unless ks-no-conflict

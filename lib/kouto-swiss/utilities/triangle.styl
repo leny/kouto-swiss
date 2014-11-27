@@ -11,4 +11,4 @@ ks-triangle( direction, size, face-color, back-color = transparent )
     if direction == right || direction == down-left || direction == up-left
         border-left-color face-color
 
-triangle = ks-triangle
+triangle = ks-triangle unless ks-no-conflict

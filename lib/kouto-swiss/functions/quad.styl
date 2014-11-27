@@ -7,6 +7,6 @@ ks-quad( color )
     third = spin( color, 180 )
     ( first second third )
 
-quad = ks-quad
+quad = ks-quad unless ks-no-conflict
 ks-tetrad = ks-quad
-tetrad = ks-quad
+tetrad = ks-quad unless ks-no-conflict

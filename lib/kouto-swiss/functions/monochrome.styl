@@ -7,4 +7,4 @@ ks-monochrome( color )
     second = adjust( color, "lightness", baseLightness * 0.333333333333333 )
     ( first second )
 
-monochrome = ks-monochrome
+monochrome = ks-monochrome unless ks-no-conflict

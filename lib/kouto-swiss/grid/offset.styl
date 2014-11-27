@@ -8,4 +8,4 @@ ks-offset( size = 1 )
         _comp = unit( ks-grid-config[ "computed-total-width" ], "" )
         margin-left: unit( _total * ( ( ( _gut + _col ) * size + ( _gut * .5 ) ) / _comp ), "%" )
 
-offset = ks-offset
+offset = ks-offset unless ks-no-conflict
