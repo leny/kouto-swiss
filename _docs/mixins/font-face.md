@@ -10,7 +10,7 @@ Simple `@font-face` mixin.
 * `font-src`: the path for the font, minus the extension
 * `weight`: the weight of the font, for font-weight. *Optional*.
 * `style`: the style of the font, for font-style. *Optional*.
-* `formats`: the formats to includes. *Optional*. Default: `eot woff truetype svg` Accepted words: `eot woff truetype ttf opentype otf svg`
+* `formats`: the formats to includes. *Optional*. Default: `eot woff2 woff truetype svg` Accepted words: `eot woff2 woff truetype ttf opentype otf svg`
 * `svg-font-name`: the svg font name. *Optional*. Default: use the `name` parameters.
 
 ### Usage
@@ -30,7 +30,7 @@ font-face( "OpenSans", "./fonts/OpenSans", formats: woff )
   font-family: "Roboto";
   font-weight: normal;
   src: url("./fonts/Roboto-Regular-webfont.eot");
-  src: url("./fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-Regular-webfont.woff") format("woff"), url("./fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("./fonts/Roboto-Regular-webfont.svg#Roboto") format("svg");
+  src: url("./fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-Regular-webfont.woff2") format("woff2"), url("./fonts/Roboto-Regular-webfont.woff") format("woff"), url("./fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("./fonts/Roboto-Regular-webfont.svg#Roboto") format("svg");
 }
 
 @font-face {
@@ -38,7 +38,7 @@ font-face( "OpenSans", "./fonts/OpenSans", formats: woff )
   font-weight: normal;
   font-style: italic;
   src: url("./fonts/Roboto-Italic-webfont.eot");
-  src: url("./fonts/Roboto-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-Italic-webfont.woff") format("woff"), url("./fonts/Roboto-Italic-webfont.ttf") format("truetype"), url("./fonts/Roboto-Italic-webfont.svg#Roboto") format("svg");
+  src: url("./fonts/Roboto-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-Italic-webfont.woff2") format("woff2"), url("./fonts/Roboto-Italic-webfont.woff") format("woff"), url("./fonts/Roboto-Italic-webfont.ttf") format("truetype"), url("./fonts/Roboto-Italic-webfont.svg#Roboto") format("svg");
 }
 
 @font-face {

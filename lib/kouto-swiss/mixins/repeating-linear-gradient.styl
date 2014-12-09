@@ -35,8 +35,9 @@ ks-repeating-linear-gradient( start, props... )
     else
         error( "ks-repeating-linear-gradient() must be used within a 'background-image' property" )
 
-repeating-linear-gradient( start, props... )
-    if( current-property )
-        _ks-repeating-linear-gradient-processing( current-property, start, props )
-    else
-        error( "repeating-linear-gradient() must be used within a 'background-image' property" )
+unless ks-no-conflict
+    repeating-linear-gradient( start, props... )
+        if( current-property )
+            _ks-repeating-linear-gradient-processing( current-property, start, props )
+        else
+            error( "repeating-linear-gradient() must be used within a 'background-image' property" )

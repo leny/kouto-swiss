@@ -8,7 +8,7 @@ ks-clearfix()
     &:after
         clear both
 
-clearfix = ks-clearfix
+clearfix = ks-clearfix unless ks-no-conflict
 
 ks-clear( value, args... )
     if value == fix
@@ -16,7 +16,7 @@ ks-clear( value, args... )
     else
         clear value args
 
-clear = ks-clear
+clear = ks-clear unless ks-no-conflict
 
 _ks-fix-processing( current-property )
     if( current-property[ 0 ] == "clear" )
@@ -30,8 +30,9 @@ ks-fix()
     else
         error( "ks-fix() must be used within a clear property" )
 
-fix()
-    if( current-property )
-        _ks-fix-processing( current-property )
-    else
-        error( "fix() must be used within a clear property" )
+unless ks-no-conflict
+    fix()
+        if( current-property )
+            _ks-fix-processing( current-property )
+        else
+            error( "fix() must be used within a clear property" )

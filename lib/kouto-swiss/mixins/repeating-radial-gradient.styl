@@ -11,8 +11,9 @@ ks-repeating-radial-gradient( props... )
     else
         error( "ks-repeating-radial-gradient() must be used within a 'background-image' property" )
 
-repeating-radial-gradient( props... )
-    if( current-property )
-        _ks-repeating-radial-gradient-processing( current-property, props )
-    else
-        error( "repeating-radial-gradient() must be used within a 'background-image' property" )
+unless ks-no-conflict
+    repeating-radial-gradient( props... )
+        if( current-property )
+            _ks-repeating-radial-gradient-processing( current-property, props )
+        else
+            error( "repeating-radial-gradient() must be used within a 'background-image' property" )

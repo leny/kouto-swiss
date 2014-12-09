@@ -1,0 +1,40 @@
+.ratio-box-default {
+  overflow: hidden;
+  position: relative;
+}
+.ratio-box-default:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 100%;
+}
+.ratio-box-1x1 {
+  overflow: hidden;
+  position: relative;
+}
+.ratio-box-1x1:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 100%;
+}
+.ratio-box-2x1 {
+  overflow: hidden;
+  position: relative;
+}
+.ratio-box-2x1:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 50%;
+}
+.ratio-box-1x2 {
+  overflow: hidden;
+  position: relative;
+}
+.ratio-box-1x2:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 200%;
+}

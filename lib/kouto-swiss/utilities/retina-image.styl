@@ -12,6 +12,6 @@ ks-retina-image( img-src, size = false, suffix = "@2x" )
         background-image url( retina-src )
         background-size size
 
-retina-image = ks-retina-image
-ks-hidpi-image = ks-retina-image
-hidpi-image = ks-hidpi-image
+retina-image = ks-retina-image unless ks-no-conflict
+ks-hidpi-image = ks-retina-image unless ks-no-conflict
+hidpi-image = ks-hidpi-image unless ks-no-conflict

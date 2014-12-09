@@ -15,4 +15,4 @@ ks-col( size = false )
         width: unit( _total * ( ( ( ( _gut + _col ) * size ) - _gut ) / _comp ), "%" )
         margin: 0 unit( _total * ( ( _gut * .5 ) / _comp ), "%" )
 
-col = ks-col
+col = ks-col unless ks-no-conflict

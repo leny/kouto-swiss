@@ -33,4 +33,4 @@ ks-gs( type = "fixed", cols = false, col-width = false, gut-width = false )
     if type != "fixed" && type != "fluid"
         error( "Unknown grid system type '" + type + "' !" )
 
-gs = ks-gs
+gs = ks-gs unless ks-no-conflict

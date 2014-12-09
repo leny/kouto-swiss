@@ -1,5 +1,14 @@
 # kouto swiss: changelog
 
+## `0.11.6` / 2014-11-27
+
+* Implementing *no-conflict* mode
+* Add `ratio-box` mixin
+
+## `0.11.5` / 2014-11-21
+
+* Implement & support WOFF2 by default for font-face mixin
+
 ## `0.11.4` / 2014-11-20
 
 * Fix additional parameters support in clear & overflow utilities

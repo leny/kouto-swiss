@@ -10,4 +10,4 @@ ks-row()
         width: unit( _total * ( ( _gut + _comp ) / _comp ), "%" )
         margin: 0 unit( _total * ( ( ( _gut * .5 ) / _comp ) * -1 ), "%" )
 
-row = ks-row
+row = ks-row unless ks-no-conflict

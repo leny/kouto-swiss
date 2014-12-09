@@ -15,9 +15,10 @@ ks-color-fallback( color )
     else
         error( "ks-color-fallback() must be used within a property" )
 
-color-fallback( color )
-    if( current-property )
-        _ks-color-fallback-processing( current-property, color )
-        color
-    else
-        error( "color-fallback() must be used within a property" )
+unless ks-no-conflict
+    color-fallback( color )
+        if( current-property )
+            _ks-color-fallback-processing( current-property, color )
+            color
+        else
+            error( "color-fallback() must be used within a property" )

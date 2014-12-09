@@ -21,14 +21,27 @@ ks-position( pos, values )
         bottom values[ 2 ] if values[ 2 ] != false
         left values[ 3 ] if values[ 3 ] != false
 
-static( values... )
+ks-static( values... )
     ks-position( static, values )
 
-relative( values... )
+ks-relative( values... )
     ks-position( relative, values )
 
-absolute( values... )
+ks-absolute( values... )
     ks-position( absolute, values )
 
-fixed( values... )
+ks-fixed( values... )
     ks-position( fixed, values )
+
+unless ks-no-conflict
+    static( values... )
+        ks-position( static, values )
+
+    relative( values... )
+        ks-position( relative, values )
+
+    absolute( values... )
+        ks-position( absolute, values )
+
+    fixed( values... )
+        ks-position( fixed, values )

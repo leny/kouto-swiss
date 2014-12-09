@@ -38,8 +38,9 @@ ks-linear-gradient( start, props... )
     else
         error( "ks-linear-gradient() must be used within a 'background-image' property" )
 
-linear-gradient( start, props... )
-    if( current-property )
-        _ks-linear-gradient-processing( current-property, start, props )
-    else
-        error( "linear-gradient() must be used within a 'background-image' property" )
+unless ks-no-conflict
+    linear-gradient( start, props... )
+        if( current-property )
+            _ks-linear-gradient-processing( current-property, start, props )
+        else
+            error( "linear-gradient() must be used within a 'background-image' property" )
