@@ -1,3 +1,5 @@
 language: node_js
 node_js:
   - "0.10"
+notifications:
+  hipchat: 65f8e10a3f7f76d4be223e82c23b4a@KRKN
