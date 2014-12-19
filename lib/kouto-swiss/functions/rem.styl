@@ -1,8 +1,19 @@
 ks-rem-base = 16px
 
-ks-rem( value )
-    value = _strip-units( value )
-    base = ks-rem-base is a "unit" ? _strip-units( ks-rem-base ) : 16
-    value / base * 1rem
+ks-rem-fallback( property, arguments )
+    px-fall  = arguments
+    rem-fall = ""
 
+    for argument in arguments
+        value = _strip-units( argument )
+        base = ks-rem-base is a "unit" ? _strip-units( ks-rem-base ) : 16
+
+        if rem-fall == null
+            rem-fall = value / base * 1rem
+        else
+            rem-fall += " " + value / base * 1rem
+
+    {property} px-fall
+    {property} unquote( rem-fall )
+    
 rem = ks-rem unless ks-no-conflict
