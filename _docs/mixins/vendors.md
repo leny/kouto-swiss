@@ -25,7 +25,7 @@ You can select which version of browsers you want to support by modifying the fo
 
 You can set a number, which will act as "*greater or equal*" support, a [semver range](https://github.com/isaacs/node-semver#ranges) string, or the `false` value, to be ignored.
 
-If you want to ignore the [caniuse](http://caniuse.com) recommandations, add the features you want to ignore to the `ks-support-ignore-features` global variable.
+If you want to ignore the [caniuse](http://caniuse.com) recommendations, add the features you want to ignore to the `ks-support-ignore-features` global variable.
 
 For the properties not registered in [caniuse](http://caniuse.com), the implementation is based on [the list of Peter Beverloo](http://peter.sh/experiments/vendor-prefixed-css-property-overview/).
 
