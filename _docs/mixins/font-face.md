@@ -13,6 +13,8 @@ Simple `@font-face` mixin.
 * `formats`: the formats to includes. *Optional*. Default: `eot woff2 woff truetype svg` Accepted words: `eot woff2 woff truetype ttf opentype otf svg`
 * `svg-font-name`: the svg font name. *Optional*. Default: use the `name` parameters.
 
+**Note:** you can add a default path through: `ks-font-src = './src/public/fonts/'`
+
 ### Usage
 
 ```stylus
@@ -21,6 +23,9 @@ font-face( "Roboto", "./fonts/Roboto-Regular-webfont", normal )
 font-face( "Roboto", "./fonts/Roboto-Italic-webfont", normal, italic )
 
 font-face( "OpenSans", "./fonts/OpenSans", formats: woff )
+
+ks-font-src = './src/fonts/'
+font-face( "Roboto", "Roboto-Regular-webfont", normal )
 ```
 
 ### Result
@@ -44,5 +49,12 @@ font-face( "OpenSans", "./fonts/OpenSans", formats: woff )
 @font-face {
   font-family: "OpenSans";
   src: url("./fonts/OpenSans.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: normal;
+  src: url("./src/fonts/Roboto-Regular-webfont.eot");
+  src: url("./src/fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("./src/fonts/Roboto-Regular-webfont.woff2") format("woff2"), url("./src/fonts/Roboto-Regular-webfont.woff") format("woff"), url("./src/fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("./src/fonts/Roboto-Regular-webfont.svg#Roboto") format("svg");
 }
 ```
