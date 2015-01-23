@@ -1,6 +1,8 @@
 ks-font-face( name, font-src, weight = false, style = false, formats = eot woff2 woff truetype svg, svg-font-name = false )
     @font-face
         font-family name
+        if ks-font-src is defined
+            font-src = ks-font-src + font-src
         if weight
             font-weight weight
         if style

@@ -52,3 +52,9 @@
   src: url("./fonts/Entypo-webfont.eot");
   src: url("./fonts/Entypo-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Entypo-webfont.ttf") format("truetype"), url("./fonts/Entypo-webfont.svg#entypo") format("svg");
 }
+@font-face {
+  font-family: "Roboto";
+  font-weight: normal;
+  src: url("./myfolder/fonts/Roboto-Regular-webfont.eot");
+  src: url("./myfolder/fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("./myfolder/fonts/Roboto-Regular-webfont.woff2") format("woff2"), url("./myfolder/fonts/Roboto-Regular-webfont.woff") format("woff"), url("./myfolder/fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("./myfolder/fonts/Roboto-Regular-webfont.svg#Roboto") format("svg");
+}
