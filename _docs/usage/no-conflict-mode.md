@@ -1,8 +1,8 @@
 # *no conflict* mode & mixins aliases
 
-If you use **kouto-swiss** with other mixins libraries, some variables & mixins names colisions can happens.
+If you use **kouto-swiss** with other mixin libraries (such as [bootstrap-stylus](https://github.com/Acquisio/bootstrap-stylus)), variables & mixin name colisions may happen.
 
-To avoid that problem, all the functions & mixins of **kouto-swiss** are also available with the `ks-` prefix before their name.
+To avoid that problem, all the functions & mixins of **kouto-swiss** are also available with the `ks-` prefix/namespace before their name.
 
 You should include the **kouto-swiss** lib first in your stylesheets, before any other library.
 
