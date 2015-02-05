@@ -1,5 +1,17 @@
 ks-position( pos, values )
-    position pos
+    if pos == sticky
+        if !( "css-sticky" in ks-support-ignore-features )
+            for prefix in caniuse-prefixes( "css-sticky" )
+                position unquote( "-" + prefix + "-sticky" )
+        else if ks-vendors-prefixes isnt false
+                if ks-vendors-prefixes isnt recommended
+                    prefixes = ks-vendors-prefixes
+                if prefixes
+                    for prefix in prefixes
+                        position unquote( "-" + prefix + "-sticky" )
+        position unquote( "sticky" )
+    else
+        position pos
     if length( values ) == 1 && values[ 0 ] != false
         top values[ 0 ]
         right values[ 0 ]
@@ -33,6 +45,9 @@ ks-absolute( values... )
 ks-fixed( values... )
     ks-position( fixed, values )
 
+ks-sticky( values... )
+    ks-position( sticky, values )
+
 unless ks-no-conflict
     static( values... )
         ks-position( static, values )
@@ -45,3 +60,9 @@ unless ks-no-conflict
 
     fixed( values... )
         ks-position( fixed, values )
+
+    sticky( values... )
+        ks-position( sticky, values )
+
+    position( value, values... )
+        ks-position( value, values )
