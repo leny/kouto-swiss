@@ -177,6 +177,12 @@ button {
   transition-timing-function: ease;
 }
 button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+button {
   -o-clip-path: none;
   -ms-clip-path: none;
   -webkit-clip-path: none;
