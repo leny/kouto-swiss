@@ -1,6 +1,6 @@
 {
   "name": "kouto-swiss",
-  "version": "0.11.6",
+  "version": "0.11.7",
   "description": "A complete CSS framework for Stylus",
   "keywords": [
     "Stylus",
@@ -48,6 +48,18 @@
     {
       "name": "teohhanhui",
       "url": "https://github.com/teohhanhui"
+    },
+    {
+      "name": "kix",
+      "url": "http://blog.kixlive.ru"
+    },
+    {
+      "name": "morenoh149",
+      "url": "http://harrymoreno.com"
+    },
+    {
+      "name": "mehcode",
+      "url": "https://github.com/mehcode"
     }
   ],
   "repository": {

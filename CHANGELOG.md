@@ -1,5 +1,12 @@
 # kouto swiss: changelog
 
+## `0.11.7` / 2015-02-05
+
+* Update Stylus to `0.50.0`, update dev dependencies.
+* Fix some grammatical/spelling errors
+* Add `user-select` vendor prefixing
+* Add `position: sticky` vendor prefixing
+
 ## `0.11.6` / 2014-11-27
 
 * Implementing *no-conflict* mode
