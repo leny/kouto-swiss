@@ -176,3 +176,11 @@ unless ks-no-conflict
         ks-vendor( "transition-property", arguments, feature: "css-transitions" )
     transition-timing-function()
         ks-vendor( "transition-timing-function", arguments, feature: "css-transitions" )
+
+    user-select( value )
+        -webkit-touch-callout value
+        -webkit-user-select value
+        -khtml-user-select value
+        -moz-user-select value
+        -ms-user-select value
+        user-select value
