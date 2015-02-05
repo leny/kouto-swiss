@@ -72,7 +72,7 @@
   },
   "dependencies": {
     "prefiks": "^0.3",
-    "stylus": "0.49.3"
+    "stylus": "0.50.0"
   },
   "devDependencies": {
     "chalk": "^0.5.1",
@@ -83,7 +83,7 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-connect": "^0.9.0",
     "grunt-contrib-copy": "^0.7.0",
-    "grunt-contrib-jade": "^0.13.0",
+    "grunt-contrib-jade": "^0.14.1",
     "grunt-contrib-stylus": "^0.20.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-gh-pages": "^0.9.1",
