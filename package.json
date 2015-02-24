@@ -1,6 +1,6 @@
 {
   "name": "kouto-swiss",
-  "version": "0.11.7",
+  "version": "0.11.8",
   "description": "A complete CSS framework for Stylus",
   "keywords": [
     "Stylus",
@@ -60,6 +60,10 @@
     {
       "name": "mehcode",
       "url": "https://github.com/mehcode"
+    },
+    {
+      "name": "sdegutis",
+      "url": "http://sdegutis.github.io"
     }
   ],
   "repository": {

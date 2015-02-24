@@ -1,5 +1,10 @@
 # kouto swiss: changelog
 
+## `0.11.8` / 2015-02-24
+
+* Update dev dependencies
+* Fix position mixins when using `!important` keyword
+
 ## `0.11.7` / 2015-02-05
 
 * Update Stylus to `0.50.0`, update dev dependencies.
