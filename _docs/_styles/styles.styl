@@ -71,16 +71,8 @@ header
     position relative
     width 100%
     margin 0 auto 70px
-    padding 1px 0 0
+    padding 1px 0 10px
     background cKoutoSwiss
-    &:after
-        content ""
-        display block
-        position absolute
-        width 120%
-        height 80px
-        margin -55px 0 0 -10%
-        background cKoutoSwiss
     h1
         position relative
         margin 10px auto 0
@@ -100,15 +92,7 @@ header
         font SemiBold 1rem FiraSans
         color white
     body.home &
-        padding 1px 0 5px
-        &:after
-            content ""
-            display block
-            position absolute
-            width 120%
-            height 90px
-            margin -45px 0 0 -10%
-            background cKoutoSwiss
+        padding 1px 0 35px
         h1
             margin 19px auto 0
             a
@@ -218,17 +202,11 @@ header
 section
     margin 0 auto 20px
     h3
-        width 120%
-        margin 30px -10% 50px
-        padding 4px 10% 0
-        background cKoutoSwiss
-        font normal 2.4rem/2 Norwester
-        color white
+        margin 30px auto 10px
+        padding 0 10px
+        font normal 2.4rem/1.5 Norwester
+        color cKoutoSwiss
         text-transform uppercase
-        &:before
-            content ""
-            display inline-block
-            width 10px
     h4
         margin 20px 10px 20px
         font SemiBold 1.8rem FiraSans
@@ -348,17 +326,9 @@ div.docs
 footer
     position relative
     width 100%
-    margin 100px auto 0
-    padding 1px 0 20px
+    margin 50px auto 0
+    padding 20px 0 20px
     background cKoutoSwiss
-    &:before
-        content ""
-        display block
-        position absolute
-        width 120%
-        height 90px
-        margin -45px 0 0 -10%
-        background cKoutoSwiss
     p
         position relative
         margin 0 10px 10px
@@ -422,17 +392,7 @@ footer
                 margin -40px 0 0 -10%
     section
         h3
-            width 120%
-            margin 0 -10% 60px
-            padding 3px 10% 0
-            background cKoutoSwiss
-            font normal 2.8rem/2 Norwester
-            color white
-            text-transform uppercase
-            &:before
-                content ""
-                display inline-block
-                width 10px
+            font normal 2.8rem/1.5 Norwester
         p.punchline
             width 50%
             margin 2.5rem 10px 1rem
@@ -440,9 +400,6 @@ footer
             color cKoutoSwiss
     footer
         margin 120px auto 0
-        &:before
-            height 100px
-            margin -55px 0 0 -10%
 
 +media-query( screen, min-width 640px )
     header
@@ -470,10 +427,6 @@ footer
             &:after
                 margin -40px 0 0 -10%
     section
-        h3
-            margin 10px -10% 50px
-            padding 5px 10% 0
-            font normal 3.2rem/2 Norwester
         p.punchline
             font SemiBold 1.8rem FiraSans
         &.about
@@ -493,7 +446,7 @@ footer
                     margin 0 auto 10px
     footer
         margin 100px auto 0
-        padding 1px 0 20px
+        padding 20px 0
         &:before
             height 90px
             margin -45px 0 0 -10%
@@ -545,25 +498,16 @@ footer
         h2
             width 100%
             margin 0
-            padding 0 10px 30px
+            padding 0 10px 10px
             overflow hidden
             color cKoutoSwiss
-            &:after
-                content ""
-                position absolute
-                bottom -40px
-                left -10%
-                display block
-                width 120%
-                height 50px
-                background cKoutoSwiss
         &:after
             content none
         body.home &
             position static
             width auto
-            margin 0 auto 120px
-            padding 21px 0 5px
+            margin 0 auto 60px
+            padding 21px 0 35px
             background cKoutoSwiss
             &:after
                 content ""
@@ -617,28 +561,17 @@ footer
         body.home &
             width 800px
             margin 30px auto 0
-        h3
-            width 600%
-            margin 10px -250% 50px
-            padding 5px 250% 0
-            font normal 3.2rem/2 Norwester
     div.docs
         width 680px
         margin 10px 0 20px 260px
     footer
         position relative
         width auto
-        padding 10px 20px 20px 260px
+        padding 20px 20px 20px 260px
         z-index 20
-        &:before
-            height 120px
-            margin -65px 0 0 -10%
         body.home &
             margin 120px auto 0
-            padding 1px 0 20px
-            &:before
-                height 120px
-                margin -55px 0 0 -10%
+            padding 20px 0
             p
                 position relative
                 width 800px
