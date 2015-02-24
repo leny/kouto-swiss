@@ -3,7 +3,7 @@
 path = require "path"
 marked = require "marked"
 chalk = require "chalk"
-sqlite3 = require( "sqlite3" ).verbose()
+# sqlite3 = require( "sqlite3" ).verbose()
 ( highlightjs = require "highlight.js" )
     .configure
         classPrefix: ""
@@ -21,6 +21,8 @@ oMarkdownCompilationOptions =
         highlightjs.highlightAuto( sCode ).value
 
 module.exports = ( grunt ) ->
+
+    return # task is not ready yet.
 
     grunt.registerTask "docset", "Generate dash docset for Kouto Swiss.", ->
         # 0. Clean previously generated docset folders
@@ -54,4 +56,3 @@ module.exports = ( grunt ) ->
         # 13. Copy README
         grunt.file.copy "#{ sDocsetSourcePath }/README.md", "#{ sDocsetPath }/README.md"
         # 14. Clean temporary files
-
