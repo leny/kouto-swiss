@@ -108,8 +108,5 @@
     "marked": "^0.3.3",
     "should": "^5.0.1",
     "sqlite3": "^3.0.5"
-  },
-  "peerDependencies": {
-    "grunt": "~0.4"
   }
 }
