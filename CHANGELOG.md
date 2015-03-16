@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.11.9` / 2015-03-16
+
+* Remove grunt as *peerDependency*
+
 ## `0.11.8` / 2015-02-24
 
 * Update dev dependencies
