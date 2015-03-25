@@ -1,5 +1,10 @@
 # kouto swiss: changelog
 
+## `0.11.10` / 2015-03-25
+
+* Update documentation for position sticky
+* Implement box-shadow vendors mixin
+
 ## `0.11.9` / 2015-03-16
 
 * Remove grunt as *peerDependency*
