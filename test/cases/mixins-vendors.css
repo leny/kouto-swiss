@@ -34,11 +34,6 @@ button {
   background-size: auto auto;
 }
 button {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-}
-button {
   -webkit-border-image-source: none;
   border-image-source: none;
   -webkit-border-image-slice: 100%;
@@ -51,6 +46,15 @@ button {
   border-image-repeat: stretch;
   -webkit-border-image: none 100% 1 0s stretch;
   border-image: none 100% 1 0s stretch;
+}
+button {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+button {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
 button {
   -webkit-clip-path: none;
@@ -183,22 +187,24 @@ button {
   user-select: none;
 }
 button {
-  -o-clip-path: none;
-  -ms-clip-path: none;
-  -webkit-clip-path: none;
-  -moz-clip-path: none;
-  clip-path: none;
+  -o-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility: visible;
+  backface-visibility: visible;
 }
 button {
-  -webkit-clip-path: none;
-  clip-path: none;
+  -webkit-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  backface-visibility: visible;
 }
 button {
-  clip-path: none;
+  backface-visibility: visible;
 }
 button {
-  -webkit-clip-path: none;
-  clip-path: none;
+  -webkit-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  backface-visibility: visible;
 }
 button {
   -webkit-columns: auto auto;
