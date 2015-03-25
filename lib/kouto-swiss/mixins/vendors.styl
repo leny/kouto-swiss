@@ -51,9 +51,6 @@ unless ks-no-conflict
     background-size()
         ks-vendor( "background-size", arguments, feature: "background-img-opts" )
 
-    box-sizing()
-        ks-vendor( "box-sizing", arguments, feature: "css3-boxsizing" )
-
     border-image-source()
         ks-vendor( "border-image-source", arguments, feature: "border-image" )
     border-image-slice()
@@ -67,8 +64,14 @@ unless ks-no-conflict
     border-image()
         ks-vendor( "border-image", arguments, feature: "border-image" )
 
+    box-shadow()
+        ks-vendor( "box-shadow", arguments, feature: "css-boxshadow" )
+
+    box-sizing()
+        ks-vendor( "box-sizing", arguments, feature: "css3-boxsizing" )
+
     clip-path()
-        ks-vendor( "clip-path", arguments, prefixes: webkit )
+        ks-vendor( "clip-path", arguments, feature: "css-clip-path" )
 
     column-count()
         ks-vendor( "column-count", arguments, feature: "multicolumn" )
@@ -179,6 +182,3 @@ unless ks-no-conflict
 
     user-select( value )
         ks-vendor( "user-select", arguments, feature: "user-select-none" )
-
-    box-shadow( value )
-        ks-vendor( "box-shadow", arguments, feature: "box-shadow", prefixes: webkit )
