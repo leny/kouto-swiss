@@ -1,8 +1,13 @@
 ks-rem-base = 16px
 
-ks-rem( value )
-    value = _strip-units( value )
-    base = ks-rem-base is a "unit" ? _strip-units( ks-rem-base ) : 16
-    value / base * 1rem
+ks-rem( values )
+    base = ks-rem-base is a "unit" ? ks-rem-base : 16
+    result = null
+    for value in values
+      	if type( value ) == "unit" && ( unit( value ) == "px" || unit( value ) == "" )
+        		value = unit( round( value / base, 3 ), "rem" )
+        		if value == "0rem" { value = 0 }
+        result = result != null ? result value : value
+    result
 
 rem = ks-rem unless ks-no-conflict
