@@ -1,6 +1,6 @@
 {
   "name": "kouto-swiss",
-  "version": "0.11.10",
+  "version": "0.11.11",
   "description": "A complete CSS framework for Stylus",
   "keywords": [
     "Stylus",
@@ -68,6 +68,10 @@
     {
       "name": "BYODKM",
       "url": "https://byodkm.com"
+    },
+    {
+      "name": "dmitrykiselyov",
+      "url": "https://github.com/dmitrykiselyov"
     }
   ],
   "repository": {

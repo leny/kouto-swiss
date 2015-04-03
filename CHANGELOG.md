@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.11.11` / 2015-04-03
+
+* Support multiple values in `rem()` function
+
 ## `0.11.10` / 2015-03-25
 
 * Update documentation for position sticky
