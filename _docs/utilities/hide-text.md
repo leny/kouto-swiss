@@ -4,7 +4,7 @@ The hide-text mixins will hide the text of the selector where it is declared. Us
 
 > This mixin is based on which from [bourbon.io](http://bourbon.io).
 
-A height declaration is required for this to function.
+A height declaration is no longer required, but inline-level elements will need block-level display styles ("block", "inline-block", etc) applied.
 
 ### Usage
 
@@ -12,7 +12,7 @@ A height declaration is required for this to function.
 h1
     height 75px
     background url( logo.png ) top left no-repeat
-    hide-text()    
+    hide-text()
 ```
 
 ### Result
@@ -22,11 +22,7 @@ h1 {
   height: 75px;
   background: url("logo.png") top left no-repeat;
   overflow: hidden;
-}
-h1:before {
-  content: "";
-  display: block;
-  width: 0;
-  height: 100%;
+  text-indent: 101%;
+  white-space: nowrap;
 }
 ```
