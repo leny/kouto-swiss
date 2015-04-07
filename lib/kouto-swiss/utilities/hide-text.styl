@@ -1,9 +1,6 @@
 ks-hide-text()
     overflow hidden
-    &:before
-        content ""
-        display block
-        width 0
-        height 100%
+    text-indent 101%
+    white-space nowrap
 
 hide-text = ks-hide-text unless ks-no-conflict
