@@ -16,10 +16,10 @@ Returns analogous variations of the given color.
 variations = analogous( #f00 )
 
 .red-analog-one
-    color variations[0]
-    
+    color: variations[0]
+
 .red-analog-two
-    color variations[1]
+    color: variations[1]
 ```
 
 ### Result
@@ -28,7 +28,7 @@ variations = analogous( #f00 )
 .red-analog-one {
   color: #ff8000;
 }
-    
+
 .red-analog-two {
   color: #ff0080;
 }

@@ -16,15 +16,15 @@ Create the query part of a media query for retina/hdpi screens, which you can st
 ```stylus
 +retina-query( all, 1.3 )
     div
-        color red
+        color: red
 
 +retina-query( only screen, 2 )
     div
-        color red
+        color: red
 
 +retina-query( screen )
     div
-        color red
+        color: red
 ```
 
 ### Result

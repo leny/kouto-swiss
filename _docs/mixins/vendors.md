@@ -74,27 +74,27 @@ You can also define your own vendors mixins with the **kouto swiss** built-in ve
 ```stylus
 
 button
-    hyphens manual
+    hyphens: manual
 
 ks-support-ie = 11
 
 button
-    hyphens manual
+    hyphens: manual
 
 ks-vendors-prefixes = o ms webkit moz
 
 button
-    backface-visibility visible
+    backface-visibility: visible
 
 ks-vendors-prefixes = recommended
 
 button
-    backface-visibility visible
+    backface-visibility: visible
 
 ks-vendors-prefixes = false
 
 button
-    backface-visibility visible
+    backface-visibility: visible
 
 button
     vendor( "columns", auto auto, feature: "multicolumn" )
@@ -108,8 +108,8 @@ button
 ks-support-ignore-features = "css3-boxsizing" "css-animation"
 
 button
-    animation none 0s ease 0s 1 normal none
-    box-sizing content-box
+    animation: none 0s ease 0s 1 normal none
+    box-sizing: content-box
 ```
 
 ### Result

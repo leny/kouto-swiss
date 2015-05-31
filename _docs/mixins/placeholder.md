@@ -7,9 +7,9 @@ Must be called from a ruleset.
 
 ```stylus
 input
-    color #f00
+    color: #f00
     +placeholder()
-        color #f99        
+        color: #f99
 ```
 
 ### Result

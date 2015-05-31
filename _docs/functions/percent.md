@@ -15,14 +15,14 @@ The `percent` function makes a simple percentage convertion operation. It takes 
 
 ```stylus
 div
-    width percent( 50px, 200px )
-    
+    width: percent( 50px, 200px )
+
 div
-    width percent( 15, 200 )
-    
+    width: percent( 15, 200 )
+
 div
-    clear percent( 30em, 10px )
-    
+    clear: percent( 30em, 10px )
+
 ```
 
 ### Result

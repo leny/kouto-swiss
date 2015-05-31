@@ -13,28 +13,28 @@ Simply call the value of position as property, and gives the values of `top`, `r
 
 ```stylus
 div
-    static 10px
+    static: 10px
 
 div
-    relative 10px 20px
+    relative: 10px 20px
 
 div
-    absolute 10px 20px 30px
+    absolute: 10px 20px 30px
 
 div
-    fixed 10px 20px 30px 40px
+    fixed: 10px 20px 30px 40px
 
 div
-    fixed 10px false 30px
+    fixed: 10px false 30px
 
 div
-    fixed 10px 20px false 40px
+    fixed: 10px 20px false 40px
 
 div
-    position sticky
+    position: sticky
 
 div
-    sticky 10px 20px 0 40px
+    sticky: 10px 20px 0 40px
 ```
 
 ### Result

@@ -14,11 +14,11 @@ Uses the second value as base. If no base is given, uses `16px` as base.
 
 ```stylus
 div
-    font-size em( 12px, 24 )
-    
+    font-size: em( 12px, 24 )
+
 div
-    font-size em( 16 )
-        
+    font-size: em( 16 )
+
 ```
 
 ### Result

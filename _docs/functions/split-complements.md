@@ -16,10 +16,10 @@ Returns split-complements variations of the given color.
 variations = split-complements( #f00 )
 
 .red-split-complement-one
-    color variations[0]
-    
+    color: variations[0]
+
 .red-split-complement-two
-    color variations[1]
+    color: variations[1]
 ```
 
 ### Result
@@ -28,7 +28,7 @@ variations = split-complements( #f00 )
 .red-split-complement-one {
   color: #00ff80;
 }
-    
+
 .red-split-complement-two {
   color: #007fff;
 }

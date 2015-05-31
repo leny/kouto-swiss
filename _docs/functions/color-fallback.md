@@ -15,10 +15,10 @@ If the given color has an alpha of `1`, the function doesn't do anything.
 
 ```stylus
 .no-alpha
-    color color-fallback( red )
+    color: color-fallback( red )
 
 .alpha
-    color color-fallback( rgba( 255, 0, 0, .5 ) )
+    color: color-fallback( rgba( 255, 0, 0, .5 ) )
 ```
 
 ### Result
@@ -44,20 +44,20 @@ The `implicit color fallback` mecanism allows you to use the `color-fallback` fu
 
 ```stylus
 .foo
-    color rgba( 255, 0, 0, .5 )
+    color: rgba( 255, 0, 0, .5 )
 
 ks-color-fallback-enabled = true
 
 .bar
-    color rgba( 255, 0, 0, .5 )
+    color: rgba( 255, 0, 0, .5 )
 
 .bar
-    background rgba( 202, 43, 120, .5 ) url( test.png ) top left repeat
+    background: rgba( 202, 43, 120, .5 ) url( test.png ) top left repeat
 
 ks-color-fallback-enabled = false
 
 .foo
-    color rgba( 255, 0, 0, .5 )
+    color: rgba( 255, 0, 0, .5 )
 
 ```
 

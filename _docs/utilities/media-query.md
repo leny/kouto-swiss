@@ -21,37 +21,37 @@ It's useful for legacy stylesheet for old IE versions.
 ```stylus
 +media-query( all, min-width 640px )
     div
-        color red
+        color: red
 
 +media-query( only screen, min-width 640px, min-height 960px, orientation portrait )
     div
-        color red
+        color: red
 
 +media-query( print )
     div
-        color red
+        color: red
 
 ks-support-media-queries = false
 
 +media-query( all, min-width 640px )
     div
-        color red
+        color: red
 
 +media-query( only screen, min-width 640px, min-height 960px, orientation portrait )
     div
-        color red
+        color: red
 
 +media-query( print )
     div
-        color red
-        
+        color: red
+
 ks-support-media-queries = true
 
 breakpointMain = only screen, max-width 767px
 
 +media-query( breakpointMain )
     div
-        width 100%
+        width: 100%
 
 ```
 

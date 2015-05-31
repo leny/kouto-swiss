@@ -12,8 +12,8 @@ Returns the [WCAG luminosity](http://www.w3.org/TR/WCAG20/#relativeluminancedef)
 
 ```stylus
 .luminosity
-    background #ff0
-    color luminosity( #ff0 ) > 0.5 ? black : white
+    background: #ff0
+    color: luminosity( #ff0 ) > 0.5 ? black : white
 ```
 
 ### Result

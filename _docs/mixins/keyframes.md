@@ -12,19 +12,19 @@ The `@keyframes` structure is currently handled by the [Stylus language](http://
 ```stylus
 @keyframes my-rainbow-animation
     0%
-        color red
+        color: red
     14%
-        color orange
+        color: orange
     28%
-        color yellow
+        color: yellow
     42%
-        color green
+        color: green
     56%
-        color blue
+        color: blue
     70%
-        color indigo
+        color: indigo
     84%
-        color violet
+        color: violet
 
 div.rainbow
     animation rainbow 3s linear

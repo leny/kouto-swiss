@@ -30,22 +30,22 @@ For the `ratio` parameter, you can give any number, or use one of the following 
 * `ks-major-tenth`: 2.5
 * `ks-major-eleventh`: 2.667
 * `ks-major-twelfth`: 3
-* `ks-double-octave`: 4 
+* `ks-double-octave`: 4
 
 ### Usage
 
 ```stylus
 div
-    font-size modular-scale( 16px, 1, 1.5 )
-    
+    font-size: modular-scale( 16px, 1, 1.5 )
+
 div
-    font-size modular-scale( 16px, 2, 1.618 )
-    
+    font-size: modular-scale( 16px, 2, 1.618 )
+
 div
-    font-size modular-scale( 16px, -2, ks-octave )
-    
+    font-size: modular-scale( 16px, -2, ks-octave )
+
 div
-    font-size modular-scale( 1em, 2, 1.5 )
+    font-size: modular-scale( 1em, 2, 1.5 )
 ```
 
 ### Result

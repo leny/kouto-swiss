@@ -3,7 +3,7 @@
 Get a `cubic-bezier` preset to use with `transition` property.  
 The presets are taken from the plugin [easie](http://jaukia.github.io/easie/), by [Janne Aukia](http://janne.aukia.com)
 
-These are the preset included in **kouto swiss**: 
+These are the preset included in **kouto swiss**:
 
 * `"in-quad"`
 * `"in-cubic"`
@@ -40,7 +40,7 @@ These are the preset included in **kouto swiss**:
 
 ```stylus
 div
-    transition all .25s easing( "in-quad" )
+    transition: all .25s easing( "in-quad" )
 ```
 
 ### Result

@@ -13,10 +13,10 @@ Returns the golden ratio (`1.618`) of a number for a given step.
 
 ```stylus
 div
-    font-size golden-ratio( 16px, 1 )
-        
+    font-size: golden-ratio( 16px, 1 )
+
 div
-    font-size golden-ratio( 1em, 2 )
+    font-size: golden-ratio( 1em, 2 )
 ```
 
 ### Result

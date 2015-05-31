@@ -13,14 +13,14 @@ Assumes `1rem = 16px`. You can override by passing a new value to the global var
 
 ```stylus
 div
-    font-size rem( 12px )
-    margin rem( 10px auto 20 )
+    font-size: rem( 12px )
+    margin: rem( 10px auto 20 )
 
 ks-rem-base = 20px
 
 div
-    font-size rem( 16 )
-    margin rem( 10 auto 20px )
+    font-size: rem( 16 )
+    margin: rem( 10 auto 20px )
 
 ```
 

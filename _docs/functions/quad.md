@@ -17,13 +17,13 @@ Returns quad (*tetrad*) variations of the given color.
 variations = quad( #f00 )
 
 .red-quad-one
-    color variations[0]
-    
+    color: variations[0]
+
 .red-quad-two
-    color variations[1]
-    
+    color: variations[1]
+
 .red-quad-three
-    color variations[2]
+    color: variations[2]
 ```
 
 ### Result
@@ -32,11 +32,11 @@ variations = quad( #f00 )
 .red-quad-one {
   color: #80ff00;
 }
-    
+
 .red-quad-two {
   color: #7f00ff;
 }
-    
+
 .red-quad-three {
   color: #0ff;
 }

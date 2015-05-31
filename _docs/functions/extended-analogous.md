@@ -18,16 +18,16 @@ Returns more analogous variations of the given color.
 variations = extended-analogous( #f00 )
 
 .red-analog-one
-    color variations[0]
-    
+    color: variations[0]
+
 .red-analog-two
-    color variations[1]
-    
+    color: variations[1]
+
 .red-analog-three
-    color variations[2]
-    
+    color: variations[2]
+
 .red-analog-four
-    color variations[3]
+    color: variations[3]
 ```
 
 ### Result
@@ -36,7 +36,7 @@ variations = extended-analogous( #f00 )
 .red-analog-one {
   color: #ff8000;
 }
-    
+
 .red-analog-two {
   color: #ff0080;
 }
@@ -44,7 +44,7 @@ variations = extended-analogous( #f00 )
 .red-analog-three {
   color: #ff0;
 }
-    
+
 .red-analog-four {
   color: #f0f;
 }

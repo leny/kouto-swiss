@@ -10,9 +10,9 @@ A height declaration is required for this to function.
 
 ```stylus
 h1
-    height 75px
-    background url( logo.png ) top left no-repeat
-    hide-text()    
+    height: 75px
+    background: url( logo.png ) top left no-repeat
+    hide-text()
 ```
 
 ### Result

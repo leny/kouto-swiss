@@ -8,7 +8,7 @@ The ellipsis mixin is a shortcut value to pass to an overflow property, which di
 
 ```stylus
 div
-    overflow ellipsis
+    overflow: ellipsis
 ```
 
 ### Result

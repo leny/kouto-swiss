@@ -16,10 +16,10 @@ Returns triad variations of the given color.
 variations = triad( #f00 )
 
 .red-triad-one
-    color variations[0]
-    
+    color: variations[0]
+
 .red-triad-two
-    color variations[1]
+    color: variations[1]
 ```
 
 ### Result
@@ -28,7 +28,7 @@ variations = triad( #f00 )
 .red-triad-one {
   color: #0f0;
 }
-    
+
 .red-triad-two {
   color: #00f;
 }

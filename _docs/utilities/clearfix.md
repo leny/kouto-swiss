@@ -14,15 +14,15 @@ The clearfix comes with three syntaxes, each return the same result.
 // form one
 div
     clearfix()
-    
+
 // form two
 div
-    clear fix
-    
+    clear: fix
+
 // form three
 div
-    clear fix()
-    
+    clear: fix()
+
 ```
 
 ### Result

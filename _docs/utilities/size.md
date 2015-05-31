@@ -10,16 +10,16 @@ The size mixins gives you a convenient shortcut for setting `width` and `height`
 
 ```stylus
 div
-    size 10px
-    
+    size: 10px
+
 div
-    size 10px 20px
-    
+    size: 10px 20px
+
 div
-    size 10px false
-    
+    size: 10px false
+
 div
-    size false 20px
+    size: false 20px
 ```
 
 ### Result

@@ -16,10 +16,10 @@ Returns monochromatic variations of the given color.
 variations = monochrome( #f00 )
 
 .red-mono-one
-    color variations[0]
-    
+    color: variations[0]
+
 .red-mono-two
-    color variations[1]
+    color: variations[1]
 ```
 
 ### Result
@@ -28,7 +28,7 @@ variations = monochrome( #f00 )
 .red-mono-one {
   color: #f55;
 }
-    
+
 .red-mono-two {
   color: #ff2a2a;
 }
