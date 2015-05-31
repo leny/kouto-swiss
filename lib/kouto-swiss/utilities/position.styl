@@ -7,36 +7,36 @@ ks-position( pos, values )
     if pos == sticky
         if !( "css-sticky" in ks-support-ignore-features )
             for prefix in caniuse-prefixes( "css-sticky" )
-                position unquote( "-" + prefix + "-sticky " + important )
+                position: unquote( "-" + prefix + "-sticky " + important )
         else if ks-vendors-prefixes isnt false
                 if ks-vendors-prefixes isnt recommended
                     prefixes = ks-vendors-prefixes
                 if prefixes
                     for prefix in prefixes
-                        position unquote( "-" + prefix + "-sticky " + important )
-        position unquote( "sticky " + important )
+                        position: unquote( "-" + prefix + "-sticky " + important )
+        position: unquote( "sticky " + important )
     else
-        position pos unquote( important )
+        position: pos unquote( important )
     if length( values ) == 1 && values[ 0 ] != false
-        top values[ 0 ] unquote( important )
-        right values[ 0 ] unquote( important )
-        bottom values[ 0 ] unquote( important )
-        left values[ 0 ] unquote( important )
+        top: values[ 0 ] unquote( important )
+        right: values[ 0 ] unquote( important )
+        bottom: values[ 0 ] unquote( important )
+        left: values[ 0 ] unquote( important )
     if length( values ) == 2
-        top values[ 0 ] unquote( important ) if values[ 0 ] != false
-        right values[ 1 ] unquote( important ) if values[ 1 ] != false
-        bottom values[ 0 ] unquote( important ) if values[ 0 ] != false
-        left values[ 1 ] unquote( important ) if values[ 1 ] != false
+        top: values[ 0 ] unquote( important ) if values[ 0 ] != false
+        right: values[ 1 ] unquote( important ) if values[ 1 ] != false
+        bottom: values[ 0 ] unquote( important ) if values[ 0 ] != false
+        left: values[ 1 ] unquote( important ) if values[ 1 ] != false
     if length( values ) == 3
-        top values[ 0 ] unquote( important ) if values[ 0 ] != false
-        right values[ 1 ] unquote( important ) if values[ 1 ] != false
-        bottom values[ 2 ] unquote( important ) if values[ 2 ] != false
-        left values[ 1 ] unquote( important ) if values[ 1 ] != false
+        top: values[ 0 ] unquote( important ) if values[ 0 ] != false
+        right: values[ 1 ] unquote( important ) if values[ 1 ] != false
+        bottom: values[ 2 ] unquote( important ) if values[ 2 ] != false
+        left: values[ 1 ] unquote( important ) if values[ 1 ] != false
     if length( values ) == 4
-        top values[ 0 ] unquote( important ) if values[ 0 ] != false
-        right values[ 1 ] unquote( important ) if values[ 1 ] != false
-        bottom values[ 2 ] unquote( important ) if values[ 2 ] != false
-        left values[ 3 ] unquote( important ) if values[ 3 ] != false
+        top: values[ 0 ] unquote( important ) if values[ 0 ] != false
+        right: values[ 1 ] unquote( important ) if values[ 1 ] != false
+        bottom: values[ 2 ] unquote( important ) if values[ 2 ] != false
+        left: values[ 3 ] unquote( important ) if values[ 3 ] != false
 
 ks-static( values... )
     ks-position( static, values )

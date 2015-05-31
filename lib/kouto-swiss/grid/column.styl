@@ -1,9 +1,9 @@
 ks-col( size = false )
     unless size
         size = ks-grid-config[ "columns" ]
-    display inline-block
-    float left
-    overflow hidden
+    display: inline-block
+    float: left
+    overflow: hidden
     if ks-grid-config[ "type" ] == "fixed"
         width: round( ks-grid-config[ "total-width" ] * ( ( ( ( ks-grid-config[ "gutter-width" ] + ks-grid-config[ "column-width" ] ) * size ) - ks-grid-config[ "gutter-width" ] ) / ks-grid-config[ "computed-total-width" ] ), 5 )
         margin: 0 round( ks-grid-config[ "total-width" ] * ( ( ks-grid-config[ "gutter-width" ] * .5 ) / ks-grid-config[ "computed-total-width" ] ), 5 )

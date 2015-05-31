@@ -5,22 +5,22 @@ ks-display( value, args... )
     if value == flex
         if ks-vendors-prefixes isnt false and !( flex in ks-support-ignore-features ) and !( flexbox in ks-support-ignore-features )
             if _ks-support-old-flex-implementation()
-                display -webkit-box args
+                display: -webkit-box args
             for prefix in caniuse-prefixes( "flexbox" )
                 if prefix is "webkit"
-                    display -webkit-flex args
+                    display: -webkit-flex args
                 if prefix is "moz"
-                    display -moz-box args
+                    display: -moz-box args
                 if prefix is "ms"
-                    display -ms-flexbox args
-        display flex args
+                    display: -ms-flexbox args
+        display: flex args
     else if value == inline-flex
         if ks-vendors-prefixes isnt false and !( flex in ks-support-ignore-features ) and !( flexbox in ks-support-ignore-features )
             for prefix in caniuse-prefixes( "flexbox" )
-                display unquote( "-" + prefix + "-inline-flex" ) args
-        display inline-flex args
+                display: unquote( "-" + prefix + "-inline-flex" ) args
+        display: inline-flex args
     else
-        display value args
+        display: value args
 
 display = ks-display unless ks-no-conflict
 
@@ -35,44 +35,44 @@ unless ks-no-conflict
         if ks-vendors-prefixes isnt false and !( flex in ks-support-ignore-features ) and !( flexbox in ks-support-ignore-features )
             if _ks-support-old-flex-implementation()
                 if value is row
-                    -webkit-box-orient vertical args
-                    -webkit-box-direction normal args
+                    -webkit-box-orient: vertical args
+                    -webkit-box-direction: normal args
                 if value is row-reverse
-                    -webkit-box-orient vertical args
-                    -webkit-box-direction reverse args
+                    -webkit-box-orient: vertical args
+                    -webkit-box-direction: reverse args
                 if value is column
-                    -webkit-box-orient horizontal args
-                    -webkit-box-direction normal args
+                    -webkit-box-orient: horizontal args
+                    -webkit-box-direction: normal args
                 if value is column-reverse
-                    -webkit-box-orient horizontal args
-                    -webkit-box-direction reverse args
+                    -webkit-box-orient: horizontal args
+                    -webkit-box-direction: reverse args
             for prefix in caniuse-prefixes( "flexbox" )
                 if prefix is "moz" and ks-support-firefox <= 20
                     if value is row
-                        -moz-box-orient vertical args
-                        -moz-box-direction normal args
+                        -moz-box-orient: vertical args
+                        -moz-box-direction: normal args
                     if value is row-reverse
-                        -moz-box-orient vertical args
-                        -moz-box-direction reverse args
+                        -moz-box-orient: vertical args
+                        -moz-box-direction: reverse args
                     if value is column
-                        -moz-box-orient horizontal args
-                        -moz-box-direction normal args
+                        -moz-box-orient: horizontal args
+                        -moz-box-direction: normal args
                     if value is column-reverse
-                        -moz-box-orient horizontal args
-                        -moz-box-direction reverse args
+                        -moz-box-orient: horizontal args
+                        -moz-box-direction: reverse args
                 else
                     if value is row
-                        -{prefix}-flex-direction unquote( "row" ) args
+                        -{prefix}-flex-direction: unquote( "row" ) args
                     else if value is column
-                        -{prefix}-flex-direction unquote( "column" ) args
+                        -{prefix}-flex-direction: unquote( "column" ) args
                     else
-                        -{prefix}-flex-direction value args
+                        -{prefix}-flex-direction: value args
         if value is row
-            flex-direction unquote( "row" ) args
+            flex-direction: unquote( "row" ) args
         else if value is column
-            flex-direction unquote( "column" ) args
+            flex-direction: unquote( "column" ) args
         else
-            flex-direction value args
+            flex-direction: value args
 
     flex-flow( dir, wrap, args... )
         if dir is row
@@ -81,8 +81,8 @@ unless ks-no-conflict
             dir = unquote( "column" )
         if ks-vendors-prefixes isnt false and !( flex in ks-support-ignore-features ) and !( flexbox in ks-support-ignore-features )
             for prefix in caniuse-prefixes( "flexbox" )
-                -{prefix}-flex-flow dir wrap args
-        flex-flow dir wrap args
+                -{prefix}-flex-flow: dir wrap args
+        flex-flow: dir wrap args
 
     flex-shrink()
         ks-vendor( "flex-shrink", arguments, feature: "flexbox" )
@@ -100,22 +100,22 @@ unless ks-no-conflict
         if ks-vendors-prefixes isnt false and !( flex in ks-support-ignore-features ) and !( flexbox in ks-support-ignore-features )
             if _ks-support-old-flex-implementation()
                 if value is flex-start
-                    -webkit-box-align start args
+                    -webkit-box-align: start args
                 else if value is flex-end
-                    -webkit-box-align end args
+                    -webkit-box-align: end args
                 else
-                    -webkit-box-align value args
+                    -webkit-box-align: value args
             for prefix in caniuse-prefixes( "flexbox" )
                 if prefix is "moz" and ks-support-firefox <= 20
                     if value is flex-start
-                        -moz-box-align start args
+                        -moz-box-align: start args
                     else if value is flex-end
-                        -moz-box-align end args
+                        -moz-box-align: end args
                     else
-                        -moz-box-align value args
+                        -moz-box-align: value args
                 else
-                    -{prefix}-align-items value args
-            align-items value args
+                    -{prefix}-align-items: value args
+            align-items: value args
 
     align-self()
         ks-vendor( "align-self", arguments, feature: "flexbox" )

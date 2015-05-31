@@ -1,13 +1,13 @@
 ks-font-face( name, font-src, weight = false, style = false, formats = eot woff2 woff truetype svg, svg-font-name = false )
     @font-face
-        font-family name
+        font-family: name
         if weight
-            font-weight weight
+            font-weight: weight
         if style
-            font-style style
+            font-style: style
         fonts = ()
         if eot in formats
-            src url( font-src + ".eot" )
+            src: url( font-src + ".eot" )
             push( fonts, 'url("' + font-src + '.eot?#iefix") format("embedded-opentype")' )
         if woff2 in formats
             push( fonts, 'url("' + font-src + '.woff2") format("woff2")' )
@@ -20,6 +20,6 @@ ks-font-face( name, font-src, weight = false, style = false, formats = eot woff2
         if svg in formats
             svg-name = svg-font-name ? svg-font-name : name
             push( fonts, 'url("' + font-src + '.svg#' + svg-name + '") format("svg")' )
-        src unquote( join( ", ", fonts ) )
+        src: unquote( join( ", ", fonts ) )
 
 font-face = ks-font-face unless ks-no-conflict

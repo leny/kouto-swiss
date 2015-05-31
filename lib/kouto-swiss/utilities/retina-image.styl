@@ -7,10 +7,10 @@ ks-retina-image( img-src, size = false, suffix = "@2x" )
         if size[ 0 ] == 0 && size[ 1 ] == 0
             size = contain
 
-    background-image url( image-src )
+    background-image: url( image-src )
     +ks-retina-query( only screen, 1.3 )
-        background-image url( retina-src )
-        background-size size
+        background-image: url( retina-src )
+        background-size: size
 
 retina-image = ks-retina-image unless ks-no-conflict
 ks-hidpi-image = ks-retina-image unless ks-no-conflict

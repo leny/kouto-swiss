@@ -1,5 +1,5 @@
 ks-row()
-    display block
+    display: block
     if ks-grid-config[ "type" ] == "fixed"
         width: round( ks-grid-config[ "total-width" ] * ( ( ks-grid-config[ "gutter-width" ] + ks-grid-config[ "computed-total-width" ] ) / ks-grid-config[ "computed-total-width" ] ), 5 )
         margin: 0 round( ks-grid-config[ "total-width" ] * ( ( ( ks-grid-config[ "gutter-width" ] * .5 ) / ks-grid-config[ "computed-total-width" ] ) * -1 ), 5 )

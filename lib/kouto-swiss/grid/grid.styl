@@ -28,8 +28,8 @@ ks-gs( type = "fixed", cols = false, col-width = false, gut-width = false )
         ks-grid-config[ "total-width" ] = 100%
     if selector() != "&"
         width: ks-grid-config[ "total-width" ]
-        margin 0 auto
-        overflow hidden
+        margin: 0 auto
+        overflow: hidden
     if type != "fixed" && type != "fluid"
         error( "Unknown grid system type '" + type + "' !" )
 
