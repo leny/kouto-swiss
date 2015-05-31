@@ -1,5 +1,11 @@
 # kouto swiss: changelog
 
+## `0.11.12` / 2015-05-31
+
+* Update Stylus to `0.51.1`, update dev dependencies.
+* Fix tests due to Stylus' new Math strictness.
+* Colons. [Colons everywhere](https://github.com/stylus/stylus/wiki/1.0.0#syntax).
+
 ## `0.11.11` / 2015-04-03
 
 * Support multiple values in `rem()` function
