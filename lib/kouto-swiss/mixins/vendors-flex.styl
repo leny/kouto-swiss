@@ -74,15 +74,15 @@ unless ks-no-conflict
         else
             flex-direction: value args
 
-    flex-flow( dir, wrap, args... )
+    flex-flow( dir, wrap-type, args... )
         if dir is row
             dir = unquote( "row" )
         if dir is column
             dir = unquote( "column" )
         if ks-vendors-prefixes isnt false and !( flex in ks-support-ignore-features ) and !( flexbox in ks-support-ignore-features )
             for prefix in caniuse-prefixes( "flexbox" )
-                -{prefix}-flex-flow: dir wrap args
-        flex-flow: dir wrap args
+                -{prefix}-flex-flow: dir wrap-type args
+        flex-flow: dir wrap-type args
 
     flex-shrink()
         ks-vendor( "flex-shrink", arguments, feature: "flexbox" )
