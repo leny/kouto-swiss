@@ -201,6 +201,16 @@ div {
   flex-flow: column nowrap !important;
 }
 div {
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+div {
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+div {
   -webkit-align-content: stretch !important;
   -ms-align-content: stretch !important;
   align-content: stretch !important;
