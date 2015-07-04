@@ -1,5 +1,10 @@
 # kouto swiss: changelog
 
+## `0.11.13` / 2015-07-04
+
+* Update dev dependencies.
+* Fix issue in flex-flow vendors mixin.
+
 ## `0.11.12` / 2015-05-31
 
 * Update Stylus to `0.51.1`, update dev dependencies.
