@@ -113,6 +113,7 @@
     "grunt-gh-pages": "^0.10.0",
     "grunt-mocha-cli": "^1.13.1",
     "highlight.js": "^8.6.0",
+    "load-grunt-tasks": "^3.4.0",
     "marked": "^0.3.3",
     "should": "^7.0.1"
   }
