@@ -12,7 +12,6 @@ module.exports = function( grunt ) {
             "options": {
                 "require": [ "should" ],
                 "reporter": "spec",
-                "check-leaks": true,
                 "inline-diffs": true
             },
             "tests": {
