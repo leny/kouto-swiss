@@ -1,6 +1,6 @@
 # kouto swiss
 
-[![NPM version](https://badge.fury.io/js/kouto-swiss.svg)](http://badge.fury.io/js/kouto-swiss) [![Build Status](http://img.shields.io/travis/krkn/kouto-swiss.svg)](https://travis-ci.org/krkn/kouto-swiss) ![Dependency Status](https://david-dm.org/krkn/kouto-swiss.svg) ![Downloads counter](http://img.shields.io/npm/dm/kouto-swiss.svg)
+[![NPM version](https://badge.fury.io/js/kouto-swiss.svg)](http://badge.fury.io/js/kouto-swiss) [![Build Status](http://img.shields.io/travis/leny/kouto-swiss.svg)](https://travis-ci.org/leny/kouto-swiss) ![Dependency Status](https://david-dm.org/leny/kouto-swiss.svg) ![Downloads counter](http://img.shields.io/npm/dm/kouto-swiss.svg)
 
 > A complete CSS framework for [Stylus](http://learnboost.github.io/stylus/)
 
@@ -32,7 +32,7 @@ For gulp, use [gulp-stylus](https://www.npmjs.org/package/gulp-stylus) and inclu
 
 On some IDEs like PHPStorm and Webstorm, you can automatically compile your styles as they change, without relying on a third-party tool.  In PHPStorm and Webstorm, this functionality is known as *file watchers*.  To use with PHPStorm or WebStorm, as a file watcher, simply:
 
-- Ensure you have added ``kouto-swiss`` as a dependency: 
+- Ensure you have added ``kouto-swiss`` as a dependency:
 
 ```
 $ npm install --save-dev kouto-swiss
@@ -47,7 +47,7 @@ $ npm install --save-dev kouto-swiss
 
 ### Included in compilation with third-party tools.
 
-To use **kouto swiss** with third-party tools like [Codekit](https://incident57.com/codekit/) or [Prepros](http://alphapixels.com/prepros/), you should include **kouto swiss** on your project by yourself. You can download it [on github](https://github.com/krkn/kouto-swiss/releases).
+To use **kouto swiss** with third-party tools like [Codekit](https://incident57.com/codekit/) or [Prepros](http://alphapixels.com/prepros/), you should include **kouto swiss** on your project by yourself. You can download it [on github](https://github.com/leny/kouto-swiss/releases).
 
 _More information coming soon._
 
@@ -60,7 +60,7 @@ var connect = require( "connect" ),
     stylus = require( "stylus" ),
     koutoSwiss = require( "kouto-swiss" ),
     server = connect();
-    
+
 function compile( str, path ) {
     return stylus( str )
         .set( "filename", path )
@@ -72,7 +72,7 @@ server.use( stylus.middleware( {
     src: __dirname,
     compile: compile
 } ) );
-    
+
 ```
 
 ## Stylus API
@@ -118,7 +118,7 @@ Many thanks!
 
 ## License
 
-Copyright (c) 2014 [krkn](http://krkn.be)  
+Copyright (c) 2014 [leny](http://leny.me)  
 Licensed under the MIT license.
 
 ### Licenses for ressources used in docs

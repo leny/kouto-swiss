@@ -14,11 +14,11 @@
     "utility"
   ],
   "homepage": "http://kouto-swiss.io",
-  "github": "http://github.com/krkn/kouto-swiss",
+  "github": "http://github.com/leny/kouto-swiss",
   "author": {
-    "name": "krkn",
-    "email": "info@krkn.be",
-    "url": "http://krkn.be"
+    "name": "leny",
+    "email": "info@flatland.be",
+    "url": "http://leny.me"
   },
   "contributors": [
     {
@@ -76,15 +76,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/krkn/kouto-swiss.git"
+    "url": "git://github.com/leny/kouto-swiss.git"
   },
   "bugs": {
-    "url": "https://github.com/krkn/kouto-swiss/issues"
+    "url": "https://github.com/leny/kouto-swiss/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/krkn/kouto-swiss/blob/master/LICENSE"
+      "url": "https://github.com/leny/kouto-swiss/blob/master/LICENSE"
     }
   ],
   "main": "lib/kouto-swiss.js",
