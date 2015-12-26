@@ -96,7 +96,7 @@
   },
   "dependencies": {
     "prefiks": "^0.3",
-    "stylus": "0.51.1"
+    "stylus": "0.53.0"
   },
   "devDependencies": {
     "chalk": "^1.0.0",
@@ -104,17 +104,17 @@
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-concurrent": "^2.0.0",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-connect": "^0.11.2",
     "grunt-contrib-copy": "^0.8.0",
-    "grunt-contrib-jade": "^0.14.1",
-    "grunt-contrib-stylus": "^0.21.0",
+    "grunt-contrib-jade": "^0.15.0",
+    "grunt-contrib-stylus": "^0.22.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-gh-pages": "^0.10.0",
-    "grunt-mocha-cli": "^1.13.1",
-    "highlight.js": "^8.6.0",
+    "grunt-gh-pages": "^1.0.0",
+    "grunt-mocha-cli": "^2.0.0",
+    "highlight.js": "^9.0.0",
     "load-grunt-tasks": "^3.4.0",
     "marked": "^0.3.3",
-    "should": "^7.0.1"
+    "should": "^8.0.2"
   }
 }
