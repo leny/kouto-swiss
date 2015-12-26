@@ -1,5 +1,10 @@
 # kouto swiss: changelog
 
+## `0.11.14` / 2015-12-26
+
+* Update dev dependencies.
+* Move repo from krkn to leny/kouto-swiss
+
 ## `0.11.13` / 2015-07-04
 
 * Update dev dependencies.
