@@ -52,3 +52,13 @@
   src: url("./fonts/Entypo-webfont.eot");
   src: url("./fonts/Entypo-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Entypo-webfont.ttf") format("truetype"), url("./fonts/Entypo-webfont.svg#entypo") format("svg");
 }
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 700;
+  src: url("./fonts/OpenSans.eot");
+  src: local("Open Sans Regular"), url("./fonts/OpenSans.eot?#iefix") format("embedded-opentype"), url("./fonts/OpenSans.woff2") format("woff2"), url("./fonts/OpenSans.woff") format("woff"), url("./fonts/OpenSans.ttf") format("truetype"), url("./fonts/OpenSans.svg#OpenSans") format("svg");
+}
+@font-face {
+  font-family: "OpenSans";
+  src: local("Open Sans Regular"), url("./fonts/OpenSans.woff2") format("woff2"), url("./fonts/OpenSans.woff") format("woff"), url("./fonts/OpenSans.ttf") format("truetype");
+}
