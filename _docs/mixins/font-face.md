@@ -4,7 +4,7 @@ Simple `@font-face` mixin.
 
 ### Signature
 
-`font-face( name, font-src [, weight [, style [, formats [, svg-font-name ] ] ] ] )`
+`font-face( name, font-src [, weight [, style [, formats [, svg-font-name ] [, local-font-name ] ] ] ] )`
 
 * `name`: name of the font, used for font-family
 * `font-src`: the path for the font, minus the extension
@@ -12,6 +12,7 @@ Simple `@font-face` mixin.
 * `style`: the style of the font, for font-style. *Optional*.
 * `formats`: the formats to includes. *Optional*. Default: `eot woff2 woff truetype svg` Accepted words: `eot woff2 woff truetype ttf opentype otf svg`
 * `svg-font-name`: the svg font name. *Optional*. Default: use the `name` parameters.
+* `local-font-name`: the local font name. *Optional*. Default: use the `name` parameters.
 
 ### Usage
 
