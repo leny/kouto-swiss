@@ -2,27 +2,27 @@
   font-family: "Roboto";
   font-weight: normal;
   src: url("./fonts/Roboto-Regular-webfont.eot");
-  src: url("./fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-Regular-webfont.woff2") format("woff2"), url("./fonts/Roboto-Regular-webfont.woff") format("woff"), url("./fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("./fonts/Roboto-Regular-webfont.svg#Roboto") format("svg");
+  src: local("Roboto"), url("./fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-Regular-webfont.woff2") format("woff2"), url("./fonts/Roboto-Regular-webfont.woff") format("woff"), url("./fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("./fonts/Roboto-Regular-webfont.svg#Roboto") format("svg");
 }
 @font-face {
   font-family: "Roboto";
   font-weight: normal;
   font-style: italic;
   src: url("./fonts/Roboto-Italic-webfont.eot");
-  src: url("./fonts/Roboto-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-Italic-webfont.woff2") format("woff2"), url("./fonts/Roboto-Italic-webfont.woff") format("woff"), url("./fonts/Roboto-Italic-webfont.ttf") format("truetype"), url("./fonts/Roboto-Italic-webfont.svg#Roboto") format("svg");
+  src: local("Roboto"), url("./fonts/Roboto-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-Italic-webfont.woff2") format("woff2"), url("./fonts/Roboto-Italic-webfont.woff") format("woff"), url("./fonts/Roboto-Italic-webfont.ttf") format("truetype"), url("./fonts/Roboto-Italic-webfont.svg#Roboto") format("svg");
 }
 @font-face {
   font-family: "Roboto";
   font-weight: bold;
   src: url("./fonts/Roboto-Bold-webfont.eot");
-  src: url("./fonts/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-Bold-webfont.woff2") format("woff2"), url("./fonts/Roboto-Bold-webfont.woff") format("woff"), url("./fonts/Roboto-Bold-webfont.ttf") format("truetype"), url("./fonts/Roboto-Bold-webfont.svg#Roboto") format("svg");
+  src: local("Roboto"), url("./fonts/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-Bold-webfont.woff2") format("woff2"), url("./fonts/Roboto-Bold-webfont.woff") format("woff"), url("./fonts/Roboto-Bold-webfont.ttf") format("truetype"), url("./fonts/Roboto-Bold-webfont.svg#Roboto") format("svg");
 }
 @font-face {
   font-family: "Roboto";
   font-weight: bold;
   font-style: italic;
   src: url("./fonts/Roboto-BoldItalic-webfont.eot");
-  src: url("./fonts/Roboto-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-BoldItalic-webfont.woff2") format("woff2"), url("./fonts/Roboto-BoldItalic-webfont.woff") format("woff"), url("./fonts/Roboto-BoldItalic-webfont.ttf") format("truetype"), url("./fonts/Roboto-BoldItalic-webfont.svg#Roboto") format("svg");
+  src: local("Roboto"), url("./fonts/Roboto-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-BoldItalic-webfont.woff2") format("woff2"), url("./fonts/Roboto-BoldItalic-webfont.woff") format("woff"), url("./fonts/Roboto-BoldItalic-webfont.ttf") format("truetype"), url("./fonts/Roboto-BoldItalic-webfont.svg#Roboto") format("svg");
 }
 @font-face {
   font-family: "EntypoIcons";
@@ -51,4 +51,14 @@
   font-family: "EntypoIcons";
   src: url("./fonts/Entypo-webfont.eot");
   src: url("./fonts/Entypo-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Entypo-webfont.ttf") format("truetype"), url("./fonts/Entypo-webfont.svg#entypo") format("svg");
+}
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 700;
+  src: url("./fonts/OpenSans.eot");
+  src: local("Open Sans Bold"), url("./fonts/OpenSans.eot?#iefix") format("embedded-opentype"), url("./fonts/OpenSans.woff2") format("woff2"), url("./fonts/OpenSans.woff") format("woff"), url("./fonts/OpenSans.ttf") format("truetype"), url("./fonts/OpenSans.svg#OpenSans") format("svg");
+}
+@font-face {
+  font-family: "OpenSans";
+  src: local("Open Sans Regular"), url("./fonts/OpenSans.woff2") format("woff2"), url("./fonts/OpenSans.woff") format("woff"), url("./fonts/OpenSans.ttf") format("truetype");
 }
