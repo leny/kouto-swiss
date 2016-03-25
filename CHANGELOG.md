@@ -1,5 +1,11 @@
 # kouto swiss: changelog
 
+## `0.12.0` / 2016-03-25
+
+* Update node targets in travis
+* Adding 'local' parameter to ks-font-face
+* Update Stylus to `0.54.2`, update dev dependencies.
+
 ## `0.11.14` / 2015-12-26
 
 * Update dev dependencies.
