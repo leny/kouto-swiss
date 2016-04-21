@@ -65,20 +65,9 @@ html( lang="en" )
                     = " "
                     code use
                     = " "
-                    | option for the task.
-
-                p
-                    | Or use
-                    = " "
-                    a( href="//www.npmjs.org/package/grunt-ks-stylus" ) grunt-ks-stylus
-                    | , which is a fork of
-                    = " "
-                    strong grunt-contrib-stylus
-                    | , with
-                    = " "
-                    strong kouto swiss
-                    = " "
-                    | included.
+                    | option for the task (
+                    a( href="./docs.html#grunt" ) example
+                    | ).
 
                 h5
                     a#gulp-site( href="//gulpjs.com" ) Gulp
@@ -96,7 +85,9 @@ html( lang="en" )
                     = " "
                     code use
                     = " "
-                    | option for the task.
+                    | option for the task (
+                    a( href="./docs.html#gulp" ) example
+                    | ).
 
                 h4 Included in compilation with third-party tools.
 
@@ -132,7 +123,11 @@ html( lang="en" )
                     | compilation.
 
                 p
-                    | Here's an exemple of how to use stylus with kouto-swiss within
+                    | See the
+                    = " "
+                    a( href="./docs.html#middleware" ) documentation
+                    = " "
+                    | for an example of how to use stylus with kouto-swiss within
                     = " "
                     a( href="//www.senchalabs.org/connect/" ) Connect
                     = " "
@@ -140,25 +135,6 @@ html( lang="en" )
                     = " "
                     a( href="//expressjs.com" ) Express
                     | .
-
-                pre
-                    code.lang-javascript.
-                        <span class="keyword">var</span> connect = <span class="keyword">require</span>( <span class="string">&quot;connect&quot;</span> ),
-                            stylus = <span class="keyword">require</span>( <span class="string">&quot;stylus&quot;</span> ),
-                            koutoSwiss = <span class="keyword">require</span>( <span class="string">&quot;kouto-swiss&quot;</span> ),
-                            server = connect();
-
-                        <span class="function"><span class="keyword">function</span> <span class="title">compile</span><span class="params">( str, path )</span> {</span>
-                            <span class="keyword">return</span> stylus( str )
-                                .set( <span class="string">&quot;filename&quot;</span>, path )
-                                .set( <span class="string">&quot;compress&quot;</span>, <span class="keyword">true</span> )
-                                .<span class="keyword">use</span>( koutoSwiss() );
-                        }
-
-                        server.<span class="keyword">use</span>( stylus.middleware( {
-                            src: __dirname,
-                            compile: compile
-                        } ) );
 
                 h4 Stylus API
 

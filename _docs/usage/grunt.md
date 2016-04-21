@@ -2,4 +2,24 @@
 
 To use **kouto swiss** with grunt, you can use [grunt-contrib-stylus](https://www.npmjs.org/package/grunt-contrib-stylus), and include **kouto swiss** in your `use` option for the task.
 
-You can also use [grunt-ks-stylus](https://www.npmjs.org/package/grunt-ks-stylus), which is a fork of **grunt-contrib-stylus**, with **kouto swiss** included.
+```javascript
+module.exports = function( grunt ) {
+    grunt.loadNpmTask( "grunt-contrib-stylus" );
+
+    grunt.initConfig( {
+        "stylus": {
+            "options": {
+                "compress": false,
+                "use": [
+                    require( "kouto-swiss" )
+                ]
+            },
+            "styles": {
+                "files": {
+                    "css/styles.css": "stylus/styles.styl"
+                }
+            }
+        }
+    };
+};
+```
