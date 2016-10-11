@@ -91,6 +91,10 @@ ks-font-stack( name )
         return unquote( 'Papyrus, fantasy' )
     if name == "Brush Script MT"
         return unquote( '"Brush Script MT", cursive' )
+    if name == "System"
+        return unquote( '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif' )
+    if name == "System with Emojis"
+        return unquote( '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' )
     return name
 
 font-stack = ks-font-stack unless ks-no-conflict
