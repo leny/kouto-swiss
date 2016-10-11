@@ -4,6 +4,8 @@ The *normalize* reset makes browsers render all elements more consistently and i
 
 For more information, refers to the [original normalize repository](https://github.com/necolas/normalize.css), by [Nicolas Gallagher](https://github.com/necolas).
 
+> **Note:** Kouto Swiss include normalize version `5.0.0`
+
 ### Usage
 
 ```stylus
