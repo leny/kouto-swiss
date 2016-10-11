@@ -3,7 +3,7 @@
 Get a font stack to use with `font-family`.  
 The font stacks are taken from the site [cssfontstack.com](http://cssfontstack.com), by [Denis Leblanc](http://denisleblanc.com)
 
-These are the stacks included in **kouto swiss**: 
+These are the stacks included in **kouto swiss**:
 
 * `"Arial"`
 * `"Arial Black"`
@@ -51,7 +51,12 @@ These are the stacks included in **kouto swiss**:
 * `"Copperplate"`
 * `"Papyrus"`
 * `"Brush Script MT"`
-* `"Kouto Swiss MT"`
+* `"System"`
+* `"System with Emojis"`
+
+#### System font-stack
+
+The `"System"` and `"System with Emojis"` stacks are [the ones used on GitHub](https://bitsofco.de/the-new-system-font-stack/) : `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif` and `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`.
 
 ### Signature
 
@@ -67,7 +72,7 @@ body
 
 body
     font-family font-stack( "Helvetica" )
-    
+
 body
     font-family font-stack( "Lucida Console" )
 ```
