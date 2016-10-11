@@ -27,6 +27,7 @@ ks-gs( type = "fixed", cols = false, col-width = false, gut-width = false )
         ks-grid-config[ "computed-total-width" ] = 100%
         ks-grid-config[ "total-width" ] = 100%
     if selector() != "&"
+        warn( "The KoutoSwiss' grid system is deprecated and will be remove in version 1.0.0, please use jeet instead." )
         width: ks-grid-config[ "total-width" ]
         margin: 0 auto
         overflow: hidden
