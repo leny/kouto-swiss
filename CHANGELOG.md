@@ -1,5 +1,15 @@
 # kouto swiss: changelog
 
+## `0.13.0` / 2016-11-12
+
+* Update normalize to `5.0.0`
+* Update default minimal browsers version for vendors
+* Mark grid system as **deprecated**
+* Add System font stack
+* Add yarn lock file
+* Update node targets in travis
+* Update Stylus to `0.54.5`, update dev dependencies.
+
 ## `0.12.0` / 2016-03-25
 
 * Update node targets in travis
