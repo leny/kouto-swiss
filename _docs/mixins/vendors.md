@@ -9,12 +9,12 @@ By default, **kouto swiss** use the data from [caniuse](http://caniuse.com) webs
 
 You can select which version of browsers you want to support by modifying the following global variables.
 
-    ks-support-ie = 8
-    ks-support-firefox = 25
-    ks-support-chrome = 20
-    ks-support-safari = 5
-    ks-support-opera = 15
-    ks-support-ios-safari = 5
+    ks-support-ie = 9
+    ks-support-firefox = 30
+    ks-support-chrome = 30
+    ks-support-safari = 6
+    ks-support-opera = 20
+    ks-support-ios-safari = 6
     ks-support-opera-mini = false
     ks-support-android-browser = false
     ks-support-blackberry-browser = false

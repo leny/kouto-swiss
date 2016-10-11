@@ -34,26 +34,17 @@ button {
   background-size: auto auto;
 }
 button {
-  -webkit-border-image-source: none;
   border-image-source: none;
-  -webkit-border-image-slice: 100%;
   border-image-slice: 100%;
-  -webkit-border-image-width: 1;
   border-image-width: 1;
-  -webkit-border-image-outset: 0s;
   border-image-outset: 0s;
-  -webkit-border-image-repeat: stretch;
   border-image-repeat: stretch;
-  -webkit-border-image: none 100% 1 0s stretch;
   border-image: none 100% 1 0s stretch;
 }
 button {
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 button {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 button {
