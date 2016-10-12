@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.13.1` / 2016-11-12
+
+* Fix `ks-vendors-prefixes` collision bug
+
 ## `0.13.0` / 2016-11-12
 
 * Update normalize to `5.0.0`
