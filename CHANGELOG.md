@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `0.14.0` / 2016-12-06
+
+* Add `min-size` & `max-size` mixins
+
 ## `0.13.1` / 2016-11-12
 
 * Fix `ks-vendors-prefixes` collision bug
