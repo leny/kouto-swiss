@@ -1,10 +1,11 @@
 _ks-calc-processing( current-property, operation, fallback )
     prop = current-property[ 0 ]
+    operation = unquote( operation )
     if fallback
         add-property( prop, fallback )
     for prefix in caniuse-prefixes( "calc" )
-        add-property( prop, unquote( "-" + prefix + "-calc(" + operation + ")" ) )
-    unquote( "calc(" + operation + ")" )
+        add-property( prop, s( "-%s-calc(%s)", unquote( prefix ), operation ) )
+    s( "calc(%s)", operation )
 
 ks-calc( operation, fallback = false )
     if current-property
