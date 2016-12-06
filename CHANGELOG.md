@@ -3,6 +3,7 @@
 ## `0.14.0` / 2016-12-06
 
 * Add `min-size` & `max-size` mixins
+* Add _relative_ keywords support in `position` mixin
 
 ## `0.13.1` / 2016-11-12
 
