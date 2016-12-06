@@ -40,3 +40,87 @@ div {
   width: 20px;
   height: 0;
 }
+div {
+  min-width: 10px;
+  min-height: 10px;
+}
+div {
+  min-width: 10px;
+  min-height: 20px;
+}
+div {
+  min-width: 10px;
+  min-height: auto;
+}
+div {
+  min-width: auto;
+  min-height: 20px;
+}
+div {
+  min-width: 10%;
+  min-height: 10%;
+}
+div {
+  min-width: 100%;
+  min-height: 2em;
+}
+div {
+  min-width: 10px;
+  min-height: inherit;
+}
+div {
+  min-height: 20px;
+}
+div {
+  min-width: 20px;
+}
+div {
+  min-width: 0;
+  min-height: 20px;
+}
+div {
+  min-width: 20px;
+  min-height: 0;
+}
+div {
+  max-width: 10px;
+  max-height: 10px;
+}
+div {
+  max-width: 10px;
+  max-height: 20px;
+}
+div {
+  max-width: 10px;
+  max-height: auto;
+}
+div {
+  max-width: auto;
+  max-height: 20px;
+}
+div {
+  max-width: 10%;
+  max-height: 10%;
+}
+div {
+  max-width: 100%;
+  max-height: 2em;
+}
+div {
+  max-width: 10px;
+  max-height: inherit;
+}
+div {
+  max-height: 20px;
+}
+div {
+  max-width: 20px;
+}
+div {
+  max-width: 0;
+  max-height: 20px;
+}
+div {
+  max-width: 20px;
+  max-height: 0;
+}
