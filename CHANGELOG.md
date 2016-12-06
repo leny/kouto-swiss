@@ -4,6 +4,7 @@
 
 * Add `min-size` & `max-size` mixins
 * Add _relative_ keywords support in `position` mixin
+* Refactor `calc` mixin
 
 ## `0.13.1` / 2016-11-12
 
