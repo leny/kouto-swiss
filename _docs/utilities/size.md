@@ -1,6 +1,7 @@
 # size mixins
 
-The size mixins gives you a convenient shortcut for setting `width` and `height` properties at the same time.  
+The **size** mixins gives you a convenient shortcut for setting `width` and `height` properties at the same time.
+Since version `0.14.0`, **min-size** & **max-size** mixins are added.
 
 **Note:** If only one value is given, the `width` and `height` will have the same values.
 
