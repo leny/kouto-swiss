@@ -1,4 +1,2220 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>kouto swiss - A complete CSS framework for Stylus</title><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, minimal-ui"><link rel="stylesheet" href="styles/styles.css"><!--if lt IE 9script( src="http://html5shiv.googlecode.com/svn/trunk/html5.js" )
---></head><body class="home"><div id="wrapper"><header><h1><a href="http://kouto-swiss.io"><span>kouto swiss</span></a></h1><h2>A complete CSS framework for Stylus</h2><div class="buttons"><a href="http://github.com/leny/kouto-swiss">github</a><a href="docs.html">docs</a></div></header><section class="about"><blockquote><p>Stylus is great, but... where's my Compass/Bourbon?</p></blockquote><p class="punchline">Here comes <strong>kouto swiss</strong>, the missing css toolbox for Stylus!</p><p><strong>kouto swiss</strong> gives you a lot of mixins, functions and utilities to code faster, and include the power of <a href="//caniuse.com">caniuse website</a> to make your stylesheets fits <em>your</em> compatibility needs.</p></section><section class="usage"><h3>Usage</h3><h4>Included in compilation, with Grunt or Gulp</h4><h5><a id="grunt-site" href="//gruntjs.com">Grunt</a></h5><p>Use <a href="//www.npmjs.org/package/grunt-contrib-stylus">grunt-contrib-stylus</a>, and include <strong>kouto swiss</strong> in your <code>use</code> option for the task (<a href="./docs.html#grunt">example</a>).</p><h5><a id="gulp-site" href="//gulpjs.com">Gulp</a></h5><p>Use <a href="//www.npmjs.org/package/gulp-stylus">gulp-stylus</a> and include <strong>kouto swiss</strong> in your <code>use</code> option for the task (<a href="./docs.html#gulp">example</a>).</p><h4>Included in compilation with third-party tools.</h4><p>To use <strong>kouto swiss</strong> with third party tools like <a href="https://incident57.com/codekit/">Codekit</a> or <a href="http://alphapixels.com/prepros/">Prepros</a>, you should include <strong>kouto swiss</strong> on your project by yourself. You can download it <a href="https://github.com/leny/kouto-swiss/releases">on github</a>.</p><p><em>More informations coming soon.</em></p><h4>As middleware, for <em>on the fly</em> compilation.</h4><p>See the <a href="./docs.html#middleware">documentation</a> for an example of how to use stylus with kouto-swiss within <a href="//www.senchalabs.org/connect/">Connect</a> or <a href="//expressjs.com">Express</a>.</p><h4>Stylus API</h4><p>To gain access to the kouto swiss tools from your Stylus files, simply add:</p><pre><code class="lang-stylus"><span class="variable">@import</span> <span class="string">&quot;kouto-swiss&quot;</span>
-</code></pre></section><footer><p><strong>kouto swiss</strong> is maintained by <a href="http://leny.me">leny</a>.
-Any question? Please tweet <a href="//twitter.com/leny_be">@leny_be</a></p><p><strong>kouto swiss</strong> is Copyright ©2014 <a href="http://leny.me">leny</a>. It is free software, and may be redistributed under the terms specified in the LICENSE file.</p><div class="buttons"><a href="http://github.com/leny/kouto-swiss">github</a><a href="docs.html">docs</a></div></footer></div></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><title>kouto swiss - A complete CSS framework for Stylus</title><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, minimal-ui"/><link rel="stylesheet" href="/assets/css/styles.css"/><!--if lt IE 9script( src="http://html5shiv.googlecode.com/svn/trunk/html5.js" )
+--></head><body><main class="wrapper"><header class="header"><h1 class="header__title"><svg class="header__logo" viewBox="0 0 258 273" xmlns="http://www.w3.org/2000/svg">
+    <path d="M88.8880967,227.959041 L88.3907717,44.2671809 C88.3452367,32.0197662 84.0482919,21.6224959 75.4998085,13.0750582 C66.9513251,4.52762047 56.648476,0.231557038 44.5909522,0.186739013 C34.501302,0.149235608 25.6624836,3.09776556 18.0743166,9.03240305 C6.53507326,17.7922199 0.836169796,29.2526573 0.888819631,43.4137306 L1.38614464,227.105591 C1.43167964,239.353005 5.72862439,249.750276 14.2771078,258.297713 C22.8255912,266.845151 33.1284403,271.141214 45.1859641,271.186032 C55.2756144,271.223536 64.1144327,268.275006 71.7025997,262.340368 C83.2418431,253.580552 88.9407465,242.120114 88.8880967,227.959041 L88.8880967,227.959041 Z M71.0914147,110.133853 L45.0826872,118.685208 L19.0739598,110.133853 L14.7391719,50.2743731 L75.4262026,50.2743731 L71.0914147,110.133853 L71.0914147,110.133853 Z M23.5663764,58.1015776 L24.373238,66.7448819 L53.6892116,66.7448819 L53.6892116,75.3881863 L25.1128612,75.3881863 L25.9197229,84.0314907 L53.6892116,84.0314907 L53.6892116,96.9964472 L45.0826872,99.1572733 L36.4761629,96.9964472 L36.4761629,88.3531429 L26.3231537,88.3531429 L27.8696385,105.639752 L45.0826872,109.961404 L62.2957359,105.639752 L66.5989981,58.1015776 L23.5663764,58.1015776 Z M85.8207183,17.8845233 C116.843883,21.2001384 155.898581,25.0011724 159.430606,25.4771321 C163.549458,25.967608 168.987213,25.2876797 175.744034,23.4373268 C182.500855,21.5869739 188.797189,19.4545923 194.633224,17.040118 C200.469259,14.6256438 206.57805,12.6506293 212.95978,11.1150153 C219.34151,9.57940136 224.429357,9.32038802 228.223475,10.3379675 C232.756481,11.626715 237.367543,15.1414307 242.0568,20.8822202 C247.749062,27.8183447 252.566729,35.9973972 256.509946,45.4196229 L252.909088,48.4411016 L228.801792,35.2508756 L227.97556,35.180312 C227.349717,35.1962171 226.333127,35.5081795 224.925758,36.1162083 C223.518389,36.7242371 222.027035,37.6891888 220.451651,39.0110923 C218.876268,40.3329959 217.764118,41.711778 217.115168,43.14748 C216.466219,44.583182 216.201871,45.7916322 216.322117,46.7728668 C216.442363,47.7541014 216.772246,48.7185484 217.311775,49.6662369 C217.851305,50.6139253 218.265194,51.2214404 218.553454,51.4888003 C218.841715,51.7561601 219.079873,52.001899 219.267937,52.2260244 L244.523657,67.698991 L237.321941,73.7419484 L228.02838,74.0925868 C221.907661,74.2633991 215.42376,74.2297998 208.576483,73.9917879 C201.729206,73.7537761 197.685433,73.2003607 196.445042,72.3315252 C193.789564,70.9950622 190.39139,68.8496353 186.250417,65.8951802 C182.109445,62.9407251 177.762237,60.1594181 173.208664,57.5511758 C168.655091,54.9429335 163.776858,52.861826 158.573817,51.3077909 C155.584675,50.4149993 122.759936,47.1426328 93.3911586,44.4033229 L93.3907534,44.253644 C93.3542352,34.4309609 90.8176863,25.6065447 85.8207183,17.8845233 Z M116.576224,51.3897976 L168.084479,85.1772939 L239.740353,132.009971 C241.27441,133.019017 242.312193,134.54925 242.853733,136.600716 C243.395272,138.652182 243.230721,140.539077 242.360075,142.261458 C241.489429,143.983838 239.778453,145.251329 237.227097,146.063968 C234.675741,146.876607 231.452685,147.218234 227.557833,147.088858 C223.662981,146.959482 219.069569,146.366417 213.777459,145.309646 C208.485349,144.252874 202.792783,142.770219 196.69959,140.861635 C190.606397,138.953051 184.010163,136.557358 176.91069,133.674485 C169.811216,130.791612 162.536072,127.570325 155.085039,124.010526 C147.634005,120.450727 139.814357,116.367296 131.625858,111.760109 C123.43736,107.152923 115.356654,102.189694 107.383499,96.870274 C105.741916,95.8904677 104.657689,94.4025763 104.130786,92.4065552 C103.603882,90.410534 103.795314,88.5163292 104.705087,86.7238839 L107.903913,80.5058014 L93.4666252,72.2778094 L93.4666252,72.2778094 L93.4040646,49.1703128 C101.130515,49.8951307 109.055943,50.6537302 116.576224,51.3897976 L116.576224,51.3897976 Z M93.6717972,148.060476 L97.5922171,154.850843 L111.833464,146.628655 C112.888377,146.019601 113.720348,146.242527 114.329402,147.297439 L116.017891,150.425006 C116.651715,151.387476 116.441174,152.173226 115.386262,152.78228 L101.145014,161.004468 L113.833576,182.981701 L128.074823,174.759513 C129.129736,174.150459 129.961706,174.373385 130.57076,175.428298 L132.25925,178.555865 C132.893074,179.518335 132.682533,180.304085 131.62762,180.913139 L117.386373,189.135327 L130.074935,211.11256 L144.316182,202.890372 C145.371095,202.281318 146.203065,202.504244 146.812119,203.559157 L148.500609,206.686723 C149.134433,207.649193 148.923892,208.434944 147.868979,209.043998 L133.627732,217.266185 L140.022767,228.342711 C140.631821,229.397624 141.537211,230.086074 142.738965,230.408083 C143.940719,230.730092 145.115255,230.598956 146.26261,230.014672 L174.393469,213.773313 C175.473151,213.071817 176.173987,212.120206 176.495995,210.918452 C176.818004,209.716699 176.674484,208.588383 176.06543,207.53347 L120.370058,111.066256 C115.139606,107.930473 109.985463,104.66813 104.962467,101.313879 C102.168752,99.6472754 100.283919,97.0620588 99.4286032,93.8236343 C98.5892421,90.645618 98.9086471,87.4867815 100.392965,84.5640535 L101.413974,82.5803879 L93.4822933,78.0649767 L93.6717972,148.060476 Z" />
+</svg>
+<svg class="header__logotype" viewBox="0 0 171 23" xmlns="http://www.w3.org/2000/svg">
+    <title>kouto swiss</title>
+    <path d="M14.296,23 C14.808,23 15,22.68 14.776,22.264 L8.984,10.936 L14.424,1.368 C14.68,0.952 14.456,0.6 13.976,0.6 L10.616,0.6 C10.264,0.6 10.04,0.792 9.88,1.08 L4.952,9.56 L4.952,1.24 C4.952,0.824 4.728,0.6 4.312,0.6 L1.24,0.6 C0.824,0.6 0.6,0.824 0.6,1.24 L0.6,22.36 C0.6,22.776 0.824,23 1.24,23 L4.312,23 C4.728,23 4.952,22.776 4.952,22.36 L4.952,16.888 L6.136,14.616 L10.168,22.52 C10.328,22.84 10.52,23 10.904,23 L14.296,23 Z M17.5319309,18.392 C17.5319309,21.4 19.1319309,23 22.1399309,23 L25.7239309,23 C28.7319309,23 30.3319309,21.4 30.3319309,18.392 L30.3319309,5.208 C30.3319309,2.2 28.7319309,0.6 25.7239309,0.6 L22.1399309,0.6 C19.1319309,0.6 17.5319309,2.2 17.5319309,5.208 L17.5319309,18.392 Z M22.9719309,18.872 C22.1399309,18.872 21.6919309,18.456 21.6919309,17.592 L21.6919309,6.008 C21.6919309,5.176 22.1399309,4.728 22.9719309,4.728 L25.0199309,4.728 C25.8519309,4.728 26.2999309,5.176 26.2999309,6.008 L26.2999309,17.592 C26.2999309,18.456 25.8519309,18.872 25.0199309,18.872 L22.9719309,18.872 Z M43.4878617,0.6 C43.1358617,0.6 42.8478617,0.888 42.8478617,1.24 L42.8478617,17.496 C42.8478617,18.36 42.3998617,18.776 41.5678617,18.776 L39.9038617,18.776 C39.0718617,18.776 38.6238617,18.36 38.6238617,17.496 L38.6238617,1.24 C38.6238617,0.888 38.3358617,0.6 37.9838617,0.6 L34.9118617,0.6 C34.5598617,0.6 34.2718617,0.888 34.2718617,1.24 L34.2718617,18.392 C34.2718617,21.4 35.8718617,23 38.8798617,23 L42.4638617,23 C45.4718617,23 47.0718617,21.4 47.0718617,18.392 L47.0718617,1.24 C47.0718617,0.888 46.7838617,0.6 46.4318617,0.6 L43.4878617,0.6 Z M62.6597926,0.6 C63.0117926,0.6 63.1717926,0.792 63.1717926,1.112 L63.1717926,4.312 C63.1717926,4.632 63.0117926,4.824 62.6597926,4.824 L58.9477926,4.824 L58.9477926,22.488 C58.9477926,22.84 58.7877926,23 58.4357926,23 L55.1077926,23 C54.7877926,23 54.5957926,22.84 54.5957926,22.488 L54.5957926,4.824 L50.8837926,4.824 C50.5637926,4.824 50.3717926,4.632 50.3717926,4.312 L50.3717926,1.112 C50.3717926,0.792 50.5637926,0.6 50.8837926,0.6 L62.6597926,0.6 Z M66.1517235,18.392 C66.1517235,21.4 67.7517235,23 70.7597235,23 L74.3437235,23 C77.3517235,23 78.9517235,21.4 78.9517235,18.392 L78.9517235,5.208 C78.9517235,2.2 77.3517235,0.6 74.3437235,0.6 L70.7597235,0.6 C67.7517235,0.6 66.1517235,2.2 66.1517235,5.208 L66.1517235,18.392 Z M71.5917235,18.872 C70.7597235,18.872 70.3117235,18.456 70.3117235,17.592 L70.3117235,6.008 C70.3117235,5.176 70.7597235,4.728 71.5917235,4.728 L73.6397235,4.728 C74.4717235,4.728 74.9197235,5.176 74.9197235,6.008 L74.9197235,17.592 C74.9197235,18.456 74.4717235,18.872 73.6397235,18.872 L71.5917235,18.872 Z M96.2395852,0.6 C93.2635852,0.6 91.6315852,2.2 91.6315852,5.208 L91.6315852,10.744 C91.6315852,11.352 91.9195852,11.736 92.4955852,11.928 L100.175585,14.424 L100.175585,17.656 C100.175585,18.52 99.7275852,18.936 98.8955852,18.936 L97.1675852,18.936 C96.3675852,18.936 95.8875852,18.52 95.8875852,17.656 L95.8875852,16.312 C95.8875852,15.96 95.7275852,15.8 95.3755852,15.8 L92.1435852,15.8 C91.8235852,15.8 91.6315852,15.96 91.6315852,16.312 L91.6315852,18.392 C91.6315852,21.4 93.2635852,23 96.2395852,23 L99.8235852,23 C102.831585,23 104.431585,21.4 104.431585,18.392 L104.431585,12.376 C104.431585,11.768 104.143585,11.384 103.599585,11.192 L95.8555852,8.696 L95.8555852,5.976 C95.8555852,5.144 96.3355852,4.696 97.1355852,4.696 L98.8955852,4.696 C99.7595852,4.696 100.175585,5.144 100.175585,5.976 L100.175585,7.32 C100.175585,7.64 100.367585,7.832 100.687585,7.832 L103.919585,7.832 C104.271585,7.832 104.431585,7.64 104.431585,7.32 L104.431585,5.208 C104.431585,2.2 102.831585,0.6 99.8235852,0.6 L96.2395852,0.6 Z M126.483516,0.6 C126.067516,0.6 125.875516,0.792 125.811516,1.208 L124.179516,14.584 L124.019516,14.584 L120.883516,1.144 C120.787516,0.792 120.563516,0.6 120.179516,0.6 L118.227516,0.6 C117.843516,0.6 117.619516,0.792 117.523516,1.144 L114.387516,14.584 L114.227516,14.584 L112.659516,1.208 C112.595516,0.792 112.371516,0.6 111.987516,0.6 L108.979516,0.6 C108.531516,0.6 108.307516,0.856 108.371516,1.272 L111.315516,22.392 C111.379516,22.808 111.603516,23 112.019516,23 L115.539516,23 C115.923516,23 116.147516,22.808 116.243516,22.424 L119.219516,9.304 L122.163516,22.424 C122.259516,22.808 122.483516,23 122.867516,23 L126.323516,23 C126.739516,23 126.963516,22.808 127.027516,22.424 L130.099516,1.272 C130.163516,0.856 129.939516,0.6 129.491516,0.6 L126.483516,0.6 Z M133.527447,23 C133.175447,23 133.015447,22.808 133.015447,22.488 L133.015447,1.112 C133.015447,0.792 133.175447,0.6 133.527447,0.6 L136.855447,0.6 C137.175447,0.6 137.367447,0.792 137.367447,1.112 L137.367447,22.488 C137.367447,22.808 137.175447,23 136.855447,23 L133.527447,23 Z M145.915378,0.6 C142.939378,0.6 141.307378,2.2 141.307378,5.208 L141.307378,10.744 C141.307378,11.352 141.595378,11.736 142.171378,11.928 L149.851378,14.424 L149.851378,17.656 C149.851378,18.52 149.403378,18.936 148.571378,18.936 L146.843378,18.936 C146.043378,18.936 145.563378,18.52 145.563378,17.656 L145.563378,16.312 C145.563378,15.96 145.403378,15.8 145.051378,15.8 L141.819378,15.8 C141.499378,15.8 141.307378,15.96 141.307378,16.312 L141.307378,18.392 C141.307378,21.4 142.939378,23 145.915378,23 L149.499378,23 C152.507378,23 154.107378,21.4 154.107378,18.392 L154.107378,12.376 C154.107378,11.768 153.819378,11.384 153.275378,11.192 L145.531378,8.696 L145.531378,5.976 C145.531378,5.144 146.011378,4.696 146.811378,4.696 L148.571378,4.696 C149.435378,4.696 149.851378,5.144 149.851378,5.976 L149.851378,7.32 C149.851378,7.64 150.043378,7.832 150.363378,7.832 L153.595378,7.832 C153.947378,7.832 154.107378,7.64 154.107378,7.32 L154.107378,5.208 C154.107378,2.2 152.507378,0.6 149.499378,0.6 L145.915378,0.6 Z M162.015309,0.6 C159.039309,0.6 157.407309,2.2 157.407309,5.208 L157.407309,10.744 C157.407309,11.352 157.695309,11.736 158.271309,11.928 L165.951309,14.424 L165.951309,17.656 C165.951309,18.52 165.503309,18.936 164.671309,18.936 L162.943309,18.936 C162.143309,18.936 161.663309,18.52 161.663309,17.656 L161.663309,16.312 C161.663309,15.96 161.503309,15.8 161.151309,15.8 L157.919309,15.8 C157.599309,15.8 157.407309,15.96 157.407309,16.312 L157.407309,18.392 C157.407309,21.4 159.039309,23 162.015309,23 L165.599309,23 C168.607309,23 170.207309,21.4 170.207309,18.392 L170.207309,12.376 C170.207309,11.768 169.919309,11.384 169.375309,11.192 L161.631309,8.696 L161.631309,5.976 C161.631309,5.144 162.111309,4.696 162.911309,4.696 L164.671309,4.696 C165.535309,4.696 165.951309,5.144 165.951309,5.976 L165.951309,7.32 C165.951309,7.64 166.143309,7.832 166.463309,7.832 L169.695309,7.832 C170.047309,7.832 170.207309,7.64 170.207309,7.32 L170.207309,5.208 C170.207309,2.2 168.607309,0.6 165.599309,0.6 L162.015309,0.6 Z" />
+</svg>
+</h1></header><section class="about"><h2 class="about__title">The missing CSS toolbox for Stylus</h2><div class="about__version version"><span class="version__label">version <strong class="version__number">0.14.0</strong></span> <time class="version__date" datetime="2016-12-06">December 6, 2016</time> <a class="version__changelog-link" href="https://github.com/leny/kouto-swiss/blob/master/CHANGELOG.md" target="new">see changelog</a></div><div class="about__sources sources"><a class="sources__link" href="https://github.com/leny/kouto-swiss"><svg class="sources__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1664 1792">
+    <path d="M640 1216q0 40-12.5 82t-43 76-72.5 34-72.5-34-43-76-12.5-82 12.5-82 43-76 72.5-34 72.5 34 43 76 12.5 82zM1280 1216q0 40-12.5 82t-43 76-72.5 34-72.5-34-43-76-12.5-82 12.5-82 43-76 72.5-34 72.5 34 43 76 12.5 82zM1440 1216q0-120-69-204t-187-84q-41 0-195 21-71 11-157 11t-157-11q-152-21-195-21-118 0-187 84t-69 204q0 88 32 153.5t81 103 122 60 140 29.5 149 7h168q82 0 149-7t140-29.5 122-60 81-103 32-153.5zM1664 1040q0 207-61 331-38 77-105.5 133t-141 86-170 47.5-171.5 22-167 4.5q-78 0-142-3t-147.5-12.5-152.5-30-137-51.5-121-81-86-115q-62-123-62-331 0-237 136-396-27-82-27-170 0-116 51-218 108 0 190 39.5t189 123.5q147-35 309-35 148 0 280 32 105-82 187-121t189-39q51 102 51 218 0 87-27 168 136 160 136 398z" />
+</svg>
+<span class="sources__text">See the code on <strong class="sources__github">GitHub</strong></span></a></div></section><section><h2 class="hidden">Introduction</h2><blockquote>Stylus is great, but… where’s my Compass/Bourbon?</blockquote><h3>Here comes <strong>kouto swiss</strong>, the missing CSS toolbox for Stylus!</h3><p><strong>kouto swiss</strong> gives you a lot of mixins, functions and utilities to code faster, and include the power of <a href="//caniuse.com">caniuse website</a> to make your stylesheets fits your compatibility needs.</p></section><nav id="main-nav"><h2>Navigation</h2><ul><li><a href="#usage">Usage</a><ul><li><a href="#usage_grunt">grunt</a></li><li><a href="#usage_gulp">gulp</a></li><li><a href="#usage_third-party">third-party</a></li><li><a href="#usage_middleware">middleware</a></li><li><a href="#usage_stylus">stylus</a></li><li><a href="#usage_nib">nib</a></li><li><a href="#usage_no-conflict-mode">no-conflict-mode</a></li></ul></li><li><a href="#reset">Reset</a><ul><li><a href="#reset_meyer-reset">meyer-reset</a></li><li><a href="#reset_box-sizing-reset">box-sizing-reset</a></li><li><a href="#reset_normalize">normalize</a></li></ul></li><li><a href="#mixins">Mixins</a><ul><li><a href="#mixins_calc">calc</a></li><li><a href="#mixins_font-face">font-face</a></li><li><a href="#mixins_keyframes">keyframes</a></li><li><a href="#mixins_placeholder">placeholder</a></li><li><a href="#mixins_ratio-box">ratio-box</a></li><li><a href="#mixins_linear-gradient">linear-gradient</a></li><li><a href="#mixins_radial-gradient">radial-gradient</a></li><li><a href="#mixins_repeating-linear-gradient">repeating-linear-gradient</a></li><li><a href="#mixins_repeating-radial-gradient">repeating-radial-gradient</a></li><li><a href="#mixins_vendors">vendors</a></li></ul></li><li><a href="#functions">Functions</a><ul><li><a href="#functions_em">em</a></li><li><a href="#functions_rem">rem</a></li><li><a href="#functions_percent">percent</a></li><li><a href="#functions_modular-scale">modular-scale</a></li><li><a href="#functions_golden-ratio">golden-ratio</a></li><li><a href="#functions_color-fallback">color-fallback</a></li><li><a href="#functions_luminosity">luminosity</a></li><li><a href="#functions_analogous">analogous</a></li><li><a href="#functions_extended-analogous">extended-analogous</a></li><li><a href="#functions_monochrome">monochrome</a></li><li><a href="#functions_split-complements">split-complements</a></li><li><a href="#functions_triad">triad</a></li><li><a href="#functions_quad">quad</a></li></ul></li><li><a href="#utilities">Utilities</a><ul><li><a href="#utilities_colors">colors</a></li><li><a href="#utilities_clearfix">clearfix</a></li><li><a href="#utilities_position">position</a></li><li><a href="#utilities_size">size</a></li><li><a href="#utilities_font-stack">font-stack</a></li><li><a href="#utilities_hide-text">hide-text</a></li><li><a href="#utilities_easing">easing</a></li><li><a href="#utilities_ellipsis">ellipsis</a></li><li><a href="#utilities_media-query">media-query</a></li><li><a href="#utilities_retina-image">retina-image</a></li><li><a href="#utilities_retina-query">retina-query</a></li><li><a href="#utilities_triangle">triangle</a></li></ul></li><li><a href="#grid">Grid</a><ul><li><a href="#grid_system">system</a></li><li><a href="#grid_gs">gs</a></li><li><a href="#grid_col">col</a></li><li><a href="#grid_row">row</a></li><li><a href="#grid_offset">offset</a></li></ul></li></ul></nav><section id="usage"><h2>Usage</h2><section id="usage_grunt"><h3 id="included-in-compilation-with-grunt">Included in compilation with grunt</h3>
+<p>To use <strong>kouto swiss</strong> with grunt, you can use <a href="https://www.npmjs.org/package/grunt-contrib-stylus">grunt-contrib-stylus</a>, and include <strong>kouto swiss</strong> in your <code>use</code> option for the task.</p>
+<pre><code class="lang-javascript">module.exports = function( grunt ) {
+    grunt.loadNpmTask( &quot;grunt-contrib-stylus&quot; );
+
+    grunt.initConfig( {
+        &quot;stylus&quot;: {
+            &quot;options&quot;: {
+                &quot;compress&quot;: false,
+                &quot;use&quot;: [
+                    require( &quot;kouto-swiss&quot; )
+                ]
+            },
+            &quot;styles&quot;: {
+                &quot;files&quot;: {
+                    &quot;css/styles.css&quot;: &quot;stylus/styles.styl&quot;
+                }
+            }
+        }
+    };
+};
+</code></pre>
+</section><section id="usage_gulp"><h3 id="included-in-compilation-with-gulp">Included in compilation with gulp</h3>
+<p>To use <strong>kouto swiss</strong> with gulp, use <a href="https://www.npmjs.org/package/gulp-stylus">gulp-stylus</a> and include <strong>kouto swiss</strong> in your <code>use</code> option for the task.</p>
+<pre><code class="lang-javascript">var gulp = require( &quot;gulp&quot; ),
+    koutoSwiss = require( &quot;kouto-swiss&quot; ),
+    stylus = require( &quot;gulp-stylus&quot; );
+
+gulp.task( &quot;styles&quot;, function() {
+    gulp.src( &quot;stylus/styles.styl&quot; )
+        .pipe( stylus( {
+            &quot;use&quot;: koutoSwiss()
+        } ) )
+        .pipe( gulp.dest( &quot;css&quot; ) );
+} );
+</code></pre>
+</section><section id="usage_third-party"><h3 id="included-in-compilation-with-third-party-tools">Included in compilation with third-party tools</h3>
+<p>To use <strong>kouto swiss</strong> with third-party tools like <a href="https://incident57.com/codekit/">Codekit</a> or <a href="http://alphapixels.com/prepros/">Prepros</a>, you should include <strong>kouto swiss</strong> on your project by yourself. You can download it <a href="https://github.com/krkn/kouto-swiss/releases">on github</a>.</p>
+<p><em>More information coming soon.</em></p>
+</section><section id="usage_middleware"><h3 id="as-middleware-for-on-the-fly-compilation-">As middleware, for <em>on the fly</em> compilation.</h3>
+<p>There&#39;s an exemple of how to use stylus with kouto-swiss within Connect or Express.</p>
+<pre><code class="lang-javascript">var connect = require( &quot;connect&quot; ),
+    stylus = require( &quot;stylus&quot; ),
+    koutoSwiss = require( &quot;kouto-swiss&quot; ),
+    server = connect();
+
+function compile( str, path ) {
+    return stylus( str )
+        .set( &quot;filename&quot;, path )
+        .set( &quot;compress&quot;, true )
+        .use( koutoSwiss() );
+}
+
+server.use( stylus.middleware( {
+    src: __dirname,
+    compile: compile
+} ) );
+</code></pre>
+</section><section id="usage_stylus"><h3 id="stylus-api">Stylus API</h3>
+<p>To gain access to the kouto swiss tools from your Stylus files, simply add:</p>
+<pre><code class="lang-stylus">@import &quot;kouto-swiss&quot;
+</code></pre>
+</section><section id="usage_nib"><h3 id="using-nib-with-kouto-swiss">Using nib with kouto swiss</h3>
+<p><strong>kouto swiss</strong> is highly inspired by <a href="http://visionmedia.github.io/nib/">nib</a>.</p>
+<p>As kouto swiss and nib shares some functions &amp; mixins names, <strong>it&#39;s not a great idea</strong> to use nib and kouto swiss together.</p>
+<p>In simple terms : importing <strong>kouto swiss</strong> <em>after</em> <strong>nib</strong> will break some of nib&#39;s features, and importing <strong>nib</strong> <em>after</em> <strong>kouto swiss</strong> will break some of kouto swiss&#39; features.</p>
+<p>kouto swiss has been coded in the way to provide a complete <em>alternative</em> to nib.</p>
+<p>If you look after some features of nib that you don&#39;t find in kouto swiss, create an <a href="https://github.com/krkn/kouto-swiss/issues">issue topic</a> to request it, or, even better if you can, <a href="https://github.com/krkn/kouto-swiss/blob/master/CONTRIBUTING.md">submit a pull request</a>!</p>
+</section><section id="usage_no-conflict-mode"><h3 id="-no-conflict-mode-mixins-aliases"><em>no conflict</em> mode &amp; mixins aliases</h3>
+<p>If you use <strong>kouto-swiss</strong> with other mixin libraries (such as <a href="https://github.com/Acquisio/bootstrap-stylus">bootstrap-stylus</a>), variables &amp; mixin name colisions may happen.</p>
+<p>To avoid that problem, all the functions &amp; mixins of <strong>kouto-swiss</strong> are also available with the <code>ks-</code> prefix/namespace before their name.</p>
+<p>You should include the <strong>kouto-swiss</strong> lib first in your stylesheets, before any other library.</p>
+<h4 id="-no-conflict-mode"><em>no-conflict</em> mode</h4>
+<p>You can also use the <em>no-conflict</em> mode : this will disable all the <em>public</em> or potentially conflicting variables &amp; mixins name used by <strong>kouto-swiss</strong>, letting only the <code>ks-</code> prefixed variables &amp; mixins availables.</p>
+<p>To use the <em>no-conflict</em> mode, simple set the <code>ks-no-conflict</code> variable to <code>true</code> <strong>before</strong> including <strong>kouto-swiss</strong>.</p>
+<pre><code class="lang-stylus">ks-no-conflict = true
+@import &quot;kouto-swiss&quot;
+</code></pre>
+</section></section><section id="reset"><h2>Reset</h2><section id="reset_meyer-reset"><h3 id="-meyer-reset-"><code>meyer-reset()</code></h3>
+<p>A global reset, using&#39;s the <a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#39;s CSS reset v2</a>.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">meyer-reset()
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: &quot;&quot;;
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+</code></pre>
+</section><section id="reset_box-sizing-reset"><h3 id="-box-sizing-reset-"><code>box-sizing-reset()</code></h3>
+<p>The <em>box-sizing reset</em>, setting the <code>box-sizing</code> property to <code>border-box</code>.</p>
+<p>For more information, read the post &quot;<a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">Box-sizing: Border-box FTW</a>&quot; by Paul Irish.</p>
+<p><strong>Note:</strong> From version <code>0.10</code>, the <code>box-sizing-reset()</code> function has changed his behaviour when its called from the root level : it <a href="http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/">use an inheritance pattern</a>, which produce the same result, and is more reliable for cases where you want to use an other <em>box model</em> for a part of your page.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">
+box-sizing-reset()
+
+article
+    box-sizing-reset()
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+article *,
+article *:before,
+article *:after {
+  box-sizing: border-box;
+}
+</code></pre>
+</section><section id="reset_normalize"><h3 id="-normalize-"><code>normalize()</code></h3>
+<p>The <em>normalize</em> reset makes browsers render all elements more consistently and in line with modern standards.</p>
+<p>For more information, refers to the <a href="https://github.com/necolas/normalize.css">original normalize repository</a>, by <a href="https://github.com/necolas">Nicolas Gallagher</a>.</p>
+<blockquote>
+<p><strong>Note:</strong> Kouto Swiss include normalize version <code>5.0.0</code></p>
+</blockquote>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">normalize()
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type=&quot;button&quot;],
+input[type=&quot;reset&quot;],
+input[type=&quot;submit&quot;] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type=&quot;checkbox&quot;],
+input[type=&quot;radio&quot;] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type=&quot;number&quot;]::-webkit-inner-spin-button,
+input[type=&quot;number&quot;]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type=&quot;search&quot;] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type=&quot;search&quot;]::-webkit-search-cancel-button,
+input[type=&quot;search&quot;]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+</code></pre>
+</section></section><section id="mixins"><h2>Mixins</h2><section id="mixins_calc"><h3 id="calc-">calc()</h3>
+<p>Add vendor-prefix for the css3 <code>calc()</code> function.</p>
+<h4 id="signature">Signature</h4>
+<p><code>calc( expr [, fallback ] )</code></p>
+<ul>
+<li><code>expr</code>: expression for calc. <strong>Must be quoted</strong>.</li>
+<li><code>fallback</code>: a fallback value for unsupported browsers. <em>Optional</em>.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">body
+    width: calc( &quot;100% - 80px&quot; )
+
+body
+    width: calc( &quot;100% - 80px&quot;, 90% )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">body {
+  width: -webkit-calc(100% - 80px);
+  width: calc(100% - 80px);
+}
+
+body {
+  width: 90%;
+  width: -webkit-calc(100% - 80px);
+  width: calc(100% - 80px);
+}
+</code></pre>
+</section><section id="mixins_font-face"><h3 id="font-face-">font-face()</h3>
+<p>Simple <code>@font-face</code> mixin.</p>
+<h4 id="signature">Signature</h4>
+<p><code>font-face( name, font-src [, weight [, style [, formats [, svg-font-name ] [, local-font-name ] ] ] ] )</code></p>
+<ul>
+<li><code>name</code>: name of the font, used for font-family</li>
+<li><code>font-src</code>: the path for the font, minus the extension</li>
+<li><code>weight</code>: the weight of the font, for font-weight. <em>Optional</em>.</li>
+<li><code>style</code>: the style of the font, for font-style. <em>Optional</em>.</li>
+<li><code>formats</code>: the formats to includes. <em>Optional</em>. Default: <code>eot woff2 woff truetype svg</code> Accepted words: <code>eot woff2 woff truetype ttf opentype otf svg local</code></li>
+<li><code>svg-font-name</code>: the svg font name. <em>Optional</em>. Default: use the <code>name</code> parameters.</li>
+<li><code>local-font-name</code>: the local font name. <em>Optional</em>. Default: use the <code>name</code> parameters.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">font-face( &quot;Roboto&quot;, &quot;./fonts/Roboto-Regular-webfont&quot;, normal )
+
+font-face( &quot;Roboto&quot;, &quot;./fonts/Roboto-Italic-webfont&quot;, normal, italic )
+
+font-face( &quot;OpenSans&quot;, &quot;./fonts/OpenSans&quot;, formats: woff )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">@font-face {
+  font-family: &quot;Roboto&quot;;
+  font-weight: normal;
+  src: url(&quot;./fonts/Roboto-Regular-webfont.eot&quot;);
+  src: local(&quot;Roboto&quot;, url(&quot;./fonts/Roboto-Regular-webfont.eot?#iefix&quot;) format(&quot;embedded-opentype&quot;), url(&quot;./fonts/Roboto-Regular-webfont.woff2&quot;) format(&quot;woff2&quot;), url(&quot;./fonts/Roboto-Regular-webfont.woff&quot;) format(&quot;woff&quot;), url(&quot;./fonts/Roboto-Regular-webfont.ttf&quot;) format(&quot;truetype&quot;), url(&quot;./fonts/Roboto-Regular-webfont.svg#Roboto&quot;) format(&quot;svg&quot;);
+}
+
+@font-face {
+  font-family: &quot;Roboto&quot;;
+  font-weight: normal;
+  font-style: italic;
+  src: url(&quot;./fonts/Roboto-Italic-webfont.eot&quot;);
+  src: local(&quot;Roboto&quot;), url(&quot;./fonts/Roboto-Italic-webfont.eot?#iefix&quot;) format(&quot;embedded-opentype&quot;), url(&quot;./fonts/Roboto-Italic-webfont.woff2&quot;) format(&quot;woff2&quot;), url(&quot;./fonts/Roboto-Italic-webfont.woff&quot;) format(&quot;woff&quot;), url(&quot;./fonts/Roboto-Italic-webfont.ttf&quot;) format(&quot;truetype&quot;), url(&quot;./fonts/Roboto-Italic-webfont.svg#Roboto&quot;) format(&quot;svg&quot;);
+}
+
+@font-face {
+  font-family: &quot;OpenSans&quot;;
+  src: url(&quot;./fonts/OpenSans.woff&quot;) format(&quot;woff&quot;);
+}
+</code></pre>
+</section><section id="mixins_keyframes"><h3 id="keyframes-animation">keyframes &amp; animation</h3>
+<p>To make animations with css3, you&#39;ll need to use the <code>animation</code> property &amp; the <code>@keyframes</code> structure.</p>
+<p>The <code>animation</code> property is already handled in <strong>kouto swiss</strong> by the <a href="#vendors">vendors mecanism</a>.</p>
+<p>The <code>@keyframes</code> structure is currently handled by the <a href="http://learnboost.github.io/stylus/docs/keyframes.html">Stylus language</a>.<br><strong>Note:</strong> as precised on the stylus documentation, the <em>vendor expansion</em> of the <code>@keyframes</code> structure will be removed from Stylus in <code>1.0</code> version. When this time will come, we&#39;ll had that behaviour to <strong>kouto swiss</strong>.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">@keyframes my-rainbow-animation
+    0%
+        color: red
+    14%
+        color: orange
+    28%
+        color: yellow
+    42%
+        color: green
+    56%
+        color: blue
+    70%
+        color: indigo
+    84%
+        color: violet
+
+div.rainbow
+    animation rainbow 3s linear
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div.rainbow {
+  -webkit-animation: rainbow 3s linear;
+  animation: rainbow 3s linear;
+}
+@-moz-keyframes my-rainbow-animation {
+  0% {
+    color: #f00;
+  }
+  14% {
+    color: #ffa500;
+  }
+  28% {
+    color: #ff0;
+  }
+  42% {
+    color: #008000;
+  }
+  56% {
+    color: #00f;
+  }
+  70% {
+    color: #4b0082;
+  }
+  84% {
+    color: #ee82ee;
+  }
+}
+@-webkit-keyframes my-rainbow-animation {
+  0% {
+    color: #f00;
+  }
+  14% {
+    color: #ffa500;
+  }
+  28% {
+    color: #ff0;
+  }
+  42% {
+    color: #008000;
+  }
+  56% {
+    color: #00f;
+  }
+  70% {
+    color: #4b0082;
+  }
+  84% {
+    color: #ee82ee;
+  }
+}
+@-o-keyframes my-rainbow-animation {
+  0% {
+    color: #f00;
+  }
+  14% {
+    color: #ffa500;
+  }
+  28% {
+    color: #ff0;
+  }
+  42% {
+    color: #008000;
+  }
+  56% {
+    color: #00f;
+  }
+  70% {
+    color: #4b0082;
+  }
+  84% {
+    color: #ee82ee;
+  }
+}
+@keyframes my-rainbow-animation {
+  0% {
+    color: #f00;
+  }
+  14% {
+    color: #ffa500;
+  }
+  28% {
+    color: #ff0;
+  }
+  42% {
+    color: #008000;
+  }
+  56% {
+    color: #00f;
+  }
+  70% {
+    color: #4b0082;
+  }
+  84% {
+    color: #ee82ee;
+  }
+}
+</code></pre>
+</section><section id="mixins_placeholder"><h3 id="placeholder-">placeholder()</h3>
+<p>Outputs vendor-prefixes for placeholders.<br>Must be called from a ruleset.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">input
+    color: #f00
+    +placeholder()
+        color: #f99
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">input {
+  color: #f00;
+}
+input::-webkit-input-placeholder {
+  color: #f99;
+}
+input:-moz-placeholder {
+  color: #f99;
+}
+input::-moz-placeholder {
+  color: #f99;
+}
+input:-ms-input-placeholder {
+  color: #f99;
+}
+</code></pre>
+</section><section id="mixins_ratio-box"><h3 id="ratio-box-">ratio-box()</h3>
+<p>Give an element with unknown or fluid width a fixed aspect ratio.</p>
+<p>Inspired by <a href="http://davidtheclark.github.io/scut/">Scut</a>.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">.ratio-box-default
+    ratio-box()
+
+.ratio-box-1x1
+    ratio-box( 1/1 )
+
+.ratio-box-2x1
+    ratio-box( 2/1 )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">.ratio-box-default {
+    overflow: hidden;
+    position: relative;
+}
+.ratio-box-default:before {
+    content: &quot;&quot;;
+    display: block;
+    height: 0;
+    padding-top: 100%;
+}
+.ratio-box-1x1 {
+    overflow: hidden;
+    position: relative;
+}
+.ratio-box-1x1:before {
+    content: &quot;&quot;;
+    display: block;
+    height: 0;
+    padding-top: 100%;
+}
+.ratio-box-2x1 {
+    overflow: hidden;
+    position: relative;
+}
+.ratio-box-2x1:before {
+    content: &quot;&quot;;
+    display: block;
+    height: 0;
+    padding-top: 50%;
+}
+</code></pre>
+</section><section id="mixins_linear-gradient"><h3 id="linear-gradient-">linear-gradient()</h3>
+<p>Display a <code>linear-gradient</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> must be used in a <code>background-image property</code>.</p>
+</blockquote>
+<h4 id="signature">Signature</h4>
+<p><code>linear-gradient( start, stops... )</code></p>
+<p>The implementation of <code>linear-gradient</code> follows <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient">the CSS3 specs</a>.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+  background-image: linear-gradient( -45deg, yellow, green )
+
+div
+  background-image: linear-gradient( to top right, red, white 30%, blue )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  background-image: -webkit-linear-gradient(135deg,#ff0,#008000);
+  background-image: -moz-linear-gradient(135deg,#ff0,#008000);
+  background-image: -ms-linear-gradient(135deg,#ff0,#008000);
+  background-image: -o-linear-gradient(135deg,#ff0,#008000);
+  background-image: linear-gradient(-45deg,#ff0,#008000);
+}
+div {
+  background-image: -webkit-linear-gradient(bottom left,#f00,#fff 30%,#00f);
+  background-image: -moz-linear-gradient(bottom left,#f00,#fff 30%,#00f);
+  background-image: -ms-linear-gradient(bottom left,#f00,#fff 30%,#00f);
+  background-image: -o-linear-gradient(bottom left,#f00,#fff 30%,#00f);
+  background-image: linear-gradient(to top right,#f00,#fff 30%,#00f);
+}
+</code></pre>
+</section><section id="mixins_radial-gradient"><h3 id="radial-gradient-">radial-gradient()</h3>
+<p>Display a <code>radial-gradient</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> must be used in a <code>background-image property</code>.</p>
+</blockquote>
+<h4 id="signature">Signature</h4>
+<p><code>radial-gradient( stops... )</code></p>
+<p>The implementation of <code>radial-gradient</code> follows <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient">the CSS3 specs</a>.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    background-image: radial-gradient( 50% 50%, black, white )
+
+div
+    background-image: radial-gradient( ellipse at center, yellow 0%, green 100% )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  background-image: -webkit-radial-gradient(50% 50%,#000,#fff);
+  background-image: -moz-radial-gradient(50% 50%,#000,#fff);
+  background-image: -ms-radial-gradient(50% 50%,#000,#fff);
+  background-image: -o-radial-gradient(50% 50%,#000,#fff);
+  background-image: radial-gradient(50% 50%,#000,#fff);
+}
+div {
+  background-image: -webkit-radial-gradient(ellipse at center,#ff0 0%,#008000 100%);
+  background-image: -moz-radial-gradient(ellipse at center,#ff0 0%,#008000 100%);
+  background-image: -ms-radial-gradient(ellipse at center,#ff0 0%,#008000 100%);
+  background-image: -o-radial-gradient(ellipse at center,#ff0 0%,#008000 100%);
+  background-image: radial-gradient(ellipse at center,#ff0 0%,#008000 100%);
+}
+</code></pre>
+</section><section id="mixins_repeating-linear-gradient"><h3 id="repeating-linear-gradient-">repeating-linear-gradient()</h3>
+<p>Display a <code>repeating-linear-gradient</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> must be used in a <code>background-image property</code>.</p>
+</blockquote>
+<h4 id="signature">Signature</h4>
+<p><code>repeating-linear-gradient( start, stops... )</code></p>
+<p>The implementation of <code>repeating-linear-gradient</code> follows <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient">the CSS3 specs</a>.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    background-image: repeating-linear-gradient( rgb( 26, 198, 204 ), rgb( 26, 198, 204 ) 7%, rgb( 100, 100, 100 ) 10% )
+
+div
+    background-image: repeating-linear-gradient( -45deg, transparent, transparent 25px, rgba( 255, 255, 255, 1 ) 25px, rgba( 255, 255, 255, 1 ) 50px)
+
+div
+    background-image: repeating-linear-gradient( to left top, blue, green 40%, red );
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  background-image: -webkit-repeating-linear-gradient(#1ac6cc,#1ac6cc 7%,#646464 10%);
+  background-image: repeating-linear-gradient(#1ac6cc,#1ac6cc 7%,#646464 10%);
+}
+div {
+  background-image: -webkit-repeating-linear-gradient(135deg,transparent,transparent 25px,#fff 25px,#fff 50px);
+  background-image: repeating-linear-gradient(-45deg,transparent,transparent 25px,#fff 25px,#fff 50px);
+}
+div {
+  background-image: -webkit-repeating-linear-gradient(right bottom,#00f,#008000 40%,#f00);
+  background-image: repeating-linear-gradient(to left top,#00f,#008000 40%,#f00);
+}
+</code></pre>
+</section><section id="mixins_repeating-radial-gradient"><h3 id="repeating-radial-gradient-">repeating-radial-gradient()</h3>
+<p>Display a <code>repeating-radial-gradient</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> must be used in a <code>background-image property</code>.</p>
+</blockquote>
+<h4 id="signature">Signature</h4>
+<p><code>repeating-radial-gradient( stops... )</code></p>
+<p>The implementation of <code>repeating-radial-gradient</code> follows <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient">the CSS3 specs</a>.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    background-image: repeating-radial-gradient( black, black 5px, white 5px, white 10px )
+
+div
+    background-image: repeating-radial-gradient( ellipse farthest-corner, red, black 5%, blue 5%, green 10% )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  background-image: -webkit-repeating-radial-gradient(#000,#000 5px,#fff 5px,#fff 10px);
+  background-image: repeating-radial-gradient(#000,#000 5px,#fff 5px,#fff 10px);
+}
+div {
+  background-image: -webkit-repeating-radial-gradient(ellipse farthest-corner,#f00,#000 5%,#00f 5%,#008000 10%);
+  background-image: repeating-radial-gradient(ellipse farthest-corner,#f00,#000 5%,#00f 5%,#008000 10%);
+}
+</code></pre>
+</section><section id="mixins_vendors"><h3 id="vendors-prefixes">Vendors Prefixes</h3>
+<p><strong>kouto swiss</strong> comes with automatic vendor prefixer for the following properties.<br>You can define the behavior of the prefixer by changing the value of the global variable <code>ks-vendors-prefixes</code>.</p>
+<h4 id="recommended-prefixes-by-default-">Recommended prefixes (by default)</h4>
+<p>By default, <strong>kouto swiss</strong> use the data from <a href="http://caniuse.com">caniuse</a> website to select the prefixes to use.</p>
+<p>You can select which version of browsers you want to support by modifying the following global variables.</p>
+<pre><code>ks-support-ie = 9
+ks-support-firefox = 30
+ks-support-chrome = 30
+ks-support-safari = 6
+ks-support-opera = 20
+ks-support-ios-safari = 6
+ks-support-opera-mini = false
+ks-support-android-browser = false
+ks-support-blackberry-browser = false
+ks-support-opera-mobile = false
+ks-support-android-chrome = false
+ks-support-android-firefox = false
+ks-support-ie-mobile = false
+</code></pre><p>You can set a number, which will act as &quot;<em>greater or equal</em>&quot; support, a <a href="https://github.com/isaacs/node-semver#ranges">semver range</a> string, or the <code>false</code> value, to be ignored.</p>
+<p>If you want to ignore the <a href="http://caniuse.com">caniuse</a> recommendations, add the features you want to ignore to the <code>ks-support-ignore-features</code> global variable.</p>
+<p>For the properties not registered in <a href="http://caniuse.com">caniuse</a>, the implementation is based on <a href="http://peter.sh/experiments/vendor-prefixed-css-property-overview/">the list of Peter Beverloo</a>.</p>
+<p>You can set the following global variable to use the recommended prefixes for the variable.</p>
+<pre><code>ks-vendors-prefixes = recommended
+</code></pre><p>The following properties are not registered in <a href="http://caniuse.com">caniuse</a>.</p>
+<h5 id="supported-properties">Supported properties</h5>
+<p>The following properties are implemented by the vendor mecanism and will be automaticaly prefixed using <a href="http://caniuse.com">caniuse</a> data: <code>align-content</code>, <code>align-items</code>, <code>align-self</code>, <code>animation</code>, <code>animation-delay</code>, <code>animation-direction</code>, <code>animation-duration</code>, <code>animation-fill-mode</code>, <code>animation-iteration-count</code>, <code>animation-name</code>, <code>animation-play-state</code>, <code>animation-timing-function</code>, <code>appearance</code>, <code>backface-visibility</code>, <code>background-clip</code>, <code>background-origin</code>, <code>background-size</code>, <code>border-image-source</code>, <code>border-image-slice</code>, <code>border-image-width</code>, <code>border-image-outset</code>, <code>border-image-repeat</code>, <code>border-image</code>, <code>box-shadow</code>, <code>box-sizing</code>, <code>clip-path</code>, <code>column-count</code>, <code>column-fill</code>, <code>column-gap</code>, <code>column-rule</code>, <code>column-rule-color</code>, <code>column-rule-style</code>, <code>column-rule-width</code>, <code>column-span</code>, <code>column-width</code>, <code>columns</code>, <code>flex</code>, <code>flex-basis</code>, <code>flex-direction</code>, <code>flex-flow</code>, <code>flex-grow</code>, <code>flex-shrink</code>, <code>flex-wrap</code>, <code>grid</code>, <code>grid-area</code>, <code>grid-auto-columns</code>, <code>grid-auto-flow</code>, <code>grid-auto-position</code>, <code>grid-auto-rows</code>, <code>grid-column</code>, <code>grid-column-end</code>, <code>grid-column-start</code>, <code>grid-row</code>, <code>grid-row-end</code>, <code>grid-row-start</code>, <code>grid-template</code>, <code>grid-template-areas</code>, <code>grid-template-columns</code>, <code>grid-template-rows</code>, <code>hyphens</code>, <code>justify-content</code>, <code>mask</code>, <code>opacity</code>, <code>order</code>, <code>perspective</code>, <code>perspective-origin</code>, <code>transform</code>, <code>transform-origin</code>, <code>transform-style</code>, <code>transition</code>, <code>transition-delay</code>, <code>transition-duration</code>, <code>transition-property</code>, <code>transition-timing-function</code>, <code>user-select</code></p>
+<h5 id="unregistered-properties">Unregistered properties</h5>
+<p>The following properties are not registered (yet?) in <a href="http://caniuse.com">caniuse</a>, and use the prefixes as indicated:</p>
+<ul>
+<li><p><strong>appearance:</strong> <code>-webkit</code> <code>-moz</code></p>
+</li>
+<li><p><strong>backface-visibility:</strong> <code>-webkit</code> <code>-ms</code></p>
+</li>
+</ul>
+<h5 id="specific-prefixes">Specific prefixes</h5>
+<p>If you want specific prefixes, you can force them by setting the global variable <code>ks-vendors-prefixes</code> with the prefixes you want.  </p>
+<h4 id="no-vendor-prefixes">No vendor prefixes</h4>
+<pre><code>ks-vendors-prefixes = false
+</code></pre><p>If you don&#39;t want to let <strong>kouto swiss</strong> to add vendor prefixes, and do the job yourself with such plugins like <code>autoprefixer</code>, simply set <code>ks-vendors-prefixes</code> to false.</p>
+<h4 id="the-vendor-mixin">The <code>vendor</code> mixin</h4>
+<p>You can also define your own vendors mixins with the <strong>kouto swiss</strong> built-in vendor mixin.</p>
+<p><code>vendor( property, value [, feature = null [, prefixes = null [, official = true ] ] ] )</code></p>
+<ul>
+<li><code>property</code>: the css property to use.</li>
+<li><code>value</code>: the value for the property.</li>
+<li><code>feature</code>: the name of the feature in <a href="http://caniuse.com">caniuse</a> website, which will automatically set the prefixes.</li>
+<li><code>prefixes</code>: the list of prefixes to use, if <code>feature</code> is set to false.</li>
+<li><code>official</code>: a boolean to display the non-prefixed property, if <code>feature</code> is set to false.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">
+button
+    hyphens: manual
+
+ks-support-ie = 11
+
+button
+    hyphens: manual
+
+ks-vendors-prefixes = o ms webkit moz
+
+button
+    backface-visibility: visible
+
+ks-vendors-prefixes = recommended
+
+button
+    backface-visibility: visible
+
+ks-vendors-prefixes = false
+
+button
+    backface-visibility: visible
+
+button
+    vendor( &quot;columns&quot;, auto auto, feature: &quot;multicolumn&quot; )
+
+button
+    vendor( &quot;columns&quot;, auto auto, prefixes: webkit moz ms o )
+
+button
+    vendor( &quot;columns&quot;, auto auto, prefixes: webkit moz ms o, official: false )
+
+ks-support-ignore-features = &quot;css3-boxsizing&quot; &quot;css-animation&quot;
+
+button
+    animation: none 0s ease 0s 1 normal none
+    box-sizing: content-box
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">button {
+  -webkit-hyphens: manual;
+  -moz-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
+}
+button {
+  -webkit-hyphens: manual;
+  -moz-hyphens: manual;
+  hyphens: manual;
+}
+button {
+  -o-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility: visible;
+  backface-visibility: visible;
+}
+button {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+button {
+  backface-visibility: visible;
+}
+button {
+  -webkit-columns: auto auto;
+  -moz-columns: auto auto;
+  columns: auto auto;
+}
+button {
+  -webkit-columns: auto auto;
+  -moz-columns: auto auto;
+  -ms-columns: auto auto;
+  -o-columns: auto auto;
+  columns: auto auto;
+}
+button {
+  -webkit-columns: auto auto;
+  -moz-columns: auto auto;
+  -ms-columns: auto auto;
+  -o-columns: auto auto;
+}
+button {
+  animation: none 0s ease 0s 1 normal none;
+  box-sizing: content-box;
+}
+</code></pre>
+</section></section><section id="functions"><h2>Functions</h2><section id="functions_em"><h3 id="em-">em()</h3>
+<p>Converts <code>pixels</code> to <code>em</code>.<br>Uses the second value as base. If no base is given, uses <code>16px</code> as base.</p>
+<h4 id="signature">Signature</h4>
+<p><code>em( value [, base ] )</code></p>
+<ul>
+<li><code>value</code>: value to convert.</li>
+<li><code>base</code>: base for conversion. <em>Optional</em> Defaults to <code>16</code>.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    font-size: em( 12px, 24 )
+
+div
+    font-size: em( 16 )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  font-size: 0.5em;
+}
+
+div {
+  font-size: 1em;
+}
+</code></pre>
+</section><section id="functions_rem"><h3 id="rem-">rem()</h3>
+<p>Converts <code>pixels</code> to <code>rem</code>.
+Assumes <code>1rem = 16px</code>. You can override by passing a new value to the global variable <code>ks-rem-base</code>.</p>
+<h4 id="signature">Signature</h4>
+<p><code>rem( values )</code></p>
+<ul>
+<li><code>values</code>: value(s) to convert.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    font-size: rem( 12px )
+    margin: rem( 10px auto 20 )
+
+ks-rem-base = 20px
+
+div
+    font-size: rem( 16 )
+    margin: rem( 10 auto 20px )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  font-size: 0.75rem;
+  margin: 0.625rem auto 1.25rem;
+}
+
+div {
+  font-size: 0.8rem;
+  margin: 0.5rem auto 1rem;
+}
+</code></pre>
+</section><section id="functions_percent"><h3 id="percent-">percent()</h3>
+<p>The <code>percent</code> function makes a simple percentage convertion operation. It takes two operands, makes a percentage of the first by the second, and return the result, with a percent unit.</p>
+<blockquote>
+<p><strong>Note:</strong> the function doesn&#39;t care about the units you give and don&#39;t convert it.</p>
+</blockquote>
+<h4 id="signature">Signature</h4>
+<p><code>percent( value, total )</code></p>
+<ul>
+<li><code>value</code>: value to a percentage of <code>total</code>.</li>
+<li><code>total</code>: the 100% reference number.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    width: percent( 50px, 200px )
+
+div
+    width: percent( 15, 200 )
+
+div
+    clear: percent( 30em, 10px )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  width: 25%;
+}
+
+div {
+  width: 7.5%;
+}
+
+div {
+  width: 300%;
+}
+</code></pre>
+</section><section id="functions_modular-scale"><h3 id="modular-scale-">modular-scale()</h3>
+<p>Returns the <code>modular scale</code> of a number for a given step of ratio.  </p>
+<h4 id="signature">Signature</h4>
+<p><code>modular-scale( base, step [, ratio ] )</code></p>
+<ul>
+<li><code>base</code>: number base to scale.</li>
+<li><code>step</code>: step to scale.</li>
+<li><code>ratio</code>: the ratio to use. <em>Optional</em>. Default: <code>ks-perfect-fifth</code>.</li>
+</ul>
+<h5 id="ratios">Ratios</h5>
+<p>For the <code>ratio</code> parameter, you can give any number, or use one of the following global variables:</p>
+<ul>
+<li><code>ks-golden</code>: 1.618</li>
+<li><code>ks-minor-second</code>: 1.067</li>
+<li><code>ks-major-second</code>: 1.125</li>
+<li><code>ks-minor-third</code>: 1.2</li>
+<li><code>ks-major-third</code>: 1.25</li>
+<li><code>ks-perfect-fourth</code>: 1.333</li>
+<li><code>ks-augmented-fourth</code>: 1.414</li>
+<li><code>ks-perfect-fifth</code>: 1.5</li>
+<li><code>ks-minor-sixth</code>: 1.6</li>
+<li><code>ks-major-sixth</code>: 1.667</li>
+<li><code>ks-minor-seventh</code>: 1.778</li>
+<li><code>ks-major-seventh</code>: 1.875</li>
+<li><code>ks-octave</code>: 2</li>
+<li><code>ks-major-tenth</code>: 2.5</li>
+<li><code>ks-major-eleventh</code>: 2.667</li>
+<li><code>ks-major-twelfth</code>: 3</li>
+<li><code>ks-double-octave</code>: 4</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    font-size: modular-scale( 16px, 1, 1.5 )
+
+div
+    font-size: modular-scale( 16px, 2, 1.618 )
+
+div
+    font-size: modular-scale( 16px, -2, ks-octave )
+
+div
+    font-size: modular-scale( 1em, 2, 1.5 )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  font-size: 24px;
+}
+
+div {
+  font-size: 41.886784px;
+}
+
+div {
+  font-size: 4px;
+}
+
+div {
+  font-size: 2.25em;
+}
+</code></pre>
+</section><section id="functions_golden-ratio"><h3 id="golden-ratio-">golden-ratio()</h3>
+<p>Returns the golden ratio (<code>1.618</code>) of a number for a given step.  </p>
+<h4 id="signature">Signature</h4>
+<p><code>golden-ratio( base, step )</code></p>
+<ul>
+<li><code>base</code>: number base to scale.</li>
+<li><code>step</code>: step to scale.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    font-size: golden-ratio( 16px, 1 )
+
+div
+    font-size: golden-ratio( 1em, 2 )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  font-size: 25.888px;
+}
+
+div {
+  font-size: 2.617924em;
+}
+</code></pre>
+</section><section id="functions_color-fallback"><h3 id="-color-fallback-color-"><code>color-fallback( color )</code></h3>
+<blockquote>
+<p><strong>Warning:</strong> must be used within a property.</p>
+</blockquote>
+<p>Create a fallback property for color with alpha value different than <code>1</code>.<br>If the given color has an alpha of <code>1</code>, the function doesn&#39;t do anything.</p>
+<h4 id="signature">Signature</h4>
+<p><code>color-fallback( color )</code></p>
+<ul>
+<li><code>color</code>: color to fallback.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">.no-alpha
+    color: color-fallback( red )
+
+.alpha
+    color: color-fallback( rgba( 255, 0, 0, .5 ) )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">.no-alpha {
+  color: #f00;
+}
+
+.alpha {
+  color: #f00;
+  color: rgba(255,0,0,0.5);
+}
+</code></pre>
+<h4 id="implicit-color-fallback">Implicit color fallback</h4>
+<p>The <code>implicit color fallback</code> mecanism allows you to use the <code>color-fallback</code> function without calling it, by declaring an <code>ks-color-fallback-enabled</code> variable to <code>true</code>.</p>
+<p><strong>Note:</strong> prior to version <code>0.11.0</code>, the <code>ks-color-fallback-enabled</code> variable was called <code>ks-color-fallback</code>.</p>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">.foo
+    color: rgba( 255, 0, 0, .5 )
+
+ks-color-fallback-enabled = true
+
+.bar
+    color: rgba( 255, 0, 0, .5 )
+
+.bar
+    background: rgba( 202, 43, 120, .5 ) url( test.png ) top left repeat
+
+ks-color-fallback-enabled = false
+
+.foo
+    color: rgba( 255, 0, 0, .5 )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">.foo {
+  color: rgba( 255, 0, 0, .5 );
+}
+
+.bar {
+  color: #f00;
+  color: rgba( 255, 0, 0, .5 );
+}
+
+.foo {
+  background: #ca2b78 url(&quot;test.png&quot;) top left repeat;
+  background: rgba(202,43,120,0.5) url(&quot;test.png&quot;) top left repeat;
+}
+
+.foo {
+  color: rgba( 255, 0, 0, .5 );
+}
+</code></pre>
+</section><section id="functions_luminosity"><h3 id="-luminosity-color-"><code>luminosity( color )</code></h3>
+<p>Returns the <a href="http://www.w3.org/TR/WCAG20/#relativeluminancedef">WCAG luminosity</a> of the given color, as a <code>Number</code> between <code>0</code> (<em>black</em>) and <code>1</code> (<em>white</em>).</p>
+<h4 id="signature">Signature</h4>
+<p><code>luminosity( color )</code></p>
+<ul>
+<li><code>color</code>: color to analyse.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">.luminosity
+    background: #ff0
+    color: luminosity( #ff0 ) &gt; 0.5 ? black : white
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">.luminosity {
+  background: #ff0;
+  color: white;
+}
+</code></pre>
+</section><section id="functions_analogous"><h3 id="-analogous-color-"><code>analogous( color )</code></h3>
+<p>Returns analogous variations of the given color.<br><code>returned[0]</code>: first analogous variation ( spinning given color by 30 degrees )<br><code>returned[1]</code>: second analogous variation ( spinning given color by -30 degrees )</p>
+<h4 id="signature">Signature</h4>
+<p><code>analogous( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform analogous variations.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">variations = analogous( #f00 )
+
+.red-analog-one
+    color: variations[0]
+
+.red-analog-two
+    color: variations[1]
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">.red-analog-one {
+  color: #ff8000;
+}
+
+.red-analog-two {
+  color: #ff0080;
+}
+</code></pre>
+</section><section id="functions_extended-analogous"><h3 id="-extended-analogous-color-"><code>extended-analogous( color )</code></h3>
+<p>Returns more analogous variations of the given color.<br><code>returned[0]</code>: first analogous variation ( spinning given color by 30 degrees )<br><code>returned[1]</code>: second analogous variation ( spinning given color by -30 degrees )<br><code>returned[2]</code>: third analogous variation ( spinning given color by 60 degrees )<br><code>returned[3]</code>: fourth analogous variation ( spinning given color by -60 degrees )</p>
+<h4 id="signature">Signature</h4>
+<p><code>extended-analogous( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform analogous variations.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">variations = extended-analogous( #f00 )
+
+.red-analog-one
+    color: variations[0]
+
+.red-analog-two
+    color: variations[1]
+
+.red-analog-three
+    color: variations[2]
+
+.red-analog-four
+    color: variations[3]
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">.red-analog-one {
+  color: #ff8000;
+}
+
+.red-analog-two {
+  color: #ff0080;
+}
+
+.red-analog-three {
+  color: #ff0;
+}
+
+.red-analog-four {
+  color: #f0f;
+}
+</code></pre>
+</section><section id="functions_monochrome"><h3 id="-monochrome-color-"><code>monochrome( color )</code></h3>
+<p>Returns monochromatic variations of the given color.<br><code>returned[0]</code>: first monochrome variation ( given color&#39;s lightness minus 33% )<br><code>returned[1]</code>: second monochrome variation ( given color&#39;s lightness minus 66% )</p>
+<h4 id="signature">Signature</h4>
+<p><code>monochrome( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform monochromatic variations.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">variations = monochrome( #f00 )
+
+.red-mono-one
+    color: variations[0]
+
+.red-mono-two
+    color: variations[1]
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">.red-mono-one {
+  color: #f55;
+}
+
+.red-mono-two {
+  color: #ff2a2a;
+}
+</code></pre>
+</section><section id="functions_split-complements"><h3 id="-split-complements-color-"><code>split-complements( color )</code></h3>
+<p>Returns split-complements variations of the given color.<br><code>returned[0]</code>: first split-complements variation ( spinning given color by 150 degrees )<br><code>returned[1]</code>: second split-complements variation ( spinning given color by -150 degrees )</p>
+<h4 id="signature">Signature</h4>
+<p><code>split-complements( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform split-complements variations.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">variations = split-complements( #f00 )
+
+.red-split-complement-one
+    color: variations[0]
+
+.red-split-complement-two
+    color: variations[1]
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">.red-split-complement-one {
+  color: #00ff80;
+}
+
+.red-split-complement-two {
+  color: #007fff;
+}
+</code></pre>
+</section><section id="functions_triad"><h3 id="-triad-color-"><code>triad( color )</code></h3>
+<p>Returns triad variations of the given color.<br><code>returned[0]</code>: first triad variation ( spinning given color by 120 degrees )<br><code>returned[1]</code>: second triad variation ( spinning given color by -120 degrees )</p>
+<h4 id="signature">Signature</h4>
+<p><code>triad( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform triad variations.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">variations = triad( #f00 )
+
+.red-triad-one
+    color: variations[0]
+
+.red-triad-two
+    color: variations[1]
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">.red-triad-one {
+  color: #0f0;
+}
+
+.red-triad-two {
+  color: #00f;
+}
+</code></pre>
+</section><section id="functions_quad"><h3 id="-quad-color-tetrad-color-"><code>quad( color )</code> &amp; <code>tetrad( color )</code></h3>
+<p>Returns quad (<em>tetrad</em>) variations of the given color.<br><code>returned[0]</code>: first quad variation ( spinning given color by 90 degrees )<br><code>returned[1]</code>: second quad variation ( spinning given color by -90 degrees )<br><code>returned[2]</code>: third quad variation ( spinning given color by 180 degrees ) - complement color</p>
+<h4 id="signature">Signature</h4>
+<p><code>quad( color )</code> &amp; <code>tetrad( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform quad variations.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">variations = quad( #f00 )
+
+.red-quad-one
+    color: variations[0]
+
+.red-quad-two
+    color: variations[1]
+
+.red-quad-three
+    color: variations[2]
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">.red-quad-one {
+  color: #80ff00;
+}
+
+.red-quad-two {
+  color: #7f00ff;
+}
+
+.red-quad-three {
+  color: #0ff;
+}
+</code></pre>
+</section></section><section id="utilities"><h2>Utilities</h2><section id="utilities_colors"><h3 id="colors">colors</h3>
+<p><strong>kouto-swiss</strong> provides variables for all the colors defined in <a href="http://dev.w3.org/csswg/css-color/">CSS Color Module Level 4</a>, as in date from 21 june 2014.</p>
+</section><section id="utilities_clearfix"><h3 id="clearfix">clearfix</h3>
+<p>The clearfix mixins will output a clearfix to the selector where it is declared.</p>
+<p>The clearfix comes with three syntaxes, each return the same result.</p>
+<blockquote>
+<p>This clearfix is based on <a href="http://nicolasgallagher.com/micro-clearfix-hack/">Nicolas Gallagher&#39;s micro clearfix</a>.</p>
+</blockquote>
+<p><strong>Note:</strong> the support of IE6&amp;7 is added using the global <code>$ks-support-ie</code>.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">// form one
+div
+    clearfix()
+
+// form two
+div
+    clear: fix
+
+// form three
+div
+    clear: fix()
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div:before,
+div:after {
+  content: &quot; &quot;;
+  display: table;
+}
+div:after {
+  clear: both;
+}
+</code></pre>
+</section><section id="utilities_position"><h3 id="position-mixins">position mixins</h3>
+<p>The position mixins gives you five convenient shortcuts for <code>position</code> property.
+Simply call the value of position as property, and gives the values of <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code> as value.</p>
+<p><strong>Note:</strong> The values are parsed in the same way as in <code>margin</code> or <code>padding</code> method : 1 value affect all, 2 values are for <code>top</code>/<code>bottom</code> and <code>left</code>/<code>right</code>, 3 values are for <code>top</code>, <code>left</code>/<code>right</code> and <code>bottom</code>, and 4 values are for <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code>.</p>
+<p><strong>Note 2:</strong> If you give the <code>false</code> value to a parameter, it will be ignored</p>
+<p><strong>Note 3:</strong> Since version <code>0.11.7</code>, position mixin supports <code>sticky</code> value, using caniuse data.</p>
+<p><strong>Note 4:</strong> Since version <code>0.14.0</code>, position mixin supports <em>relative</em> position like <code>background-position</code> (see exemple for more details).</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    static: 10px
+
+div
+    relative: 10px 20px
+
+div
+    absolute: 10px 20px 30px
+
+div
+    fixed: 10px 20px 30px 40px
+
+div
+    fixed: 10px false 30px
+
+div
+    fixed: 10px 20px false 40px
+
+div
+    position: sticky
+
+div
+    sticky: 10px 20px 0 40px
+
+div
+    absolute: top right
+
+div
+    absolute: top 2rem right
+
+div
+    absolute: top 35px right 20%
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  position: static;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+
+div {
+  position: relative;
+  top: 10px;
+  right: 20px;
+  bottom: 10px;
+  left: 20px;
+}
+
+div {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  bottom: 30px;
+  left: 20px;
+}
+
+div {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  bottom: 30px;
+  left: 40px;
+}
+
+div {
+  position: fixed;
+  top: 10px;
+  bottom: 30px;
+}
+
+div {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  left: 40px;
+}
+
+div {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+div {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  right: 20px;
+  bottom: 0;
+  left: 40px;
+}
+div {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+div {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+}
+div {
+  position: absolute;
+  top: 35px;
+  right: 20%;
+}
+</code></pre>
+</section><section id="utilities_size"><h3 id="size-mixins">size mixins</h3>
+<p>The <strong>size</strong> mixins gives you a convenient shortcut for setting <code>width</code> and <code>height</code> properties at the same time.
+Since version <code>0.14.0</code>, <strong>min-size</strong> &amp; <strong>max-size</strong> mixins are added.</p>
+<p><strong>Note:</strong> If only one value is given, the <code>width</code> and <code>height</code> will have the same values.</p>
+<p><strong>Note 2:</strong> When giving two values, making one to false will not displaying it.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    size: 10px
+
+div
+    size: 10px 20px
+
+div
+    size: 10px false
+
+div
+    size: false 20px
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  width: 10px;
+  height: 10px;
+}
+
+div {
+  width: 10px;
+  height: 20px;
+}
+
+div {
+  width: 10px;
+}
+
+div {
+  height: 20px;
+}
+</code></pre>
+</section><section id="utilities_font-stack"><h3 id="-font-stack-"><code>font-stack()</code></h3>
+<p>Get a font stack to use with <code>font-family</code>.<br>The font stacks are taken from the site <a href="http://cssfontstack.com">cssfontstack.com</a>, by <a href="http://denisleblanc.com">Denis Leblanc</a></p>
+<p>These are the stacks included in <strong>kouto swiss</strong>:</p>
+<ul>
+<li><code>&quot;Arial&quot;</code></li>
+<li><code>&quot;Arial Black&quot;</code></li>
+<li><code>&quot;Arial Narrow&quot;</code></li>
+<li><code>&quot;Arial Rounded MT Bold&quot;</code></li>
+<li><code>&quot;Avant Garde&quot;</code></li>
+<li><code>&quot;Calibri&quot;</code></li>
+<li><code>&quot;Candara&quot;</code></li>
+<li><code>&quot;Century Gothic&quot;</code></li>
+<li><code>&quot;Franklin Gothic Medium&quot;</code></li>
+<li><code>&quot;Futura&quot;</code></li>
+<li><code>&quot;Geneva&quot;</code></li>
+<li><code>&quot;Gill Sans&quot;</code></li>
+<li><code>&quot;Helvetica&quot;</code></li>
+<li><code>&quot;Impact&quot;</code></li>
+<li><code>&quot;Lucida Grande&quot;</code></li>
+<li><code>&quot;Optima&quot;</code></li>
+<li><code>&quot;Segoe UI&quot;</code></li>
+<li><code>&quot;Tahoma&quot;</code></li>
+<li><code>&quot;Trebuchet MS&quot;</code></li>
+<li><code>&quot;Verdana&quot;</code></li>
+<li><code>&quot;Baskerville&quot;</code></li>
+<li><code>&quot;Big Caslon&quot;</code></li>
+<li><code>&quot;Bodoni MT&quot;</code></li>
+<li><code>&quot;Book Antiqua&quot;</code></li>
+<li><code>&quot;Calisto MT&quot;</code></li>
+<li><code>&quot;Cambria&quot;</code></li>
+<li><code>&quot;Didot&quot;</code></li>
+<li><code>&quot;Garamond&quot;</code></li>
+<li><code>&quot;Georgia&quot;</code></li>
+<li><code>&quot;Goudy Old Style&quot;</code></li>
+<li><code>&quot;Hoefler Text&quot;</code></li>
+<li><code>&quot;Lucida Bright&quot;</code></li>
+<li><code>&quot;Palatino&quot;</code></li>
+<li><code>&quot;Perpetua&quot;</code></li>
+<li><code>&quot;Rockwell&quot;</code></li>
+<li><code>&quot;Rockwell Extra Bold&quot;</code></li>
+<li><code>&quot;Times New Roman&quot;</code></li>
+<li><code>&quot;Andale Mono&quot;</code></li>
+<li><code>&quot;Consolas&quot;</code></li>
+<li><code>&quot;Courier New&quot;</code></li>
+<li><code>&quot;Lucida Console&quot;</code></li>
+<li><code>&quot;Lucida Sans Typewriter&quot;</code></li>
+<li><code>&quot;Monaco&quot;</code></li>
+<li><code>&quot;Copperplate&quot;</code></li>
+<li><code>&quot;Papyrus&quot;</code></li>
+<li><code>&quot;Brush Script MT&quot;</code></li>
+<li><code>&quot;System&quot;</code></li>
+<li><code>&quot;System with Emojis&quot;</code></li>
+</ul>
+<h4 id="system-font-stack">System font-stack</h4>
+<p>The <code>&quot;System&quot;</code> and <code>&quot;System with Emojis&quot;</code> stacks are <a href="https://bitsofco.de/the-new-system-font-stack/">the ones used on GitHub</a> : <code>-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif</code> and <code>-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;</code>.</p>
+<h4 id="signature">Signature</h4>
+<p><code>font-stack( name )</code></p>
+<ul>
+<li><code>name</code>: name of the stack. <strong>Must be quoted</strong>.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">body
+    font-family font-stack( &quot;Arial&quot; )
+
+body
+    font-family font-stack( &quot;Helvetica&quot; )
+
+body
+    font-family font-stack( &quot;Lucida Console&quot; )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">body {
+  font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;
+}
+
+body {
+  font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: &quot;Lucida Console&quot;, &quot;Lucida Sans Typewriter&quot;, Monaco, &quot;Bitstream Vera Sans Mono&quot;, monospace;
+}
+</code></pre>
+</section><section id="utilities_hide-text"><h3 id="hide-text-">hide-text()</h3>
+<p>The hide-text mixins will hide the text of the selector where it is declared. Used for background image like logo display, etc...</p>
+<blockquote>
+<p>This mixin is based on which from <a href="http://bourbon.io">bourbon.io</a>.</p>
+</blockquote>
+<p>A height declaration is required for this to function.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">h1
+    height: 75px
+    background: url( logo.png ) top left no-repeat
+    hide-text()
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">h1 {
+  height: 75px;
+  background: url(&quot;logo.png&quot;) top left no-repeat;
+  overflow: hidden;
+}
+h1:before {
+  content: &quot;&quot;;
+  display: block;
+  width: 0;
+  height: 100%;
+}
+</code></pre>
+</section><section id="utilities_easing"><h3 id="easing-">easing()</h3>
+<p>Get a <code>cubic-bezier</code> preset to use with <code>transition</code> property.<br>The presets are taken from the plugin <a href="http://jaukia.github.io/easie/">easie</a>, by <a href="http://janne.aukia.com">Janne Aukia</a></p>
+<p>These are the preset included in <strong>kouto swiss</strong>:</p>
+<ul>
+<li><code>&quot;in-quad&quot;</code></li>
+<li><code>&quot;in-cubic&quot;</code></li>
+<li><code>&quot;in-quart&quot;</code></li>
+<li><code>&quot;in-quint&quot;</code></li>
+<li><code>&quot;in-sine&quot;</code></li>
+<li><code>&quot;in-expo&quot;</code></li>
+<li><code>&quot;in-circ&quot;</code></li>
+<li><code>&quot;in-back&quot;</code></li>
+<li><code>&quot;out-quad&quot;</code></li>
+<li><code>&quot;out-cubic&quot;</code></li>
+<li><code>&quot;out-quart&quot;</code></li>
+<li><code>&quot;out-quint&quot;</code></li>
+<li><code>&quot;out-sine&quot;</code></li>
+<li><code>&quot;out-expo&quot;</code></li>
+<li><code>&quot;out-circ&quot;</code></li>
+<li><code>&quot;out-back&quot;</code></li>
+<li><code>&quot;in-out-quad&quot;</code></li>
+<li><code>&quot;in-out-cubic&quot;</code></li>
+<li><code>&quot;in-out-quart&quot;</code></li>
+<li><code>&quot;in-out-quint&quot;</code></li>
+<li><code>&quot;in-out-sine&quot;</code></li>
+<li><code>&quot;in-out-expo&quot;</code></li>
+<li><code>&quot;in-out-circ&quot;</code></li>
+<li><code>&quot;in-out-back&quot;</code></li>
+</ul>
+<h4 id="signature">Signature</h4>
+<p><code>easing( name )</code></p>
+<ul>
+<li><code>name</code>: name of the preset. <strong>Must be quoted</strong>.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    transition: all .25s easing( &quot;in-quad&quot; )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  -webkit-transition: all 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  -o-transition: all 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: all 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+</code></pre>
+</section><section id="utilities_ellipsis"><h3 id="overflow-ellipsis">overflow ellipsis</h3>
+<p>The ellipsis mixin is a shortcut value to pass to an overflow property, which displays the code for a <code>text-overflow: ellipsis;</code>.</p>
+<blockquote>
+<p>This mixin is based on which from <a href="http://visionmedia.github.io/nib/">nib</a>.</p>
+</blockquote>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    overflow: ellipsis
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+</code></pre>
+</section><section id="utilities_media-query"><h3 id="media-query-">media-query()</h3>
+<p>Create the query part of a media query, which you can store in a variable, to use when you make a media block.</p>
+<p>You can disable the media-queries by modifying the global <code>ks-support-media-queries</code> variable, which is by default valued to <code>true</code>.<br>It&#39;s useful for legacy stylesheet for old IE versions.</p>
+<blockquote>
+<p><strong>Warning:</strong> since version <code>0.9</code>, the media-query() mixin has changed: it&#39;s now a <em>block</em> mixin.</p>
+</blockquote>
+<h4 id="signature">Signature</h4>
+<p><code>+media-query( media [, conditions... ] )</code></p>
+<ul>
+<li><code>media</code>: the media of the query</li>
+<li><code>conditions</code>: multiple pairs of conditions for the query. <em>Optional</em>.</li>
+</ul>
+<p><strong>Note:</strong> if you give a list as the <code>media</code> argument, the first element of this list will be assumed as the media value.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">+media-query( all, min-width 640px )
+    div
+        color: red
+
++media-query( only screen, min-width 640px, min-height 960px, orientation portrait )
+    div
+        color: red
+
++media-query( print )
+    div
+        color: red
+
+ks-support-media-queries = false
+
++media-query( all, min-width 640px )
+    div
+        color: red
+
++media-query( only screen, min-width 640px, min-height 960px, orientation portrait )
+    div
+        color: red
+
++media-query( print )
+    div
+        color: red
+
+ks-support-media-queries = true
+
+breakpointMain = only screen, max-width 767px
+
++media-query( breakpointMain )
+    div
+        width: 100%
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">@media all and (min-width: 640px) {
+  div {
+    color: #f00;
+  }
+}
+@media only screen and (min-width: 640px) and (min-height: 960px) and (orientation: portrait) {
+  div {
+    color: #f00;
+  }
+}
+@media print {
+  div {
+    color: #f00;
+  }
+}
+div {
+  color: #f00;
+}
+div {
+  color: #f00;
+}
+div {
+  color: #f00;
+}
+@media only screen and (max-width: 767px) {
+  div {
+    width: 100%;
+  }
+}
+</code></pre>
+</section><section id="utilities_retina-image"><h3 id="retina-image-">retina-image()</h3>
+<p>Generate a media query for an image.<br>If no size is given, the mixin tries to get the sizes from the file.</p>
+<h4 id="signature">Signature</h4>
+<p><code>retina-image( img-src [, size [, suffix ] ] )</code></p>
+<ul>
+<li><code>img-src</code>: the path for the image</li>
+<li><code>size</code>: width and height of the image, uses as <code>background-size</code> for the retina image. <em>Optional</em>. If none is given, the sizes are computed from the path. If it fails, the <code>background-size</code> value will be <code>contain</code>.</li>
+<li><code>suffix</code>: the suffix to add to the file to reach retina image. <em>Optional</em>. Default: <code>@2x</code>.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+  retina-image( &quot;logo.png&quot;, 277px 292px, &quot;-2x&quot; )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  background-image: url(&quot;logo.png&quot;);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3/1), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+  div {
+    background-image: url(&quot;logo-2x.png&quot;);
+    -webkit-background-size: 277px 292px;
+    background-size: 277px 292px;
+  }
+}
+</code></pre>
+<h4 id="alias">Alias</h4>
+<p><code>hidpi-image()</code></p>
+</section><section id="utilities_retina-query"><h3 id="retina-query-">retina-query()</h3>
+<p>Create the query part of a media query for retina/hdpi screens, which you can store in a variable, to use when you make a media block.  </p>
+<blockquote>
+<p><strong>Warning:</strong> since version <code>0.9</code>, the retina-query() mixin has changed: it&#39;s now a <em>block</em> mixin.</p>
+</blockquote>
+<h4 id="signature">Signature</h4>
+<p><code>+retina-query( media [, density ] )</code></p>
+<ul>
+<li><code>media</code>: the media of the query</li>
+<li><code>density</code>: pixel density for the query. <em>Optional</em>. Default to <code>1</code></li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">+retina-query( all, 1.3 )
+    div
+        color: red
+
++retina-query( only screen, 2 )
+    div
+        color: red
+
++retina-query( screen )
+    div
+        color: red
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">@media all and (-webkit-min-device-pixel-ratio: 1.3), all and (min--moz-device-pixel-ratio: 1.3), all and (-o-min-device-pixel-ratio: 1.3/1), all and (min-device-pixel-ratio: 1.3), all and (min-resolution: 125dpi), all and (min-resolution: 1.3dppx) {
+  div {
+    color: #f00;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  div {
+    color: #f00;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1), screen and (min--moz-device-pixel-ratio: 1), screen and (-o-min-device-pixel-ratio: 1/1), screen and (min-device-pixel-ratio: 1), screen and (min-resolution: 96dpi), screen and (min-resolution: 1dppx) {
+  div {
+    color: #f00;
+  }
+}
+</code></pre>
+<h4 id="alias">Alias</h4>
+<p><code>hidpi-query()</code></p>
+</section><section id="utilities_triangle"><h3 id="triangle-">triangle()</h3>
+<p>Change the target into a lovely triangle :)<br>Useful for tooltips, arrows, or anything you want with pointy stuffs.</p>
+<h4 id="signature">Signature</h4>
+<p><code>triangle( direction, size, face-color [, back-color ] )</code></p>
+<ul>
+<li><code>direction</code>: the direction of the triangle. Can be <code>up</code>, <code>down</code>, <code>left</code>, <code>right</code>, <code>up-left</code>, <code>up-right</code>, <code>down-left</code>, <code>down-right</code>.</li>
+<li><code>size</code>: size of the triangle.</li>
+<li><code>face-color</code>: color of the triangle.</li>
+<li><code>back-color</code>: background color of the triangle. <em>Optional</em>. Defaults to <code>transparent</code>.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    triangle( up, 10px, red )
+
+div
+    triangle( down-right, 10px, red )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #f00;
+}
+
+div {
+  width: 0;
+  height: 0;
+  border: 10px solid #00f;
+  border-bottom-color: #f00;
+  border-right-color: #f00;
+}
+</code></pre>
+</section></section><section id="grid"><h2>Grid</h2><section id="grid_system"><h3 id="grid-system">grid system</h3>
+<blockquote>
+<p><strong>WARNING!</strong> The grid system of Kouto Swiss is deprecated and will be removed in version <code>1.0.0</code>. Please use <a href="https://jeet.gs">jeet</a> instead.</p>
+</blockquote>
+<p><strong>kouto swiss</strong> comes with a semantic grid system, which can be fixed (by default), or fluid.</p>
+<p>The grid system works in two steps : init the grid by calling the <code>gs()</code> function, then, into your selectors, define rows and columns with <code>row()</code>, <code>col()</code> and <code>offset()</code>.</p>
+<p>The grid system of kouto swiss is inspired by those from <a href="http://960.gs">960.gs</a> and <a href="http://semantic.gs">semantic.gs</a>.</p>
+</section><section id="grid_gs"><h3 id="gs-">gs()</h3>
+<p>Init (or change) the grid system parameters : type, amount of columns, size, gutters...</p>
+<h4 id="signature">Signature</h4>
+<p><code>gs( [ type [, cols [, col-width [, gut-width ] ] ] ] )</code></p>
+<p>If the mixin is called from a selector, it will returns some properties to set the grid up.</p>
+<ul>
+<li><code>type</code>: the type of the grid. Can be &quot;<code>fixed</code>&quot; (be default) or &quot;<code>fluid</code>&quot;. <em>Optional</em></li>
+<li><code>cols</code>: amount of columns in the grid. <em>Optional</em> Default to <code>12</code>.</li>
+</ul>
+<h5 id="fixed-grid">fixed grid</h5>
+<ul>
+<li><code>col-width</code>: the size of the columns. <em>Optional</em> Default to <code>60px</code>.</li>
+<li><code>gut-width</code>: the size of the gutter between columns. <em>Optional</em> Default to <code>20px</code>.</li>
+</ul>
+<h5 id="fluid-grid">fluid grid</h5>
+<ul>
+<li><code>col-width</code>: the size of the columns. All numbers given will be taken as percentages. <em>Optional</em> Default to <code>( 100% / cols ) * 0.9</code>.</li>
+<li><code>gut-width</code>: the size of the gutter between columns. All numbers given will be taken as percentages. <em>Optional</em> Default to <code>( 100% / cols ) * 0.1</code>.</li>
+</ul>
+<p>When using the <code>fluid</code> grid system, only one of the value is used to compute, proportionaly, the size of columns and gutters. If the two values are given, the <code>col-width</code> is used.</p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">body
+    gs()
+
+body
+    gs( &quot;fixed&quot;, 16, 40px, 10px )
+
+body
+    gs( &quot;fluid&quot; )
+
+body
+    gs( &quot;fluid&quot;, 10, 9% )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">body {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+body {
+  width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+body {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+body {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+</code></pre>
+</section><section id="grid_col"><h3 id="col-">col()</h3>
+<p>Init a column of the given size for the current grid system.</p>
+<h4 id="signature">Signature</h4>
+<p><code>col( [ size ] )</code></p>
+<ul>
+<li><code>size</code>: size of the column. <em>Optional</em> Default to the total of columns in the grid.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    col()
+
+div
+    col( 1 )
+
+div
+    col( 6 )
+
+gs( &quot;fixed&quot;, 16, 40px, 10px )
+
+div
+    col()
+
+div
+    col( 1 )
+
+div
+    col( 6 )
+
+gs( &quot;fluid&quot; )
+
+div
+    col()
+
+div
+    col( 1 )
+
+div
+    col( 6 )
+
+gs( &quot;fluid&quot;, 10, 9% )
+
+div
+    col()
+
+div
+    col( 1 )
+
+div
+    col( 6 )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 940px;
+  margin: 0 10px;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 60px;
+  margin: 0 10px;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 460px;
+  margin: 0 10px;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 790px;
+  margin: 0 5px;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 40px;
+  margin: 0 5px;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 290px;
+  margin: 0 5px;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 99.1666666666667%;
+  margin: 0 0.4166666666667%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 7.5%;
+  margin: 0 0.4166666666667%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 49.1666666666667%;
+  margin: 0 0.4166666666667%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 99%;
+  margin: 0 0.5%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 9%;
+  margin: 0 0.5%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 59%;
+  margin: 0 0.5%;
+}
+</code></pre>
+</section><section id="grid_row"><h3 id="row-">row()</h3>
+<p>Init a row for the current grid system.</p>
+<h4 id="signature">Signature</h4>
+<p><code>row()</code></p>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    row()
+
+gs( &quot;fixed&quot;, 16, 40px, 10px )
+
+div
+    row()
+
+gs( &quot;fluid&quot; )
+
+div
+    row()
+
+gs( &quot;fluid&quot;, 10, 9% )
+
+div
+    row()
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  display: block;
+  width: 980px;
+  margin: 0 -10px;
+}
+div {
+  display: block;
+  width: 810px;
+  margin: 0 -5px;
+}
+div {
+  display: block;
+  width: 100.83333333333331%;
+  margin: 0 -0.4166666666667%;
+}
+div {
+  display: block;
+  width: 101%;
+  margin: 0 -0.5%;
+}
+</code></pre>
+</section><section id="grid_offset"><h3 id="offset-">offset()</h3>
+<p>Offset a column to the left by the given size, for the current grid system.</p>
+<h4 id="signature">Signature</h4>
+<p><code>offset( [ size ] )</code></p>
+<ul>
+<li><code>size</code>: size of the offset. <em>Optional</em> Default to <code>1</code>.</li>
+</ul>
+<h4 id="example">Example</h4>
+<h5 id="usage">Usage</h5>
+<pre><code class="lang-stylus">div
+    col( 1 )
+    offset( 3 )
+
+div
+    col( 6 )
+    offset( 6 )
+
+gs( &quot;fixed&quot;, 16, 40px, 10px )
+
+div
+    col( 1 )
+    offset( 3 )
+
+div
+    col( 6 )
+    offset( 6 )
+
+gs( &quot;fluid&quot; )
+
+div
+    col( 1 )
+    offset( 3 )
+
+div
+    col( 6 )
+    offset( 6 )
+
+gs( &quot;fluid&quot;, 10, 9% )
+
+div
+    col( 1 )
+    offset( 3 )
+
+div
+    col( 6 )
+    offset( 6 )
+</code></pre>
+<h5 id="result">Result</h5>
+<pre><code class="lang-css">div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 60px;
+  margin: 0 10px;
+  margin-left: 250px;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 460px;
+  margin: 0 10px;
+  margin-left: 490px;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 40px;
+  margin: 0 5px;
+  margin-left: 155px;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 290px;
+  margin: 0 5px;
+  margin-left: 305px;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 7.5%;
+  margin: 0 0.4166666666667%;
+  margin-left: 25.4166666666667%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 49.1666666666667%;
+  margin: 0 0.4166666666667%;
+  margin-left: 50.4166666666667%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 9%;
+  margin: 0 0.5%;
+  margin-left: 30.5%;
+}
+div {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 59%;
+  margin: 0 0.5%;
+  margin-left: 60.5%;
+}
+</code></pre>
+</section></section></main><div class="artifacts"><div class="artifacts__diamonds--one"></div><div class="artifacts__diamonds--two"></div><div class="artifacts__diamonds--three"></div><div class="artifacts__diamonds--four"></div><div class="artifacts__diamonds--five"></div><div class="artifacts__diamonds--six"></div><div class="artifacts__diamonds--seven"></div><div class="artifacts__diamonds--eight"></div><div class="artifacts__diamonds--nine"></div><div class="artifacts__diamonds--ten"></div></div></body></html>
