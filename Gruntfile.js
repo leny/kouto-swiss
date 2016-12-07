@@ -5,7 +5,6 @@
 module.exports = function( grunt ) {
 
     require( "load-grunt-tasks" )( grunt );
-    grunt.loadTasks( "_docs/_tasks" );
 
     grunt.initConfig( {
         "mochacli": {
@@ -19,7 +18,7 @@ module.exports = function( grunt ) {
             },
         },
         "clean": {
-            "docs": [ "docs" ],
+            "docs": [ "docs/**" ],
         },
         "stylus": {
             "options": {
@@ -32,47 +31,27 @@ module.exports = function( grunt ) {
                 },
             },
         },
-        "jade": {
+        "pug": {
             "options": {
                 "compress": true,
             },
-            "docs": {
+            "website": {
                 "options": {
-                    "data": grunt.file.readJSON( "package.json" ),
+                    "data": {
+                        "pkg": grunt.file.readJSON( "package.json" ),
+                        "index": grunt.file.readJSON( "src/docs/index.json" ),
+                        "utils": require( __dirname + "/src/js/utils.js" ),
+                    },
                 },
                 "files": {
-                    "docs/docs.html": "_docs/_pages/docs.jade",
-                },
-            },
-            "home": {
-                "options": {
-                    "data": grunt.file.readJSON( "package.json" ),
-                },
-                "files": {
-                    "docs/index.html": "_docs/_pages/index.jade",
+                    "docs/index.html": "src/pug/index.pug",
                 },
             },
         },
         "copy": {
-            "assets": {
-                "expand": true,
-                "cwd": "_docs/_styles/",
-                "src": [ "img/**", "fonts/**" ],
-                "dest": "docs/styles/",
-            },
-            "scripts": {
-                "expand": true,
-                "cwd": "_docs/_js/",
-                "src": [ "**" ],
-                "dest": "docs/js/",
-            },
             "cname": {
-                "src": "_docs/CNAME",
+                "src": "src/CNAME",
                 "dest": "docs/CNAME",
-            },
-            "readme": {
-                "src": "_docs/README.md",
-                "dest": "docs/README.md",
             },
         },
         "connect": {
@@ -98,9 +77,9 @@ module.exports = function( grunt ) {
             "options": {
                 "livereload": true,
             },
-            "jade": {
-                "files": "_docs/_pages/*.jade",
-                "tasks": [ "jade", "generate" ],
+            "pug": {
+                "files": "src/pug/**/*.pug",
+                "tasks": [ "pug" ],
             },
             "styles": {
                 "files": "_docs/_styles/**/*.styl",
@@ -112,16 +91,15 @@ module.exports = function( grunt ) {
             },
             "docs": {
                 "files": "_docs/**/*.md",
-                "tasks": [ "generate" ],
+                "tasks": [ "jade" ],
             },
         },
     } );
 
     grunt.registerTask( "default", [
         "clean",
-        "jade",
-        "generate",
-        "stylus",
+        "pug",
+        // "stylus",
         "copy",
     ] );
 
