@@ -85,40 +85,35 @@ To gain access to the kouto swiss tools from your Stylus files, simply add:
 
 ## Contributing
 
-In lieu of a formal styleguide, take care to maintain the existing coding style.  
-Add unit tests and update the docs for any new or changed functionality.  
+In lieu of a formal styleguide, take care to maintain the existing coding style.
+Add unit tests and update the docs for any new or changed functionality.
 More informations in the `CONTRIBUTING.md` file.
 
 ### Special call for contribution : someone who's English is better than I am !
 
 > I am committed to improving the readability of documents with heart and soul. As you can see, I'm **not** a native English speaker. I need your help.
 
-If you want to help the **kouto swiss** project, but don't want to write code, please consider reviewing the docs, correcting my *very bad* English.  
+If you want to help the **kouto swiss** project, but don't want to write code, please consider reviewing the docs, correcting my *very bad* English.
 Many thanks!
 
 ## Release History
 
-- **2014-08-18:** version `0.10.0`: some breaking changes in box-sizing mixin.
-- **2014-07-19:** version `0.9.0`: some breaking changes in media-queries management.
-- **2014-06-30:** version `0.8.0`: first stable version of the lib, including website & docs.
-- **2014-05-20:** version `0.1.0`: first version of the lib, including nearly all the basics.
-- **2014-05-05:** version `0.0.1`: first publish on npm, still in early stages of development.
+For more details, look at the [changelog](./CHANGELOG.md).
+
+- **2016-12-06:** version `0.14.0`
+- **2016-11-12:** version `0.13.0`
+- **2016-03-25:** version `0.12.0`
+- **2014-11-08:** version `0.11.0`
+- **2014-08-18:** version `0.10.0`
+- **2014-07-19:** version `0.9.0`
+- **2014-06-30:** version `0.8.0`
+- **2014-05-20:** version `0.1.0`
+- **2014-05-05:** version `0.0.1`
 - **2014-05-03:** starting project
-
-### Development TODO
-
-- [x] allow users to choose the vendor prefixes they want to use
-- [x] write how-to for CodeKit & Prepros
-- [x] IE 8 media queries fallback
-- [x] release 0.9
-- [ ] docset for [dash](http://kapeli.com/dash)
-- [ ] community returns
-- [ ] **release 1.0**
-- [ ] grid background helper
 
 ## License
 
-Copyright (c) 2014 [leny](http://leny.me)  
+Copyright (c) 2014 [leny](http://leny.me)
 Licensed under the MIT license.
 
 ### Licenses for ressources used in docs
