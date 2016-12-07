@@ -1,7 +1,6 @@
 .grunt
 build/Release
 node_modules
-docs
 docset
 *.orig
 .idea

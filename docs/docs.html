@@ -1,0 +1,2002 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>docs - kouto swiss - A complete CSS framework for Stylus</title><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"><link rel="stylesheet" href="styles/styles.css"><!--if lt IE 9script( src="http://html5shiv.googlecode.com/svn/trunk/html5.js" )
+--></head><body><div id="wrapper"><header><h1><a href="http://kouto-swiss.io"><span>kouto swiss</span></a></h1><h2>A complete CSS framework for Stylus</h2><a href="javascript:void(0)">toggle nav</a><nav><ul><li><strong>usage</strong><ul><li><a href="#grunt">grunt</a></li><li><a href="#gulp">gulp</a></li><li><a href="#third-party">third-party</a></li><li><a href="#webstorm">webstorm</a></li><li><a href="#middleware">middleware</a></li><li><a href="#stylus">stylus</a></li><li><a href="#nib">nib</a></li><li><a href="#no-conflict-mode">no-conflict-mode</a></li></ul></li><li><strong>reset</strong><ul><li><a href="#meyer-reset">meyer-reset</a></li><li><a href="#box-sizing-reset">box-sizing-reset</a></li><li><a href="#normalize">normalize</a></li></ul></li><li><strong>mixins</strong><ul><li><a href="#calc">calc</a></li><li><a href="#font-face">font-face</a></li><li><a href="#keyframes">keyframes</a></li><li><a href="#placeholder">placeholder</a></li><li><a href="#ratio-box">ratio-box</a></li><li><a href="#linear-gradient">linear-gradient</a></li><li><a href="#radial-gradient">radial-gradient</a></li><li><a href="#repeating-linear-gradient">repeating-linear-gradient</a></li><li><a href="#repeating-radial-gradient">repeating-radial-gradient</a></li><li><a href="#vendors">vendors</a></li></ul></li><li><strong>functions</strong><ul><li><a href="#em">em</a></li><li><a href="#rem">rem</a></li><li><a href="#percent">percent</a></li><li><a href="#modular-scale">modular-scale</a></li><li><a href="#golden-ratio">golden-ratio</a></li><li><a href="#color-fallback">color-fallback</a></li><li><a href="#luminosity">luminosity</a></li><li><a href="#analogous">analogous</a></li><li><a href="#extended-analogous">extended-analogous</a></li><li><a href="#monochrome">monochrome</a></li><li><a href="#split-complements">split-complements</a></li><li><a href="#triad">triad</a></li><li><a href="#quad">quad</a></li></ul></li><li><strong>utilities</strong><ul><li><a href="#colors">colors</a></li><li><a href="#clearfix">clearfix</a></li><li><a href="#position">position</a></li><li><a href="#size">size</a></li><li><a href="#font-stack">font-stack</a></li><li><a href="#hide-text">hide-text</a></li><li><a href="#easing">easing</a></li><li><a href="#ellipsis">ellipsis</a></li><li><a href="#media-query">media-query</a></li><li><a href="#retina-image">retina-image</a></li><li><a href="#retina-query">retina-query</a></li><li><a href="#triangle">triangle</a></li></ul></li><li><strong>grid</strong><ul><li><a href="#system">system</a></li><li><a href="#gs">gs</a></li><li><a href="#col">col</a></li><li><a href="#row">row</a></li><li><a href="#offset">offset</a></li></ul></li></ul></nav></header><section class="about"><p>The documentation below refers to kouto swiss <strong class="version">v0.14.0</strong>, build on top of Stylus <strong class="stylus">v0.54.5</strong></p></section><div class="docs"><h2>usage</h2><article id="grunt"><h1>Included in compilation with grunt</h1><p>To use <strong>kouto swiss</strong> with grunt, you can use <a href="https://www.npmjs.org/package/grunt-contrib-stylus">grunt-contrib-stylus</a>, and include <strong>kouto swiss</strong> in your <code>use</code> option for the task.</p>
+<pre><code class="lang-javascript">module.exports = <span class="keyword">function</span>( grunt ) {
+    grunt.loadNpmTask( <span class="string">&quot;grunt-contrib-stylus&quot;</span> );
+
+    grunt.initConfig( {
+        <span class="string">&quot;stylus&quot;</span>: {
+            <span class="string">&quot;options&quot;</span>: {
+                <span class="string">&quot;compress&quot;</span>: false,
+                <span class="string">&quot;use&quot;</span>: [
+                    require( <span class="string">&quot;kouto-swiss&quot;</span> )
+                ]
+            },
+            <span class="string">&quot;styles&quot;</span>: {
+                <span class="string">&quot;files&quot;</span>: {
+                    <span class="string">&quot;css/styles.css&quot;</span>: <span class="string">&quot;stylus/styles.styl&quot;</span>
+                }
+            }
+        }
+    };
+};
+</code></pre>
+</article><article id="gulp"><h1>Included in compilation with gulp</h1><p>To use <strong>kouto swiss</strong> with gulp, use <a href="https://www.npmjs.org/package/gulp-stylus">gulp-stylus</a> and include <strong>kouto swiss</strong> in your <code>use</code> option for the task.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> gulp = <span class="built_in">require</span>( <span class="string">&quot;gulp&quot;</span> ),
+    koutoSwiss = <span class="built_in">require</span>( <span class="string">&quot;kouto-swiss&quot;</span> ),
+    stylus = <span class="built_in">require</span>( <span class="string">&quot;gulp-stylus&quot;</span> );
+
+gulp.task( <span class="string">&quot;styles&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    gulp.src( <span class="string">&quot;stylus/styles.styl&quot;</span> )
+        .pipe( stylus( {
+            <span class="string">&quot;use&quot;</span>: koutoSwiss()
+        } ) )
+        .pipe( gulp.dest( <span class="string">&quot;css&quot;</span> ) );
+} );
+</code></pre>
+</article><article id="third-party"><h1>Included in compilation with third-party tools</h1><p>To use <strong>kouto swiss</strong> with third-party tools like <a href="https://incident57.com/codekit/">Codekit</a> or <a href="http://alphapixels.com/prepros/">Prepros</a>, you should include <strong>kouto swiss</strong> on your project by yourself. You can download it <a href="https://github.com/krkn/kouto-swiss/releases">on github</a>.</p>
+<p><em>More information coming soon.</em></p>
+</article><article id="webstorm"><h1>Using with PHPStorm and WebStorm IDEs</h1><p>On some IDEs like PHPStorm and Webstorm, you can automatically compile your styles as they change, without relying on a third-party tool.  In PHPStorm and Webstorm, this functionality is known as <em>file watchers</em>.  To use with PHPStorm or WebStorm, as a file watcher, simply:</p>
+<ol>
+<li>Ensure you have added <code>kouto-swiss</code> as a dependency: <code>bash
+$ npm install --save-dev kouto-swiss</code></li>
+<li>Do an <code>npm install</code></li>
+<li>Create a new file watcher with settings like these: <a href="styles/img/webstorm-integration.png"><img src="styles/img/webstorm-integration.png" alt="webstorm-integration"></a></li>
+<li>Create an <code>@import</code> in one of you <code>.styl</code> files:<pre><code>@<span class="keyword">import</span> <span class="string">&quot;../../../node_modules/kouto-swiss&quot;</span> // <span class="keyword">import</span> kouto-swiss <span class="keyword">for</span> auto-prefixing (<span class="built_in">or</span> whatever relative <span class="built_in">path</span> <span class="keyword">where</span> node-modules lives
+</code></pre></li>
+</ol>
+</article><article id="middleware"><h1>As middleware, for <em>on the fly</em> compilation.</h1><p>There&apos;s an exemple of how to use stylus with kouto-swiss within Connect or Express.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> connect = <span class="keyword">require</span>( <span class="string">&quot;connect&quot;</span> ),
+    stylus = <span class="keyword">require</span>( <span class="string">&quot;stylus&quot;</span> ),
+    koutoSwiss = <span class="keyword">require</span>( <span class="string">&quot;kouto-swiss&quot;</span> ),
+    server = connect();
+
+<span class="function"><span class="keyword">function</span> <span class="title">compile</span><span class="params">( str, path )</span> </span>{
+    <span class="keyword">return</span> stylus( str )
+        .set( <span class="string">&quot;filename&quot;</span>, path )
+        .set( <span class="string">&quot;compress&quot;</span>, <span class="keyword">true</span> )
+        .<span class="keyword">use</span>( koutoSwiss() );
+}
+
+server.<span class="keyword">use</span>( stylus.middleware( {
+    src: __dirname,
+    compile: compile
+} ) );
+</code></pre>
+</article><article id="stylus"><h1>Stylus API</h1><p>To gain access to the kouto swiss tools from your Stylus files, simply add:</p>
+<pre><code class="lang-stylus">@<span class="keyword">import</span> <span class="string">&quot;kouto-swiss&quot;</span>
+</code></pre>
+</article><article id="nib"><h1>Using nib with kouto swiss</h1><p><strong>kouto swiss</strong> is highly inspired by <a href="http://visionmedia.github.io/nib/">nib</a>.</p>
+<p>As kouto swiss and nib shares some functions &amp; mixins names, <strong>it&apos;s not a great idea</strong> to use nib and kouto swiss together.</p>
+<p>In simple terms : importing <strong>kouto swiss</strong> <em>after</em> <strong>nib</strong> will break some of nib&apos;s features, and importing <strong>nib</strong> <em>after</em> <strong>kouto swiss</strong> will break some of kouto swiss&apos; features.</p>
+<p>kouto swiss has been coded in the way to provide a complete <em>alternative</em> to nib.</p>
+<p>If you look after some features of nib that you don&apos;t find in kouto swiss, create an <a href="https://github.com/krkn/kouto-swiss/issues">issue topic</a> to request it, or, even better if you can, <a href="https://github.com/krkn/kouto-swiss/blob/master/CONTRIBUTING.md">submit a pull request</a>!</p>
+</article><article id="no-conflict-mode"><h1><em>no conflict</em> mode &amp; mixins aliases</h1><p>If you use <strong>kouto-swiss</strong> with other mixin libraries (such as <a href="https://github.com/Acquisio/bootstrap-stylus">bootstrap-stylus</a>), variables &amp; mixin name colisions may happen.</p>
+<p>To avoid that problem, all the functions &amp; mixins of <strong>kouto-swiss</strong> are also available with the <code>ks-</code> prefix/namespace before their name.</p>
+<p>You should include the <strong>kouto-swiss</strong> lib first in your stylesheets, before any other library.</p>
+<h2><em>no-conflict</em> mode</h2><p>You can also use the <em>no-conflict</em> mode : this will disable all the <em>public</em> or potentially conflicting variables &amp; mixins name used by <strong>kouto-swiss</strong>, letting only the <code>ks-</code> prefixed variables &amp; mixins availables.</p>
+<p>To use the <em>no-conflict</em> mode, simple set the <code>ks-no-conflict</code> variable to <code>true</code> <strong>before</strong> including <strong>kouto-swiss</strong>.</p>
+<pre><code class="lang-stylus">ks-<span class="literal">no</span>-conflict = <span class="literal">true</span>
+@import <span class="string">&quot;kouto-swiss&quot;</span>
+</code></pre>
+</article><h2>reset</h2><article id="meyer-reset"><h1><code>meyer-reset()</code></h1><p>A global reset, using&apos;s the <a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&apos;s CSS reset v2</a>.</p>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="function"><span class="title">meyer-reset</span><span class="params">()</span></span>
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">html</span>, <span class="selector-tag">body</span>, <span class="selector-tag">div</span>, <span class="selector-tag">span</span>, applet, <span class="selector-tag">object</span>, <span class="selector-tag">iframe</span>, <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>, <span class="selector-tag">p</span>, <span class="selector-tag">blockquote</span>, pre, <span class="selector-tag">a</span>, <span class="selector-tag">abbr</span>, acronym, <span class="selector-tag">address</span>, big, <span class="selector-tag">cite</span>, <span class="selector-tag">code</span>, <span class="selector-tag">del</span>, <span class="selector-tag">dfn</span>, <span class="selector-tag">em</span>, <span class="selector-tag">img</span>, <span class="selector-tag">ins</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">q</span>, s, <span class="selector-tag">samp</span>, small, strike, <span class="selector-tag">strong</span>, sub, <span class="selector-tag">sup</span>, tt, <span class="selector-tag">var</span>, <span class="selector-tag">b</span>, u, <span class="selector-tag">i</span>, center, <span class="selector-tag">dl</span>, <span class="selector-tag">dt</span>, <span class="selector-tag">dd</span>, <span class="selector-tag">ol</span>, <span class="selector-tag">ul</span>, <span class="selector-tag">li</span>, <span class="selector-tag">fieldset</span>, <span class="selector-tag">form</span>, <span class="selector-tag">label</span>, <span class="selector-tag">legend</span>, <span class="selector-tag">table</span>, <span class="selector-tag">caption</span>, <span class="selector-tag">tbody</span>, <span class="selector-tag">tfoot</span>, <span class="selector-tag">thead</span>, <span class="selector-tag">tr</span>, <span class="selector-tag">th</span>, <span class="selector-tag">td</span>, <span class="selector-tag">article</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">canvas</span>, <span class="selector-tag">details</span>, embed, <span class="selector-tag">figure</span>, <span class="selector-tag">figcaption</span>, <span class="selector-tag">footer</span>, <span class="selector-tag">header</span>, <span class="selector-tag">hgroup</span>, <span class="selector-tag">menu</span>, <span class="selector-tag">nav</span>, output, ruby, <span class="selector-tag">section</span>, <span class="selector-tag">summary</span>, <span class="selector-tag">time</span>, <span class="selector-tag">mark</span>, <span class="selector-tag">audio</span>, <span class="selector-tag">video</span> {
+  <span class="attribute">margin</span>: <span class="number">0</span>;
+  <span class="attribute">padding</span>: <span class="number">0</span>;
+  <span class="attribute">border</span>: <span class="number">0</span>;
+  <span class="attribute">font-size</span>: <span class="number">100%</span>;
+  <span class="attribute">font</span>: inherit;
+  <span class="attribute">vertical-align</span>: baseline;
+}
+<span class="selector-tag">article</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">details</span>, <span class="selector-tag">figcaption</span>, <span class="selector-tag">figure</span>, <span class="selector-tag">footer</span>, <span class="selector-tag">header</span>, <span class="selector-tag">hgroup</span>, <span class="selector-tag">menu</span>, <span class="selector-tag">nav</span>, <span class="selector-tag">section</span> {
+  <span class="attribute">display</span>: block;
+}
+<span class="selector-tag">body</span> {
+  <span class="attribute">line-height</span>: <span class="number">1</span>;
+}
+<span class="selector-tag">ol</span>, <span class="selector-tag">ul</span> {
+  <span class="attribute">list-style</span>: none;
+}
+<span class="selector-tag">blockquote</span>, <span class="selector-tag">q</span> {
+  <span class="attribute">quotes</span>: none;
+}
+<span class="selector-tag">blockquote</span>:before, <span class="selector-tag">blockquote</span>:after, <span class="selector-tag">q</span>:before, <span class="selector-tag">q</span>:after {
+  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;
+  <span class="attribute">content</span>: none;
+}
+<span class="selector-tag">table</span> {
+  <span class="attribute">border-collapse</span>: collapse;
+  <span class="attribute">border-spacing</span>: <span class="number">0</span>;
+}
+</code></pre>
+</article><article id="box-sizing-reset"><h1><code>box-sizing-reset()</code></h1><p>The <em>box-sizing reset</em>, setting the <code>box-sizing</code> property to <code>border-box</code>.</p>
+<p>For more information, read the post &quot;<a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">Box-sizing: Border-box FTW</a>&quot; by Paul Irish.</p>
+<p><strong>Note:</strong> From version <code>0.10</code>, the <code>box-sizing-reset()</code> function has changed his behaviour when its called from the root level : it <a href="http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/">use an inheritance pattern</a>, which produce the same result, and is more reliable for cases where you want to use an other <em>box model</em> for a part of your page.</p>
+<h3>Usage</h3><pre><code class="lang-stylus">
+<span class="function"><span class="title">box-sizing-reset</span><span class="params">()</span></span>
+
+<span class="selector-tag">article</span>
+    <span class="attribute">box-sizing</span>-reset()
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">html</span> {
+  <span class="attribute">box-sizing</span>: border-box;
+}
+*,
+*<span class="selector-pseudo">:before</span>,
+*<span class="selector-pseudo">:after</span> {
+  <span class="attribute">box-sizing</span>: inherit;
+}
+<span class="selector-tag">article</span> *,
+<span class="selector-tag">article</span> *<span class="selector-pseudo">:before</span>,
+<span class="selector-tag">article</span> *<span class="selector-pseudo">:after</span> {
+  <span class="attribute">box-sizing</span>: border-box;
+}
+</code></pre>
+</article><article id="normalize"><h1><code>normalize()</code></h1><p>The <em>normalize</em> reset makes browsers render all elements more consistently and in line with modern standards.</p>
+<p>For more information, refers to the <a href="https://github.com/necolas/normalize.css">original normalize repository</a>, by <a href="https://github.com/necolas">Nicolas Gallagher</a>.</p>
+<blockquote>
+<p><strong>Note:</strong> Kouto Swiss include normalize version <code>5.0.0</code></p>
+</blockquote>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="function"><span class="title">normalize</span><span class="params">()</span></span>
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">html</span> {
+  <span class="attribute">font-family</span>: sans-serif;
+  <span class="attribute">-ms-text-size-adjust</span>: <span class="number">100%</span>;
+  <span class="attribute">-webkit-text-size-adjust</span>: <span class="number">100%</span>;
+}
+<span class="selector-tag">body</span> {
+  <span class="attribute">margin</span>: <span class="number">0</span>;
+}
+<span class="selector-tag">article</span>,
+<span class="selector-tag">aside</span>,
+<span class="selector-tag">details</span>,
+<span class="selector-tag">figcaption</span>,
+<span class="selector-tag">figure</span>,
+<span class="selector-tag">footer</span>,
+<span class="selector-tag">header</span>,
+<span class="selector-tag">hgroup</span>,
+<span class="selector-tag">main</span>,
+<span class="selector-tag">nav</span>,
+<span class="selector-tag">section</span>,
+<span class="selector-tag">summary</span> {
+  <span class="attribute">display</span>: block;
+}
+<span class="selector-tag">audio</span>,
+<span class="selector-tag">canvas</span>,
+<span class="selector-tag">progress</span>,
+<span class="selector-tag">video</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">vertical-align</span>: baseline;
+}
+<span class="selector-tag">audio</span><span class="selector-pseudo">:not(</span><span class="selector-attr">[controls]</span>) {
+  <span class="attribute">display</span>: none;
+  <span class="attribute">height</span>: <span class="number">0</span>;
+}
+<span class="selector-attr">[hidden]</span>,
+<span class="selector-tag">template</span> {
+  <span class="attribute">display</span>: none;
+}
+<span class="selector-tag">a</span> {
+  <span class="attribute">background</span>: transparent;
+}
+<span class="selector-tag">a</span><span class="selector-pseudo">:active</span>,
+<span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> {
+  <span class="attribute">outline</span>: <span class="number">0</span>;
+}
+<span class="selector-tag">abbr</span><span class="selector-attr">[title]</span> {
+  <span class="attribute">border-bottom</span>: <span class="number">1px</span> dotted;
+}
+<span class="selector-tag">b</span>,
+<span class="selector-tag">strong</span> {
+  <span class="attribute">font-weight</span>: bold;
+}
+<span class="selector-tag">dfn</span> {
+  <span class="attribute">font-style</span>: italic;
+}
+<span class="selector-tag">h1</span> {
+  <span class="attribute">font-size</span>: <span class="number">2em</span>;
+  <span class="attribute">margin</span>: <span class="number">0.67em</span> <span class="number">0</span>;
+}
+<span class="selector-tag">mark</span> {
+  <span class="attribute">background</span>: <span class="number">#ff0</span>;
+  <span class="attribute">color</span>: <span class="number">#000</span>;
+}
+<span class="selector-tag">small</span> {
+  <span class="attribute">font-size</span>: <span class="number">80%</span>;
+}
+<span class="selector-tag">sub</span>,
+<span class="selector-tag">sup</span> {
+  <span class="attribute">font-size</span>: <span class="number">75%</span>;
+  <span class="attribute">line-height</span>: <span class="number">0</span>;
+  <span class="attribute">position</span>: relative;
+  <span class="attribute">vertical-align</span>: baseline;
+}
+<span class="selector-tag">sup</span> {
+  <span class="attribute">top</span>: -<span class="number">0.5em</span>;
+}
+<span class="selector-tag">sub</span> {
+  <span class="attribute">bottom</span>: -<span class="number">0.25em</span>;
+}
+<span class="selector-tag">img</span> {
+  <span class="attribute">border</span>: <span class="number">0</span>;
+}
+<span class="selector-tag">svg</span><span class="selector-pseudo">:not(</span><span class="selector-pseudo">:root)</span> {
+  <span class="attribute">overflow</span>: hidden;
+}
+<span class="selector-tag">figure</span> {
+  <span class="attribute">margin</span>: <span class="number">1em</span> <span class="number">40px</span>;
+}
+<span class="selector-tag">hr</span> {
+  <span class="attribute">-webkit-box-sizing</span>: content-box;
+  <span class="attribute">-moz-box-sizing</span>: content-box;
+  <span class="attribute">box-sizing</span>: content-box;
+  <span class="attribute">height</span>: <span class="number">0</span>;
+}
+<span class="selector-tag">pre</span> {
+  <span class="attribute">overflow</span>: auto;
+}
+<span class="selector-tag">code</span>,
+<span class="selector-tag">kbd</span>,
+<span class="selector-tag">pre</span>,
+<span class="selector-tag">samp</span> {
+  <span class="attribute">font-family</span>: monospace, monospace;
+  <span class="attribute">font-size</span>: <span class="number">1em</span>;
+}
+<span class="selector-tag">button</span>,
+<span class="selector-tag">input</span>,
+<span class="selector-tag">optgroup</span>,
+<span class="selector-tag">select</span>,
+<span class="selector-tag">textarea</span> {
+  <span class="attribute">color</span>: inherit;
+  <span class="attribute">font</span>: inherit;
+  <span class="attribute">margin</span>: <span class="number">0</span>;
+}
+<span class="selector-tag">button</span> {
+  <span class="attribute">overflow</span>: visible;
+}
+<span class="selector-tag">button</span>,
+<span class="selector-tag">select</span> {
+  <span class="attribute">text-transform</span>: none;
+}
+<span class="selector-tag">button</span>,
+<span class="selector-tag">html</span> <span class="selector-tag">input</span><span class="selector-attr">[type=&quot;button&quot;]</span>,
+<span class="selector-tag">input</span><span class="selector-attr">[type=&quot;reset&quot;]</span>,
+<span class="selector-tag">input</span><span class="selector-attr">[type=&quot;submit&quot;]</span> {
+  <span class="attribute">-webkit-appearance</span>: button;
+  <span class="attribute">cursor</span>: pointer;
+}
+<span class="selector-tag">button</span><span class="selector-attr">[disabled]</span>,
+<span class="selector-tag">html</span> <span class="selector-tag">input</span><span class="selector-attr">[disabled]</span> {
+  <span class="attribute">cursor</span>: default;
+}
+<span class="selector-tag">button</span><span class="selector-pseudo">::-moz-focus-inner</span>,
+<span class="selector-tag">input</span><span class="selector-pseudo">::-moz-focus-inner</span> {
+  <span class="attribute">border</span>: <span class="number">0</span>;
+  <span class="attribute">padding</span>: <span class="number">0</span>;
+}
+<span class="selector-tag">input</span> {
+  <span class="attribute">line-height</span>: normal;
+}
+<span class="selector-tag">input</span><span class="selector-attr">[type=&quot;checkbox&quot;]</span>,
+<span class="selector-tag">input</span><span class="selector-attr">[type=&quot;radio&quot;]</span> {
+  <span class="attribute">-webkit-box-sizing</span>: border-box;
+  <span class="attribute">-moz-box-sizing</span>: border-box;
+  <span class="attribute">box-sizing</span>: border-box;
+  <span class="attribute">padding</span>: <span class="number">0</span>;
+}
+<span class="selector-tag">input</span><span class="selector-attr">[type=&quot;number&quot;]</span><span class="selector-pseudo">::-webkit-inner-spin-button</span>,
+<span class="selector-tag">input</span><span class="selector-attr">[type=&quot;number&quot;]</span><span class="selector-pseudo">::-webkit-outer-spin-button</span> {
+  <span class="attribute">height</span>: auto;
+}
+<span class="selector-tag">input</span><span class="selector-attr">[type=&quot;search&quot;]</span> {
+  <span class="attribute">-webkit-appearance</span>: textfield;
+  <span class="attribute">-webkit-box-sizing</span>: content-box;
+  <span class="attribute">-moz-box-sizing</span>: content-box;
+  <span class="attribute">box-sizing</span>: content-box;
+}
+<span class="selector-tag">input</span><span class="selector-attr">[type=&quot;search&quot;]</span><span class="selector-pseudo">::-webkit-search-cancel-button</span>,
+<span class="selector-tag">input</span><span class="selector-attr">[type=&quot;search&quot;]</span><span class="selector-pseudo">::-webkit-search-decoration</span> {
+  <span class="attribute">-webkit-appearance</span>: none;
+}
+<span class="selector-tag">fieldset</span> {
+  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#c0c0c0</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">2px</span>;
+  <span class="attribute">padding</span>: <span class="number">0.35em</span> <span class="number">0.625em</span> <span class="number">0.75em</span>;
+}
+<span class="selector-tag">legend</span> {
+  <span class="attribute">border</span>: <span class="number">0</span>;
+  <span class="attribute">padding</span>: <span class="number">0</span>;
+}
+<span class="selector-tag">textarea</span> {
+  <span class="attribute">overflow</span>: auto;
+}
+<span class="selector-tag">optgroup</span> {
+  <span class="attribute">font-weight</span>: bold;
+}
+<span class="selector-tag">table</span> {
+  <span class="attribute">border-collapse</span>: collapse;
+  <span class="attribute">border-spacing</span>: <span class="number">0</span>;
+}
+<span class="selector-tag">td</span>,
+<span class="selector-tag">th</span> {
+  <span class="attribute">padding</span>: <span class="number">0</span>;
+}
+</code></pre>
+</article><h2>mixins</h2><article id="calc"><h1>calc()</h1><p>Add vendor-prefix for the css3 <code>calc()</code> function.</p>
+<h3>Signature</h3><p><code>calc( expr [, fallback ] )</code></p>
+<ul>
+<li><code>expr</code>: expression for calc. <strong>Must be quoted</strong>.</li>
+<li><code>fallback</code>: a fallback value for unsupported browsers. <em>Optional</em>.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">body</span>
+    <span class="attribute">width</span>: calc( <span class="string">&quot;100% - 80px&quot;</span> )
+
+<span class="selector-tag">body</span>
+    <span class="attribute">width</span>: calc( <span class="string">&quot;100% - 80px&quot;</span>, <span class="number">90%</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">body</span> {
+  <span class="attribute">width</span>: <span class="built_in">-webkit-calc</span>(100% - 80px);
+  <span class="attribute">width</span>: <span class="built_in">calc</span>(100% - 80px);
+}
+
+<span class="selector-tag">body</span> {
+  <span class="attribute">width</span>: <span class="number">90%</span>;
+  <span class="attribute">width</span>: <span class="built_in">-webkit-calc</span>(100% - 80px);
+  <span class="attribute">width</span>: <span class="built_in">calc</span>(100% - 80px);
+}
+</code></pre>
+</article><article id="font-face"><h1>font-face()</h1><p>Simple <code>@font-face</code> mixin.</p>
+<h3>Signature</h3><p><code>font-face( name, font-src [, weight [, style [, formats [, svg-font-name ] [, local-font-name ] ] ] ] )</code></p>
+<ul>
+<li><code>name</code>: name of the font, used for font-family</li>
+<li><code>font-src</code>: the path for the font, minus the extension</li>
+<li><code>weight</code>: the weight of the font, for font-weight. <em>Optional</em>.</li>
+<li><code>style</code>: the style of the font, for font-style. <em>Optional</em>.</li>
+<li><code>formats</code>: the formats to includes. <em>Optional</em>. Default: <code>eot woff2 woff truetype svg</code> Accepted words: <code>eot woff2 woff truetype ttf opentype otf svg local</code></li>
+<li><code>svg-font-name</code>: the svg font name. <em>Optional</em>. Default: use the <code>name</code> parameters.</li>
+<li><code>local-font-name</code>: the local font name. <em>Optional</em>. Default: use the <code>name</code> parameters.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="function"><span class="title">font-face</span><span class="params">( <span class="string">&quot;Roboto&quot;</span>, <span class="string">&quot;./fonts/Roboto-Regular-webfont&quot;</span>, normal )</span></span>
+
+<span class="function"><span class="title">font-face</span><span class="params">( <span class="string">&quot;Roboto&quot;</span>, <span class="string">&quot;./fonts/Roboto-Italic-webfont&quot;</span>, normal, italic )</span></span>
+
+<span class="function"><span class="title">font-face</span><span class="params">( <span class="string">&quot;OpenSans&quot;</span>, <span class="string">&quot;./fonts/OpenSans&quot;</span>, formats: woff )</span></span>
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css">@<span class="keyword">font-face</span> {
+  <span class="attribute">font-family</span>: <span class="string">&quot;Roboto&quot;</span>;
+  <span class="attribute">font-weight</span>: normal;
+  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;./fonts/Roboto-Regular-webfont.eot&quot;</span>);
+  <span class="attribute">src</span>: <span class="built_in">local</span>(<span class="string">&quot;Roboto&quot;</span>, url(<span class="string">&quot;./fonts/Roboto-Regular-webfont.eot?#iefix&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;embedded-opentype&quot;</span>), <span class="built_in">url</span>(<span class="string">&quot;./fonts/Roboto-Regular-webfont.woff2&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;woff2&quot;</span>), <span class="built_in">url</span>(<span class="string">&quot;./fonts/Roboto-Regular-webfont.woff&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;woff&quot;</span>), <span class="built_in">url</span>(<span class="string">&quot;./fonts/Roboto-Regular-webfont.ttf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;truetype&quot;</span>), <span class="built_in">url</span>(<span class="string">&quot;./fonts/Roboto-Regular-webfont.svg#Roboto&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;svg&quot;</span>);
+}
+
+@<span class="keyword">font-face</span> {
+  <span class="attribute">font-family</span>: <span class="string">&quot;Roboto&quot;</span>;
+  <span class="attribute">font-weight</span>: normal;
+  <span class="attribute">font-style</span>: italic;
+  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;./fonts/Roboto-Italic-webfont.eot&quot;</span>);
+  <span class="attribute">src</span>: <span class="built_in">local</span>(<span class="string">&quot;Roboto&quot;</span>), <span class="built_in">url</span>(<span class="string">&quot;./fonts/Roboto-Italic-webfont.eot?#iefix&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;embedded-opentype&quot;</span>), <span class="built_in">url</span>(<span class="string">&quot;./fonts/Roboto-Italic-webfont.woff2&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;woff2&quot;</span>), <span class="built_in">url</span>(<span class="string">&quot;./fonts/Roboto-Italic-webfont.woff&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;woff&quot;</span>), <span class="built_in">url</span>(<span class="string">&quot;./fonts/Roboto-Italic-webfont.ttf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;truetype&quot;</span>), <span class="built_in">url</span>(<span class="string">&quot;./fonts/Roboto-Italic-webfont.svg#Roboto&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;svg&quot;</span>);
+}
+
+@<span class="keyword">font-face</span> {
+  <span class="attribute">font-family</span>: <span class="string">&quot;OpenSans&quot;</span>;
+  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;./fonts/OpenSans.woff&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;woff&quot;</span>);
+}
+</code></pre>
+</article><article id="keyframes"><h1>keyframes &amp; animation</h1><p>To make animations with css3, you&apos;ll need to use the <code>animation</code> property &amp; the <code>@keyframes</code> structure.</p>
+<p>The <code>animation</code> property is already handled in <strong>kouto swiss</strong> by the <a href="#vendors">vendors mecanism</a>.</p>
+<p>The <code>@keyframes</code> structure is currently handled by the <a href="http://learnboost.github.io/stylus/docs/keyframes.html">Stylus language</a>.<br><strong>Note:</strong> as precised on the stylus documentation, the <em>vendor expansion</em> of the <code>@keyframes</code> structure will be removed from Stylus in <code>1.0</code> version. When this time will come, we&apos;ll had that behaviour to <strong>kouto swiss</strong>.</p>
+<h3>Usage</h3><pre><code class="lang-stylus">@keyframes my-rainbow-<span class="attribute">animation</span>
+    <span class="number">0%</span>
+        <span class="attribute">color</span>: red
+    <span class="number">14%</span>
+        <span class="attribute">color</span>: orange
+    <span class="number">28%</span>
+        <span class="attribute">color</span>: yellow
+    <span class="number">42%</span>
+        <span class="attribute">color</span>: green
+    <span class="number">56%</span>
+        <span class="attribute">color</span>: blue
+    <span class="number">70%</span>
+        <span class="attribute">color</span>: indigo
+    <span class="number">84%</span>
+        <span class="attribute">color</span>: violet
+
+<span class="selector-tag">div</span><span class="selector-class">.rainbow</span>
+    <span class="attribute">animation</span> rainbow <span class="number">3s</span> linear
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span><span class="selector-class">.rainbow</span> {
+  <span class="attribute">-webkit-animation</span>: rainbow <span class="number">3s</span> linear;
+  <span class="attribute">animation</span>: rainbow <span class="number">3s</span> linear;
+}
+@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> my-rainbow-animation {
+  0% {
+    <span class="attribute">color</span>: <span class="number">#f00</span>;
+  }
+  14% {
+    <span class="attribute">color</span>: <span class="number">#ffa500</span>;
+  }
+  28% {
+    <span class="attribute">color</span>: <span class="number">#ff0</span>;
+  }
+  42% {
+    <span class="attribute">color</span>: <span class="number">#008000</span>;
+  }
+  56% {
+    <span class="attribute">color</span>: <span class="number">#00f</span>;
+  }
+  70% {
+    <span class="attribute">color</span>: <span class="number">#4b0082</span>;
+  }
+  84% {
+    <span class="attribute">color</span>: <span class="number">#ee82ee</span>;
+  }
+}
+@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> my-rainbow-animation {
+  0% {
+    <span class="attribute">color</span>: <span class="number">#f00</span>;
+  }
+  14% {
+    <span class="attribute">color</span>: <span class="number">#ffa500</span>;
+  }
+  28% {
+    <span class="attribute">color</span>: <span class="number">#ff0</span>;
+  }
+  42% {
+    <span class="attribute">color</span>: <span class="number">#008000</span>;
+  }
+  56% {
+    <span class="attribute">color</span>: <span class="number">#00f</span>;
+  }
+  70% {
+    <span class="attribute">color</span>: <span class="number">#4b0082</span>;
+  }
+  84% {
+    <span class="attribute">color</span>: <span class="number">#ee82ee</span>;
+  }
+}
+@-<span class="keyword">o</span>-<span class="keyword">keyframes</span> my-rainbow-animation {
+  0% {
+    <span class="attribute">color</span>: <span class="number">#f00</span>;
+  }
+  14% {
+    <span class="attribute">color</span>: <span class="number">#ffa500</span>;
+  }
+  28% {
+    <span class="attribute">color</span>: <span class="number">#ff0</span>;
+  }
+  42% {
+    <span class="attribute">color</span>: <span class="number">#008000</span>;
+  }
+  56% {
+    <span class="attribute">color</span>: <span class="number">#00f</span>;
+  }
+  70% {
+    <span class="attribute">color</span>: <span class="number">#4b0082</span>;
+  }
+  84% {
+    <span class="attribute">color</span>: <span class="number">#ee82ee</span>;
+  }
+}
+@<span class="keyword">keyframes</span> my-rainbow-animation {
+  0% {
+    <span class="attribute">color</span>: <span class="number">#f00</span>;
+  }
+  14% {
+    <span class="attribute">color</span>: <span class="number">#ffa500</span>;
+  }
+  28% {
+    <span class="attribute">color</span>: <span class="number">#ff0</span>;
+  }
+  42% {
+    <span class="attribute">color</span>: <span class="number">#008000</span>;
+  }
+  56% {
+    <span class="attribute">color</span>: <span class="number">#00f</span>;
+  }
+  70% {
+    <span class="attribute">color</span>: <span class="number">#4b0082</span>;
+  }
+  84% {
+    <span class="attribute">color</span>: <span class="number">#ee82ee</span>;
+  }
+}
+</code></pre>
+</article><article id="placeholder"><h1>placeholder()</h1><p>Outputs vendor-prefixes for placeholders.<br>Must be called from a ruleset.</p>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">input</span>
+    <span class="attribute">color</span>: <span class="number">#f00</span>
+    +placeholder()
+        <span class="attribute">color</span>: <span class="number">#f99</span>
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">input</span> {
+  <span class="attribute">color</span>: <span class="number">#f00</span>;
+}
+<span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> {
+  <span class="attribute">color</span>: <span class="number">#f99</span>;
+}
+<span class="selector-tag">input</span><span class="selector-pseudo">:-moz-placeholder</span> {
+  <span class="attribute">color</span>: <span class="number">#f99</span>;
+}
+<span class="selector-tag">input</span><span class="selector-pseudo">::-moz-placeholder</span> {
+  <span class="attribute">color</span>: <span class="number">#f99</span>;
+}
+<span class="selector-tag">input</span><span class="selector-pseudo">:-ms-input-placeholder</span> {
+  <span class="attribute">color</span>: <span class="number">#f99</span>;
+}
+</code></pre>
+</article><article id="ratio-box"><h1>ratio-box()</h1><p>Give an element with unknown or fluid width a fixed aspect ratio.</p>
+<p>Inspired by <a href="http://davidtheclark.github.io/scut/">Scut</a>.</p>
+<h3>Usage</h3><pre><code class="lang-stylus">.ratio-box-<span class="section">default</span>
+    ratio-box()
+
+.ratio-box<span class="number">-1</span>x1
+    ratio-box( <span class="number">1</span>/<span class="number">1</span> )
+
+.ratio-box<span class="number">-2</span>x1
+    ratio-box( <span class="number">2</span>/<span class="number">1</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-class">.ratio-box-default</span> {
+    <span class="attribute">overflow</span>: hidden;
+    <span class="attribute">position</span>: relative;
+}
+<span class="selector-class">.ratio-box-default</span><span class="selector-pseudo">:before</span> {
+    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;
+    <span class="attribute">display</span>: block;
+    <span class="attribute">height</span>: <span class="number">0</span>;
+    <span class="attribute">padding-top</span>: <span class="number">100%</span>;
+}
+<span class="selector-class">.ratio-box-1x1</span> {
+    <span class="attribute">overflow</span>: hidden;
+    <span class="attribute">position</span>: relative;
+}
+<span class="selector-class">.ratio-box-1x1</span><span class="selector-pseudo">:before</span> {
+    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;
+    <span class="attribute">display</span>: block;
+    <span class="attribute">height</span>: <span class="number">0</span>;
+    <span class="attribute">padding-top</span>: <span class="number">100%</span>;
+}
+<span class="selector-class">.ratio-box-2x1</span> {
+    <span class="attribute">overflow</span>: hidden;
+    <span class="attribute">position</span>: relative;
+}
+<span class="selector-class">.ratio-box-2x1</span><span class="selector-pseudo">:before</span> {
+    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;
+    <span class="attribute">display</span>: block;
+    <span class="attribute">height</span>: <span class="number">0</span>;
+    <span class="attribute">padding-top</span>: <span class="number">50%</span>;
+}
+</code></pre>
+</article><article id="linear-gradient"><h1>linear-gradient()</h1><p>Display a <code>linear-gradient</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> must be used in a <code>background-image property</code>.</p>
+</blockquote>
+<h3>Signature</h3><p><code>linear-gradient( start, stops... )</code></p>
+<p>The implementation of <code>linear-gradient</code> follows <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient">the CSS3 specs</a>.</p>
+<h3>Usage</h3><pre><code class="lang-stylus">div
+  <span class="built_in">background</span>-<span class="built_in">image</span>: linear-gradient( <span class="number">-45</span>deg, yellow, <span class="built_in">green</span> )
+
+div
+  <span class="built_in">background</span>-<span class="built_in">image</span>: linear-gradient( to top right, <span class="built_in">red</span>, white <span class="number">30</span>%, <span class="built_in">blue</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(135deg,#ff0,#008000);
+  <span class="attribute">background-image</span>: <span class="built_in">-moz-linear-gradient</span>(135deg,#ff0,#008000);
+  <span class="attribute">background-image</span>: <span class="built_in">-ms-linear-gradient</span>(135deg,#ff0,#008000);
+  <span class="attribute">background-image</span>: <span class="built_in">-o-linear-gradient</span>(135deg,#ff0,#008000);
+  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(-45deg,#ff0,#008000);
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(bottom left,#f00,#fff 30%,#00f);
+  <span class="attribute">background-image</span>: <span class="built_in">-moz-linear-gradient</span>(bottom left,#f00,#fff 30%,#00f);
+  <span class="attribute">background-image</span>: <span class="built_in">-ms-linear-gradient</span>(bottom left,#f00,#fff 30%,#00f);
+  <span class="attribute">background-image</span>: <span class="built_in">-o-linear-gradient</span>(bottom left,#f00,#fff 30%,#00f);
+  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to top right,#f00,#fff 30%,#00f);
+}
+</code></pre>
+</article><article id="radial-gradient"><h1>radial-gradient()</h1><p>Display a <code>radial-gradient</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> must be used in a <code>background-image property</code>.</p>
+</blockquote>
+<h3>Signature</h3><p><code>radial-gradient( stops... )</code></p>
+<p>The implementation of <code>radial-gradient</code> follows <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient">the CSS3 specs</a>.</p>
+<h3>Usage</h3><pre><code class="lang-stylus">div
+    <span class="built_in">background</span>-<span class="built_in">image</span>: radial-gradient( <span class="number">50</span><span class="symbol">%</span> <span class="number">50</span><span class="symbol">%</span>, black, white )
+
+div
+    <span class="built_in">background</span>-<span class="built_in">image</span>: radial-gradient( <span class="built_in">ellipse</span> <span class="built_in">at</span> <span class="built_in">center</span>, yellow <span class="number">0</span><span class="symbol">%</span>, green <span class="number">100</span><span class="symbol">%</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">background-image</span>: <span class="built_in">-webkit-radial-gradient</span>(50% 50%,#000,#fff);
+  <span class="attribute">background-image</span>: <span class="built_in">-moz-radial-gradient</span>(50% 50%,#000,#fff);
+  <span class="attribute">background-image</span>: <span class="built_in">-ms-radial-gradient</span>(50% 50%,#000,#fff);
+  <span class="attribute">background-image</span>: <span class="built_in">-o-radial-gradient</span>(50% 50%,#000,#fff);
+  <span class="attribute">background-image</span>: <span class="built_in">radial-gradient</span>(50% 50%,#000,#fff);
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">background-image</span>: <span class="built_in">-webkit-radial-gradient</span>(ellipse at center,#ff0 0%,#008000 100%);
+  <span class="attribute">background-image</span>: <span class="built_in">-moz-radial-gradient</span>(ellipse at center,#ff0 0%,#008000 100%);
+  <span class="attribute">background-image</span>: <span class="built_in">-ms-radial-gradient</span>(ellipse at center,#ff0 0%,#008000 100%);
+  <span class="attribute">background-image</span>: <span class="built_in">-o-radial-gradient</span>(ellipse at center,#ff0 0%,#008000 100%);
+  <span class="attribute">background-image</span>: <span class="built_in">radial-gradient</span>(ellipse at center,#ff0 0%,#008000 100%);
+}
+</code></pre>
+</article><article id="repeating-linear-gradient"><h1>repeating-linear-gradient()</h1><p>Display a <code>repeating-linear-gradient</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> must be used in a <code>background-image property</code>.</p>
+</blockquote>
+<h3>Signature</h3><p><code>repeating-linear-gradient( start, stops... )</code></p>
+<p>The implementation of <code>repeating-linear-gradient</code> follows <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient">the CSS3 specs</a>.</p>
+<h3>Usage</h3><pre><code class="lang-stylus">div
+    <span class="built_in">background</span>-<span class="built_in">image</span>: repeating-<span class="built_in">linear</span>-gradient( rgb( <span class="number">26</span>, <span class="number">198</span>, <span class="number">204</span> ), rgb( <span class="number">26</span>, <span class="number">198</span>, <span class="number">204</span> ) <span class="number">7</span><span class="symbol">%</span>, rgb( <span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span> ) <span class="number">10</span><span class="symbol">%</span> )
+
+div
+    <span class="built_in">background</span>-<span class="built_in">image</span>: repeating-<span class="built_in">linear</span>-gradient( -45deg, <span class="built_in">transparent</span>, <span class="built_in">transparent</span> 25px, rgba( <span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">1</span> ) 25px, rgba( <span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">1</span> ) 50px)
+
+div
+    <span class="built_in">background</span>-<span class="built_in">image</span>: repeating-<span class="built_in">linear</span>-gradient( to left top, blue, green <span class="number">40</span><span class="symbol">%</span>, red );
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">background-image</span>: <span class="built_in">-webkit-repeating-linear-gradient</span>(#1ac6cc,#1ac6cc 7%,#646464 10%);
+  <span class="attribute">background-image</span>: <span class="built_in">repeating-linear-gradient</span>(#1ac6cc,#1ac6cc 7%,#646464 10%);
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">background-image</span>: <span class="built_in">-webkit-repeating-linear-gradient</span>(135deg,transparent,transparent 25px,#fff 25px,#fff 50px);
+  <span class="attribute">background-image</span>: <span class="built_in">repeating-linear-gradient</span>(-45deg,transparent,transparent 25px,#fff 25px,#fff 50px);
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">background-image</span>: <span class="built_in">-webkit-repeating-linear-gradient</span>(right bottom,#00f,#008000 40%,#f00);
+  <span class="attribute">background-image</span>: <span class="built_in">repeating-linear-gradient</span>(to left top,#00f,#008000 40%,#f00);
+}
+</code></pre>
+</article><article id="repeating-radial-gradient"><h1>repeating-radial-gradient()</h1><p>Display a <code>repeating-radial-gradient</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> must be used in a <code>background-image property</code>.</p>
+</blockquote>
+<h3>Signature</h3><p><code>repeating-radial-gradient( stops... )</code></p>
+<p>The implementation of <code>repeating-radial-gradient</code> follows <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient">the CSS3 specs</a>.</p>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="keyword">div
+</span>    <span class="keyword">background-image: </span>repeating-radial-gradient( <span class="keyword">black, </span><span class="keyword">black </span><span class="number">5</span>px, white <span class="number">5</span>px, white <span class="number">10</span>px )
+
+<span class="keyword">div
+</span>    <span class="keyword">background-image: </span>repeating-radial-gradient( ellipse farthest-corner, red, <span class="keyword">black </span><span class="number">5</span>%, <span class="keyword">blue </span><span class="number">5</span>%, green <span class="number">10</span>% )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">background-image</span>: <span class="built_in">-webkit-repeating-radial-gradient</span>(#000,#000 5px,#fff 5px,#fff 10px);
+  <span class="attribute">background-image</span>: <span class="built_in">repeating-radial-gradient</span>(#000,#000 5px,#fff 5px,#fff 10px);
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">background-image</span>: <span class="built_in">-webkit-repeating-radial-gradient</span>(ellipse farthest-corner,#f00,#000 5%,#00f 5%,#008000 10%);
+  <span class="attribute">background-image</span>: <span class="built_in">repeating-radial-gradient</span>(ellipse farthest-corner,#f00,#000 5%,#00f 5%,#008000 10%);
+}
+</code></pre>
+</article><article id="vendors"><h1>Vendors Prefixes</h1><p><strong>kouto swiss</strong> comes with automatic vendor prefixer for the following properties.<br>You can define the behavior of the prefixer by changing the value of the global variable <code>ks-vendors-prefixes</code>.</p>
+<h2>Recommended prefixes (by default)</h2><p>By default, <strong>kouto swiss</strong> use the data from <a href="http://caniuse.com">caniuse</a> website to select the prefixes to use.</p>
+<p>You can select which version of browsers you want to support by modifying the following global variables.</p>
+<pre><code><span class="attr">ks-support-ie</span> = <span class="number">9</span>
+<span class="attr">ks-support-firefox</span> = <span class="number">30</span>
+<span class="attr">ks-support-chrome</span> = <span class="number">30</span>
+<span class="attr">ks-support-safari</span> = <span class="number">6</span>
+<span class="attr">ks-support-opera</span> = <span class="number">20</span>
+<span class="attr">ks-support-ios-safari</span> = <span class="number">6</span>
+<span class="attr">ks-support-opera-mini</span> = <span class="literal">false</span>
+<span class="attr">ks-support-android-browser</span> = <span class="literal">false</span>
+<span class="attr">ks-support-blackberry-browser</span> = <span class="literal">false</span>
+<span class="attr">ks-support-opera-mobile</span> = <span class="literal">false</span>
+<span class="attr">ks-support-android-chrome</span> = <span class="literal">false</span>
+<span class="attr">ks-support-android-firefox</span> = <span class="literal">false</span>
+<span class="attr">ks-support-ie-mobile</span> = <span class="literal">false</span>
+</code></pre><p>You can set a number, which will act as &quot;<em>greater or equal</em>&quot; support, a <a href="https://github.com/isaacs/node-semver#ranges">semver range</a> string, or the <code>false</code> value, to be ignored.</p>
+<p>If you want to ignore the <a href="http://caniuse.com">caniuse</a> recommendations, add the features you want to ignore to the <code>ks-support-ignore-features</code> global variable.</p>
+<p>For the properties not registered in <a href="http://caniuse.com">caniuse</a>, the implementation is based on <a href="http://peter.sh/experiments/vendor-prefixed-css-property-overview/">the list of Peter Beverloo</a>.</p>
+<p>You can set the following global variable to use the recommended prefixes for the variable.</p>
+<pre><code><span class="attr">ks-vendors-prefixes</span> = recommended
+</code></pre><p>The following properties are not registered in <a href="http://caniuse.com">caniuse</a>.</p>
+<h3>Supported properties</h3><p>The following properties are implemented by the vendor mecanism and will be automaticaly prefixed using <a href="http://caniuse.com">caniuse</a> data: <code>align-content</code>, <code>align-items</code>, <code>align-self</code>, <code>animation</code>, <code>animation-delay</code>, <code>animation-direction</code>, <code>animation-duration</code>, <code>animation-fill-mode</code>, <code>animation-iteration-count</code>, <code>animation-name</code>, <code>animation-play-state</code>, <code>animation-timing-function</code>, <code>appearance</code>, <code>backface-visibility</code>, <code>background-clip</code>, <code>background-origin</code>, <code>background-size</code>, <code>border-image-source</code>, <code>border-image-slice</code>, <code>border-image-width</code>, <code>border-image-outset</code>, <code>border-image-repeat</code>, <code>border-image</code>, <code>box-shadow</code>, <code>box-sizing</code>, <code>clip-path</code>, <code>column-count</code>, <code>column-fill</code>, <code>column-gap</code>, <code>column-rule</code>, <code>column-rule-color</code>, <code>column-rule-style</code>, <code>column-rule-width</code>, <code>column-span</code>, <code>column-width</code>, <code>columns</code>, <code>flex</code>, <code>flex-basis</code>, <code>flex-direction</code>, <code>flex-flow</code>, <code>flex-grow</code>, <code>flex-shrink</code>, <code>flex-wrap</code>, <code>grid</code>, <code>grid-area</code>, <code>grid-auto-columns</code>, <code>grid-auto-flow</code>, <code>grid-auto-position</code>, <code>grid-auto-rows</code>, <code>grid-column</code>, <code>grid-column-end</code>, <code>grid-column-start</code>, <code>grid-row</code>, <code>grid-row-end</code>, <code>grid-row-start</code>, <code>grid-template</code>, <code>grid-template-areas</code>, <code>grid-template-columns</code>, <code>grid-template-rows</code>, <code>hyphens</code>, <code>justify-content</code>, <code>mask</code>, <code>opacity</code>, <code>order</code>, <code>perspective</code>, <code>perspective-origin</code>, <code>transform</code>, <code>transform-origin</code>, <code>transform-style</code>, <code>transition</code>, <code>transition-delay</code>, <code>transition-duration</code>, <code>transition-property</code>, <code>transition-timing-function</code>, <code>user-select</code></p>
+<h3>Unregistered properties</h3><p>The following properties are not registered (yet?) in <a href="http://caniuse.com">caniuse</a>, and use the prefixes as indicated:</p>
+<ul>
+<li><p><strong>appearance:</strong> <code>-webkit</code> <code>-moz</code></p>
+</li>
+<li><p><strong>backface-visibility:</strong> <code>-webkit</code> <code>-ms</code></p>
+</li>
+</ul>
+<h2>Specific prefixes</h2><p>If you want specific prefixes, you can force them by setting the global variable <code>ks-vendors-prefixes</code> with the prefixes you want.  </p>
+<h2>No vendor prefixes</h2><pre><code><span class="attr">ks-vendors-prefixes</span> = <span class="literal">false</span>
+</code></pre><p>If you don&apos;t want to let <strong>kouto swiss</strong> to add vendor prefixes, and do the job yourself with such plugins like <code>autoprefixer</code>, simply set <code>ks-vendors-prefixes</code> to false.</p>
+<h2>The <code>vendor</code> mixin</h2><p>You can also define your own vendors mixins with the <strong>kouto swiss</strong> built-in vendor mixin.</p>
+<p><code>vendor( property, value [, feature = null [, prefixes = null [, official = true ] ] ] )</code></p>
+<ul>
+<li><code>property</code>: the css property to use.</li>
+<li><code>value</code>: the value for the property.</li>
+<li><code>feature</code>: the name of the feature in <a href="http://caniuse.com">caniuse</a> website, which will automatically set the prefixes.</li>
+<li><code>prefixes</code>: the list of prefixes to use, if <code>feature</code> is set to false.</li>
+<li><code>official</code>: a boolean to display the non-prefixed property, if <code>feature</code> is set to false.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus">
+<span class="selector-tag">button</span>
+    <span class="attribute">hyphens</span>: manual
+
+ks-support-ie = <span class="number">11</span>
+
+<span class="selector-tag">button</span>
+    <span class="attribute">hyphens</span>: manual
+
+ks-vendors-prefixes = o ms webkit moz
+
+<span class="selector-tag">button</span>
+    <span class="attribute">backface-visibility</span>: visible
+
+ks-vendors-prefixes = recommended
+
+<span class="selector-tag">button</span>
+    <span class="attribute">backface-visibility</span>: visible
+
+ks-vendors-prefixes = false
+
+<span class="selector-tag">button</span>
+    <span class="attribute">backface-visibility</span>: visible
+
+<span class="selector-tag">button</span>
+    vendor( <span class="string">&quot;columns&quot;</span>, <span class="attribute">auto</span> auto, feature: <span class="string">&quot;multicolumn&quot;</span> )
+
+<span class="selector-tag">button</span>
+    vendor( <span class="string">&quot;columns&quot;</span>, <span class="attribute">auto</span> auto, prefixes: webkit moz ms o )
+
+<span class="selector-tag">button</span>
+    vendor( <span class="string">&quot;columns&quot;</span>, <span class="attribute">auto</span> auto, prefixes: webkit moz ms o, official: false )
+
+ks-support-ignore-features = <span class="string">&quot;css3-boxsizing&quot;</span> <span class="string">&quot;css-animation&quot;</span>
+
+<span class="selector-tag">button</span>
+    <span class="attribute">animation</span>: none <span class="number">0s</span> ease <span class="number">0s</span> <span class="number">1</span> normal none
+    <span class="attribute">box-sizing</span>: content-box
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">button</span> {
+  <span class="attribute">-webkit-hyphens</span>: manual;
+  <span class="attribute">-moz-hyphens</span>: manual;
+  <span class="attribute">-ms-hyphens</span>: manual;
+  <span class="attribute">hyphens</span>: manual;
+}
+<span class="selector-tag">button</span> {
+  <span class="attribute">-webkit-hyphens</span>: manual;
+  <span class="attribute">-moz-hyphens</span>: manual;
+  <span class="attribute">hyphens</span>: manual;
+}
+<span class="selector-tag">button</span> {
+  <span class="attribute">-o-backface-visibility</span>: visible;
+  <span class="attribute">-ms-backface-visibility</span>: visible;
+  <span class="attribute">-webkit-backface-visibility</span>: visible;
+  <span class="attribute">-moz-backface-visibility</span>: visible;
+  <span class="attribute">backface-visibility</span>: visible;
+}
+<span class="selector-tag">button</span> {
+  <span class="attribute">-webkit-backface-visibility</span>: visible;
+  <span class="attribute">backface-visibility</span>: visible;
+}
+<span class="selector-tag">button</span> {
+  <span class="attribute">backface-visibility</span>: visible;
+}
+<span class="selector-tag">button</span> {
+  <span class="attribute">-webkit-columns</span>: auto auto;
+  <span class="attribute">-moz-columns</span>: auto auto;
+  <span class="attribute">columns</span>: auto auto;
+}
+<span class="selector-tag">button</span> {
+  <span class="attribute">-webkit-columns</span>: auto auto;
+  <span class="attribute">-moz-columns</span>: auto auto;
+  <span class="attribute">-ms-columns</span>: auto auto;
+  <span class="attribute">-o-columns</span>: auto auto;
+  <span class="attribute">columns</span>: auto auto;
+}
+<span class="selector-tag">button</span> {
+  <span class="attribute">-webkit-columns</span>: auto auto;
+  <span class="attribute">-moz-columns</span>: auto auto;
+  <span class="attribute">-ms-columns</span>: auto auto;
+  <span class="attribute">-o-columns</span>: auto auto;
+}
+<span class="selector-tag">button</span> {
+  <span class="attribute">animation</span>: none <span class="number">0s</span> ease <span class="number">0s</span> <span class="number">1</span> normal none;
+  <span class="attribute">box-sizing</span>: content-box;
+}
+</code></pre>
+</article><h2>functions</h2><article id="em"><h1>em()</h1><p>Converts <code>pixels</code> to <code>em</code>.<br>Uses the second value as base. If no base is given, uses <code>16px</code> as base.</p>
+<h3>Signature</h3><p><code>em( value [, base ] )</code></p>
+<ul>
+<li><code>value</code>: value to convert.</li>
+<li><code>base</code>: base for conversion. <em>Optional</em> Defaults to <code>16</code>.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">div</span>
+    <span class="attribute">font-size</span>: em( <span class="number">12px</span>, <span class="number">24</span> )
+
+<span class="selector-tag">div</span>
+    <span class="attribute">font-size</span>: em( <span class="number">16</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">font-size</span>: <span class="number">0.5em</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">font-size</span>: <span class="number">1em</span>;
+}
+</code></pre>
+</article><article id="rem"><h1>rem()</h1><p>Converts <code>pixels</code> to <code>rem</code>.
+Assumes <code>1rem = 16px</code>. You can override by passing a new value to the global variable <code>ks-rem-base</code>.</p>
+<h3>Signature</h3><p><code>rem( values )</code></p>
+<ul>
+<li><code>values</code>: value(s) to convert.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">div</span>
+    <span class="attribute">font-size</span>: rem( <span class="number">12px</span> )
+    <span class="attribute">margin</span>: rem( <span class="number">10px</span> auto <span class="number">20</span> )
+
+ks-rem-base = <span class="number">20px</span>
+
+<span class="selector-tag">div</span>
+    <span class="attribute">font-size</span>: rem( <span class="number">16</span> )
+    <span class="attribute">margin</span>: rem( <span class="number">10</span> auto <span class="number">20px</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">font-size</span>: <span class="number">0.75rem</span>;
+  <span class="attribute">margin</span>: <span class="number">0.625rem</span> auto <span class="number">1.25rem</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">font-size</span>: <span class="number">0.8rem</span>;
+  <span class="attribute">margin</span>: <span class="number">0.5rem</span> auto <span class="number">1rem</span>;
+}
+</code></pre>
+</article><article id="percent"><h1>percent()</h1><p>The <code>percent</code> function makes a simple percentage convertion operation. It takes two operands, makes a percentage of the first by the second, and return the result, with a percent unit.</p>
+<blockquote>
+<p><strong>Note:</strong> the function doesn&apos;t care about the units you give and don&apos;t convert it.</p>
+</blockquote>
+<h3>Signature</h3><p><code>percent( value, total )</code></p>
+<ul>
+<li><code>value</code>: value to a percentage of <code>total</code>.</li>
+<li><code>total</code>: the 100% reference number.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">div</span>
+    <span class="attribute">width</span>: percent( <span class="number">50px</span>, <span class="number">200px</span> )
+
+<span class="selector-tag">div</span>
+    <span class="attribute">width</span>: percent( <span class="number">15</span>, <span class="number">200</span> )
+
+<span class="selector-tag">div</span>
+    <span class="attribute">clear</span>: percent( <span class="number">30em</span>, <span class="number">10px</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">width</span>: <span class="number">25%</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">width</span>: <span class="number">7.5%</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">width</span>: <span class="number">300%</span>;
+}
+</code></pre>
+</article><article id="modular-scale"><h1>modular-scale()</h1><p>Returns the <code>modular scale</code> of a number for a given step of ratio.  </p>
+<h3>Signature</h3><p><code>modular-scale( base, step [, ratio ] )</code></p>
+<ul>
+<li><code>base</code>: number base to scale.</li>
+<li><code>step</code>: step to scale.</li>
+<li><code>ratio</code>: the ratio to use. <em>Optional</em>. Default: <code>ks-perfect-fifth</code>.</li>
+</ul>
+<h4>Ratios</h4><p>For the <code>ratio</code> parameter, you can give any number, or use one of the following global variables:</p>
+<ul>
+<li><code>ks-golden</code>: 1.618</li>
+<li><code>ks-minor-second</code>: 1.067</li>
+<li><code>ks-major-second</code>: 1.125</li>
+<li><code>ks-minor-third</code>: 1.2</li>
+<li><code>ks-major-third</code>: 1.25</li>
+<li><code>ks-perfect-fourth</code>: 1.333</li>
+<li><code>ks-augmented-fourth</code>: 1.414</li>
+<li><code>ks-perfect-fifth</code>: 1.5</li>
+<li><code>ks-minor-sixth</code>: 1.6</li>
+<li><code>ks-major-sixth</code>: 1.667</li>
+<li><code>ks-minor-seventh</code>: 1.778</li>
+<li><code>ks-major-seventh</code>: 1.875</li>
+<li><code>ks-octave</code>: 2</li>
+<li><code>ks-major-tenth</code>: 2.5</li>
+<li><code>ks-major-eleventh</code>: 2.667</li>
+<li><code>ks-major-twelfth</code>: 3</li>
+<li><code>ks-double-octave</code>: 4</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">div</span>
+    <span class="attribute">font-size</span>: modular-scale( <span class="number">16px</span>, <span class="number">1</span>, <span class="number">1.5</span> )
+
+<span class="selector-tag">div</span>
+    <span class="attribute">font-size</span>: modular-scale( <span class="number">16px</span>, <span class="number">2</span>, <span class="number">1.618</span> )
+
+<span class="selector-tag">div</span>
+    <span class="attribute">font-size</span>: modular-scale( <span class="number">16px</span>, -<span class="number">2</span>, ks-octave )
+
+<span class="selector-tag">div</span>
+    <span class="attribute">font-size</span>: modular-scale( <span class="number">1em</span>, <span class="number">2</span>, <span class="number">1.5</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">font-size</span>: <span class="number">24px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">font-size</span>: <span class="number">41.886784px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">font-size</span>: <span class="number">4px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">font-size</span>: <span class="number">2.25em</span>;
+}
+</code></pre>
+</article><article id="golden-ratio"><h1>golden-ratio()</h1><p>Returns the golden ratio (<code>1.618</code>) of a number for a given step.  </p>
+<h3>Signature</h3><p><code>golden-ratio( base, step )</code></p>
+<ul>
+<li><code>base</code>: number base to scale.</li>
+<li><code>step</code>: step to scale.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">div</span>
+    <span class="attribute">font-size</span>: golden-ratio( <span class="number">16px</span>, <span class="number">1</span> )
+
+<span class="selector-tag">div</span>
+    <span class="attribute">font-size</span>: golden-ratio( <span class="number">1em</span>, <span class="number">2</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">font-size</span>: <span class="number">25.888px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">font-size</span>: <span class="number">2.617924em</span>;
+}
+</code></pre>
+</article><article id="color-fallback"><h1><code>color-fallback( color )</code></h1><blockquote>
+<p><strong>Warning:</strong> must be used within a property.</p>
+</blockquote>
+<p>Create a fallback property for color with alpha value different than <code>1</code>.<br>If the given color has an alpha of <code>1</code>, the function doesn&apos;t do anything.</p>
+<h3>Signature</h3><p><code>color-fallback( color )</code></p>
+<ul>
+<li><code>color</code>: color to fallback.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus">.no-<span class="built_in">alpha</span>
+    <span class="built_in">color</span>: <span class="built_in">color</span>-fallback( <span class="built_in">red</span> )
+
+.<span class="built_in">alpha</span>
+    <span class="built_in">color</span>: <span class="built_in">color</span>-fallback( rgba( <span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">.5</span> ) )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-class">.no-alpha</span> {
+  <span class="attribute">color</span>: <span class="number">#f00</span>;
+}
+
+<span class="selector-class">.alpha</span> {
+  <span class="attribute">color</span>: <span class="number">#f00</span>;
+  <span class="attribute">color</span>: <span class="built_in">rgba</span>(255,0,0,0.5);
+}
+</code></pre>
+<h2>Implicit color fallback</h2><p>The <code>implicit color fallback</code> mecanism allows you to use the <code>color-fallback</code> function without calling it, by declaring an <code>ks-color-fallback-enabled</code> variable to <code>true</code>.</p>
+<p><strong>Note:</strong> prior to version <code>0.11.0</code>, the <code>ks-color-fallback-enabled</code> variable was called <code>ks-color-fallback</code>.</p>
+<h3>Usage</h3><pre><code class="lang-stylus">.foo
+    <span class="built_in">color</span>: rgba( <span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">5</span> )
+
+ks-<span class="built_in">color</span>-fallback-enabled = <span class="literal">true</span>
+
+.bar
+    <span class="built_in">color</span>: rgba( <span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">5</span> )
+
+.bar
+    <span class="built_in">background</span>: rgba( <span class="number">202</span>, <span class="number">43</span>, <span class="number">120</span>, .<span class="number">5</span> ) url( test.png ) top left repeat
+
+ks-<span class="built_in">color</span>-fallback-enabled = <span class="literal">false</span>
+
+.foo
+    <span class="built_in">color</span>: rgba( <span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">5</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-class">.foo</span> {
+  <span class="attribute">color</span>: <span class="built_in">rgba</span>( 255, 0, 0, .5 );
+}
+
+<span class="selector-class">.bar</span> {
+  <span class="attribute">color</span>: <span class="number">#f00</span>;
+  <span class="attribute">color</span>: <span class="built_in">rgba</span>( 255, 0, 0, .5 );
+}
+
+<span class="selector-class">.foo</span> {
+  <span class="attribute">background</span>: <span class="number">#ca2b78</span> <span class="built_in">url</span>(<span class="string">&quot;test.png&quot;</span>) top left repeat;
+  <span class="attribute">background</span>: <span class="built_in">rgba</span>(202,43,120,0.5) <span class="built_in">url</span>(<span class="string">&quot;test.png&quot;</span>) top left repeat;
+}
+
+<span class="selector-class">.foo</span> {
+  <span class="attribute">color</span>: <span class="built_in">rgba</span>( 255, 0, 0, .5 );
+}
+</code></pre>
+</article><article id="luminosity"><h1><code>luminosity( color )</code></h1><p>Returns the <a href="http://www.w3.org/TR/WCAG20/#relativeluminancedef">WCAG luminosity</a> of the given color, as a <code>Number</code> between <code>0</code> (<em>black</em>) and <code>1</code> (<em>white</em>).</p>
+<h3>Signature</h3><p><code>luminosity( color )</code></p>
+<ul>
+<li><code>color</code>: color to analyse.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-class">.luminosity</span>
+    <span class="attribute">background</span>: <span class="number">#ff0</span>
+    <span class="attribute">color</span>: luminosity( <span class="number">#ff0</span> ) &gt; <span class="number">0.5</span> ? black : white
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-class">.luminosity</span> {
+  <span class="attribute">background</span>: <span class="number">#ff0</span>;
+  <span class="attribute">color</span>: white;
+}
+</code></pre>
+</article><article id="analogous"><h1><code>analogous( color )</code></h1><p>Returns analogous variations of the given color.<br><code>returned[0]</code>: first analogous variation ( spinning given color by 30 degrees )<br><code>returned[1]</code>: second analogous variation ( spinning given color by -30 degrees )</p>
+<h3>Signature</h3><p><code>analogous( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform analogous variations.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus">variations = analogous( <span class="number">#f00</span> )
+
+<span class="selector-class">.red-analog-one</span>
+    <span class="attribute">color</span>: variations[<span class="number">0</span>]
+
+<span class="selector-class">.red-analog-two</span>
+    <span class="attribute">color</span>: variations[<span class="number">1</span>]
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-class">.red-analog-one</span> {
+  <span class="attribute">color</span>: <span class="number">#ff8000</span>;
+}
+
+<span class="selector-class">.red-analog-two</span> {
+  <span class="attribute">color</span>: <span class="number">#ff0080</span>;
+}
+</code></pre>
+</article><article id="extended-analogous"><h1><code>extended-analogous( color )</code></h1><p>Returns more analogous variations of the given color.<br><code>returned[0]</code>: first analogous variation ( spinning given color by 30 degrees )<br><code>returned[1]</code>: second analogous variation ( spinning given color by -30 degrees )<br><code>returned[2]</code>: third analogous variation ( spinning given color by 60 degrees )<br><code>returned[3]</code>: fourth analogous variation ( spinning given color by -60 degrees )</p>
+<h3>Signature</h3><p><code>extended-analogous( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform analogous variations.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus">variations = extended-analogous( <span class="number">#f00</span> )
+
+<span class="selector-class">.red-analog-one</span>
+    <span class="attribute">color</span>: variations[<span class="number">0</span>]
+
+<span class="selector-class">.red-analog-two</span>
+    <span class="attribute">color</span>: variations[<span class="number">1</span>]
+
+<span class="selector-class">.red-analog-three</span>
+    <span class="attribute">color</span>: variations[<span class="number">2</span>]
+
+<span class="selector-class">.red-analog-four</span>
+    <span class="attribute">color</span>: variations[<span class="number">3</span>]
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-class">.red-analog-one</span> {
+  <span class="attribute">color</span>: <span class="number">#ff8000</span>;
+}
+
+<span class="selector-class">.red-analog-two</span> {
+  <span class="attribute">color</span>: <span class="number">#ff0080</span>;
+}
+
+<span class="selector-class">.red-analog-three</span> {
+  <span class="attribute">color</span>: <span class="number">#ff0</span>;
+}
+
+<span class="selector-class">.red-analog-four</span> {
+  <span class="attribute">color</span>: <span class="number">#f0f</span>;
+}
+</code></pre>
+</article><article id="monochrome"><h1><code>monochrome( color )</code></h1><p>Returns monochromatic variations of the given color.<br><code>returned[0]</code>: first monochrome variation ( given color&apos;s lightness minus 33% )<br><code>returned[1]</code>: second monochrome variation ( given color&apos;s lightness minus 66% )</p>
+<h3>Signature</h3><p><code>monochrome( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform monochromatic variations.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus">variations = monochrome( <span class="number">#f00</span> )
+
+<span class="selector-class">.red-mono-one</span>
+    <span class="attribute">color</span>: variations[<span class="number">0</span>]
+
+<span class="selector-class">.red-mono-two</span>
+    <span class="attribute">color</span>: variations[<span class="number">1</span>]
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-class">.red-mono-one</span> {
+  <span class="attribute">color</span>: <span class="number">#f55</span>;
+}
+
+<span class="selector-class">.red-mono-two</span> {
+  <span class="attribute">color</span>: <span class="number">#ff2a2a</span>;
+}
+</code></pre>
+</article><article id="split-complements"><h1><code>split-complements( color )</code></h1><p>Returns split-complements variations of the given color.<br><code>returned[0]</code>: first split-complements variation ( spinning given color by 150 degrees )<br><code>returned[1]</code>: second split-complements variation ( spinning given color by -150 degrees )</p>
+<h3>Signature</h3><p><code>split-complements( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform split-complements variations.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus">variations = <span class="built_in">split</span>-complements( #f00 )
+
+.<span class="built_in">red</span>-<span class="built_in">split</span>-complement-one
+    <span class="built_in">color</span>: variations[<span class="number">0</span>]
+
+.<span class="built_in">red</span>-<span class="built_in">split</span>-complement-two
+    <span class="built_in">color</span>: variations[<span class="number">1</span>]
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-class">.red-split-complement-one</span> {
+  <span class="attribute">color</span>: <span class="number">#00ff80</span>;
+}
+
+<span class="selector-class">.red-split-complement-two</span> {
+  <span class="attribute">color</span>: <span class="number">#007fff</span>;
+}
+</code></pre>
+</article><article id="triad"><h1><code>triad( color )</code></h1><p>Returns triad variations of the given color.<br><code>returned[0]</code>: first triad variation ( spinning given color by 120 degrees )<br><code>returned[1]</code>: second triad variation ( spinning given color by -120 degrees )</p>
+<h3>Signature</h3><p><code>triad( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform triad variations.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus">variations = triad( <span class="number">#f00</span> )
+
+<span class="selector-class">.red-triad-one</span>
+    <span class="attribute">color</span>: variations[<span class="number">0</span>]
+
+<span class="selector-class">.red-triad-two</span>
+    <span class="attribute">color</span>: variations[<span class="number">1</span>]
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-class">.red-triad-one</span> {
+  <span class="attribute">color</span>: <span class="number">#0f0</span>;
+}
+
+<span class="selector-class">.red-triad-two</span> {
+  <span class="attribute">color</span>: <span class="number">#00f</span>;
+}
+</code></pre>
+</article><article id="quad"><h1><code>quad( color )</code> &amp; <code>tetrad( color )</code></h1><p>Returns quad (<em>tetrad</em>) variations of the given color.<br><code>returned[0]</code>: first quad variation ( spinning given color by 90 degrees )<br><code>returned[1]</code>: second quad variation ( spinning given color by -90 degrees )<br><code>returned[2]</code>: third quad variation ( spinning given color by 180 degrees ) - complement color</p>
+<h3>Signature</h3><p><code>quad( color )</code> &amp; <code>tetrad( color )</code></p>
+<ul>
+<li><code>color</code>: color to perform quad variations.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus">variations = <span class="built_in">quad</span>( #f00 )
+
+.<span class="built_in">red</span>-<span class="built_in">quad</span>-one
+    <span class="built_in">color</span>: variations[<span class="number">0</span>]
+
+.<span class="built_in">red</span>-<span class="built_in">quad</span>-two
+    <span class="built_in">color</span>: variations[<span class="number">1</span>]
+
+.<span class="built_in">red</span>-<span class="built_in">quad</span>-three
+    <span class="built_in">color</span>: variations[<span class="number">2</span>]
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-class">.red-quad-one</span> {
+  <span class="attribute">color</span>: <span class="number">#80ff00</span>;
+}
+
+<span class="selector-class">.red-quad-two</span> {
+  <span class="attribute">color</span>: <span class="number">#7f00ff</span>;
+}
+
+<span class="selector-class">.red-quad-three</span> {
+  <span class="attribute">color</span>: <span class="number">#0ff</span>;
+}
+</code></pre>
+</article><h2>utilities</h2><article id="colors"><h1>colors</h1><p><strong>kouto-swiss</strong> provides variables for all the colors defined in <a href="http://dev.w3.org/csswg/css-color/">CSS Color Module Level 4</a>, as in date from 21 june 2014.</p>
+</article><article id="clearfix"><h1>clearfix</h1><p>The clearfix mixins will output a clearfix to the selector where it is declared.</p>
+<p>The clearfix comes with three syntaxes, each return the same result.</p>
+<blockquote>
+<p>This clearfix is based on <a href="http://nicolasgallagher.com/micro-clearfix-hack/">Nicolas Gallagher&apos;s micro clearfix</a>.</p>
+</blockquote>
+<p><strong>Note:</strong> the support of IE6&amp;7 is added using the global <code>$ks-support-ie</code>.</p>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="comment">// form one</span>
+<span class="selector-tag">div</span>
+    clearfix()
+
+<span class="comment">// form two</span>
+<span class="selector-tag">div</span>
+    <span class="attribute">clear</span>: fix
+
+<span class="comment">// form three</span>
+<span class="selector-tag">div</span>
+    <span class="attribute">clear</span>: fix()
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span><span class="selector-pseudo">:before</span>,
+<span class="selector-tag">div</span><span class="selector-pseudo">:after</span> {
+  <span class="attribute">content</span>: <span class="string">&quot; &quot;</span>;
+  <span class="attribute">display</span>: table;
+}
+<span class="selector-tag">div</span><span class="selector-pseudo">:after</span> {
+  <span class="attribute">clear</span>: both;
+}
+</code></pre>
+</article><article id="position"><h1>position mixins</h1><p>The position mixins gives you five convenient shortcuts for <code>position</code> property.
+Simply call the value of position as property, and gives the values of <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code> as value.</p>
+<p><strong>Note:</strong> The values are parsed in the same way as in <code>margin</code> or <code>padding</code> method : 1 value affect all, 2 values are for <code>top</code>/<code>bottom</code> and <code>left</code>/<code>right</code>, 3 values are for <code>top</code>, <code>left</code>/<code>right</code> and <code>bottom</code>, and 4 values are for <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code>.</p>
+<p><strong>Note 2:</strong> If you give the <code>false</code> value to a parameter, it will be ignored</p>
+<p><strong>Note 3:</strong> Since version <code>0.11.7</code>, position mixin supports <code>sticky</code> value, using caniuse data.</p>
+<p><strong>Note 4:</strong> Since version <code>0.14.0</code>, position mixin supports <em>relative</em> position like <code>background-position</code> (see exemple for more details).</p>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">div</span>
+    static: <span class="number">10px</span>
+
+<span class="selector-tag">div</span>
+    relative: <span class="number">10px</span> <span class="number">20px</span>
+
+<span class="selector-tag">div</span>
+    absolute: <span class="number">10px</span> <span class="number">20px</span> <span class="number">30px</span>
+
+<span class="selector-tag">div</span>
+    fixed: <span class="number">10px</span> <span class="number">20px</span> <span class="number">30px</span> <span class="number">40px</span>
+
+<span class="selector-tag">div</span>
+    fixed: <span class="number">10px</span> false <span class="number">30px</span>
+
+<span class="selector-tag">div</span>
+    fixed: <span class="number">10px</span> <span class="number">20px</span> false <span class="number">40px</span>
+
+<span class="selector-tag">div</span>
+    <span class="attribute">position</span>: sticky
+
+<span class="selector-tag">div</span>
+    sticky: <span class="number">10px</span> <span class="number">20px</span> <span class="number">0</span> <span class="number">40px</span>
+
+<span class="selector-tag">div</span>
+    absolute: <span class="attribute">top</span> right
+
+<span class="selector-tag">div</span>
+    absolute: <span class="attribute">top</span> <span class="number">2rem</span> right
+
+<span class="selector-tag">div</span>
+    absolute: <span class="attribute">top</span> <span class="number">35px</span> right <span class="number">20%</span>
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: static;
+  <span class="attribute">top</span>: <span class="number">10px</span>;
+  <span class="attribute">right</span>: <span class="number">10px</span>;
+  <span class="attribute">bottom</span>: <span class="number">10px</span>;
+  <span class="attribute">left</span>: <span class="number">10px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: relative;
+  <span class="attribute">top</span>: <span class="number">10px</span>;
+  <span class="attribute">right</span>: <span class="number">20px</span>;
+  <span class="attribute">bottom</span>: <span class="number">10px</span>;
+  <span class="attribute">left</span>: <span class="number">20px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: absolute;
+  <span class="attribute">top</span>: <span class="number">10px</span>;
+  <span class="attribute">right</span>: <span class="number">20px</span>;
+  <span class="attribute">bottom</span>: <span class="number">30px</span>;
+  <span class="attribute">left</span>: <span class="number">20px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: fixed;
+  <span class="attribute">top</span>: <span class="number">10px</span>;
+  <span class="attribute">right</span>: <span class="number">20px</span>;
+  <span class="attribute">bottom</span>: <span class="number">30px</span>;
+  <span class="attribute">left</span>: <span class="number">40px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: fixed;
+  <span class="attribute">top</span>: <span class="number">10px</span>;
+  <span class="attribute">bottom</span>: <span class="number">30px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: fixed;
+  <span class="attribute">top</span>: <span class="number">10px</span>;
+  <span class="attribute">right</span>: <span class="number">20px</span>;
+  <span class="attribute">left</span>: <span class="number">40px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: -webkit-sticky;
+  <span class="attribute">position</span>: sticky;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: -webkit-sticky;
+  <span class="attribute">position</span>: sticky;
+  <span class="attribute">top</span>: <span class="number">10px</span>;
+  <span class="attribute">right</span>: <span class="number">20px</span>;
+  <span class="attribute">bottom</span>: <span class="number">0</span>;
+  <span class="attribute">left</span>: <span class="number">40px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: absolute;
+  <span class="attribute">top</span>: <span class="number">0</span>;
+  <span class="attribute">right</span>: <span class="number">0</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: absolute;
+  <span class="attribute">top</span>: <span class="number">2rem</span>;
+  <span class="attribute">right</span>: <span class="number">0</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: absolute;
+  <span class="attribute">top</span>: <span class="number">35px</span>;
+  <span class="attribute">right</span>: <span class="number">20%</span>;
+}
+</code></pre>
+</article><article id="size"><h1>size mixins</h1><p>The <strong>size</strong> mixins gives you a convenient shortcut for setting <code>width</code> and <code>height</code> properties at the same time.
+Since version <code>0.14.0</code>, <strong>min-size</strong> &amp; <strong>max-size</strong> mixins are added.</p>
+<p><strong>Note:</strong> If only one value is given, the <code>width</code> and <code>height</code> will have the same values.</p>
+<p><strong>Note 2:</strong> When giving two values, making one to false will not displaying it.</p>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="keyword">div</span>
+    <span class="keyword">size</span>: <span class="number">10</span>px
+
+<span class="keyword">div</span>
+    <span class="keyword">size</span>: <span class="number">10</span>px <span class="number">20</span>px
+
+<span class="keyword">div</span>
+    <span class="keyword">size</span>: <span class="number">10</span>px <span class="keyword">false</span>
+
+<span class="keyword">div</span>
+    <span class="keyword">size</span>: <span class="keyword">false</span> <span class="number">20</span>px
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">width</span>: <span class="number">10px</span>;
+  <span class="attribute">height</span>: <span class="number">10px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">width</span>: <span class="number">10px</span>;
+  <span class="attribute">height</span>: <span class="number">20px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">width</span>: <span class="number">10px</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">height</span>: <span class="number">20px</span>;
+}
+</code></pre>
+</article><article id="font-stack"><h1><code>font-stack()</code></h1><p>Get a font stack to use with <code>font-family</code>.<br>The font stacks are taken from the site <a href="http://cssfontstack.com">cssfontstack.com</a>, by <a href="http://denisleblanc.com">Denis Leblanc</a></p>
+<p>These are the stacks included in <strong>kouto swiss</strong>:</p>
+<ul>
+<li><code>&quot;Arial&quot;</code></li>
+<li><code>&quot;Arial Black&quot;</code></li>
+<li><code>&quot;Arial Narrow&quot;</code></li>
+<li><code>&quot;Arial Rounded MT Bold&quot;</code></li>
+<li><code>&quot;Avant Garde&quot;</code></li>
+<li><code>&quot;Calibri&quot;</code></li>
+<li><code>&quot;Candara&quot;</code></li>
+<li><code>&quot;Century Gothic&quot;</code></li>
+<li><code>&quot;Franklin Gothic Medium&quot;</code></li>
+<li><code>&quot;Futura&quot;</code></li>
+<li><code>&quot;Geneva&quot;</code></li>
+<li><code>&quot;Gill Sans&quot;</code></li>
+<li><code>&quot;Helvetica&quot;</code></li>
+<li><code>&quot;Impact&quot;</code></li>
+<li><code>&quot;Lucida Grande&quot;</code></li>
+<li><code>&quot;Optima&quot;</code></li>
+<li><code>&quot;Segoe UI&quot;</code></li>
+<li><code>&quot;Tahoma&quot;</code></li>
+<li><code>&quot;Trebuchet MS&quot;</code></li>
+<li><code>&quot;Verdana&quot;</code></li>
+<li><code>&quot;Baskerville&quot;</code></li>
+<li><code>&quot;Big Caslon&quot;</code></li>
+<li><code>&quot;Bodoni MT&quot;</code></li>
+<li><code>&quot;Book Antiqua&quot;</code></li>
+<li><code>&quot;Calisto MT&quot;</code></li>
+<li><code>&quot;Cambria&quot;</code></li>
+<li><code>&quot;Didot&quot;</code></li>
+<li><code>&quot;Garamond&quot;</code></li>
+<li><code>&quot;Georgia&quot;</code></li>
+<li><code>&quot;Goudy Old Style&quot;</code></li>
+<li><code>&quot;Hoefler Text&quot;</code></li>
+<li><code>&quot;Lucida Bright&quot;</code></li>
+<li><code>&quot;Palatino&quot;</code></li>
+<li><code>&quot;Perpetua&quot;</code></li>
+<li><code>&quot;Rockwell&quot;</code></li>
+<li><code>&quot;Rockwell Extra Bold&quot;</code></li>
+<li><code>&quot;Times New Roman&quot;</code></li>
+<li><code>&quot;Andale Mono&quot;</code></li>
+<li><code>&quot;Consolas&quot;</code></li>
+<li><code>&quot;Courier New&quot;</code></li>
+<li><code>&quot;Lucida Console&quot;</code></li>
+<li><code>&quot;Lucida Sans Typewriter&quot;</code></li>
+<li><code>&quot;Monaco&quot;</code></li>
+<li><code>&quot;Copperplate&quot;</code></li>
+<li><code>&quot;Papyrus&quot;</code></li>
+<li><code>&quot;Brush Script MT&quot;</code></li>
+<li><code>&quot;System&quot;</code></li>
+<li><code>&quot;System with Emojis&quot;</code></li>
+</ul>
+<h4>System font-stack</h4><p>The <code>&quot;System&quot;</code> and <code>&quot;System with Emojis&quot;</code> stacks are <a href="https://bitsofco.de/the-new-system-font-stack/">the ones used on GitHub</a> : <code>-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif</code> and <code>-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;</code>.</p>
+<h3>Signature</h3><p><code>font-stack( name )</code></p>
+<ul>
+<li><code>name</code>: name of the stack. <strong>Must be quoted</strong>.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">body</span>
+    <span class="attribute">font-family</span> font-stack( <span class="string">&quot;Arial&quot;</span> )
+
+<span class="selector-tag">body</span>
+    <span class="attribute">font-family</span> font-stack( <span class="string">&quot;Helvetica&quot;</span> )
+
+<span class="selector-tag">body</span>
+    <span class="attribute">font-family</span> font-stack( <span class="string">&quot;Lucida Console&quot;</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">body</span> {
+  <span class="attribute">font-family</span>: Arial, <span class="string">&quot;Helvetica Neue&quot;</span>, Helvetica, sans-serif;
+}
+
+<span class="selector-tag">body</span> {
+  <span class="attribute">font-family</span>: <span class="string">&quot;Helvetica Neue&quot;</span>, Helvetica, Arial, sans-serif;
+}
+
+<span class="selector-tag">body</span> {
+  <span class="attribute">font-family</span>: <span class="string">&quot;Lucida Console&quot;</span>, <span class="string">&quot;Lucida Sans Typewriter&quot;</span>, Monaco, <span class="string">&quot;Bitstream Vera Sans Mono&quot;</span>, monospace;
+}
+</code></pre>
+</article><article id="hide-text"><h1>hide-text()</h1><p>The hide-text mixins will hide the text of the selector where it is declared. Used for background image like logo display, etc...</p>
+<blockquote>
+<p>This mixin is based on which from <a href="http://bourbon.io">bourbon.io</a>.</p>
+</blockquote>
+<p>A height declaration is required for this to function.</p>
+<h3>Usage</h3><pre><code class="lang-stylus">h1
+    heigh<span class="variable">t:</span> <span class="number">75</span>px
+    background: url( logo.png ) top <span class="keyword">left</span> <span class="keyword">no</span>-<span class="built_in">repeat</span>
+    <span class="keyword">hide</span>-text()
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">h1</span> {
+  <span class="attribute">height</span>: <span class="number">75px</span>;
+  <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;logo.png&quot;</span>) top left no-repeat;
+  <span class="attribute">overflow</span>: hidden;
+}
+<span class="selector-tag">h1</span><span class="selector-pseudo">:before</span> {
+  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;
+  <span class="attribute">display</span>: block;
+  <span class="attribute">width</span>: <span class="number">0</span>;
+  <span class="attribute">height</span>: <span class="number">100%</span>;
+}
+</code></pre>
+</article><article id="easing"><h1>easing()</h1><p>Get a <code>cubic-bezier</code> preset to use with <code>transition</code> property.<br>The presets are taken from the plugin <a href="http://jaukia.github.io/easie/">easie</a>, by <a href="http://janne.aukia.com">Janne Aukia</a></p>
+<p>These are the preset included in <strong>kouto swiss</strong>:</p>
+<ul>
+<li><code>&quot;in-quad&quot;</code></li>
+<li><code>&quot;in-cubic&quot;</code></li>
+<li><code>&quot;in-quart&quot;</code></li>
+<li><code>&quot;in-quint&quot;</code></li>
+<li><code>&quot;in-sine&quot;</code></li>
+<li><code>&quot;in-expo&quot;</code></li>
+<li><code>&quot;in-circ&quot;</code></li>
+<li><code>&quot;in-back&quot;</code></li>
+<li><code>&quot;out-quad&quot;</code></li>
+<li><code>&quot;out-cubic&quot;</code></li>
+<li><code>&quot;out-quart&quot;</code></li>
+<li><code>&quot;out-quint&quot;</code></li>
+<li><code>&quot;out-sine&quot;</code></li>
+<li><code>&quot;out-expo&quot;</code></li>
+<li><code>&quot;out-circ&quot;</code></li>
+<li><code>&quot;out-back&quot;</code></li>
+<li><code>&quot;in-out-quad&quot;</code></li>
+<li><code>&quot;in-out-cubic&quot;</code></li>
+<li><code>&quot;in-out-quart&quot;</code></li>
+<li><code>&quot;in-out-quint&quot;</code></li>
+<li><code>&quot;in-out-sine&quot;</code></li>
+<li><code>&quot;in-out-expo&quot;</code></li>
+<li><code>&quot;in-out-circ&quot;</code></li>
+<li><code>&quot;in-out-back&quot;</code></li>
+</ul>
+<h3>Signature</h3><p><code>easing( name )</code></p>
+<ul>
+<li><code>name</code>: name of the preset. <strong>Must be quoted</strong>.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="built-in">div</span>
+    transition: <span class="keyword">all</span> <span class="number">.25</span>s easing( <span class="string">&quot;in-quad&quot;</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">-webkit-transition</span>: all <span class="number">0.25s</span> <span class="built_in">cubic-bezier</span>(0.55, 0.085, 0.68, 0.53);
+  <span class="attribute">-o-transition</span>: all <span class="number">0.25s</span> <span class="built_in">cubic-bezier</span>(0.55, 0.085, 0.68, 0.53);
+  <span class="attribute">transition</span>: all <span class="number">0.25s</span> <span class="built_in">cubic-bezier</span>(0.55, 0.085, 0.68, 0.53);
+}
+</code></pre>
+</article><article id="ellipsis"><h1>overflow ellipsis</h1><p>The ellipsis mixin is a shortcut value to pass to an overflow property, which displays the code for a <code>text-overflow: ellipsis;</code>.</p>
+<blockquote>
+<p>This mixin is based on which from <a href="http://visionmedia.github.io/nib/">nib</a>.</p>
+</blockquote>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">div</span>
+    <span class="attribute">overflow</span>: ellipsis
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">white-space</span>: nowrap;
+  <span class="attribute">text-overflow</span>: ellipsis;
+  <span class="attribute">overflow</span>: hidden;
+}
+</code></pre>
+</article><article id="media-query"><h1>media-query()</h1><p>Create the query part of a media query, which you can store in a variable, to use when you make a media block.</p>
+<p>You can disable the media-queries by modifying the global <code>ks-support-media-queries</code> variable, which is by default valued to <code>true</code>.<br>It&apos;s useful for legacy stylesheet for old IE versions.</p>
+<blockquote>
+<p><strong>Warning:</strong> since version <code>0.9</code>, the media-query() mixin has changed: it&apos;s now a <em>block</em> mixin.</p>
+</blockquote>
+<h3>Signature</h3><p><code>+media-query( media [, conditions... ] )</code></p>
+<ul>
+<li><code>media</code>: the media of the query</li>
+<li><code>conditions</code>: multiple pairs of conditions for the query. <em>Optional</em>.</li>
+</ul>
+<p><strong>Note:</strong> if you give a list as the <code>media</code> argument, the first element of this list will be assumed as the media value.</p>
+<h3>Usage</h3><pre><code class="lang-stylus">+media-query( all, <span class="built_in">min</span>-<span class="built_in">width</span> <span class="number">640</span>px )
+    div
+        <span class="built_in">color</span>: <span class="built_in">red</span>
+
++media-query( only screen, <span class="built_in">min</span>-<span class="built_in">width</span> <span class="number">640</span>px, <span class="built_in">min</span>-<span class="built_in">height</span> <span class="number">960</span>px, orientation portrait )
+    div
+        <span class="built_in">color</span>: <span class="built_in">red</span>
+
++media-query( <span class="built_in">print</span> )
+    div
+        <span class="built_in">color</span>: <span class="built_in">red</span>
+
+ks-support-media-queries = <span class="keyword">false</span>
+
++media-query( all, <span class="built_in">min</span>-<span class="built_in">width</span> <span class="number">640</span>px )
+    div
+        <span class="built_in">color</span>: <span class="built_in">red</span>
+
++media-query( only screen, <span class="built_in">min</span>-<span class="built_in">width</span> <span class="number">640</span>px, <span class="built_in">min</span>-<span class="built_in">height</span> <span class="number">960</span>px, orientation portrait )
+    div
+        <span class="built_in">color</span>: <span class="built_in">red</span>
+
++media-query( <span class="built_in">print</span> )
+    div
+        <span class="built_in">color</span>: <span class="built_in">red</span>
+
+ks-support-media-queries = <span class="keyword">true</span>
+
+breakpointMain = only screen, <span class="built_in">max</span>-<span class="built_in">width</span> <span class="number">767</span>px
+
++media-query( breakpointMain )
+    div
+        <span class="built_in">width</span>: <span class="number">100</span>%
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css">@<span class="keyword">media</span> all and (min-width: <span class="number">640px</span>) {
+  <span class="selector-tag">div</span> {
+    <span class="attribute">color</span>: <span class="number">#f00</span>;
+  }
+}
+@<span class="keyword">media</span> only screen and (min-width: <span class="number">640px</span>) and (min-height: <span class="number">960px</span>) and (orientation: portrait) {
+  <span class="selector-tag">div</span> {
+    <span class="attribute">color</span>: <span class="number">#f00</span>;
+  }
+}
+@<span class="keyword">media</span> print {
+  <span class="selector-tag">div</span> {
+    <span class="attribute">color</span>: <span class="number">#f00</span>;
+  }
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">color</span>: <span class="number">#f00</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">color</span>: <span class="number">#f00</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">color</span>: <span class="number">#f00</span>;
+}
+@<span class="keyword">media</span> only screen and (max-width: <span class="number">767px</span>) {
+  <span class="selector-tag">div</span> {
+    <span class="attribute">width</span>: <span class="number">100%</span>;
+  }
+}
+</code></pre>
+</article><article id="retina-image"><h1>retina-image()</h1><p>Generate a media query for an image.<br>If no size is given, the mixin tries to get the sizes from the file.</p>
+<h3>Signature</h3><p><code>retina-image( img-src [, size [, suffix ] ] )</code></p>
+<ul>
+<li><code>img-src</code>: the path for the image</li>
+<li><code>size</code>: width and height of the image, uses as <code>background-size</code> for the retina image. <em>Optional</em>. If none is given, the sizes are computed from the path. If it fails, the <code>background-size</code> value will be <code>contain</code>.</li>
+<li><code>suffix</code>: the suffix to add to the file to reach retina image. <em>Optional</em>. Default: <code>@2x</code>.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus">div
+  retina-image( <span class="string">&quot;logo.png&quot;</span>, <span class="number">277</span>px <span class="number">292</span>px, <span class="string">&quot;-2x&quot;</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&quot;logo.png&quot;</span>);
+}
+@<span class="keyword">media</span> only screen and (-webkit-min-device-pixel-ratio: <span class="number">1.3</span>), only screen and (min--moz-device-pixel-ratio: <span class="number">1.3</span>), only screen and (-o-min-device-pixel-ratio: <span class="number">1.3</span>/<span class="number">1</span>), only screen and (min-device-pixel-ratio: <span class="number">1.3</span>), only screen and (min-resolution: <span class="number">125dpi</span>), only screen and (min-resolution: <span class="number">1.3dppx</span>) {
+  <span class="selector-tag">div</span> {
+    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&quot;logo-2x.png&quot;</span>);
+    <span class="attribute">-webkit-background-size</span>: <span class="number">277px</span> <span class="number">292px</span>;
+    <span class="attribute">background-size</span>: <span class="number">277px</span> <span class="number">292px</span>;
+  }
+}
+</code></pre>
+<h3>Alias</h3><p><code>hidpi-image()</code></p>
+</article><article id="retina-query"><h1>retina-query()</h1><p>Create the query part of a media query for retina/hdpi screens, which you can store in a variable, to use when you make a media block.  </p>
+<blockquote>
+<p><strong>Warning:</strong> since version <code>0.9</code>, the retina-query() mixin has changed: it&apos;s now a <em>block</em> mixin.</p>
+</blockquote>
+<h3>Signature</h3><p><code>+retina-query( media [, density ] )</code></p>
+<ul>
+<li><code>media</code>: the media of the query</li>
+<li><code>density</code>: pixel density for the query. <em>Optional</em>. Default to <code>1</code>.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus">+retina-query( all, <span class="number">1.3</span> )
+    <span class="selector-tag">div</span>
+        <span class="attribute">color</span>: red
+
++retina-query( only screen, <span class="number">2</span> )
+    <span class="selector-tag">div</span>
+        <span class="attribute">color</span>: red
+
++retina-query( screen )
+    <span class="selector-tag">div</span>
+        <span class="attribute">color</span>: red
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css">@media <span class="keyword">all</span> <span class="keyword">and</span> (-webkit-<span class="built-in">min</span>-device-pixel-ratio: <span class="number">1.3</span>), <span class="keyword">all</span> <span class="keyword">and</span> (<span class="built-in">min</span>--moz-device-pixel-ratio: <span class="number">1.3</span>), <span class="keyword">all</span> <span class="keyword">and</span> (-o-<span class="built-in">min</span>-device-pixel-ratio: <span class="number">1.3</span>/<span class="number">1</span>), <span class="keyword">all</span> <span class="keyword">and</span> (<span class="built-in">min</span>-device-pixel-ratio: <span class="number">1.3</span>), <span class="keyword">all</span> <span class="keyword">and</span> (<span class="built-in">min</span>-resolution: <span class="number">125</span>dpi), <span class="keyword">all</span> <span class="keyword">and</span> (<span class="built-in">min</span>-resolution: <span class="number">1.3</span>dppx) {
+  <span class="built-in">div</span> {
+    color: #f00;
+  }
+}
+@media only screen <span class="keyword">and</span> (-webkit-<span class="built-in">min</span>-device-pixel-ratio: <span class="number">2</span>), only screen <span class="keyword">and</span> (<span class="built-in">min</span>--moz-device-pixel-ratio: <span class="number">2</span>), only screen <span class="keyword">and</span> (-o-<span class="built-in">min</span>-device-pixel-ratio: <span class="number">2</span>/<span class="number">1</span>), only screen <span class="keyword">and</span> (<span class="built-in">min</span>-device-pixel-ratio: <span class="number">2</span>), only screen <span class="keyword">and</span> (<span class="built-in">min</span>-resolution: <span class="number">192</span>dpi), only screen <span class="keyword">and</span> (<span class="built-in">min</span>-resolution: <span class="number">2</span>dppx) {
+  <span class="built-in">div</span> {
+    color: #f00;
+  }
+}
+@media screen <span class="keyword">and</span> (-webkit-<span class="built-in">min</span>-device-pixel-ratio: <span class="number">1</span>), screen <span class="keyword">and</span> (<span class="built-in">min</span>--moz-device-pixel-ratio: <span class="number">1</span>), screen <span class="keyword">and</span> (-o-<span class="built-in">min</span>-device-pixel-ratio: <span class="number">1</span>/<span class="number">1</span>), screen <span class="keyword">and</span> (<span class="built-in">min</span>-device-pixel-ratio: <span class="number">1</span>), screen <span class="keyword">and</span> (<span class="built-in">min</span>-resolution: <span class="number">96</span>dpi), screen <span class="keyword">and</span> (<span class="built-in">min</span>-resolution: <span class="number">1</span>dppx) {
+  <span class="built-in">div</span> {
+    color: #f00;
+  }
+}
+</code></pre>
+<h3>Alias</h3><p><code>hidpi-query()</code></p>
+</article><article id="triangle"><h1>triangle()</h1><p>Change the target into a lovely triangle :)<br>Useful for tooltips, arrows, or anything you want with pointy stuffs.</p>
+<h3>Signature</h3><p><code>triangle( direction, size, face-color [, back-color ] )</code></p>
+<ul>
+<li><code>direction</code>: the direction of the triangle. Can be <code>up</code>, <code>down</code>, <code>left</code>, <code>right</code>, <code>up-left</code>, <code>up-right</code>, <code>down-left</code>, <code>down-right</code>.</li>
+<li><code>size</code>: size of the triangle.</li>
+<li><code>face-color</code>: color of the triangle.</li>
+<li><code>back-color</code>: background color of the triangle. <em>Optional</em>. Defaults to <code>transparent</code>.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">div</span>
+    triangle( up, <span class="number">10px</span>, red )
+
+<span class="selector-tag">div</span>
+    triangle( down-<span class="attribute">right</span>, <span class="number">10px</span>, red )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">width</span>: <span class="number">0</span>;
+  <span class="attribute">height</span>: <span class="number">0</span>;
+  <span class="attribute">border</span>: <span class="number">10px</span> solid transparent;
+  <span class="attribute">border-bottom-color</span>: <span class="number">#f00</span>;
+}
+
+<span class="selector-tag">div</span> {
+  <span class="attribute">width</span>: <span class="number">0</span>;
+  <span class="attribute">height</span>: <span class="number">0</span>;
+  <span class="attribute">border</span>: <span class="number">10px</span> solid <span class="number">#00f</span>;
+  <span class="attribute">border-bottom-color</span>: <span class="number">#f00</span>;
+  <span class="attribute">border-right-color</span>: <span class="number">#f00</span>;
+}
+</code></pre>
+</article><h2>grid</h2><article id="system"><h1>grid system</h1><blockquote>
+<p><strong>WARNING!</strong> The grid system of Kouto Swiss is deprecated and will be removed in version <code>1.0.0</code>. Please use <a href="https://jeet.gs">jeet</a> instead.</p>
+</blockquote>
+<p><strong>kouto swiss</strong> comes with a semantic grid system, which can be fixed (by default), or fluid.</p>
+<p>The grid system works in two steps : init the grid by calling the <code>gs()</code> function, then, into your selectors, define rows and columns with <code>row()</code>, <code>col()</code> and <code>offset()</code>.</p>
+<p>The grid system of kouto swiss is inspired by those from <a href="http://960.gs">960.gs</a> and <a href="http://semantic.gs">semantic.gs</a>.</p>
+</article><article id="gs"><h1>gs()</h1><p>Init (or change) the grid system parameters : type, amount of columns, size, gutters...</p>
+<h3>Signature</h3><p><code>gs( [ type [, cols [, col-width [, gut-width ] ] ] ] )</code></p>
+<p>If the mixin is called from a selector, it will returns some properties to set the grid up.</p>
+<ul>
+<li><code>type</code>: the type of the grid. Can be &quot;<code>fixed</code>&quot; (be default) or &quot;<code>fluid</code>&quot;. <em>Optional</em></li>
+<li><code>cols</code>: amount of columns in the grid. <em>Optional</em> Default to <code>12</code>.</li>
+</ul>
+<h4>fixed grid</h4><ul>
+<li><code>col-width</code>: the size of the columns. <em>Optional</em> Default to <code>60px</code>.</li>
+<li><code>gut-width</code>: the size of the gutter between columns. <em>Optional</em> Default to <code>20px</code>.</li>
+</ul>
+<h4>fluid grid</h4><ul>
+<li><code>col-width</code>: the size of the columns. All numbers given will be taken as percentages. <em>Optional</em> Default to <code>( 100% / cols ) * 0.9</code>.</li>
+<li><code>gut-width</code>: the size of the gutter between columns. All numbers given will be taken as percentages. <em>Optional</em> Default to <code>( 100% / cols ) * 0.1</code>.</li>
+</ul>
+<p>When using the <code>fluid</code> grid system, only one of the value is used to compute, proportionaly, the size of columns and gutters. If the two values are given, the <code>col-width</code> is used.</p>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">body</span>
+    gs()
+
+<span class="selector-tag">body</span>
+    gs( <span class="string">&quot;fixed&quot;</span>, <span class="number">16</span>, <span class="number">40px</span>, <span class="number">10px</span> )
+
+<span class="selector-tag">body</span>
+    gs( <span class="string">&quot;fluid&quot;</span> )
+
+<span class="selector-tag">body</span>
+    gs( <span class="string">&quot;fluid&quot;</span>, <span class="number">10</span>, <span class="number">9%</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">body</span> {
+  <span class="attribute">width</span>: <span class="number">960px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> auto;
+  <span class="attribute">overflow</span>: hidden;
+}
+<span class="selector-tag">body</span> {
+  <span class="attribute">width</span>: <span class="number">800px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> auto;
+  <span class="attribute">overflow</span>: hidden;
+}
+<span class="selector-tag">body</span> {
+  <span class="attribute">width</span>: <span class="number">100%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> auto;
+  <span class="attribute">overflow</span>: hidden;
+}
+<span class="selector-tag">body</span> {
+  <span class="attribute">width</span>: <span class="number">100%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> auto;
+  <span class="attribute">overflow</span>: hidden;
+}
+</code></pre>
+</article><article id="col"><h1>col()</h1><p>Init a column of the given size for the current grid system.</p>
+<h3>Signature</h3><p><code>col( [ size ] )</code></p>
+<ul>
+<li><code>size</code>: size of the column. <em>Optional</em> Default to the total of columns in the grid.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">div</span>
+    col()
+
+<span class="selector-tag">div</span>
+    col( <span class="number">1</span> )
+
+<span class="selector-tag">div</span>
+    col( <span class="number">6</span> )
+
+<span class="function"><span class="title">gs</span><span class="params">( <span class="string">&quot;fixed&quot;</span>, <span class="number">16</span>, <span class="number">40px</span>, <span class="number">10px</span> )</span></span>
+
+<span class="selector-tag">div</span>
+    col()
+
+<span class="selector-tag">div</span>
+    col( <span class="number">1</span> )
+
+<span class="selector-tag">div</span>
+    col( <span class="number">6</span> )
+
+<span class="function"><span class="title">gs</span><span class="params">( <span class="string">&quot;fluid&quot;</span> )</span></span>
+
+<span class="selector-tag">div</span>
+    col()
+
+<span class="selector-tag">div</span>
+    col( <span class="number">1</span> )
+
+<span class="selector-tag">div</span>
+    col( <span class="number">6</span> )
+
+<span class="function"><span class="title">gs</span><span class="params">( <span class="string">&quot;fluid&quot;</span>, <span class="number">10</span>, <span class="number">9%</span> )</span></span>
+
+<span class="selector-tag">div</span>
+    col()
+
+<span class="selector-tag">div</span>
+    col( <span class="number">1</span> )
+
+<span class="selector-tag">div</span>
+    col( <span class="number">6</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">940px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">10px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">60px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">10px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">460px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">10px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">790px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">40px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">290px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">99.1666666666667%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0.4166666666667%</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">7.5%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0.4166666666667%</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">49.1666666666667%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0.4166666666667%</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">99%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0.5%</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">9%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0.5%</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">59%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0.5%</span>;
+}
+</code></pre>
+</article><article id="row"><h1>row()</h1><p>Init a row for the current grid system.</p>
+<h3>Signature</h3><p><code>row()</code></p>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">div</span>
+    row()
+
+<span class="function"><span class="title">gs</span><span class="params">( <span class="string">&quot;fixed&quot;</span>, <span class="number">16</span>, <span class="number">40px</span>, <span class="number">10px</span> )</span></span>
+
+<span class="selector-tag">div</span>
+    row()
+
+<span class="function"><span class="title">gs</span><span class="params">( <span class="string">&quot;fluid&quot;</span> )</span></span>
+
+<span class="selector-tag">div</span>
+    row()
+
+<span class="function"><span class="title">gs</span><span class="params">( <span class="string">&quot;fluid&quot;</span>, <span class="number">10</span>, <span class="number">9%</span> )</span></span>
+
+<span class="selector-tag">div</span>
+    row()
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: block;
+  <span class="attribute">width</span>: <span class="number">980px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> -<span class="number">10px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: block;
+  <span class="attribute">width</span>: <span class="number">810px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> -<span class="number">5px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: block;
+  <span class="attribute">width</span>: <span class="number">100.83333333333331%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> -<span class="number">0.4166666666667%</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: block;
+  <span class="attribute">width</span>: <span class="number">101%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> -<span class="number">0.5%</span>;
+}
+</code></pre>
+</article><article id="offset"><h1>offset()</h1><p>Offset a column to the left by the given size, for the current grid system.</p>
+<h3>Signature</h3><p><code>offset( [ size ] )</code></p>
+<ul>
+<li><code>size</code>: size of the offset. <em>Optional</em> Default to <code>1</code>.</li>
+</ul>
+<h3>Usage</h3><pre><code class="lang-stylus"><span class="selector-tag">div</span>
+    col( <span class="number">1</span> )
+    offset( <span class="number">3</span> )
+
+<span class="selector-tag">div</span>
+    col( <span class="number">6</span> )
+    offset( <span class="number">6</span> )
+
+<span class="function"><span class="title">gs</span><span class="params">( <span class="string">&quot;fixed&quot;</span>, <span class="number">16</span>, <span class="number">40px</span>, <span class="number">10px</span> )</span></span>
+
+<span class="selector-tag">div</span>
+    col( <span class="number">1</span> )
+    offset( <span class="number">3</span> )
+
+<span class="selector-tag">div</span>
+    col( <span class="number">6</span> )
+    offset( <span class="number">6</span> )
+
+<span class="function"><span class="title">gs</span><span class="params">( <span class="string">&quot;fluid&quot;</span> )</span></span>
+
+<span class="selector-tag">div</span>
+    col( <span class="number">1</span> )
+    offset( <span class="number">3</span> )
+
+<span class="selector-tag">div</span>
+    col( <span class="number">6</span> )
+    offset( <span class="number">6</span> )
+
+<span class="function"><span class="title">gs</span><span class="params">( <span class="string">&quot;fluid&quot;</span>, <span class="number">10</span>, <span class="number">9%</span> )</span></span>
+
+<span class="selector-tag">div</span>
+    col( <span class="number">1</span> )
+    offset( <span class="number">3</span> )
+
+<span class="selector-tag">div</span>
+    col( <span class="number">6</span> )
+    offset( <span class="number">6</span> )
+</code></pre>
+<h3>Result</h3><pre><code class="lang-css"><span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">60px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">10px</span>;
+  <span class="attribute">margin-left</span>: <span class="number">250px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">460px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">10px</span>;
+  <span class="attribute">margin-left</span>: <span class="number">490px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">40px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;
+  <span class="attribute">margin-left</span>: <span class="number">155px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">290px</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;
+  <span class="attribute">margin-left</span>: <span class="number">305px</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">7.5%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0.4166666666667%</span>;
+  <span class="attribute">margin-left</span>: <span class="number">25.4166666666667%</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">49.1666666666667%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0.4166666666667%</span>;
+  <span class="attribute">margin-left</span>: <span class="number">50.4166666666667%</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">9%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0.5%</span>;
+  <span class="attribute">margin-left</span>: <span class="number">30.5%</span>;
+}
+<span class="selector-tag">div</span> {
+  <span class="attribute">display</span>: inline-block;
+  <span class="attribute">float</span>: left;
+  <span class="attribute">overflow</span>: hidden;
+  <span class="attribute">width</span>: <span class="number">59%</span>;
+  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0.5%</span>;
+  <span class="attribute">margin-left</span>: <span class="number">60.5%</span>;
+}
+</code></pre>
+</article></div><footer><p><strong>kouto swiss</strong> is maintained by <a href="http://leny.me">leny</a>.
+Any question? Please tweet <a href="//twitter.com/leny_be">@leny_be</a></p><p><strong>kouto swiss</strong> is Copyright &#xA9;2014 <a href="http://leny.me">leny</a>. It is free software, and may be redistributed under the terms specified in the LICENSE file.</p><div class="buttons"><a href="http://github.com/leny/kouto-swiss">github</a><a href="docs.html">docs</a></div></footer></div><script src="js/jquery.min.js"></script><script src="js/docs.js"></script></body></html>
