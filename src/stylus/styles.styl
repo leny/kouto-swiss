@@ -1,0 +1,606 @@
+// imports
+@import "kouto-swiss"
+
+// resets
+meyer-reset()
+box-sizing-reset()
+
+// fonts
+// TODO : clean unused weights
+ExtraLight = 100
+font-face( "FiraSans", "fonts/firasans/FiraSans-ExtraLight", ExtraLight, formats: eot woff )
+Light = 200
+font-face( "FiraSans", "fonts/firasans/FiraSans-Light", Light, formats: eot woff )
+// normal
+font-face( "FiraSans", "fonts/firasans/FiraSans-Book", formats: eot woff )
+font-face( "FiraSans", "fonts/firasans/FiraSans-BookItalic", normal, italic, formats: eot woff )
+Medium = 400
+font-face( "FiraSans", "fonts/firasans/FiraSans-Medium", Medium, formats: eot woff )
+SemiBold = 500
+font-face( "FiraSans", "fonts/firasans/FiraSans-SemiBold", SemiBold, formats: eot woff )
+Bold = 600
+font-face( "FiraSans", "fonts/firasans/FiraSans-Bold", Bold, formats: eot woff )
+FiraSans = "FiraSans", "Fira Sans", "FiraSansOT", font-stack( "Helvetica" )
+font-face( "FiraMono", "fonts/firamono/FiraMono-Regular", formats: eot woff )
+font-face( "FiraMono", "fonts/firamono/FiraMono-Regular", bold, formats: eot woff )
+FiraMono = "FiraMono", font-stack( "Consolas" )
+font-face( "Norwester", "fonts/norwester/norwester", formats: eot woff )
+Norwester = "Norwester", FiraSans
+font-face( "WebHostingHub", "fonts/webhostinghub/webhostinghub-glyphs-webfont", formats: eot truetype svg )
+Glyphs = "WebHostingHub", "WebHostingHub-Glyphs"
+
+// vars
+cKoutoSwiss = #c30
+
+*
+    -webkit-font-smoothing antialiased
+    -webkit-text-size-adjust 100%
+
+html
+    width 100%
+    background white
+    font normal 62.5%/1.5 FiraSans
+
+body
+    color black
+
+a
+    color cKoutoSwiss
+    text-decoration none
+    transition color .25s ease-in-out
+    &:hover
+        color complement( cKoutoSwiss )
+
+pre
+    padding 1rem
+    overflow auto
+    -webkit-overflow-scrolling touch
+    background tint( #fff1cc, 95% )
+    border 1px solid shade( #ffe399, 15% )
+    border-radius 3px
+    font normal 1.2rem FiraMono
+    code
+        color #008a67
+
+div[id="wrapper"]
+    position relative
+    width 100%
+    overflow hidden
+
+header
+    position relative
+    width 100%
+    margin 0 auto 70px
+    padding 1px 0 10px
+    background cKoutoSwiss
+    h1
+        position relative
+        margin 10px auto 0
+        z-index 20
+        a
+            display block
+            margin 0 70px 0 10px
+            font normal 3.225rem/1 Norwester
+            color white
+            text-decoration none
+            &:hover
+                color white
+    h2
+        position relative
+        margin 0 0 5px 10px
+        z-index 20
+        font SemiBold 1rem FiraSans
+        color white
+    body.home &
+        padding 1px 0 35px
+        h1
+            margin 19px auto 0
+            a
+                display block
+                margin 0 auto
+                font normal 5rem/1 Norwester
+                color white
+                text-align center
+                text-decoration none
+                &:before
+                    content ""
+                    display block
+                    size 120px 80px
+                    margin 0 auto 10px
+                    background url( "img/logo.svg" ) right center no-repeat
+                    background-size auto 100%
+                &:hover
+                    color white
+        h2
+            margin 0 auto 25px
+            font SemiBold 1.55rem FiraSans
+            color white
+            text-align center
+        .buttons
+            position relative
+            z-index 10
+            text-align center
+            a
+                display inline-block
+                width 120px
+                padding 8px 0
+                border 2px solid white
+                font SemiBold 1.8rem FiraSans
+                color white
+                text-decoration none
+                text-align center
+                &:first-child
+                    border-right-width 1px
+                    border-radius 5px 0 0 5px
+                &:last-child
+                    background white
+                    border-left-width 1px
+                    border-radius 0 5px 5px 0
+                    color cKoutoSwiss
+    > a
+        position absolute
+        display block
+        width 40px
+        height 40px
+        top 8px
+        right 10px
+        z-index 30
+        text-indent -9999px
+        &:before
+            content ""
+            position absolute
+            display block
+            top 4px
+            right 0
+            font normal 2.4rem Glyphs
+            color white
+            text-align right
+    nav
+        position relative
+        display none
+        margin 10px 10px 20px
+        z-index 20
+        > ul
+            border 2px solid white
+            border-radius 5px
+            > li
+                strong
+                    display block
+                    padding 8px 0 5px
+                    font normal 1.6rem/1 FiraSans
+                    color white
+                    text-transform uppercase
+                    text-align center
+                > ul
+                    border 2px solid white
+                    border-left 0
+                    border-right 0
+                    > li
+                        a
+                            display block
+                            padding 13px 10px 10px
+                            background white
+                            border-bottom 1px solid cKoutoSwiss
+                            font normal 1.4rem/1 FiraSans
+                            color cKoutoSwiss
+                            text-align left
+                            &.active
+                                padding-top 11px
+                                padding-left 0
+                                background cKoutoSwiss
+                                color white
+                                &:before
+                                    content ""
+                                    display inline-block
+                                    triangle( right, 10px, white )
+                                    vertical-align -5px
+                        &:last-child a
+                            border-bottom 0
+        &.open
+            display block
+
+section
+    margin 0 auto 20px
+    h3
+        margin 30px auto 10px
+        padding 0 10px
+        font normal 2.4rem/1.5 Norwester
+        color cKoutoSwiss
+        text-transform uppercase
+    h4
+        margin 20px 10px 20px
+        font SemiBold 1.8rem FiraSans
+    h5
+        margin 0 10px 5px
+        font SemiBold 1.6rem FiraSans
+    p
+        margin 0 10px 1rem
+        font Light 1.6rem FiraSans
+        strong
+            font-weight normal
+        code
+            padding 0 .5rem
+            border 1px solid transparent
+            font normal 1.5rem FiraMono
+            color #008a67
+            transition all .25s ease-in-out
+            &:hover
+                background #fff1cc
+                border 1px solid shade( #ffe399, 15% )
+                border-radius 3px
+        &.punchline
+            margin 2.5rem 10px 1rem
+            font-weight SemiBold
+            color cKoutoSwiss
+    pre
+        margin 10px
+    &.about
+        margin 0 auto 40px
+        blockquote
+            position relative
+            margin 0 10px 20px
+            padding 0 0 0 60px
+            text-align right
+            &:before
+                content "“"
+                position absolute
+                top -40px
+                right 0
+                font italic Light 8rem/1 FiraSans
+                color cKoutoSwiss
+            p
+                font italic Light 1.8rem FiraSans
+                color cKoutoSwiss
+    &.usage
+        h5
+            text-align center
+            a
+                display inline-block
+                size 100px
+                text-indent -9999px
+                &[id="grunt-site"]
+                    background url( "img/grunt-logo.svg" ) top center no-repeat
+                    background-size contain
+                &[id="gulp-site"]
+                    background url( "img/gulp-logo.svg" ) top center no-repeat
+                    background-size contain
+
+div.docs
+    margin 0 10px
+    > h2
+        margin 0 auto 2rem
+        font normal 2rem FiraSans
+        color cKoutoSwiss
+        text-align center
+        text-transform capitalize
+    article
+        margin 0 auto 6rem
+        padding 0 0 12rem
+        border-bottom 1px solid tint( cKoutoSwiss, 75% )
+        > h1
+            margin 0 auto 2.5rem
+            padding 6rem 0 0
+            font normal 1.8rem FiraSans
+            code
+                font normal 1.8rem FiraMono
+        > h2
+            margin 0 auto 2rem 1.5rem
+            font normal 1.7rem FiraSans
+            color shade( cKoutoSwiss, 25% )
+        > h3
+            margin 0 auto .5rem 1.5rem
+            font normal 1.6rem FiraSans
+            color tint( cKoutoSwiss, 15% )
+        p
+        ul
+        ol
+            margin 0 auto 2rem
+            font Light 1.6rem FiraSans
+            strong
+                font-weight normal
+            code
+                padding 0 .5rem
+                border 1px solid transparent
+                font normal 1.5rem FiraMono
+                transition all .25s ease-in-out
+                &:hover
+                    background #fff1cc
+                    border 1px solid shade( #ffe399, 15% )
+                    border-radius 3px
+        ul
+        ol
+            li
+                margin 0 auto .75rem
+        ul
+            list-style disc inside
+        ol
+            list-style decimal inside
+        pre
+            margin 1rem 0 2rem
+        img
+            display block
+            max-width 100%
+        &:last-child
+            border-bottom 0
+
+footer
+    position relative
+    width 100%
+    margin 50px auto 0
+    padding 20px 0 20px
+    background cKoutoSwiss
+    p
+        position relative
+        margin 0 10px 10px
+        font Light 1.4rem FiraSans
+        color white
+        z-index 10
+        strong
+            font-weight normal
+        a
+            font-weight normal
+            color tint( complement( cKoutoSwiss ), 66% )
+    .buttons
+        position relative
+        margin 10px auto 0
+        z-index 10
+        text-align center
+        a
+            display inline-block
+            width 80px
+            padding 4px 0
+            border 2px solid white
+            font SemiBold 1.4rem FiraSans
+            color white
+            text-decoration none
+            &:first-child
+                border-right-width 1px
+                border-radius 5px 0 0 5px
+            &:last-child
+                background white
+                border-left-width 1px
+                border-radius 0 5px 5px 0
+                color cKoutoSwiss
+
+@import "highlightjs-tommorrow-theme"
+
++media-query( screen, min-width 480px )
+    header
+        margin 0 auto 100px
+        &:after
+            height 110px
+            margin -65px 0 0 -10%
+        body.home &
+            margin 0 auto 60px
+            h1
+                margin 19px auto 0 10px
+                a
+                    margin 0
+                    text-align left
+                    &:before
+                        position absolute
+                        size 140px
+                        top 6px
+                        right 10px
+            h2
+                margin 0 auto 25px 10px
+                text-align left
+            .buttons
+                margin 0 0 0 20px
+                text-align left
+            &:after
+                margin -40px 0 0 -10%
+    section
+        h3
+            font normal 2.8rem/1.5 Norwester
+        p.punchline
+            width 50%
+            margin 2.5rem 10px 1rem
+            font-weight SemiBold
+            color cKoutoSwiss
+    footer
+        margin 120px auto 0
+
++media-query( screen, min-width 640px )
+    header
+        margin 0 auto 100px
+        &:after
+            height 90px
+            margin -55px 0 0 -10%
+        body.home &
+            margin 0 auto 70px
+            h1
+                margin 19px auto 0 20px
+                a
+                    font normal 7rem/1 Norwester
+                    &:before
+                        position absolute
+                        size 175px
+                        top 8px
+                        right 20px
+            h2
+                margin 0 auto 25px 20px
+                font SemiBold 2.15rem FiraSans
+            .buttons
+                margin 0 0 0 72.5px
+                text-align left
+            &:after
+                margin -40px 0 0 -10%
+    section
+        p.punchline
+            font SemiBold 1.8rem FiraSans
+        &.about
+            blockquote
+                padding 10px 0 0 50%
+                &:before
+                    top -35px
+                    right 10px
+                    font italic Light 12rem/1 FiraSans
+                p
+                    font italic Light 2.0rem FiraSans
+                    color cKoutoSwiss
+        &.usage
+            h5
+                a
+                    size 150px
+                    margin 0 auto 10px
+    footer
+        margin 100px auto 0
+        padding 20px 0
+        &:before
+            height 90px
+            margin -45px 0 0 -10%
+
++media-query( screen, min-width 768px )
+    section.usage
+        h5
+            text-align center
+            a
+                display inline-block
+                size 100px
+                text-indent -9999px
+                &[id="grunt-site"]
+                    background url( "img/grunt-logo.svg" ) top center no-repeat
+                    background-size contain
+                &[id="gulp-site"]
+                    background url( "img/gulp-logo.svg" ) top center no-repeat
+                    background-size contain
+
++media-query( screen, min-width 960px )
+    header
+        fixed 0 auto 0 0
+        size 240px 100%
+        overflow auto
+        -webkit-overflow-scrolling touch
+        margin 0
+        z-index 100
+        background white
+        border-right 2px solid cKoutoSwiss
+        > a
+            display none
+        nav
+            position relative
+            display block
+            margin 0
+            z-index 100
+            background cKoutoSwiss
+            > ul
+                border 2px solid cKoutoSwiss
+                border-left 0
+                border-right 0
+                border-radius 0
+        h1
+            a
+                margin 0 10px 0
+                color cKoutoSwiss
+                &:hover
+                    color cKoutoSwiss
+        h2
+            width 100%
+            margin 0
+            padding 0 10px 10px
+            overflow hidden
+            color cKoutoSwiss
+        &:after
+            content none
+        body.home &
+            position static
+            width auto
+            margin 0 auto 60px
+            padding 21px 0 35px
+            background cKoutoSwiss
+            &:after
+                content ""
+                height 300px
+                margin -200px 0 0 -10%
+                background cKoutoSwiss
+            h1
+                width 800px
+                margin 19px auto 0
+                color white
+                a
+                    margin 0 auto
+                    font normal 7rem/1 Norwester
+                    color white
+                    text-align right
+                    &:before
+                        position absolute
+                        size 205px
+                        top 0
+                        left 0
+                        margin 0
+            h2
+                width 800px
+                margin 0 auto 20px
+                text-align right
+                &:after
+                    content none
+            .buttons
+                width 800px
+                margin 0 auto
+                padding 0 65px 0 0
+                text-align right
+    section
+        &.about
+            width 680px
+            margin 30px 0 50px 260px
+            p.punchline
+                font SemiBold 2.2rem FiraSans
+            blockquote
+                padding 10px 0 0 40%
+                &:before
+                    top -35px
+                    right 10px
+                    font italic Light 12rem/1 FiraSans
+                p
+                    font italic Light 3.0rem FiraSans
+                    color cKoutoSwiss
+        &.usage
+            h4:nth-of-type( 2 )
+                margin 40px 10px 20px
+        body.home &
+            width 800px
+            margin 30px auto 0
+    div.docs
+        width 680px
+        margin 10px 0 20px 260px
+    footer
+        position relative
+        width auto
+        padding 20px 20px 20px 260px
+        z-index 20
+        body.home &
+            margin 120px auto 0
+            padding 20px 0
+            p
+                position relative
+                width 800px
+                margin 0 auto 10px
+                padding 0 420px 0 0
+                font Light 1.5rem FiraSans
+            .buttons
+                position absolute
+                top 0
+                left 50%
+                margin 30px 0 0 100px
+                a
+                    width 120px
+                    font SemiBold 1.8rem FiraSans
+
++media-query( screen, min-width 1200px )
+    div.docs
+        width 800px
+        margin 10px auto 20px 320px
+
++media-query( screen, min-width 1600px )
+    footer
+        margin 180px auto 0
+        padding 10px 20px 20px 260px
+        &:before
+            height 180px
+            margin -95px 0 0 -10%
+        body.home &
+            margin 200px auto 0
+            &:before
+                height 180px
+                margin -85px 0 0 -10%
