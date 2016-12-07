@@ -27,7 +27,7 @@ module.exports = function( grunt ) {
             },
             "docs": {
                 "files": {
-                    "docs/styles/styles.css": "_docs/_styles/styles.styl",
+                    "docs/assets/css/styles.css": "src/stylus/styles.styl",
                 },
             },
         },
@@ -82,16 +82,12 @@ module.exports = function( grunt ) {
                 "tasks": [ "pug" ],
             },
             "styles": {
-                "files": "_docs/_styles/**/*.styl",
+                "files": "src/stylus/**/*.styl",
                 "tasks": [ "stylus" ],
-            },
-            "scripts": {
-                "files": "_docs/_js/**/*.js",
-                "tasks": [ "copy:scripts" ],
             },
             "docs": {
                 "files": "_docs/**/*.md",
-                "tasks": [ "jade" ],
+                "tasks": [ "pug" ],
             },
         },
     } );
