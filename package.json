@@ -114,7 +114,6 @@
     "grunt-contrib-jade": "^1.0.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-gh-pages": "^2.0.0",
     "grunt-mocha-cli": "^2.0.0",
     "highlight.js": "^9.2.0",
     "load-grunt-tasks": "^3.4.1",

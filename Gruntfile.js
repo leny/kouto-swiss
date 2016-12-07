@@ -12,74 +12,68 @@ module.exports = function( grunt ) {
             "options": {
                 "require": [ "should" ],
                 "reporter": "spec",
-                "inline-diffs": true
+                "inline-diffs": true,
             },
             "tests": {
-                "src": "test/runner.js"
-            }
+                "src": "test/runner.js",
+            },
         },
         "clean": {
-            "docs": [ "docs" ]
+            "docs": [ "docs" ],
         },
         "stylus": {
             "options": {
                 "compress": true,
-                "use": [ require( "./lib/kouto-swiss.js" ) ]
+                "use": [ require( "./lib/kouto-swiss.js" ) ],
             },
             "docs": {
                 "files": {
-                    "docs/styles/styles.css": "_docs/_styles/styles.styl"
-                }
-            }
+                    "docs/styles/styles.css": "_docs/_styles/styles.styl",
+                },
+            },
         },
         "jade": {
             "options": {
-                "compress": true
+                "compress": true,
             },
             "docs": {
                 "options": {
-                    "data": grunt.file.readJSON( "package.json" )
+                    "data": grunt.file.readJSON( "package.json" ),
                 },
                 "files": {
-                    "docs/docs.html": "_docs/_pages/docs.jade"
-                }
+                    "docs/docs.html": "_docs/_pages/docs.jade",
+                },
             },
             "home": {
                 "options": {
-                    "data": grunt.file.readJSON( "package.json" )
+                    "data": grunt.file.readJSON( "package.json" ),
                 },
                 "files": {
-                    "docs/index.html": "_docs/_pages/index.jade"
-                }
-            }
+                    "docs/index.html": "_docs/_pages/index.jade",
+                },
+            },
         },
         "copy": {
             "assets": {
                 "expand": true,
                 "cwd": "_docs/_styles/",
                 "src": [ "img/**", "fonts/**" ],
-                "dest": "docs/styles/"
+                "dest": "docs/styles/",
             },
             "scripts": {
                 "expand": true,
                 "cwd": "_docs/_js/",
                 "src": [ "**" ],
-                "dest": "docs/js/"
+                "dest": "docs/js/",
             },
             "cname": {
                 "src": "_docs/CNAME",
-                "dest": "docs/CNAME"
+                "dest": "docs/CNAME",
             },
             "readme": {
                 "src": "_docs/README.md",
-                "dest": "docs/README.md"
-            }
-        },
-        "gh-pages": {
-            "options": {
-                "base": "docs"
+                "dest": "docs/README.md",
             },
-            "src": "**/*"
         },
         "connect": {
             "docs": {
@@ -88,39 +82,39 @@ module.exports = function( grunt ) {
                     "hostname": "*",
                     "base": "./docs",
                     "keepalive": true,
-                    "livereload": true
-                }
-            }
+                    "livereload": true,
+                },
+            },
         },
         "concurrent": {
             "docs": {
                 "tasks": [ "connect:docs", "watch" ],
                 "options": {
-                    "logConcurrentOutput": true
-                }
-            }
+                    "logConcurrentOutput": true,
+                },
+            },
         },
         "watch": {
             "options": {
-                "livereload": true
+                "livereload": true,
             },
             "jade": {
                 "files": "_docs/_pages/*.jade",
-                "tasks": [ "jade", "generate" ]
+                "tasks": [ "jade", "generate" ],
             },
             "styles": {
                 "files": "_docs/_styles/**/*.styl",
-                "tasks": [ "stylus" ]
+                "tasks": [ "stylus" ],
             },
             "scripts": {
                 "files": "_docs/_js/**/*.js",
-                "tasks": [ "copy:scripts" ]
+                "tasks": [ "copy:scripts" ],
             },
             "docs": {
                 "files": "_docs/**/*.md",
-                "tasks": [ "generate" ]
-            }
-        }
+                "tasks": [ "generate" ],
+            },
+        },
     } );
 
     grunt.registerTask( "default", [
@@ -128,25 +122,24 @@ module.exports = function( grunt ) {
         "jade",
         "generate",
         "stylus",
-        "copy"
+        "copy",
     ] );
 
     grunt.registerTask( "test", [
-        "mochacli"
+        "mochacli",
     ] );
 
     grunt.registerTask( "preview", [
         "default",
-        "connect:docs"
+        "connect:docs",
     ] );
 
     grunt.registerTask( "work", [
         "default",
-        "concurrent"
+        "concurrent",
     ] );
 
     grunt.registerTask( "build", [
         "default",
-        "gh-pages"
     ] );
 };
