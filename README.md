@@ -121,4 +121,3 @@ Licensed under the MIT license.
 #### Fonts
 
 * [Norwester by Jamie Wilson](http://jamiewilson.io/norwester/) ([SIL Open Font License](http://scripts.sil.org/OFL))
-* [Fira Sans & Fira Mono by Mozilla](https://www.mozilla.org/en-US/styleguide/products/firefox-os/typeface/) ([SIL Open Font License](http://scripts.sil.org/OFL))
