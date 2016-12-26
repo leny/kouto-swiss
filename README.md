@@ -100,6 +100,7 @@ Many thanks!
 
 For more details, look at the [changelog](./CHANGELOG.md).
 
+- **2016-12-26:** version `1.0.0`
 - **2016-12-06:** version `0.14.0`
 - **2016-11-12:** version `0.13.0`
 - **2016-03-25:** version `0.12.0`

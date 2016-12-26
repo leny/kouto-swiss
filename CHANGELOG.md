@@ -1,5 +1,11 @@
 # kouto swiss: changelog
 
+## `1.0.0` / 2016-12-26
+
+* **Breaking change:** remove grid system
+* New design & build system for documentation
+* Update dev dependencies
+
 ## `0.14.0` / 2016-12-06
 
 * Add `min-size` & `max-size` mixins
