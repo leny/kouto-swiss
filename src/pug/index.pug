@@ -33,16 +33,6 @@ html( lang="en" )
                         = " "
                         a.version__changelog-link( href="https://github.com/leny/kouto-swiss/blob/master/CHANGELOG.md", target="new" ) see changelog
 
-            section.content
-                h2.hidden Introduction
-
-                blockquote Stylus is great, but… where’s my Compass/Bourbon?
-
-                p Here comes #[strong kouto swiss], the missing CSS toolbox for Stylus!
-
-                p #[strong kouto swiss] gives you a lot of mixins, functions and utilities to code faster, and include the power of #[a( href="//caniuse.com" ) caniuse website] to make your stylesheets fits your compatibility needs.
-
-
             .documentation
                 nav#main-nav.main-nav
                     h2 Navigation
@@ -55,6 +45,14 @@ html( lang="en" )
                                     each entry in index[ chapter ]
                                         li
                                             a( href="#" + chapter + "_" + entry )= entry
+                section.content
+                    h2.hidden Introduction
+
+                    blockquote Stylus is great, but… where’s my Compass/Bourbon?
+
+                    p Here comes #[strong kouto swiss], the missing CSS toolbox for Stylus!
+
+                    p #[strong kouto swiss] gives you a lot of mixins, functions and utilities to code faster, and include the power of #[a( href="//caniuse.com" ) caniuse website] to make your stylesheets fits your compatibility needs.
 
                 each chapter in index.chapters
                     section.content( id=chapter )
@@ -65,9 +63,7 @@ html( lang="en" )
 
             footer.footer
                 .footer__content
-                    p #[strong kouto swiss] is maintained by [leny](http://leny.me). Any question? Please tweet [@leny_be](http://twitter.com/leny_be)
+                    p #[strong kouto swiss] is maintained by #[a( href="http://leny.me" ) leny]. Any question? Please tweet #[a( href="http://twitter.com/leny_be" ) @leny_be].
 
-                    p #[strong kouto swiss] is copyright ©2014 [leny](https://github.com/leny). It is free software, and may be redistributed under the terms specified in the LICENSE file.
-
-        include partials/artifacts
+                    p #[strong kouto swiss] is copyright ©2014 #[a( href="https://github.com/leny" ) leny]. It is free software, and may be redistributed under the terms specified in the LICENSE file.
 

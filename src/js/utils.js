@@ -7,7 +7,14 @@
  */
 
 var fs = require( "fs" ),
-    marked = require( "marked" );
+    marked = require( "marked" ),
+    highlight = require( "highlight.js" ).highlightAuto;
+
+marked.setOptions( {
+    "highlight": function( sCode ) {
+        return highlight( sCode ).value;
+    },
+} );
 
 exports.date_format = function( sDate ) {
     var dDate = new Date( sDate );
