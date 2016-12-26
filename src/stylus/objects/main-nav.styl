@@ -7,15 +7,32 @@
  */
 
 .main-nav
-    margin-bottom 4.8rem
-    padding 0 2rem
+    display none
+    width 16rem
+    float right
+    padding 3.2rem 0 0
+    h2
+        display none
     ul
-        margin 0
-        padding-left 0
         list-style none
-        li
-            margin-bottom .8rem
+        padding 0
+        > li
+            margin-bottom 2rem
             font-size 1.6rem
+            font-weight bold
+            > a
+                display block
+                margin-bottom 1rem
+                color #555
             > ul
-                margin-top .8rem
-                padding-left 2.4rem
+                padding-left 1rem
+                li
+                    margin-bottom .5rem
+                    a
+                        margin-bottom 0
+                        font-weight normal
+                        font-size 1.2rem
+
++media-query( screen, min-width 960px )
+    .main-nav
+        display block
