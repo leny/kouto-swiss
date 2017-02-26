@@ -57,6 +57,7 @@
         "hide-text",
         "easing",
         "ellipsis",
+        "flex-axis",
         "media-query",
         "retina-image",
         "retina-query",
