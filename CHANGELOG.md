@@ -1,5 +1,9 @@
 # kouto swiss: changelog
 
+## `1.1.0` / 2017-02-26
+
+* Add `flex-axis` mixin
+
 ## `1.0.0` / 2016-12-26
 
 * **Breaking change:** remove grid system
