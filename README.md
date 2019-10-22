@@ -1,6 +1,6 @@
 # kouto swiss
 
-[![NPM version](https://badge.fury.io/js/kouto-swiss.svg)](http://badge.fury.io/js/kouto-swiss) [![Build Status](http://img.shields.io/travis/leny/kouto-swiss.svg)](https://travis-ci.org/leny/kouto-swiss) ![Dependency Status](https://david-dm.org/leny/kouto-swiss.svg) ![Downloads counter](http://img.shields.io/npm/dm/kouto-swiss.svg)
+[![NPM version](https://badge.fury.io/js/kouto-swiss.svg)](http://badge.fury.io/js/kouto-swiss) [![Build Status](http://img.shields.io/travis/leny/kouto-swiss.svg)](https://travis-ci.org/leny/kouto-swiss) ![Dependency Status](https://david-dm.org/leny/kouto-swiss.svg) ![Downloads counter](http://img.shields.io/npm/dm/kouto-swiss.svg) [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 > A complete CSS framework for [Stylus](http://learnboost.github.io/stylus/)
 
